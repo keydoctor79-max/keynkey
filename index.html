@@ -1,0 +1,1790 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크 1600-9712</title>
+  <meta name="theme-color" content="#FEE838">
+
+  <!-- 상업용 무료 폰트: 지마켓 산스 & 오스왈드 & 프리텐다드 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff">
+  <style>
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    :root {
+      --bg-yellow: #FEE838;
+      --logo-yellow: #FEE907; 
+      --header-bg: #FFFDF4;   
+      --white-sec: #FFFFFF;   
+      --black-sec: #111111;   
+      --black: #000000;       
+      --text-gray: #444444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'GmarketSans', 'Pretendard', sans-serif;
+      background-color: var(--bg-yellow);
+      color: var(--black);
+      -webkit-user-select: none;
+      user-select: none;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 1260px; margin: 0 auto; padding: 0 24px; }
+
+    /* ================= 1. Top Header ================= */
+    .topNav {
+      background: var(--header-bg);
+      border-bottom: 2px solid var(--black);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navInner {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brandLogo {
+      background: var(--black);
+      color: #fff;
+      padding: 0 18px;
+      height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      white-space: nowrap;
+      border: 2px solid var(--black);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .brandLogo .logoKo {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      display: inline-block;
+      transform: translateY(2px);
+    }
+    .brandLogo .logoEn {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--logo-yellow);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      display: inline-block;
+      transform: translateY(0.5px);
+    }
+
+    .centerMenu {
+      display: flex;
+      gap: 8px;
+    }
+    .menuBtn {
+      border: 2px solid var(--black);
+      padding: 8px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      background: #fff;
+      letter-spacing: 0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 2px 2px 0px var(--black);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .menuBtn:hover {
+      background: var(--bg-yellow);
+      transform: translateY(-2px);
+    }
+    .menuBtn span {
+      font-size: 14px;
+    }
+
+    .navCallLarge {
+      background: var(--black);
+      color: #fff;
+      padding: 0 18px;
+      height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 2px solid var(--black);
+      white-space: nowrap;
+      box-shadow: 2px 2px 0px var(--black);
+      transition: transform 0.15s;
+    }
+    .navCallLarge:hover {
+      transform: translateY(-2px);
+    }
+    .navCallLarge .badgeText {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      display: inline-block;
+      letter-spacing: -0.02em;
+      transform: translateY(2px);
+    }
+    .navCallLarge b {
+      color: var(--logo-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 27px;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    /* ================= 2. Hero Section ================= */
+    .heroSection {
+      background-color: var(--bg-yellow);
+      padding: 75px 0 85px;
+    }
+    .heroGrid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .reserveBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #111111;
+      color: var(--logo-yellow);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 8px 18px;
+      margin-bottom: 20px;
+      border: 2px solid #111111;
+      box-shadow: 4px 4px 0px #ffffff;
+      letter-spacing: -0.01em;
+      transition: transform 0.15s ease;
+    }
+    .reserveBadge:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0px #ffffff;
+    }
+
+    .mainTitle {
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 54px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+    .mainDesc {
+      font-size: 18px;
+      font-weight: 500;
+      max-width: 580px;
+      margin-bottom: 34px;
+      line-height: 1.75;
+    }
+    .ctaGroup {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btnAction {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btnBlackHighlight {
+      background: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 5px 5px 0px #ffffff;
+    }
+    .btnBlackHighlight:hover {
+      background: #1a1a1a;
+      color: var(--logo-yellow);
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px #ffffff;
+    }
+    .btnBlackHighlight:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0px #ffffff;
+    }
+
+    .btnWhiteHighlight {
+      background: #ffffff;
+      color: #000000;
+      border: 2px solid #000000;
+      box-shadow: 5px 5px 0px #000000;
+    }
+    .btnWhiteHighlight:hover {
+      background: var(--bg-yellow);
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px #000000;
+    }
+    .btnWhiteHighlight:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0px #000000;
+    }
+
+    .sideHeroArea {
+      max-width: 440px;
+      margin-left: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sideHeroMedia {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border: 3px solid var(--black);
+      box-shadow: 6px 6px 0px var(--black);
+      margin-bottom: 14px;
+      background: #000;
+    }
+
+    .sideCardTitle {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .sideTagRow {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 10px;
+      width: 100%;
+    }
+    .sideTag {
+      border: 2px solid var(--black);
+      height: 54px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 3px 3px 0px var(--black);
+      white-space: nowrap;
+      padding: 0 8px;
+    }
+    .sideTag.tagPhone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: #000;
+    }
+    .sideTag.tagKo {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #000;
+      transform: translateY(2px);
+    }
+
+    /* 공통 섹션 헤더 */
+    .secHeader {
+      margin-bottom: 45px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .secHeaderTitle {
+      font-family: 'Oswald', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .secHeaderSubKo {
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+      background: #fff;
+      border: 2.5px solid var(--black);
+      padding: 8px 20px;
+      box-shadow: 4px 4px 0px var(--black);
+      display: inline-block;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* ================= 3. About Us Section ================= */
+    .aboutSection {
+      background-color: var(--white-sec);
+      padding: 95px 0 105px;
+    }
+    .aboutGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+    .aboutHeading {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .aboutHeading .highlightTag {
+      background: var(--bg-yellow);
+      padding: 2px 8px;
+      border: 2px solid var(--black);
+      margin-right: 6px;
+      display: inline-block;
+    }
+    .aboutText {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: var(--text-gray);
+      margin-bottom: 24px;
+    }
+
+    .aboutTistoryBtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 24px;
+      border: 2px solid var(--black);
+      box-shadow: 5px 5px 0px var(--bg-yellow);
+      margin-bottom: 28px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .aboutTistoryBtn:hover {
+      background: var(--bg-yellow);
+      color: var(--black);
+      box-shadow: 5px 5px 0px var(--black);
+      transform: translate(-2px, -2px);
+    }
+    .aboutTistoryBtn .tistoryIcon {
+      background: #eb531f;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 12px;
+      padding: 2px 6px;
+      font-weight: 700;
+    }
+
+    .aboutStats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .statBox {
+      border: 2px solid var(--black);
+      padding: 18px 14px;
+      background: var(--bg-yellow);
+      text-align: center;
+      box-shadow: 4px 4px 0px var(--black);
+    }
+    .statNum {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .statLabel {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    
+    .aboutMediaBox {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 3px solid var(--black);
+      box-shadow: 7px 7px 0px var(--black);
+      display: block;
+      background: #000;
+    }
+
+    /* ================= 4. 전국 광역 마스터 네트워크 ================= */
+    .networkSection {
+      background-color: var(--bg-yellow);
+      padding: 95px 0 105px;
+      border-bottom: 2px solid var(--black);
+    }
+    .networkIntro {
+      font-size: 19px;
+      font-weight: 500;
+      max-width: 860px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .networkGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .networkCard {
+      background: #fff;
+      border: 2px solid var(--black);
+      box-shadow: 6px 6px 0px var(--black);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .networkCard:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px var(--black);
+    }
+
+    .netTopRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .netBadge {
+      background: var(--black);
+      color: var(--logo-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+    .netBadge.cert {
+      background: #d32f2f;
+      color: #fff;
+    }
+    .netBadge.new {
+      background: #0b57d0;
+      color: #fff;
+    }
+    .netRegion {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .netCoverage {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0b57d0;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .netExp {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-gray);
+      line-height: 1.55;
+      border-top: 1.5px dashed var(--black);
+      padding-top: 12px;
+      margin-top: auto;
+      margin-bottom: 14px;
+    }
+    .netExp strong {
+      color: #000;
+      font-weight: 700;
+    }
+    .netBtnRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .netMiniBtn {
+      border: 1.5px solid var(--black);
+      padding: 6px 4px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      background: #fafafa;
+      box-shadow: 2px 2px 0px var(--black);
+      transition: all 0.1s;
+    }
+    .netMiniBtn:hover {
+      background: var(--bg-yellow);
+    }
+    .netMiniBtn.call {
+      background: var(--black);
+      color: #fff;
+    }
+
+    .netCallBanner {
+      background: #fff;
+      border: 2px solid var(--black);
+      box-shadow: 6px 6px 0px var(--black);
+      padding: 24px 30px;
+      margin-top: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .netCallText {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    /* ================= 5. Case Section ================= */
+    .caseSection {
+      background-color: var(--white-sec);
+      padding: 95px 0 105px;
+    }
+    .caseList {
+      display: flex;
+      flex-direction: column;
+      gap: 45px;
+    }
+    .caseItem {
+      display: grid;
+      grid-template-columns: 160px 340px 1fr;
+      align-items: start;
+      gap: 34px;
+    }
+    .caseDate {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .caseImg img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border: 2px solid var(--black);
+      display: block;
+      background: #ddd;
+    }
+    .caseHeading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 40px;
+      line-height: 1.05;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .caseBadge {
+      display: inline-block;
+      border: 1.5px solid var(--black);
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      background: var(--bg-yellow);
+    }
+    .caseDesc {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    /* ================= 6. FAQ Section ================= */
+    .faqSection {
+      background-color: var(--black-sec);
+      color: #ffffff;
+      padding: 100px 0 110px;
+      position: relative;
+    }
+    .faqHeader {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .faqSubTitle {
+      font-family: 'Oswald', sans-serif;
+      color: var(--logo-yellow);
+      font-size: 20px;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .faqMainTitle {
+      font-family: 'Oswald', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .faqDesc {
+      font-size: 17px;
+      font-weight: 500;
+      color: #aaaaaa;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .faqList {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 960px;
+      margin: 0 auto 40px;
+    }
+    .faqCard {
+      background: #1c1c1c;
+      border: 2px solid #333333;
+      padding: 24px 28px;
+      box-shadow: 4px 4px 0px var(--logo-yellow);
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .faqCard:hover {
+      transform: translateX(4px);
+      border-color: var(--logo-yellow);
+    }
+    .faqTopRow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .faqBadge {
+      background: var(--logo-yellow);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 4px 12px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .faqQuestion {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .faqAnswer {
+      font-size: 16px;
+      font-weight: 500;
+      color: #cccccc;
+      line-height: 1.75;
+      padding-left: 54px;
+    }
+
+    .faqHiddenWrap {
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .faqMoreArea {
+      text-align: center;
+    }
+    .btnFaqMore {
+      background: var(--logo-yellow);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 16px 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid var(--black);
+      box-shadow: 4px 4px 0px #ffffff;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btnFaqMore:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #ffffff;
+    }
+    .btnFaqMore:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #ffffff;
+    }
+    .btnFaqMore svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.25s ease;
+    }
+    .btnFaqMore.active svg {
+      transform: rotate(45deg);
+    }
+
+    /* ================= 7. Store Section ================= */
+    .storeSection {
+      background-color: var(--white-sec);
+      padding: 95px 0 105px;
+    }
+    .storeFilterNav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+    .storeTab {
+      font-family: 'GmarketSans', sans-serif;
+      border: 2.5px solid var(--black);
+      background: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px var(--black);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .storeTab:hover {
+      background: var(--bg-yellow);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--black);
+    }
+    .storeTab.active {
+      background: var(--bg-yellow);
+      box-shadow: 2px 2px 0px var(--black);
+      transform: translate(2px, 2px);
+    }
+
+    .storeGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .storeCard {
+      border: 2px solid var(--black);
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 6px 6px 0px var(--black);
+    }
+    .storeCard img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 2px solid var(--black);
+      margin-bottom: 16px;
+      background: #eee;
+    }
+    .storeName {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .storeInfo {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-gray);
+      flex: 1;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    .storeBottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1.5px solid var(--black);
+      padding-top: 14px;
+    }
+    .storePrice {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    /* ================= 8. Blog Section ================= */
+    .blogSection {
+      background-color: var(--bg-yellow);
+      padding: 95px 0 105px;
+    }
+    .blogGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .blogCard {
+      border: 2px solid var(--black);
+      background: #fff;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 6px 6px 0px var(--black);
+      transition: transform 0.15s;
+    }
+    .blogCard:hover {
+      transform: translateY(-3px);
+    }
+    .blogDate {
+      font-size: 13px;
+      font-weight: 700;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .blogTitle {
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .blogExcerpt {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-gray);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+    .blogLink {
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* ================= 9. Footer ================= */
+    .footer {
+      background: var(--white-sec);
+      border-top: 2px solid var(--black);
+      padding: 80px 0 95px;
+    }
+    .footerGrid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 55px;
+    }
+    .footerCol h4 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footerCol .enColTitle {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .footerLinks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footerLinks li {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .footerLinks li a:hover {
+      text-decoration: underline;
+    }
+
+    .footerAbout p {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 320px;
+    }
+
+    .socialBox {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .socialBtn {
+      border: 1.5px solid var(--black);
+      background: #fff;
+      padding: 7px 11px;
+      font-size: 12.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0px var(--black);
+      transition: all 0.15s;
+    }
+    .socialBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 3px 3px 0px var(--black);
+    }
+    .socialIcon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .btnKakao {
+      background: #FEE500;
+      color: #000;
+      border-color: #000;
+    }
+    .btnSms {
+      background: #000;
+      color: #fff;
+    }
+
+    /* 하단 사업자 정보 */
+    .bizInfoBox {
+      border-top: 1.5px solid var(--black);
+      padding-top: 32px;
+      font-size: 14.5px;
+      font-weight: 500;
+      line-height: 1.85;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .bizTitleBig {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    /* 모바일 플로팅 바 */
+    .mobileBar { display: none; }
+
+    @media (max-width: 900px) {
+      .centerMenu { display: none; }
+      .heroGrid { grid-template-columns: 1fr; }
+      .mainTitle { font-size: 38px; line-height: 1.3; }
+      .sideHeroArea { margin-left: 0; max-width: 100%; }
+      .aboutGrid { grid-template-columns: 1fr; }
+      .aboutHeading { font-size: 28px; }
+      .aboutTistoryBtn { width: 100%; justify-content: center; }
+      .networkGrid { grid-template-columns: 1fr; }
+      .caseItem { grid-template-columns: 1fr; gap: 16px; }
+      .caseHeading { font-size: 32px; }
+      .faqMainTitle { font-size: 38px; }
+      .faqAnswer { padding-left: 0; }
+      .storeGrid { grid-template-columns: 1fr; }
+      .storeFilterNav { gap: 8px; }
+      .storeTab { padding: 10px 16px; font-size: 14.5px; }
+      .blogGrid { grid-template-columns: 1fr; }
+      .footerGrid { grid-template-columns: 1fr 1fr; }
+      .bizInfoBox { flex-direction: column; align-items: flex-start; }
+
+      .mobileBar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 200;
+        background: #fff;
+        border-top: 2px solid var(--black);
+      }
+      .mobileBar a {
+        padding: 15px 6px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .mobileBar .btnMStore {
+        background: #fff;
+        border-right: 1.5px solid var(--black);
+      }
+      .mobileBar .btnMSms {
+        background: #111;
+        color: #fff;
+        border-right: 1.5px solid var(--black);
+      }
+      .mobileBar .btnMCall {
+        background: var(--bg-yellow);
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+<!-- 1. Header Navigation -->
+<header class="topNav">
+  <div class="wrap navInner">
+    <a class="brandLogo" href="#top">
+      <span class="logoKo">키앤키닷컴</span>
+      <span class="logoEn">KEYNKEY.COM</span>
+    </a>
+
+    <nav class="centerMenu">
+      <a class="menuBtn" href="#about"><span>👤</span> ABOUT</a>
+      <a class="menuBtn" href="#network"><span>🌐</span> NETWORK</a>
+      <a class="menuBtn" href="#cases"><span>💼</span> CASES</a>
+      <a class="menuBtn" href="#faq"><span>❓</span> FAQ</a>
+      <a class="menuBtn" href="#store"><span>🛒</span> STORE</a>
+      <a class="menuBtn" href="#blogs"><span>📝</span> BLOGS</a>
+    </nav>
+
+    <a class="navCallLarge" href="tel:16009712">
+      <span class="badgeText">대표전화</span>
+      <b>1600-9712</b>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 2. Hero Section (첫 번째 시동 영상: '내 영상 1.mp4' 자동재생) -->
+  <section class="heroSection">
+    <div class="wrap heroGrid">
+      <div>
+        <div class="reserveBadge">
+          <span style="font-size:16px;">⏱️</span>
+          <span>100% 예약 우선 출동 원칙 · 시간 약속 엄수</span>
+        </div>
+
+        <h1 class="mainTitle">
+          "오늘 당일, 시간 약속 지켜서<br>
+          차키를 완벽하게 해결해 줄<br>
+          믿을 수 있는 전문가는 없을까?"
+        </h1>
+        <p class="mainDesc">
+          키앤키닷컴은 무분별한 단순 출동을 지양하며, <strong>철저한 사전 상담과 ‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과 약속한 시간을 엄수하여 현장으로 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결해 드립니다.
+        </p>
+
+        <div class="ctaGroup">
+          <a class="btnAction btnBlackHighlight" href="tel:16009712">📞 예약 및 긴급 상담 (1600-9712)</a>
+          <a class="btnAction btnWhiteHighlight" href="#network">전국 광역 지부 확인</a>
+        </div>
+      </div>
+
+      <!-- ⭐️ 메인 대표 키박스 시동 영상 1 무한 자동재생 ⭐️ -->
+      <div class="sideHeroArea">
+        <video class="sideHeroMedia" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80">
+          <source src="assets/내 영상 1.mp4" type="video/mp4">
+          <source src="내 영상 1.mp4" type="video/mp4">
+          <source src="assets/hero.mp4" type="video/mp4">
+          <source src="assets/20260925_125333.gif" type="image/gif">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="키앤키 차키 시동 실전">
+        </video>
+        <div class="sideCardTitle">SMART KEY - PRODUCTION & CODING</div>
+        <div class="sideTagRow">
+          <span class="sideTag tagPhone">1600-9712</span>
+          <span class="sideTag tagKo">키앤키닷컴</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. About Us Section (두 번째 코딩·장비 영상: '내 영상 2.mp4' 자동재생 전면 적용) -->
+  <section id="about" class="aboutSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">ABOUT US</h2>
+      </div>
+      <div class="aboutGrid">
+        <div>
+          <h3 class="aboutHeading">
+            <span class="highlightTag">20년 현장 노하우</span> 로 완성하는<br>
+            원스톱 차키 출장 솔루션
+          </h3>
+          <p class="aboutText">
+            키앤키닷컴(KEYNKEY.COM)은 분실된 차키와 스마트키를 현장에서 견인 없이 즉시 가공·복원하는 대한민국 대표 자동차키 전문 네트워크입니다. 최첨단 CNC 자동 가공기와 순정 OBD 진단 코딩 시스템을 통해 차량 손상 없이 완벽한 시동과 리모컨 등록을 보장합니다.
+          </p>
+
+          <a class="aboutTistoryBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77" title="대표 차상준의 20년 현장 일기 보러가기">
+            <span class="tistoryIcon">STORY</span>
+            <span>대표 차상준의 20년 현장 일기 & 진심 스토리 전문 읽기 →</span>
+          </a>
+
+          <div class="aboutStats">
+            <div class="statBox">
+              <span class="statNum">20+</span>
+              <span class="statLabel">YEARS EXP</span>
+            </div>
+            <div class="statBox">
+              <span class="statNum">100%</span>
+              <span class="statLabel">ON-SITE FIX</span>
+            </div>
+            <div class="statBox">
+              <span class="statNum">0%</span>
+              <span class="statLabel">NO DAMAGE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ⭐️ 대표님의 '내 영상 2.mp4' 진단기 코딩/가공 자동재생 비디오 박스 ⭐️ -->
+        <div class="aboutImgBox">
+          <video class="aboutMediaBox" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80">
+            <source src="assets/내 영상 2.mp4" type="video/mp4">
+            <source src="내 영상 2.mp4" type="video/mp4">
+            <source src="assets/about.mp4" type="video/mp4">
+            <source src="assets/1000094154.gif" type="image/gif">
+            <source src="1000094154.gif" type="image/gif">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="키앤키닷컴 현장 장비 및 작업 모습">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 전국 광역 마스터 네트워크 -->
+  <section id="network" class="networkSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">NATIONWIDE MASTERS NETWORK</h2>
+        <span class="secHeaderSubKo">전국 광역 마스터 네트워크</span>
+      </div>
+      <p class="networkIntro">
+        키앤키닷컴은 각 권역별 <strong>20년 이상 베테랑 마스터 엔지니어</strong>가 전국 광역 출동망을 구축하고 있습니다. 원하시는 지역의 직통 전화나 대표 포스팅을 확인하실 수 있습니다.
+      </p>
+
+      <div class="networkGrid">
+        <!-- 1. 인천, 서울, 경기 수도권 본부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">HQ 본부</span></div>
+          <h3 class="netRegion">인천 · 서울 · 경기 수도권 본부</h3>
+          <div class="netCoverage">서울특별시 · 인천광역시 · 경기 수도권 일대</div>
+          <div class="netExp"><strong>20년 경력 차상준 대표</strong> CNC 정밀가공 및 수입차 특화 긴급출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 2. 경기 남부 & 충남 북부 (백년가게 친절열쇠) -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge cert">백년가게 공식인증</span></div>
+          <h3 class="netRegion">경기 안성 · 평택 / 충남 천안 · 아산</h3>
+          <div class="netCoverage">안성시 · 평택시 · 천안시 · 아산시 광역 일대</div>
+          <div class="netExp"><strong>중기부 공식인증 백년가게 (안성 친절열쇠)</strong> 20년 현장 장인 원스톱 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 3. 경기 용인 · 광주 · 오산 지부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge new">NEW 지부</span></div>
+          <h3 class="netRegion">경기 용인 · 광주 · 오산</h3>
+          <div class="netCoverage">용인특례시 전역 · 경기 광주시 · 오산시 일대</div>
+          <div class="netExp"><strong>20년 베테랑 엔지니어</strong> 신속 현장 출동 및 정밀 키 가공 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 4. 경기 안양 · 과천 · 군포 지부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge new">NEW 지부</span></div>
+          <h3 class="netRegion">경기 안양 · 과천 · 군포</h3>
+          <div class="netCoverage">안양시(만안·동안) · 과천시 · 군포시 · 의왕 인접권</div>
+          <div class="netExp"><strong>20년 베테랑 엔지니어</strong> 순정 스마트키 당일 복원 및 무손상 개문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 5. 전남 광역 특구 (광주 · 나주 · 담양 · 장성) -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge cert">전남 광역 특구</span></div>
+          <h3 class="netRegion">전남 광역 특구 (광주·나주·담양·장성)</h3>
+          <div class="netCoverage">광주광역시 전역 · 나주시 · 담양군 · 장성군 일대</div>
+          <div class="netExp"><strong>20년 베테랑 마스터</strong> 호남 거점 긴급출동 · 스마트키 원스톱 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 6. 대구 · 경산 · 구미 지부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge cert">영남 산업벨트 특화</span></div>
+          <h3 class="netRegion">대구광역시 · 경산 · 구미</h3>
+          <div class="netCoverage">대구 도심권 전역 · 경산 학원·공단벨트 · 구미 국가산단</div>
+          <div class="netExp"><strong>20년 베테랑 마스터</strong> 국가산단·도심 신속 출동 · 스마트키/폴딩키 당일 즉시 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 7. 충북 제천 · 단양 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">충북 지부</span></div>
+          <h3 class="netRegion">충북 제천 · 단양</h3>
+          <div class="netCoverage">제천시 전역 · 단양군 및 인접 산간 권역</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 국산/수입 전 차종 당일 긴급 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 8. 충북 충주 · 음성 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">충북 지부</span></div>
+          <h3 class="netRegion">충북 충주 · 음성</h3>
+          <div class="netCoverage">충주시 도심 · 음성군 및 기업도시 산단</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 스마트키 제작 및 현장 완벽 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 9. 경북 영주 · 봉화 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
+          <h3 class="netRegion">경북 영주 · 봉화</h3>
+          <div class="netCoverage">영주시 전역 · 봉화군 광역 지원 네트워크</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 분실키 즉시 판독 및 무손상 개문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 10. 경북 안동 · 예천 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
+          <h3 class="netRegion">경북 안동 · 예천</h3>
+          <div class="netCoverage">안동 도심 · 경북도청 신도시 · 예천군</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 이모빌라이저 키 & 스마트키 순정 등록</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 11. 경북 풍기 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
+          <h3 class="netRegion">경북 풍기</h3>
+          <div class="netCoverage">풍기읍 및 소백산 관광특구 인접 권역</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 긴급 차키 복원 및 리모컨 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 12. 경북 포항 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
+          <h3 class="netRegion">경북 포항 (북구·남구)</h3>
+          <div class="netCoverage">포항 북구·남구 전역 · 철강공단 및 항만</div>
+          <div class="netExp"><strong>20년 베테랑</strong> KGM·쉐보레·르노 전용 장비 상시 보유</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 13. 경북 경주 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
+          <h3 class="netRegion">경북 경주</h3>
+          <div class="netCoverage">경주시 도심 · 보문단지 · 외동공단 인접권</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 관광객 긴급 분실 스마트키 현장 원스톱</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 14. 경남 창원 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경남 지부</span></div>
+          <h3 class="netRegion">경남 창원 (의창·성산)</h3>
+          <div class="netCoverage">창원 도심 · 창원국가산단 · 진해구 권역</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 화물·특수차 및 전 차종 스마트키 마스터</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 15. 경남 마산 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경남 지부</span></div>
+          <h3 class="netRegion">경남 마산 (합포·회원)</h3>
+          <div class="netCoverage">마산합포구 · 회원구 · 내서읍 및 자유무역지역</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 정밀 픽킹 무손상 도어 개문 전문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 16. 전남 여수 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">전남 지부</span></div>
+          <h3 class="netRegion">전남 여수</h3>
+          <div class="netCoverage">여수시 도심 · 여수국가산단 · 돌산·도서 연계</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 당일 즉시 제작 및 순정 부품 상시 보유</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 17. 전남 광양 · 순천 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">전남 지부</span></div>
+          <h3 class="netRegion">전남 광양 · 순천</h3>
+          <div class="netCoverage">광양제철소 산단 · 광양항 · 순천 인접 권역</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 산업단지 긴급 출장 및 키박스 수리</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 18. 대전 · 세종 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">충청 허브</span></div>
+          <h3 class="netRegion">대전 · 세종 지부</h3>
+          <div class="netCoverage">대전 광역시 전역 · 세종 특별자치시 도심권</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 정부청사 및 충청 중심 허브 신속 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 19. 제주 특별자치도 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">제주 지부</span></div>
+          <h3 class="netRegion">제주 특별자치도</h3>
+          <div class="netCoverage">제주시 · 서귀포시 전역 및 관광특구 렌트카 긴급 지원</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 도서 관광지 즉시 출동 및 분실키 원스톱</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 20. 강원 광역 지부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">강원 지부</span></div>
+          <h3 class="netRegion">강원 광역 지부</h3>
+          <div class="netCoverage">원주 · 춘천 · 강릉 동해안권 및 리조트 관광 권역</div>
+          <div class="netExp"><strong>20년 베테랑</strong> 산간·고속도로 휴게소 긴급 차키 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="netCallBanner">
+        <div class="netCallText">
+          📍 어디서든 <strong>대표전화 1600-9712</strong>로 연락 주시면 계신 곳에서 가장 가까운 <strong>20년 마스터 엔지니어</strong>에게 1초 만에 직통 연결됩니다.
+        </div>
+        <a class="btnAction btnBlack" style="padding:12px 24px; font-size:15px;" href="tel:16009712">📞 대표번호 직통 연결</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Case Section -->
+  <section id="cases" class="caseSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">UPCOMING & WORK CASES</h2>
+      </div>
+      <div class="caseList">
+        <article class="caseItem">
+          <div class="caseDate">CASE 01</div>
+          <div class="caseImg">
+            <img src="assets/case01.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80';" 
+                 alt="분실 차키 현장 제작">
+          </div>
+          <div>
+            <h3 class="caseHeading">LOST CAR KEY RECOVERY</h3>
+            <span class="caseBadge">ON-SITE SERVICE</span>
+            <p class="caseDesc">차키를 전부 분실하셨어도 견인 없이 현장으로 출동하여 키박스 데이터 판독 후 현장 CNC 정밀 가공으로 원키와 동일하게 복원합니다.</p>
+          </div>
+        </article>
+
+        <article class="caseItem">
+          <div class="caseDate">CASE 02</div>
+          <div class="caseImg">
+            <img src="assets/case02.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80';" 
+                 alt="스마트키 복제 및 등록">
+          </div>
+          <div>
+            <h3 class="caseHeading">SMART KEY DUPLICATION</h3>
+            <span class="caseBadge">OBD CODING SYSTEM</span>
+            <p class="caseDesc">현대, 기아, 르노, 쉐보레, 쌍용 KGM 정품 스마트키 부품을 상시 보유하여 현장에서 시동 및 무선 기능을 당일 완벽 코딩합니다.</p>
+          </div>
+        </article>
+
+        <article class="caseItem">
+          <div class="caseDate">CASE 03</div>
+          <div class="caseImg">
+            <img src="assets/case03.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80';" 
+                 alt="무손상 차문 개문">
+          </div>
+          <div>
+            <h3 class="caseHeading">NON-DAMAGE DOOR OPENING</h3>
+            <span class="caseBadge">PRECISION PICKING</span>
+            <p class="caseDesc">차 문 틈새를 강제로 벌리지 않고 키홀 텐션 픽킹 방식을 적용하여 도장면이나 고무 몰딩 손상 없이 안전하게 잠금을 해제합니다.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ Section -->
+  <section id="faq" class="faqSection">
+    <div class="wrap">
+      <div class="faqHeader">
+        <div class="faqSubTitle">FREQUENTLY ASKED QUESTIONS</div>
+        <h2 class="faqMainTitle">DISCOVER YOUR ANSWERS</h2>
+        <p class="faqDesc">고객님들이 출동 전 가장 자주 문의하시는 현장 질문들을 모았습니다.</p>
+      </div>
+
+      <div class="faqList">
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q1</span>
+            <h3 class="faqQuestion">차키를 전부 잃어버렸는데 서비스센터 견인 없이 현장에서 되나요?</h3>
+          </div>
+          <p class="faqAnswer">
+            네, 100% 현장에서 가능합니다! 전용 이동식 CNC 정밀 가공 머신과 순정 스캐너를 보유하고 있어 견인할 필요 없이 계신 곳(주차장, 도로변, 공터 등)으로 직통 출동하여 즉시 키를 깎고 시동 등록까지 당일 완벽 복원해 드립니다.
+          </p>
+        </div>
+
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q2</span>
+            <h3 class="faqQuestion">알리, 테무, 당근에서 사둔 키 부품도 현장 등록만 가능한가요?</h3>
+          </div>
+          <p class="faqAnswer">
+            직구 부품이나 중고 키는 등록 작업을 진행하지 않습니다. 자동차 스마트키는 차종·연식마다 주파수와 칩 품번이 극도로 예민하여 불일치 시 차량 전자제어장치(BCM/ECU)에 오류 락(Lock)이 걸릴 위험이 큽니다. 키앤키닷컴은 검증된 100% 순정 부품만 취급합니다.
+          </p>
+        </div>
+
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q3</span>
+            <h3 class="faqQuestion">차 안에 스마트키를 두고 문이 잠겼는데 차에 흠집이 안 나나요?</h3>
+          </div>
+          <p class="faqAnswer">
+            철사로 문틈을 벌리거나 강제로 쑤시는 구식 방식을 절대 쓰지 않습니다! 키 구멍(키홀)에 특수 텐션 툴을 걸어 열쇠를 넣고 돌린 것처럼 부드럽게 픽킹(Picking) 개문하므로 문짝 찌그러짐, 도장면 스크래치, 방수 고무 몰딩 손상이 전혀 없습니다.
+          </p>
+        </div>
+
+        <div class="faqHiddenWrap" id="faqMoreWrap">
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q4</span><h3 class="faqQuestion">수출차량키 제작도 가능한가요?</h3></div>
+            <p class="faqAnswer">모하비 더마스터, 팰리세이드, 싼타페TM, 카니발KA4 등 외국에서 인기 많은 차량의 경우 키 복제 후 등록까지 가능하기에 많은 수출 제휴를 맺고 현장 지원하고 있습니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q5</span><h3 class="faqQuestion">중고차 매매 마켓 스마트키 리모컨키 복제 가능한가요?</h3></div>
+            <p class="faqAnswer">KB국민차매매단지, 엠파크, 오토플렉스, SKV1 등 많은 대형 매매단지 상사와 제휴를 맺어 신속하게 해결하고 있습니다. 한 분야에서 20년간 살아남은 네트워크이기에 단골 매매상사가 많습니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q6</span><h3 class="faqQuestion">내 차량이 렌트카인데 키복사 절차가 왜이리 까다롭나요?</h3></div>
+            <p class="faqAnswer">렌트카 차량의 경우에도 폴딩차키, 스마트키 분실 제작부터 기존 차키 추가 복제까지 당일 현장에서 원스톱으로 가능합니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q7</span><h3 class="faqQuestion">키 제작하는 김에 예비키 한 개 더 하려는데 바로 가능한가요?</h3></div>
+            <p class="faqAnswer">기본 스마트키 1개 제작 후 추가 복제 시 차량용 부품 재고가 있다면 즉시 연속 등록이 가능합니다. 현장 출동 시 미리 말씀해 주시면 여유분을 준비해 갑니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q8</span><h3 class="faqQuestion">이모빌라이저 차키는 무엇인가요?</h3></div>
+            <p class="faqAnswer">일반 쇠 막대기 키로 제작한 후 시동을 돌려도 차 내부의 ECU와 일치하는 암호가 없으면 시동이 걸리지 않는 도난 방지 시스템입니다. 일종의 차량용 OTP 번호 등록 작업입니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q9</span><h3 class="faqQuestion">쌍용자동차 KGM 신형품번 재고 있나요?</h3></div>
+            <p class="faqAnswer">토레스 등 KGM 사명 변경 후 새롭게 출시된 신형 스마트키 재고를 확보하고 있으며, 현장에서 없는 차키 제작부터 등록까지 가능합니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q10</span><h3 class="faqQuestion">폴딩리모컨 차키도 가능한가요?</h3></div>
+            <p class="faqAnswer">접이식 폴딩키 제작 및 등록이 모두 가능하며, 이모빌라이저가 미적용된 차량의 경우 일반 비상 막대키도 여유분으로 복제하여 함께 드립니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q11</span><h3 class="faqQuestion">현대모비스 순정 부품인가요?</h3></div>
+            <p class="faqAnswer">네, 현대차와 기아차 모두 공인된 현대 모비스 순정 정품 스마트키 부품으로 정확하게 작업해 드립니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q12</span><h3 class="faqQuestion">어디든 출장을 나와서 작업이 되나요?</h3></div>
+            <p class="faqAnswer">포장 도로뿐 아니라 지하주차장 구석, 논밭, 야외 공터, 공사 현장 등 장비 진입이 가능한 웬만한 모든 곳으로 즉시 출동합니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q13</span><h3 class="faqQuestion">슬롯에 꽂아서 시동 걸어주는 구형 스마트키도 재고 있나요?</h3></div>
+            <p class="faqAnswer">차량 슬롯 콘솔에 직접 꽂아 키를 인식시키는 1세대·2세대 구형 스마트키 재고 역시 상시 보유하고 있어 당일 작업이 가능합니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q14</span><h3 class="faqQuestion">배터리 방전 충전도 해주시나요?</h3></div>
+            <p class="faqAnswer">쉐보레 차량 등은 키 등록 시 배터리 전압 소모가 많아 보조 전원 배터리를 연결한 후 작업을 진행해 드립니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q15</span><h3 class="faqQuestion">포터2, 봉고3, 스타렉스 등 생업용 화물차 리모컨키 되나요?</h3></div>
+            <p class="faqAnswer">기존에 쓰시던 버튼 고무가 찢어졌거나 파손된 경우 튼튼한 플라스틱 버튼형 일체형 폴딩키로 당일 튼튼하게 교체 제작해 드립니다.</p>
+          </div>
+          <div class="faqCard">
+            <div class="faqTopRow"><span class="faqBadge">Q16</span><h3 class="faqQuestion">독일 3사(벤츠, BMW, 아우디) 작업도 가능한가요?</h3></div>
+            <p class="faqAnswer" style="color:#ff8585;">독일 3사(벤츠, BMW, 아우디) 차키 제작 견적 문의는 사절하며 일체 작업하지 않습니다. 현대, 기아, 르노, 쉐보레, 쌍용 KGM 및 주요 지원 수입 차종에 집중합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqMoreArea">
+        <button class="btnFaqMore" id="btnFaqToggle" onclick="toggleFaq()">
+          <span id="faqBtnText">VIEW MORE FAQ (13) +</span>
+          <svg id="faqPlusIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Store Section -->
+  <section id="store" class="storeSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">KEY & KEY STORE</h2>
+        <span class="secHeaderSubKo">스마트키 케이스 & 키홀더 전 품목</span>
+      </div>
+
+      <div class="storeFilterNav">
+        <button class="storeTab active">전체보기 (ALL)</button>
+        <button class="storeTab">현대 / 제네시스</button>
+        <button class="storeTab">기아 (KIA)</button>
+        <button class="storeTab">르노코리아</button>
+        <button class="storeTab">쉐보레 (CHEVROLET)</button>
+        <button class="storeTab">KGM 쌍용</button>
+        <button class="storeTab">가죽 키홀더 & 키링</button>
+      </div>
+
+      <div class="storeGrid">
+        <article class="storeCard">
+          <img src="assets/store01.jpg" 
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=600&q=80';" 
+               alt="현대 기아 스마트키 케이스">
+          <h3 class="storeName">HYUNDAI / KIA PREMIUM CASE</h3>
+          <p class="storeInfo">버튼 밀착감과 스크래치 방지를 완벽 지원하는 정밀 맞춤형 케이스</p>
+          <div class="storeBottom">
+            <span class="storePrice">₩ 25,000</span>
+            <a class="btnAction btnBlack" style="padding: 8px 18px; font-size: 13px;" href="tel:16009712">BUY NOW</a>
+          </div>
+        </article>
+
+        <article class="storeCard">
+          <img src="assets/store02.jpg" 
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80';" 
+               alt="르노 쉐보레 가죽 키케이스">
+          <h3 class="storeName">RENAULT / CHEVROLET LEATHER</h3>
+          <p class="storeInfo">손에 감기는 최상의 그립감과 오랜 내구성을 갖춘 최고급 천연 가죽 케이스</p>
+          <div class="storeBottom">
+            <span class="storePrice">₩ 28,000</span>
+            <a class="btnAction btnBlack" style="padding: 8px 18px; font-size: 13px;" href="tel:16009712">BUY NOW</a>
+          </div>
+        </article>
+
+        <article class="storeCard">
+          <img src="assets/store03.jpg" 
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';" 
+               alt="KGM 쌍용 메탈 케이스">
+          <h3 class="storeName">KGM SSANGYONG METAL CASE</h3>
+          <p class="storeInfo">신형 토레스 및 티볼리 완벽 호환, 단단한 엣지 보호 메탈 프레임</p>
+          <div class="storeBottom">
+            <span class="storePrice">₩ 26,000</span>
+            <a class="btnAction btnBlack" style="padding: 8px 18px; font-size: 13px;" href="tel:16009712">BUY NOW</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Blog Section -->
+  <section id="blogs" class="blogSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">LATEST BLOG STORIES</h2>
+        <span class="secHeaderSubKo">블로그 실전 사례</span>
+      </div>
+      <div class="blogGrid">
+        <article class="blogCard">
+          <div class="blogDate">NAVER BLOG STORY 01</div>
+          <h3 class="blogTitle">SM7 르노삼성 스마트키 분실 현장 복원</h3>
+          <p class="blogExcerpt">르노삼성 스마트키를 전부 분실한 긴급 상황, 현장으로 출동하여 인텔리전트 키 데이터 복구와 시동 등록을 원스톱으로 마쳤습니다.</p>
+          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">READ ARTICLE →</a>
+        </article>
+
+        <article class="blogCard">
+          <div class="blogDate">NAVER BLOG STORY 02</div>
+          <h3 class="blogTitle">쉐보레 트랙스 당일 정품키 재발급 출동</h3>
+          <p class="blogExcerpt">서비스센터 입고 없이 현장에서 정품 스마트키를 직접 가공 및 등록하여 차주분의 일정을 지켜드린 실제 사례입니다.</p>
+          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">READ ARTICLE →</a>
+        </article>
+
+        <article class="blogCard">
+          <div class="blogDate">NAVER BLOG STORY 03</div>
+          <h3 class="blogTitle">쌍용 KGM 코란도스포츠 스마트키 제작</h3>
+          <p class="blogExcerpt">KGM 최신 부품 재고를 상시 확보하고 있어 분실 현장에서 지체 없이 시동 및 비상 인서트 키까지 완벽하게 출고해 드렸습니다.</p>
+          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">READ ARTICLE →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 9. Footer -->
+<footer id="footer" class="footer">
+  <div class="wrap">
+    <div class="footerGrid">
+      <div class="footerCol footerAbout">
+        <h4>키앤키닷컴</h4>
+        <p>전국 마스터 엔지니어가 함께하는 자동차키·스마트키 긴급 제작 광역 네트워크 키앤키닷컴입니다.</p>
+        <div class="socialBox">
+          <a class="socialBtn btnKakao" target="_blank" rel="noopener" href="https://open.kakao.com" title="카카오톡 1:1 상담">
+            <svg class="socialIcon" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.87 1.884 5.39 4.747 6.772l-1.206 4.425c-.105.388.337.697.669.467l5.244-3.493c.18.019.362.029.546.029 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
+            카카오톡 문의
+          </a>
+          <a class="socialBtn btnSms" href="sms:01082424649" title="차키 사진 문자 전송">
+            <svg class="socialIcon" viewBox="0 0 24 24" fill="#FFF"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg>
+            문자 상담 (사진전송)
+          </a>
+          <a class="socialBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">
+            <svg class="socialIcon" viewBox="0 0 24 24" fill="#03C75A"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg>
+            네이버 블로그
+          </a>
+          <a class="socialBtn" target="_blank" rel="noopener" href="https://youtube.com">
+            <svg class="socialIcon" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            유튜브
+          </a>
+          <a class="socialBtn" target="_blank" rel="noopener" href="https://instagram.com">
+            <svg class="socialIcon" viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            인스타그램
+          </a>
+        </div>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="enColTitle">QUICK LINKS</h4>
+        <ul class="footerLinks">
+          <li><a href="#about">키앤키 소개 (About Us)</a></li>
+          <li><a href="#network">전국 광역 네트워크</a></li>
+          <li><a href="#cases">현장 출동 작업 사례</a></li>
+          <li><a href="#faq">자주 묻는 질문 (FAQ)</a></li>
+          <li><a href="#store">스마트키 케이스 스토어</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="enColTitle">RESOURCES</h4>
+        <ul class="footerLinks">
+          <li><a href="#cases">스마트키 코딩 시스템</a></li>
+          <li><a href="#cases">CNC 정밀 키 가공 안내</a></li>
+          <li><a href="#cases">무손상 차문 개문 원리</a></li>
+          <li><a href="#footer">이용약관 및 개인정보처리</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="enColTitle">CONTACT US</h4>
+        <ul class="footerLinks">
+          <li>대표전화 : 1600-9712</li>
+          <li>직통문의 : 010-8242-4649</li>
+          <li>이메일 : keynkey1313@gmail.com</li>
+          <li>상담시간 : 08:00 - 20:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 하단 사업자 정보 -->
+    <div class="bizInfoBox">
+      <div>
+        <span class="bizTitleBig">상호명 : 키앤키닷컴</span> | 대표 : 차상준 | 사업자등록번호 : 122-10-65938<br>
+        통신판매업 신고번호 : 제2016-경기부천-1677호<br>
+        주소 : 서울특별시 강서구 마곡중앙6로 21 이너매스마곡1차 512호
+      </div>
+      <div>Copyright © 키앤키닷컴 (KEYNKEY.COM) All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- 10. Mobile Floating Bar -->
+<div class="mobileBar">
+  <a class="btnMStore" href="#store">🛒 스토어</a>
+  <a class="btnMSms" href="sms:01082424649">💬 문자상담</a>
+  <a class="btnMCall" href="tel:16009712">📞 전화상담</a>
+</div>
+
+<!-- 스크립트 -->
+<script>
+  function toggleFaq() {
+    var wrap = document.getElementById('faqMoreWrap');
+    var btnText = document.getElementById('faqBtnText');
+    var btn = document.getElementById('btnFaqToggle');
+    
+    if (wrap.style.display === 'flex') {
+      wrap.style.display = 'none';
+      btnText.innerText = 'VIEW MORE FAQ (13) +';
+      btn.classList.remove('active');
+    } else {
+      wrap.style.display = 'flex';
+      btnText.innerText = 'CLOSE FAQ -';
+      btn.classList.add('active');
+    }
+  }
+
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) return false;
+    if (e.ctrlKey && (e.keyCode == 85 || e.keyCode == 83)) return false;
+  };
+</script>
+
+</body>
+</html>
