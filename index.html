@@ -2,15 +2,16 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
   <title>키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크 1600-9712</title>
-  <meta name="theme-color" content="#FEE838">
+  <meta name="theme-color" content="#0F172A">
 
-  <!-- 상업용 무료 폰트: 지마켓 산스 & 오스왈드 & 프리텐다드 -->
+  <!-- 상업용 무료 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <style>
     @font-face {
       font-family: 'GmarketSans';
@@ -24,43 +25,63 @@
       font-weight: 500;
       font-style: normal;
     }
-    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
     :root {
-      --bg-yellow: #FEE838;
-      --logo-yellow: #FEE907; 
-      --header-bg: #FFFDF4;   
-      --white-sec: #FFFFFF;   
-      --black-sec: #111111;   
-      --black: #000000;       
-      --text-gray: #444444;
+      --bg-main: #0B0F19;
+      --bg-surface: #151D2E;
+      --bg-card: #1E293B;
+      --border-card: #334155;
+      --neon-yellow: #FEE838;
+      --neon-pink: #FF007A;
+      --neon-pink-glow: rgba(255, 0, 122, 0.75);
+      --clear-cyan: #67E8F9;
+      --text-main: #FFFFFF;
+      --text-clean: #E2E8F0;
+      --text-bright: #F1F5F9;
+      --text-muted: #94A3B8;
+      --black: #000000;
+      --map-sea: #0A111F;
+      --map-land: #26354D;
+      --map-stroke: #475B7A;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'GmarketSans', 'Pretendard', sans-serif;
-      background-color: var(--bg-yellow);
-      color: var(--black);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
       -webkit-user-select: none;
       user-select: none;
       line-height: 1.6;
       word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .brandLogo, .menuBtn, .secHeaderSubKoBig, .reserveBadgeBig, .btnActionLarge {
+      font-family: 'GmarketSans', 'Pretendard', sans-serif;
     }
 
     a { text-decoration: none; color: inherit; }
-    .wrap { max-width: 1260px; margin: 0 auto; padding: 0 24px; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: 1380px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
-    /* ================= 1. Top Header ================= */
+    /* ================= 1. Header Navigation ================= */
     .topNav {
-      background: var(--header-bg);
-      border-bottom: 2px solid var(--black);
+      background: rgba(11, 15, 25, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border-card);
       position: sticky;
       top: 0;
       z-index: 100;
+      width: 100%;
     }
     .navInner {
-      height: 84px;
+      height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -68,986 +89,775 @@
     }
 
     .brandLogo {
-      background: var(--black);
+      background: #000;
       color: #fff;
       padding: 0 18px;
-      height: 54px;
+      height: 56px;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      gap: 8px;
       white-space: nowrap;
-      border: 2px solid var(--black);
-      box-shadow: 2px 2px 0px var(--black);
+      border: 2px solid var(--neon-yellow);
+      box-shadow: 0 0 12px rgba(254, 232, 56, 0.25);
+      flex-shrink: 0;
     }
     .brandLogo .logoKo {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1;
-      display: inline-block;
-      transform: translateY(2px);
+      transform: translateY(1.5px);
     }
     .brandLogo .logoEn {
       font-family: 'Oswald', sans-serif;
       font-size: 22px;
       font-weight: 700;
-      color: var(--logo-yellow);
-      letter-spacing: 0.04em;
-      line-height: 1;
-      display: inline-block;
-      transform: translateY(0.5px);
+      color: var(--neon-yellow);
+      letter-spacing: 0.03em;
     }
 
-    .centerMenu {
-      display: flex;
-      gap: 8px;
-    }
+    .centerMenu { display: flex; gap: 10px; }
     .menuBtn {
-      border: 2px solid var(--black);
-      padding: 8px 14px;
-      font-size: 13.5px;
+      border: 1.5px solid var(--border-card);
+      padding: 10px 20px;
+      font-size: 15px;
       font-weight: 700;
-      background: #fff;
-      letter-spacing: 0.01em;
+      background: var(--bg-surface);
+      color: var(--text-main);
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      box-shadow: 2px 2px 0px var(--black);
-      transition: all 0.15s;
+      gap: 6px;
+      transition: all 0.2s ease;
       white-space: nowrap;
     }
     .menuBtn:hover {
-      background: var(--bg-yellow);
+      background: var(--neon-yellow);
+      color: #000;
+      border-color: var(--neon-yellow);
+      box-shadow: 0 0 14px rgba(254, 232, 56, 0.4);
       transform: translateY(-2px);
-    }
-    .menuBtn span {
-      font-size: 14px;
     }
 
     .navCallLarge {
-      background: var(--black);
-      color: #fff;
-      padding: 0 18px;
-      height: 54px;
+      background: var(--neon-yellow);
+      color: #000;
+      padding: 0 22px;
+      height: 56px;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      border: 2px solid var(--black);
+      border: 2.5px solid #000;
       white-space: nowrap;
-      box-shadow: 2px 2px 0px var(--black);
-      transition: transform 0.15s;
+      box-shadow: 0 0 18px rgba(254, 232, 56, 0.45);
+      flex-shrink: 0;
+      transition: all 0.2s;
     }
     .navCallLarge:hover {
-      transform: translateY(-2px);
+      background: #fff;
+      transform: scale(1.03);
     }
-    .navCallLarge .badgeText {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-      display: inline-block;
-      letter-spacing: -0.02em;
-      transform: translateY(2px);
-    }
+    .navCallLarge .badgeText { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
     .navCallLarge b {
-      color: var(--logo-yellow);
-      font-family: 'Oswald', sans-serif;
-      font-size: 27px;
-      letter-spacing: 0.04em;
-      line-height: 1;
-      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      transform: translateY(1px);
     }
 
     /* ================= 2. Hero Section ================= */
     .heroSection {
-      background-color: var(--bg-yellow);
-      padding: 75px 0 85px;
+      background: linear-gradient(180deg, #0F172A 0%, #151F33 100%);
+      border-bottom: 2px solid var(--border-card);
+      padding: 85px 0 95px;
+      width: 100%;
     }
-    .heroGrid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      align-items: center;
-      gap: 45px;
-    }
+    .heroGrid { display: grid; grid-template-columns: 1.25fr 0.75fr; align-items: center; gap: 50px; }
 
-    .reserveBadge {
+    .reserveBadgeBig {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #111111;
-      color: var(--logo-yellow);
-      font-size: 15px;
-      font-weight: 700;
-      padding: 8px 18px;
-      margin-bottom: 20px;
-      border: 2px solid #111111;
-      box-shadow: 4px 4px 0px #ffffff;
-      letter-spacing: -0.01em;
-      transition: transform 0.15s ease;
+      gap: 12px;
+      background: #000;
+      color: var(--neon-yellow);
+      font-size: 21px;
+      font-weight: 900;
+      padding: 15px 28px;
+      margin-bottom: 26px;
+      border: 3px solid var(--neon-yellow);
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(254, 232, 56, 0.45);
+      animation: alertPulse 1.8s infinite ease-in-out;
     }
-    .reserveBadge:hover {
-      transform: translate(-1px, -1px);
-      box-shadow: 5px 5px 0px #ffffff;
+    @keyframes alertPulse {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(254, 232, 56, 0.35);
+        border-color: var(--neon-yellow);
+      }
+      50% {
+        box-shadow: 0 0 32px rgba(254, 232, 56, 0.85);
+        border-color: #ffffff;
+      }
     }
 
     .mainTitle {
-      font-family: 'GmarketSans', sans-serif;
-      font-size: 54px;
+      font-size: 52px;
       line-height: 1.25;
       font-weight: 700;
       letter-spacing: -0.03em;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      color: #fff;
     }
+    .mainTitle span { color: var(--neon-yellow); }
     .mainDesc {
-      font-size: 18px;
-      font-weight: 500;
-      max-width: 580px;
-      margin-bottom: 34px;
-      line-height: 1.75;
+      font-size: 19px;
+      font-weight: 400;
+      max-width: 640px;
+      margin-bottom: 38px;
+      line-height: 1.8;
+      color: var(--text-clean);
+      letter-spacing: -0.01em;
     }
-    .ctaGroup {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .btnAction {
+    .ctaGroup { display: flex; gap: 16px; flex-wrap: wrap; }
+    
+    .btnActionLarge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 16px 28px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .btnBlackHighlight {
-      background: #000000;
-      color: #ffffff;
-      border: 2px solid #000000;
-      box-shadow: 5px 5px 0px #ffffff;
-    }
-    .btnBlackHighlight:hover {
-      background: #1a1a1a;
-      color: var(--logo-yellow);
-      transform: translate(-2px, -2px);
-      box-shadow: 7px 7px 0px #ffffff;
-    }
-    .btnBlackHighlight:active {
-      transform: translate(3px, 3px);
-      box-shadow: 2px 2px 0px #ffffff;
-    }
-
-    .btnWhiteHighlight {
-      background: #ffffff;
-      color: #000000;
-      border: 2px solid #000000;
-      box-shadow: 5px 5px 0px #000000;
-    }
-    .btnWhiteHighlight:hover {
-      background: var(--bg-yellow);
-      transform: translate(-2px, -2px);
-      box-shadow: 7px 7px 0px #000000;
-    }
-    .btnWhiteHighlight:active {
-      transform: translate(3px, 3px);
-      box-shadow: 2px 2px 0px #000000;
-    }
-
-    .sideHeroArea {
-      max-width: 440px;
-      margin-left: auto;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sideHeroMedia {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border: 3px solid var(--black);
-      box-shadow: 6px 6px 0px var(--black);
-      margin-bottom: 14px;
-      background: #000;
-    }
-
-    .sideCardTitle {
-      font-family: 'Oswald', sans-serif;
+      padding: 20px 34px;
       font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      letter-spacing: 0.02em;
+      font-weight: 900;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      letter-spacing: -0.02em;
     }
-    .sideTagRow {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 10px;
-      width: 100%;
+    .btnNeonHighlight {
+      background: var(--neon-yellow);
+      color: #000;
+      border: 3px solid var(--neon-yellow);
+      box-shadow: 0 0 20px rgba(254, 232, 56, 0.45);
     }
-    .sideTag {
-      border: 2px solid var(--black);
-      height: 54px;
+    .btnNeonHighlight:hover {
       background: #fff;
+      border-color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 0 28px rgba(255, 255, 255, 0.7);
+    }
+    .btnOutlineHighlight {
+      background: var(--bg-surface);
+      color: #fff;
+      border: 3px solid var(--border-card);
+    }
+    .btnOutlineHighlight:hover {
+      border-color: var(--neon-yellow);
+      color: var(--neon-yellow);
+      transform: translateY(-3px);
+    }
+
+    .sideHeroArea { max-width: 460px; margin-left: auto; width: 100%; display: flex; flex-direction: column; }
+    .sideHeroMedia { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 3px solid var(--border-card); box-shadow: 0 12px 30px rgba(0,0,0,0.7); margin-bottom: 14px; background: #000; border-radius: 6px; }
+    .sideCardTitle { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.02em; color: var(--neon-yellow); }
+    
+    .sideTagRow { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 12px; width: 100%; }
+    .sideTagBtn {
+      border: 2px solid var(--border-card);
+      height: 56px;
+      background: var(--bg-surface);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 3px 3px 0px var(--black);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       white-space: nowrap;
-      padding: 0 8px;
+      padding: 0 12px;
+      color: #fff;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
-    .sideTag.tagPhone {
-      font-family: 'Oswald', sans-serif;
-      font-size: 27px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      line-height: 1;
-      color: #000;
+    .sideTagBtn:hover {
+      border-color: var(--neon-yellow);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(254, 232, 56, 0.35);
     }
-    .sideTag.tagKo {
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
+    .sideTagBtn.tagPhone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
       line-height: 1;
-      color: #000;
-      transform: translateY(2px);
+      color: var(--neon-yellow);
+      letter-spacing: -0.01em;
+    }
+    .sideTagBtn.tagKo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: #ffffff;
     }
 
     /* 공통 섹션 헤더 */
-    .secHeader {
-      margin-bottom: 45px;
-      display: flex;
+    .secHeader { margin-bottom: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .secHeaderTitle { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; text-transform: uppercase; line-height: 1; color: #fff; letter-spacing: 0.02em; }
+    
+    .secHeaderBadgePulse {
+      display: inline-flex;
       align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .secHeaderTitle {
-      font-family: 'Oswald', sans-serif;
-      font-size: 52px;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-    .secHeaderSubKo {
-      font-family: 'GmarketSans', sans-serif;
+      gap: 10px;
+      background: #000;
+      color: var(--neon-yellow);
       font-size: 22px;
-      font-weight: 700;
-      color: #000;
-      background: #fff;
-      border: 2.5px solid var(--black);
-      padding: 8px 20px;
-      box-shadow: 4px 4px 0px var(--black);
-      display: inline-block;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      font-weight: 900;
+      padding: 12px 26px;
+      border: 3px solid var(--neon-yellow);
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(254, 232, 56, 0.45);
+      animation: alertPulse 1.8s infinite ease-in-out;
     }
 
     /* ================= 3. About Us Section ================= */
-    .aboutSection {
-      background-color: var(--white-sec);
-      padding: 95px 0 105px;
-    }
-    .aboutGrid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 50px;
-    }
-    .aboutHeading {
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-    .aboutHeading .highlightTag {
-      background: var(--bg-yellow);
-      padding: 2px 8px;
-      border: 2px solid var(--black);
-      margin-right: 6px;
+    .aboutSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .aboutGrid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
+    
+    .aboutHeading { font-size: 36px; font-weight: 700; line-height: 1.4; margin-bottom: 24px; color: #fff; }
+    .highlightTag3D {
+      background: var(--neon-yellow);
+      color: #000;
+      padding: 5px 16px;
+      margin-right: 8px;
       display: inline-block;
+      font-weight: 900;
+      border: 2.5px solid #000;
+      box-shadow: 3px 3px 0px rgba(254, 232, 56, 0.6);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .aboutText {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.8;
-      color: var(--text-gray);
-      margin-bottom: 24px;
+    .highlightTag3D:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+    .aboutText { font-size: 18px; font-weight: 400; line-height: 1.8; color: var(--text-clean); margin-bottom: 28px; }
+    
+    .aboutTistoryBtnBig {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: var(--bg-surface);
+      color: #fff;
+      font-size: 19px;
+      font-weight: 800;
+      padding: 20px 28px;
+      border: 2px solid var(--border-card);
+      border-radius: 6px;
+      margin-bottom: 30px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+    .aboutTistoryBtnBig:hover {
+      border-color: var(--neon-pink);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--neon-pink-glow);
+    }
+    .aboutTistoryBtnBig .tistoryIconPink {
+      background: var(--neon-pink);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      padding: 6px 14px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px var(--neon-pink-glow);
     }
 
-    .aboutTistoryBtn {
+    .aboutStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .statBox { border: 2px solid var(--border-card); padding: 18px 14px; background: var(--bg-surface); text-align: center; border-radius: 4px; }
+    .statNum { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; display: block; line-height: 1; margin-bottom: 6px; color: var(--neon-yellow); }
+    .statLabel { font-size: 13.5px; font-weight: 700; color: var(--text-muted); }
+    .aboutMediaBox { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 3px solid var(--border-card); box-shadow: 0 15px 35px rgba(0,0,0,0.7); background: #000; border-radius: 6px; }
+
+    /* ================= 4. 전국 인터랙티브 관제 지도 (깔끔한 회색 바탕 & 슬림한 패널 버튼) ================= */
+    .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
+    .networkIntro { font-size: 19px; font-weight: 400; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: var(--text-clean); }
+
+    .mapControlCenter {
+      background: var(--map-sea);
+      border: 3px solid var(--border-card);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.75);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 710px 1fr;
+      gap: 36px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .mapViewWrapper {
+      background: #09101E;
+      border: 2px solid #23334D;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.95);
+    }
+    .mapTopStatus {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #2A3C59;
+      font-size: 15px;
+      color: #94A3B8;
+      font-weight: 700;
+    }
+    .statusLive {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--black);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 15px 24px;
-      border: 2px solid var(--black);
-      box-shadow: 5px 5px 0px var(--bg-yellow);
-      margin-bottom: 28px;
-      transition: all 0.15s ease;
-      cursor: pointer;
-    }
-    .aboutTistoryBtn:hover {
-      background: var(--bg-yellow);
-      color: var(--black);
-      box-shadow: 5px 5px 0px var(--black);
-      transform: translate(-2px, -2px);
-    }
-    .aboutTistoryBtn .tistoryIcon {
-      background: #eb531f;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 12px;
-      padding: 2px 6px;
-      font-weight: 700;
-    }
-
-    .aboutStats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .statBox {
-      border: 2px solid var(--black);
-      padding: 18px 14px;
-      background: var(--bg-yellow);
-      text-align: center;
-      box-shadow: 4px 4px 0px var(--black);
-    }
-    .statNum {
-      font-family: 'Oswald', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      display: block;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .statLabel {
-      font-size: 13px;
-      font-weight: 700;
-    }
-    
-    .aboutMediaBox {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border: 3px solid var(--black);
-      box-shadow: 7px 7px 0px var(--black);
-      display: block;
-      background: #000;
-    }
-
-    /* ================= 4. 전국 광역 마스터 네트워크 ================= */
-    .networkSection {
-      background-color: var(--bg-yellow);
-      padding: 95px 0 105px;
-      border-bottom: 2px solid var(--black);
-    }
-    .networkIntro {
-      font-size: 19px;
-      font-weight: 500;
-      max-width: 860px;
-      line-height: 1.7;
-      margin-bottom: 40px;
-    }
-    .networkGrid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .networkCard {
-      background: #fff;
-      border: 2px solid var(--black);
-      box-shadow: 6px 6px 0px var(--black);
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .networkCard:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 9px 9px 0px var(--black);
-    }
-
-    .netTopRow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    .netBadge {
-      background: var(--black);
-      color: var(--logo-yellow);
-      font-family: 'Oswald', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 4px 10px;
+      color: #10B981;
+      font-weight: 800;
       letter-spacing: 0.05em;
     }
-    .netBadge.cert {
-      background: #d32f2f;
-      color: #fff;
+    .statusLiveDot {
+      width: 14px;
+      height: 14px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #10B981;
+      animation: pulseLive 1.5s infinite;
     }
-    .netBadge.new {
-      background: #0b57d0;
-      color: #fff;
+
+    .koreaDetailedSvg {
+      width: 100%;
+      max-width: 670px;
+      height: auto;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
     }
-    .netRegion {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .geoPath {
+      fill: var(--map-land);
+      stroke: var(--map-stroke);
+      stroke-width: 2.2;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .geoPath:hover {
+      fill: #394C6D !important;
+      stroke: var(--neon-yellow) !important;
+      stroke-width: 4.5 !important;
+      filter: drop-shadow(0 0 20px rgba(254, 232, 56, 0.95)) !important;
+    }
+    .geoPath.selectedPink {
+      fill: var(--neon-pink) !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 4 !important;
+      filter: drop-shadow(0 0 25px var(--neon-pink-glow)) !important;
+    }
+    .geoPath.selected {
+      fill: #2563EB !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 4 !important;
+      filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.9)) !important;
+    }
+
+    .mapCityLabel {
+      font-size: 21px;
+      font-weight: 900;
+      fill: #FFFFFF;
+      pointer-events: none;
+      text-anchor: middle;
+      paint-order: stroke fill;
+      stroke: #0A111E;
+      stroke-width: 6px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
       letter-spacing: -0.02em;
     }
-    .netCoverage {
-      font-size: 14px;
-      font-weight: 700;
-      color: #0b57d0;
-      margin-bottom: 12px;
-      line-height: 1.5;
+    .mapCityLabel.mainLarge { font-size: 24px; fill: var(--neon-yellow); }
+    .mapCityLabel.subIsland { font-size: 17px; fill: var(--clear-cyan); }
+
+    .mapPinNode { cursor: pointer; transition: transform 0.2s; }
+    .mapPinNode:hover { transform: scale(1.3); }
+    .pinPulse { animation: pinWave 2s infinite ease-out; transform-origin: center; }
+    @keyframes pinWave {
+      0% { r: 8; opacity: 1; stroke-width: 3.5; }
+      100% { r: 35; opacity: 0; stroke-width: 0.5; }
     }
-    .netExp {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-gray);
-      line-height: 1.55;
-      border-top: 1.5px dashed var(--black);
-      padding-top: 12px;
-      margin-top: auto;
-      margin-bottom: 14px;
-    }
-    .netExp strong {
-      color: #000;
-      font-weight: 700;
-    }
-    .netBtnRow {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-    .netMiniBtn {
-      border: 1.5px solid var(--black);
-      padding: 6px 4px;
-      font-size: 12px;
-      font-weight: 700;
-      text-align: center;
-      background: #fafafa;
-      box-shadow: 2px 2px 0px var(--black);
-      transition: all 0.1s;
-    }
-    .netMiniBtn:hover {
-      background: var(--bg-yellow);
-    }
-    .netMiniBtn.call {
-      background: var(--black);
+
+    /* 우측 상세 정보 패널 */
+    .mapDetailBoard {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
       color: #fff;
     }
-
-    .netCallBanner {
-      background: #fff;
-      border: 2px solid var(--black);
-      box-shadow: 6px 6px 0px var(--black);
-      padding: 24px 30px;
-      margin-top: 35px;
+    .boardHead {
+      border-bottom: 2px solid #23334D;
+      padding-bottom: 14px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 10px;
     }
-    .netCallText {
-      font-size: 18px;
+    .boardTitle {
+      font-size: 26px;
       font-weight: 700;
-    }
-
-    /* ================= 5. Case Section ================= */
-    .caseSection {
-      background-color: var(--white-sec);
-      padding: 95px 0 105px;
-    }
-    .caseList {
-      display: flex;
-      flex-direction: column;
-      gap: 45px;
-    }
-    .caseItem {
-      display: grid;
-      grid-template-columns: 160px 340px 1fr;
-      align-items: start;
-      gap: 34px;
-    }
-    .caseDate {
-      font-family: 'Oswald', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .caseImg img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      border: 2px solid var(--black);
-      display: block;
-      background: #ddd;
-    }
-    .caseHeading {
-      font-family: 'Oswald', sans-serif;
-      font-size: 40px;
-      line-height: 1.05;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .caseBadge {
-      display: inline-block;
-      border: 1.5px solid var(--black);
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      background: var(--bg-yellow);
-    }
-    .caseDesc {
-      font-size: 17px;
-      font-weight: 500;
-      line-height: 1.7;
-      max-width: 620px;
-    }
-
-    /* ================= 6. FAQ Section ================= */
-    .faqSection {
-      background-color: var(--black-sec);
-      color: #ffffff;
-      padding: 100px 0 110px;
-      position: relative;
-    }
-    .faqHeader {
-      margin-bottom: 50px;
-      text-align: center;
-    }
-    .faqSubTitle {
-      font-family: 'Oswald', sans-serif;
-      color: var(--logo-yellow);
-      font-size: 20px;
-      letter-spacing: 0.15em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-    .faqMainTitle {
-      font-family: 'Oswald', sans-serif;
-      font-size: 56px;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .faqDesc {
-      font-size: 17px;
-      font-weight: 500;
-      color: #aaaaaa;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .faqList {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 960px;
-      margin: 0 auto 40px;
-    }
-    .faqCard {
-      background: #1c1c1c;
-      border: 2px solid #333333;
-      padding: 24px 28px;
-      box-shadow: 4px 4px 0px var(--logo-yellow);
-      transition: transform 0.15s, border-color 0.15s;
-    }
-    .faqCard:hover {
-      transform: translateX(4px);
-      border-color: var(--logo-yellow);
-    }
-    .faqTopRow {
+      color: var(--neon-yellow);
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 12px;
+      gap: 8px;
     }
-    .faqBadge {
-      background: var(--logo-yellow);
-      color: var(--black);
+    .boardCountTagCustom {
+      background: #064E3B;
+      color: #34D399;
       font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 4px 12px;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .faqQuestion {
-      font-size: 20px;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-    }
-    .faqAnswer {
-      font-size: 16px;
-      font-weight: 500;
-      color: #cccccc;
-      line-height: 1.75;
-      padding-left: 54px;
-    }
-
-    .faqHiddenWrap {
-      display: none;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .faqMoreArea {
-      text-align: center;
-    }
-    .btnFaqMore {
-      background: var(--logo-yellow);
-      color: var(--black);
-      font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      padding: 16px 36px;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border: 1.5px solid #10B981;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+      border-radius: 4px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      border: 2px solid var(--black);
-      box-shadow: 4px 4px 0px #ffffff;
-      cursor: pointer;
-      transition: all 0.15s ease;
+      gap: 6px;
     }
-    .btnFaqMore:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0px #ffffff;
-    }
-    .btnFaqMore:active {
-      transform: translate(2px, 2px);
-      box-shadow: 2px 2px 0px #ffffff;
-    }
-    .btnFaqMore svg {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.25s ease;
-    }
-    .btnFaqMore.active svg {
-      transform: rotate(45deg);
-    }
-
-    /* ================= 7. Store Section ================= */
-    .storeSection {
-      background-color: var(--white-sec);
-      padding: 95px 0 105px;
-    }
-    .storeFilterNav {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 35px;
-    }
-    .storeTab {
-      font-family: 'GmarketSans', sans-serif;
-      border: 2.5px solid var(--black);
-      background: #fff;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      cursor: pointer;
-      box-shadow: 4px 4px 0px var(--black);
-      transition: all 0.15s ease;
-      white-space: nowrap;
-    }
-    .storeTab:hover {
-      background: var(--bg-yellow);
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0px var(--black);
-    }
-    .storeTab.active {
-      background: var(--bg-yellow);
-      box-shadow: 2px 2px 0px var(--black);
-      transform: translate(2px, 2px);
-    }
-
-    .storeGrid {
+    .boardScrollArea {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-height: 700px;
+      overflow-y: auto;
+      padding-right: 8px;
     }
-    .storeCard {
-      border: 2px solid var(--black);
+    .boardScrollArea::-webkit-scrollbar { width: 6px; }
+    .boardScrollArea::-webkit-scrollbar-thumb { background: var(--neon-pink); border-radius: 3px; }
+
+    .boardCard {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-card);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+      border-radius: 6px;
+    }
+    .boardCard:hover {
+      border-color: var(--neon-pink);
+      box-shadow: 0 0 16px var(--neon-pink-glow);
+      transform: translateY(-2px);
+    }
+
+    .cardCovText {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 15.5px;
+      font-weight: 500;
+      color: var(--clear-cyan);
+      margin-bottom: 10px;
+      line-height: 1.6;
+      letter-spacing: -0.015em;
+    }
+    .cardExpText {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-clean);
+      line-height: 1.65;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 10px;
+      margin-top: auto;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .cardExpText strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    /* 우측 관제 패널 전용 단정하고 정갈한 버튼 (모양새 복원) */
+    .panelBtnRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .panelBtn {
+      border: 1.5px solid var(--border-card);
+      padding: 8px 4px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      background: var(--bg-surface);
+      color: #fff;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .panelBtn:hover { background: var(--border-card); }
+    .panelBtn.call {
+      background: var(--neon-yellow);
+      color: #000;
+      border-color: var(--neon-yellow);
+      font-weight: 800;
+    }
+    .panelBtn.call:hover {
       background: #fff;
+      border-color: #fff;
+    }
+
+    /* 하단 가나다순 지부 리스트용 큼직한 버튼 스타일 */
+    .netBtnRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .netMiniBtn {
+      border: 1.5px solid var(--border-card);
+      padding: 12px 4px;
+      font-size: 16.5px;
+      font-weight: 900;
+      text-align: center;
+      background: var(--bg-surface);
+      color: #fff;
+      border-radius: 4px;
+      transition: all 0.15s;
+      letter-spacing: -0.02em;
+    }
+    .netMiniBtn:hover { background: var(--border-card); }
+    .netMiniBtn.call {
+      background: var(--neon-yellow);
+      color: #000;
+      border-color: var(--neon-yellow);
+      font-weight: 900;
+    }
+    .netMiniBtn.call:hover {
+      background: #fff;
+      border-color: #fff;
+    }
+
+    /* ================= 하단 가나다순 전체 지부 목록 ================= */
+    .sortNotice {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(22, 26, 34, 0.9);
+      display: inline-block;
+      padding: 7px 18px;
+      border: 1.5px solid var(--border-card);
+      margin-bottom: 26px;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .networkGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .networkCard {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-card);
       padding: 20px;
       display: flex;
       flex-direction: column;
-      box-shadow: 6px 6px 0px var(--black);
+      transition: all 0.2s ease;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
-    .storeCard img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border: 2px solid var(--black);
-      margin-bottom: 16px;
-      background: #eee;
-    }
-    .storeName {
-      font-family: 'Oswald', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .storeInfo {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-gray);
-      flex: 1;
-      margin-bottom: 18px;
-      line-height: 1.6;
-    }
-    .storeBottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1.5px solid var(--black);
-      padding-top: 14px;
-    }
-    .storePrice {
-      font-family: 'Oswald', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    /* ================= 8. Blog Section ================= */
-    .blogSection {
-      background-color: var(--bg-yellow);
-      padding: 95px 0 105px;
-    }
-    .blogGrid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-    .blogCard {
-      border: 2px solid var(--black);
-      background: #fff;
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 6px 6px 0px var(--black);
-      transition: transform 0.15s;
-    }
-    .blogCard:hover {
+    .networkCard:hover {
+      border-color: var(--neon-yellow);
+      box-shadow: 0 0 18px rgba(254, 232, 56, 0.45);
       transform: translateY(-3px);
     }
-    .blogDate {
+    .netTopRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .netBadge {
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
       font-size: 13px;
       font-weight: 700;
-      color: #666;
-      margin-bottom: 10px;
+      padding: 3px 9px;
+      border: 1px solid var(--neon-yellow);
+      border-radius: 3px;
     }
-    .blogTitle {
-      font-size: 20px;
-      line-height: 1.35;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .blogExcerpt {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-gray);
-      line-height: 1.7;
-      flex: 1;
-      margin-bottom: 18px;
-    }
-    .blogLink {
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: underline;
-    }
+    .netRegion { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; color: #fff; }
 
-    /* ================= 9. Footer ================= */
-    .footer {
-      background: var(--white-sec);
-      border-top: 2px solid var(--black);
-      padding: 80px 0 95px;
-    }
-    .footerGrid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 40px;
-      margin-bottom: 55px;
-    }
-    .footerCol h4 {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .footerCol .enColTitle {
-      font-family: 'Oswald', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .footerLinks {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footerLinks li {
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-    .footerLinks li a:hover {
-      text-decoration: underline;
-    }
-
-    .footerAbout p {
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.75;
-      margin-bottom: 20px;
-      max-width: 320px;
-    }
-
-    .socialBox {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .socialBtn {
-      border: 1.5px solid var(--black);
-      background: #fff;
-      padding: 7px 11px;
-      font-size: 12.5px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 2px 2px 0px var(--black);
-      transition: all 0.15s;
-    }
-    .socialBtn:hover {
-      transform: translateY(-2px);
-      box-shadow: 3px 3px 0px var(--black);
-    }
-    .socialIcon {
-      width: 16px;
-      height: 16px;
-      display: inline-block;
-      vertical-align: middle;
-      flex-shrink: 0;
-    }
-
-    .btnKakao {
-      background: #FEE500;
-      color: #000;
-      border-color: #000;
-    }
-    .btnSms {
-      background: #000;
-      color: #fff;
-    }
-
-    /* 하단 사업자 정보 */
-    .bizInfoBox {
-      border-top: 1.5px solid var(--black);
-      padding-top: 32px;
-      font-size: 14.5px;
-      font-weight: 500;
-      line-height: 1.85;
-      color: #333;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .bizTitleBig {
+    .networkMoreWrap { display: none; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
+    .netMoreBtnArea { margin-top: 40px; text-align: center; }
+    .btnNetworkToggle {
+      background: var(--bg-card);
+      color: var(--neon-yellow);
+      font-family: 'GmarketSans', sans-serif;
       font-size: 18px;
       font-weight: 700;
-      color: #000;
-      display: inline-block;
-      margin-bottom: 4px;
+      padding: 16px 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 15px rgba(254, 232, 56, 0.2);
     }
+    .btnNetworkToggle:hover {
+      background: var(--neon-yellow);
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(254, 232, 56, 0.5);
+    }
+    .netCallBanner {
+      background: var(--bg-card);
+      border: 2px solid var(--border-card);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      padding: 24px 28px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      border-radius: 6px;
+    }
+    .netCallText { font-size: 17.5px; font-weight: 700; color: #fff; }
+    .netCallText strong { color: var(--neon-yellow); }
 
-    /* 모바일 플로팅 바 */
+    /* ================= 5. Cases Section ================= */
+    .caseSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .caseList { display: flex; flex-direction: column; gap: 40px; }
+    .caseItem { display: grid; grid-template-columns: 140px 320px 1fr; align-items: start; gap: 30px; }
+    .caseDate { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: var(--neon-yellow); }
+    .caseImg img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 2px solid var(--border-card); background: #000; border-radius: 4px; }
+    .caseHeading { font-family: 'Oswald', sans-serif; font-size: 34px; line-height: 1.1; font-weight: 700; margin-bottom: 10px; color: #fff; }
+    .caseBadge { display: inline-block; border: 1.5px solid var(--neon-yellow); padding: 5px 12px; font-size: 12px; font-weight: 700; background: #000; color: var(--neon-yellow); margin-bottom: 12px; border-radius: 3px; }
+    .caseDesc { font-size: 16.5px; font-weight: 400; line-height: 1.7; max-width: 620px; color: var(--text-clean); }
+
+    /* ================= 6. FAQ Section ================= */
+    .faqSection { background-color: var(--bg-surface); color: #fff; padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .faqHeader { margin-bottom: 45px; text-align: center; }
+    .faqSubTitle { font-family: 'Oswald', sans-serif; color: var(--neon-yellow); font-size: 18px; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .faqMainTitle { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 14px; }
+    .faqDesc { font-size: 16.5px; color: var(--text-clean); max-width: 620px; margin: 0 auto; }
+    .faqList { display: flex; flex-direction: column; gap: 16px; max-width: 940px; margin: 0 auto 35px; }
+    .faqCard { background: var(--bg-card); border: 1.5px solid var(--border-card); padding: 22px 26px; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .faqTopRow { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+    .faqBadge { background: var(--neon-yellow); color: #000; font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; padding: 3px 10px; flex-shrink: 0; border-radius: 3px; }
+    .faqQuestion { font-size: 18.5px; font-weight: 700; color: #fff; }
+    .faqAnswer { font-size: 16px; color: var(--text-clean); line-height: 1.7; padding-left: 48px; }
+    .faqHiddenWrap { display: none; flex-direction: column; gap: 16px; }
+    .faqMoreArea { text-align: center; }
+    .btnFaqMore { background: var(--neon-yellow); color: #000; font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 700; padding: 14px 34px; border: 2px solid #000; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+    .btnFaqMore:hover { background: #fff; transform: translateY(-2px); }
+
+    /* ================= 7. Blog Section ================= */
+    .blogSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .blogGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .blogCard { border: 1.5px solid var(--border-card); background: var(--bg-card); padding: 24px; display: flex; flex-direction: column; border-radius: 6px; transition: all 0.2s; }
+    .blogCard:hover { border-color: var(--neon-yellow); transform: translateY(-3px); box-shadow: 0 0 16px rgba(254, 232, 56, 0.25); }
+    .blogDate { font-size: 13.5px; font-weight: 700; color: var(--neon-yellow); margin-bottom: 8px; font-family: 'Oswald', sans-serif; }
+    .blogTitle { font-size: 19px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; color: #fff; }
+    .blogExcerpt { font-size: 15px; color: var(--text-clean); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+    .blogLink { font-size: 14.5px; font-weight: 700; color: var(--clear-cyan); text-decoration: underline; }
+
+    /* ================= 8. Footer (출동시간 08~22시 야간 출장 마감) ================= */
+    .footer { background: #070A0F; border-top: 2px solid var(--border-card); padding: 75px 0 95px; width: 100%; }
+    .footerGrid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 35px; margin-bottom: 45px; }
+    .footerCol h4 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: var(--neon-yellow); }
+    .footerLinks { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footerLinks li { font-size: 15px; color: var(--text-bright); }
+    .footerLinks a { color: var(--text-bright); transition: color 0.15s; }
+    .footerLinks a:hover { color: var(--neon-yellow); }
+    .footerAbout p { font-size: 15px; line-height: 1.7; margin-bottom: 18px; color: var(--text-bright); }
+    
+    .socialBox { display: flex; gap: 8px; flex-wrap: wrap; }
+    .socialBtn { border: 1px solid var(--border-card); background: var(--bg-surface); color: #fff; padding: 7px 12px; font-size: 12.5px; font-weight: 700; border-radius: 4px; transition: all 0.15s; }
+    .socialBtn:hover { border-color: var(--neon-yellow); color: var(--neon-yellow); }
+    .btnKakao { background: #FEE500; color: #000; border: none; }
+    .btnPlusFriend { background: #3B1E1E; color: #FEE500; border: 1px solid #FEE500; }
+    .btnSms { background: var(--neon-yellow); color: #000; border: none; }
+    .btnYoutube { background: #FF0000; color: #fff; border: none; }
+    .btnInsta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; border: none; }
+    .btnFacebook { background: #1877F2; color: #fff; border: none; }
+
+    .bizInfoBox { border-top: 1px dashed var(--border-card); padding-top: 28px; font-size: 14.5px; line-height: 1.85; color: var(--text-bright); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .bizInfoBox strong { color: #FFFFFF; font-weight: 700; }
+
+    /* ================= 모바일 반응형 ================= */
     .mobileBar { display: none; }
 
-    @media (max-width: 900px) {
-      .centerMenu { display: none; }
-      .heroGrid { grid-template-columns: 1fr; }
-      .mainTitle { font-size: 38px; line-height: 1.3; }
+    @media (max-width: 920px) {
+      .centerMenu { display: none !important; }
+      .wrap { padding: 0 16px !important; }
+      .navInner { height: 64px; }
+      .brandLogo { height: 44px; padding: 0 10px; }
+      .brandLogo .logoKo { font-size: 18px; }
+      .brandLogo .logoEn { font-size: 15px; }
+      .navCallLarge { height: 44px; padding: 0 12px; }
+      .navCallLarge .badgeText { font-size: 14px; }
+      .navCallLarge b { font-size: 19px; }
+
+      .heroSection { padding: 45px 0 55px; }
+      .heroGrid { grid-template-columns: 1fr; gap: 28px; }
+      .reserveBadgeBig { font-size: 15px; padding: 10px 16px; width: 100%; justify-content: center; }
+      .mainTitle { font-size: 30px; line-height: 1.3; }
+      .mainDesc { font-size: 16px; }
+      .ctaGroup { flex-direction: column; width: 100%; gap: 12px; }
+      .btnActionLarge { width: 100%; padding: 15px; font-size: 16.5px; }
       .sideHeroArea { margin-left: 0; max-width: 100%; }
-      .aboutGrid { grid-template-columns: 1fr; }
-      .aboutHeading { font-size: 28px; }
-      .aboutTistoryBtn { width: 100%; justify-content: center; }
-      .networkGrid { grid-template-columns: 1fr; }
-      .caseItem { grid-template-columns: 1fr; gap: 16px; }
-      .caseHeading { font-size: 32px; }
-      .faqMainTitle { font-size: 38px; }
+
+      .secHeaderTitle { font-size: 32px; }
+      .secHeaderBadgePulse { font-size: 17px; padding: 8px 16px; }
+
+      .aboutSection { padding: 55px 0 65px; }
+      .aboutGrid { grid-template-columns: 1fr; gap: 26px; }
+      .aboutHeading { font-size: 26px; }
+      .aboutTistoryBtnBig { font-size: 15px; padding: 14px; }
+
+      .mapControlCenter { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
+      .boardScrollArea { grid-template-columns: 1fr; max-height: 380px; }
+
+      .networkSection { padding: 55px 0 65px; }
+      .networkGrid, .networkMoreWrap { grid-template-columns: 1fr; gap: 14px; }
+      .netCallBanner { flex-direction: column; align-items: flex-start; }
+
+      .caseSection { padding: 55px 0 65px; }
+      .caseItem { grid-template-columns: 1fr; gap: 14px; border-bottom: 1.5px dashed var(--border-card); padding-bottom: 24px; }
+      .caseHeading { font-size: 26px; }
+
+      .faqSection { padding: 55px 0 65px; }
+      .faqMainTitle { font-size: 32px; }
+      .faqQuestion { font-size: 16.5px; }
       .faqAnswer { padding-left: 0; }
-      .storeGrid { grid-template-columns: 1fr; }
-      .storeFilterNav { gap: 8px; }
-      .storeTab { padding: 10px 16px; font-size: 14.5px; }
-      .blogGrid { grid-template-columns: 1fr; }
-      .footerGrid { grid-template-columns: 1fr 1fr; }
+
+      .blogSection { padding: 55px 0 65px; }
+      .blogGrid { grid-template-columns: 1fr; gap: 16px; }
+      .footer { padding: 45px 0 95px; }
+      .footerGrid { grid-template-columns: 1fr; gap: 24px; }
       .bizInfoBox { flex-direction: column; align-items: flex-start; }
 
       .mobileBar {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1.3fr 1.3fr;
         position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 200;
-        background: #fff;
-        border-top: 2px solid var(--black);
+        left: 0; right: 0; bottom: 0;
+        z-index: 999;
+        background: #0B0F19;
+        border-top: 2px solid var(--border-card);
       }
       .mobileBar a {
-        padding: 15px 6px;
+        padding: 15px 4px;
         text-align: center;
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: 800;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .mobileBar .btnMStore {
-        background: #fff;
-        border-right: 1.5px solid var(--black);
-      }
-      .mobileBar .btnMSms {
-        background: #111;
-        color: #fff;
-        border-right: 1.5px solid var(--black);
-      }
-      .mobileBar .btnMCall {
-        background: var(--bg-yellow);
-        color: #000;
-      }
+      .mobileBar .btnMSms { background: #151D2E; color: var(--neon-yellow); border-right: 1.5px solid var(--border-card); }
+      .mobileBar .btnMCall { background: var(--neon-yellow); color: #000; }
     }
   </style>
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-<!-- 1. Header Navigation -->
+<!-- 1. Header -->
 <header class="topNav">
   <div class="wrap navInner">
     <a class="brandLogo" href="#top">
@@ -1060,7 +870,6 @@
       <a class="menuBtn" href="#network"><span>🌐</span> NETWORK</a>
       <a class="menuBtn" href="#cases"><span>💼</span> CASES</a>
       <a class="menuBtn" href="#faq"><span>❓</span> FAQ</a>
-      <a class="menuBtn" href="#store"><span>🛒</span> STORE</a>
       <a class="menuBtn" href="#blogs"><span>📝</span> BLOGS</a>
     </nav>
 
@@ -1072,49 +881,45 @@
 </header>
 
 <main id="top">
-  <!-- 2. Hero Section (첫 번째 시동 영상: '내 영상 1.mp4' 자동재생) -->
+  <!-- 2. Hero Section -->
   <section class="heroSection">
     <div class="wrap heroGrid">
       <div>
-        <div class="reserveBadge">
-          <span style="font-size:16px;">⏱️</span>
-          <span>100% 예약 우선 출동 원칙 · 시간 약속 엄수</span>
+        <div class="reserveBadgeBig">
+          <span>⏱️ 100% 예약 우선 출동 원칙 · 시간 약속 엄수</span>
         </div>
 
         <h1 class="mainTitle">
           "오늘 당일, 시간 약속 지켜서<br>
-          차키를 완벽하게 해결해 줄<br>
-          믿을 수 있는 전문가는 없을까?"
+          차키를 완벽 해결해 줄<br>
+          <span>믿을 수 있는 전문가</span>는 없을까?"
         </h1>
         <p class="mainDesc">
-          키앤키닷컴은 무분별한 단순 출동을 지양하며, <strong>철저한 사전 상담과 ‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과 약속한 시간을 엄수하여 현장으로 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결해 드립니다.
+          키앤키닷컴은 철저한 사전 상담과 <strong>‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과의 약속 시간을 엄수하여 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결합니다.
         </p>
 
         <div class="ctaGroup">
-          <a class="btnAction btnBlackHighlight" href="tel:16009712">📞 예약 및 긴급 상담 (1600-9712)</a>
-          <a class="btnAction btnWhiteHighlight" href="#network">전국 광역 지부 확인</a>
+          <a class="btnActionLarge btnNeonHighlight" href="tel:16009712">📞 예약 및 긴급 상담 (1600-9712)</a>
+          <a class="btnActionLarge btnOutlineHighlight" href="#network">전국 광역 지부 확인</a>
         </div>
       </div>
 
-      <!-- ⭐️ 메인 대표 키박스 시동 영상 1 무한 자동재생 ⭐️ -->
       <div class="sideHeroArea">
         <video class="sideHeroMedia" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80">
-          <source src="assets/내 영상 1.mp4" type="video/mp4">
           <source src="내 영상 1.mp4" type="video/mp4">
-          <source src="assets/hero.mp4" type="video/mp4">
-          <source src="assets/20260925_125333.gif" type="image/gif">
-          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="키앤키 차키 시동 실전">
+          <source src="assets/내 영상 1.mp4" type="video/mp4">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="차키 시동 실전">
         </video>
         <div class="sideCardTitle">SMART KEY - PRODUCTION & CODING</div>
         <div class="sideTagRow">
-          <span class="sideTag tagPhone">1600-9712</span>
-          <span class="sideTag tagKo">키앤키닷컴</span>
+          <a class="sideTagBtn tagPhone" href="tel:16009712">1600-9712</a>
+          <a class="sideTagBtn tagKo" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">키앤키닷컴</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. About Us Section (두 번째 코딩·장비 영상: '내 영상 2.mp4' 자동재생 전면 적용) -->
+  <!-- 3. About Us Section -->
   <section id="about" class="aboutSection">
     <div class="wrap">
       <div class="secHeader">
@@ -1123,307 +928,834 @@
       <div class="aboutGrid">
         <div>
           <h3 class="aboutHeading">
-            <span class="highlightTag">20년 현장 노하우</span> 로 완성하는<br>
+            <a class="highlightTag3D" target="_blank" rel="noopener" href="https://keynkey.tistory.com">20년 현장 노하우 ↗</a> 로 완성하는<br>
             원스톱 차키 출장 솔루션
           </h3>
           <p class="aboutText">
-            키앤키닷컴(KEYNKEY.COM)은 분실된 차키와 스마트키를 현장에서 견인 없이 즉시 가공·복원하는 대한민국 대표 자동차키 전문 네트워크입니다. 최첨단 CNC 자동 가공기와 순정 OBD 진단 코딩 시스템을 통해 차량 손상 없이 완벽한 시동과 리모컨 등록을 보장합니다.
+            키앤키닷컴은 분실된 차키와 스마트키를 현장에서 견인 없이 즉시 가공·복원하는 대한민국 대표 자동차키 전문 네트워크입니다. 최첨단 CNC 자동 가공기와 순정 OBD 진단 코딩 시스템을 통해 차량 손상 없는 완벽한 시동을 약속드립니다.
           </p>
 
-          <a class="aboutTistoryBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77" title="대표 차상준의 20년 현장 일기 보러가기">
-            <span class="tistoryIcon">STORY</span>
-            <span>대표 차상준의 20년 현장 일기 & 진심 스토리 전문 읽기 →</span>
+          <a class="aboutTistoryBtnBig" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">
+            <span class="tistoryIconPink">STORY</span>
+            <span>20년 현장 일기 & 진심 스토리 전문 읽기 →</span>
           </a>
 
           <div class="aboutStats">
-            <div class="statBox">
-              <span class="statNum">20+</span>
-              <span class="statLabel">YEARS EXP</span>
-            </div>
-            <div class="statBox">
-              <span class="statNum">100%</span>
-              <span class="statLabel">ON-SITE FIX</span>
-            </div>
-            <div class="statBox">
-              <span class="statNum">0%</span>
-              <span class="statLabel">NO DAMAGE</span>
-            </div>
+            <div class="statBox"><span class="statNum">20+</span><span class="statLabel">YEARS EXP</span></div>
+            <div class="statBox"><span class="statNum">100%</span><span class="statLabel">ON-SITE FIX</span></div>
+            <div class="statBox"><span class="statNum">0%</span><span class="statLabel">NO DAMAGE</span></div>
           </div>
         </div>
 
-        <!-- ⭐️ 대표님의 '내 영상 2.mp4' 진단기 코딩/가공 자동재생 비디오 박스 ⭐️ -->
         <div class="aboutImgBox">
           <video class="aboutMediaBox" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80">
-            <source src="assets/내 영상 2.mp4" type="video/mp4">
             <source src="내 영상 2.mp4" type="video/mp4">
-            <source src="assets/about.mp4" type="video/mp4">
-            <source src="assets/1000094154.gif" type="image/gif">
-            <source src="1000094154.gif" type="image/gif">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="키앤키닷컴 현장 장비 및 작업 모습">
+            <source src="assets/내 영상 2.mp4" type="video/mp4">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="키앤키 현장 장비 및 작업">
           </video>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. 전국 광역 마스터 네트워크 -->
+  <!-- 4. 전국 인터랙티브 관제 지도 (인천 회색 기본 톤 복원 & 경계 점선 삭제) -->
   <section id="network" class="networkSection">
     <div class="wrap">
       <div class="secHeader">
         <h2 class="secHeaderTitle">NATIONWIDE MASTERS NETWORK</h2>
-        <span class="secHeaderSubKo">전국 광역 마스터 네트워크</span>
+        <span class="secHeaderBadgePulse">
+          <span>⏱️ 실시간 긴급출동 관제망</span>
+        </span>
       </div>
       <p class="networkIntro">
-        키앤키닷컴은 각 권역별 <strong>20년 이상 베테랑 마스터 엔지니어</strong>가 전국 광역 출동망을 구축하고 있습니다. 원하시는 지역의 직통 전화나 대표 포스팅을 확인하실 수 있습니다.
+        키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역을 유기적으로 관제·출동합니다.
       </p>
 
+      <!-- ================= 🗺️ 대형 관제 센터 그래픽 지도 ================= -->
+      <div class="mapControlCenter">
+        <div class="mapViewWrapper">
+          <div class="mapTopStatus">
+            <span class="statusLive"><span class="statusLiveDot"></span> REAL-TIME EMERGENCY DISPATCH SYSTEM</span>
+            <span>지역을 누르면 상세 지부가 실시간 전환됩니다</span>
+          </div>
+
+          <!-- 위아래 940px 웅장한 전도 SVG -->
+          <svg class="koreaDetailedSvg" viewBox="0 0 640 940" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="glowBigPinkPin" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <filter id="glowBigPin" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- [1. 지형 PATH 그룹: 실제 남한 지형 정밀 반영] -->
+            <g id="map-geo-paths">
+              <!-- 경기 북부 -->
+              <path class="geoPath" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
+                    d="M 205,120 L 295,110 L 335,170 L 330,215 L 285,215 L 205,200 L 190,165 Z" />
+
+              <!-- 경기 남부 (평택 포함) -->
+              <path class="geoPath" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
+                    d="M 185,265 L 285,260 L 335,245 L 340,310 L 300,380 L 220,375 L 175,335 L 175,270 Z" />
+
+              <!-- 강원 -->
+              <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
+                    d="M 295,110 L 420,95 L 525,195 L 580,305 L 475,360 L 340,310 L 335,170 Z" />
+
+              <!-- 인천광역시 전역 & 강화도 & 영종도 (기본 회색 톤 복원) -->
+              <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
+                    d="M 80,110 L 145,100 L 150,155 L 115,170 L 75,145 Z" />
+              <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
+                    d="M 35,200 L 100,190 L 110,250 L 55,265 L 30,235 Z" />
+              <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
+                    d="M 115,195 L 175,195 L 170,260 L 180,305 L 130,315 L 100,280 L 100,220 Z" />
+
+              <!-- 서울 특별시 (확대 랜드마크) -->
+              <path class="geoPath" id="geo-seoul" onclick="selectMapRegion('seoul')"
+                    d="M 195,185 L 275,175 L 285,245 L 205,255 L 185,220 Z" />
+
+              <!-- 충북 제천 · 충주 내륙 특구 -->
+              <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
+                    d="M 335,270 L 415,285 L 440,365 L 385,420 L 300,380 L 340,310 Z" />
+
+              <!-- 대전 · 세종 · 충남 (천안·아산 포함) -->
+              <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
+                    d="M 160,270 L 220,375 L 300,380 L 385,420 L 360,520 L 235,510 L 125,435 L 110,335 Z" />
+
+              <!-- 대구 · 경북 (TK) -->
+              <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
+                    d="M 475,360 L 580,305 L 630,460 L 610,550 L 490,560 L 430,530 L 440,430 L 385,420 Z" />
+
+              <!-- 부산 · 울산 · 경남 (PK) -->
+              <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
+                    d="M 430,530 L 490,560 L 610,550 L 595,650 L 545,715 L 415,720 L 365,605 L 420,535 Z" />
+
+              <!-- 호남 (광주·전남) -->
+              <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
+                    d="M 125,435 L 235,510 L 360,520 L 365,605 L 415,720 L 305,790 L 160,785 L 85,640 L 80,500 Z" />
+            </g>
+
+            <!-- [2. 펄스 핀 레이어] -->
+            <g id="map-radar-pins">
+              <!-- 인천 본토 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')">
+                <circle class="pinPulse" cx="140" cy="285" r="9" fill="none" stroke="#FF007A" />
+                <circle cx="140" cy="285" r="9" fill="#FF007A" stroke="#FFFFFF" stroke-width="2.5" filter="url(#glowBigPinkPin)" />
+              </g>
+              <!-- 영종도 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')">
+                <circle class="pinPulse" cx="70" cy="255" r="7" fill="none" stroke="#FF007A" />
+                <circle cx="70" cy="255" r="7" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+              <!-- 강화도 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')">
+                <circle class="pinPulse" cx="115" cy="160" r="7" fill="none" stroke="#FF007A" />
+                <circle cx="115" cy="160" r="6.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+              <!-- 서울 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('seoul')">
+                <circle class="pinPulse" cx="240" cy="245" r="9.5" fill="none" stroke="#FEE838" />
+                <circle cx="240" cy="245" r="10" fill="#FEE838" stroke="#000" stroke-width="2.5" filter="url(#glowBigPin)" />
+              </g>
+              <!-- 경기 북부 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="265" cy="175" r="8" fill="none" stroke="#10B981" />
+                <circle cx="265" cy="175" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 경기 남부 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="250" cy="335" r="8" fill="none" stroke="#10B981" />
+                <circle cx="250" cy="335" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 강원 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="430" cy="255" r="9" fill="none" stroke="#38BDF8" />
+                <circle cx="430" cy="255" r="9" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 충북 제천·충주 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
+                <circle class="pinPulse" cx="370" cy="375" r="8.5" fill="none" stroke="#38BDF8" />
+                <circle cx="370" cy="375" r="8.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 대전·세종·충남 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="230" cy="460" r="9" fill="none" stroke="#F59E0B" />
+                <circle cx="230" cy="460" r="9" fill="#F59E0B" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 대구·경북 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="505" cy="495" r="9" fill="none" stroke="#EF4444" />
+                <circle cx="505" cy="495" r="9" fill="#EF4444" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 부산·울산·경남 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="525" cy="670" r="9.5" fill="none" stroke="#EF4444" />
+                <circle cx="525" cy="670" r="9.5" fill="#EF4444" stroke="#000" stroke-width="2.5" />
+              </g>
+              <!-- 호남 (광주·전남) 핀 -->
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="205" cy="675" r="9" fill="none" stroke="#A855F7" />
+                <circle cx="205" cy="675" r="9" fill="#A855F7" stroke="#000" stroke-width="2" />
+              </g>
+            </g>
+
+            <!-- [3. 최상단 텍스트 라벨 레이어] -->
+            <g id="map-labels">
+              <text class="mapCityLabel subIsland" x="115" y="140">강화도</text>
+              <text class="mapCityLabel subIsland" x="70" y="235">영종도</text>
+              <text class="mapCityLabel mainLarge" x="140" y="265">인천광역시</text>
+              
+              <text class="mapCityLabel mainLarge" x="240" y="225" style="font-size:27px;">서울</text>
+              <text class="mapCityLabel" x="265" y="155">경기북부</text>
+              <text class="mapCityLabel" x="250" y="315">경기남부</text>
+              <text class="mapCityLabel mainLarge" x="430" y="235">강원</text>
+
+              <text class="mapCityLabel" x="370" y="355">충북 (제천·충주)</text>
+              <text class="mapCityLabel" x="230" y="440">대전·세종·충남</text>
+              
+              <text class="mapCityLabel" x="505" y="475">대구·경북</text>
+              <text class="mapCityLabel" x="525" y="650">부산·울산·경남</text>
+
+              <text class="mapCityLabel" x="205" y="655">호남 (광주·전남)</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 우측 관제 센터 실시간 상세 보드 -->
+        <div class="mapDetailBoard">
+          <div class="boardHead">
+            <h3 class="boardTitle" id="ctrlBoardTitle">📍 인천광역시 10대 세부 자치구 지부</h3>
+            <span class="boardCountTagCustom" id="ctrlBoardCount">
+              <span style="font-size:12px;">●</span> 10개 지부 실시간 관제
+            </span>
+          </div>
+
+          <div class="boardScrollArea" id="ctrlBoardCards">
+            <!-- 지도를 누르면 즉각 반응하여 지부 카드가 렌더링됩니다 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 📋 전체 52개 지부 가나다순 리스트 ================= -->
+      <div class="secHeader" style="margin-top:60px;">
+        <h3 class="secHeaderTitle" style="font-size:32px;">ALL REGIONAL NETWORKS</h3>
+        <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 16px;">전국 가나다순 전체보기</span>
+      </div>
+      <div class="sortNotice">
+        ℹ️ 전국 지부 안내는 고객 편의를 위해 <strong>'가나다(ㄱ-ㄴ-ㄷ) 지역명 순'</strong>으로 공평하고 체계적으로 정렬되어 있습니다.
+      </div>
+
+      <!-- 상위 8개 상시 노출 카드 -->
       <div class="networkGrid">
-        <!-- 1. 인천, 서울, 경기 수도권 본부 -->
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">HQ 본부</span></div>
-          <h3 class="netRegion">인천 · 서울 · 경기 수도권 본부</h3>
-          <div class="netCoverage">서울특별시 · 인천광역시 · 경기 수도권 일대</div>
-          <div class="netExp"><strong>20년 경력 차상준 대표</strong> CNC 정밀가공 및 수입차 특화 긴급출동</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 2. 경기 남부 & 충남 북부 (백년가게 친절열쇠) -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge cert">백년가게 공식인증</span></div>
-          <h3 class="netRegion">경기 안성 · 평택 / 충남 천안 · 아산</h3>
-          <div class="netCoverage">안성시 · 평택시 · 천안시 · 아산시 광역 일대</div>
-          <div class="netExp"><strong>중기부 공식인증 백년가게 (안성 친절열쇠)</strong> 20년 현장 장인 원스톱 출동</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 3. 경기 용인 · 광주 · 오산 지부 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge new">NEW 지부</span></div>
-          <h3 class="netRegion">경기 용인 · 광주 · 오산</h3>
-          <div class="netCoverage">용인특례시 전역 · 경기 광주시 · 오산시 일대</div>
-          <div class="netExp"><strong>20년 베테랑 엔지니어</strong> 신속 현장 출동 및 정밀 키 가공 코딩</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 4. 경기 안양 · 과천 · 군포 지부 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge new">NEW 지부</span></div>
-          <h3 class="netRegion">경기 안양 · 과천 · 군포</h3>
-          <div class="netCoverage">안양시(만안·동안) · 과천시 · 군포시 · 의왕 인접권</div>
-          <div class="netExp"><strong>20년 베테랑 엔지니어</strong> 순정 스마트키 당일 복원 및 무손상 개문</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 5. 전남 광역 특구 (광주 · 나주 · 담양 · 장성) -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge cert">전남 광역 특구</span></div>
-          <h3 class="netRegion">전남 광역 특구 (광주·나주·담양·장성)</h3>
-          <div class="netCoverage">광주광역시 전역 · 나주시 · 담양군 · 장성군 일대</div>
-          <div class="netExp"><strong>20년 베테랑 마스터</strong> 호남 거점 긴급출동 · 스마트키 원스톱 복원</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 6. 대구 · 경산 · 구미 지부 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge cert">영남 산업벨트 특화</span></div>
-          <h3 class="netRegion">대구광역시 · 경산 · 구미</h3>
-          <div class="netCoverage">대구 도심권 전역 · 경산 학원·공단벨트 · 구미 국가산단</div>
-          <div class="netExp"><strong>20년 베테랑 마스터</strong> 국가산단·도심 신속 출동 · 스마트키/폴딩키 당일 즉시 복원</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 7. 충북 제천 · 단양 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">충북 지부</span></div>
-          <h3 class="netRegion">충북 제천 · 단양</h3>
-          <div class="netCoverage">제천시 전역 · 단양군 및 인접 산간 권역</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 국산/수입 전 차종 당일 긴급 출동</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 8. 충북 충주 · 음성 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">충북 지부</span></div>
-          <h3 class="netRegion">충북 충주 · 음성</h3>
-          <div class="netCoverage">충주시 도심 · 음성군 및 기업도시 산단</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 스마트키 제작 및 현장 완벽 코딩</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 9. 경북 영주 · 봉화 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
-          <h3 class="netRegion">경북 영주 · 봉화</h3>
-          <div class="netCoverage">영주시 전역 · 봉화군 광역 지원 네트워크</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 분실키 즉시 판독 및 무손상 개문</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 10. 경북 안동 · 예천 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
-          <h3 class="netRegion">경북 안동 · 예천</h3>
-          <div class="netCoverage">안동 도심 · 경북도청 신도시 · 예천군</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 이모빌라이저 키 & 스마트키 순정 등록</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 11. 경북 풍기 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
-          <h3 class="netRegion">경북 풍기</h3>
-          <div class="netCoverage">풍기읍 및 소백산 관광특구 인접 권역</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 긴급 차키 복원 및 리모컨 코딩</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 12. 경북 포항 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
-          <h3 class="netRegion">경북 포항 (북구·남구)</h3>
-          <div class="netCoverage">포항 북구·남구 전역 · 철강공단 및 항만</div>
-          <div class="netExp"><strong>20년 베테랑</strong> KGM·쉐보레·르노 전용 장비 상시 보유</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 13. 경북 경주 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경북 지부</span></div>
-          <h3 class="netRegion">경북 경주</h3>
-          <div class="netCoverage">경주시 도심 · 보문단지 · 외동공단 인접권</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 관광객 긴급 분실 스마트키 현장 원스톱</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 14. 경남 창원 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경남 지부</span></div>
-          <h3 class="netRegion">경남 창원 (의창·성산)</h3>
-          <div class="netCoverage">창원 도심 · 창원국가산단 · 진해구 권역</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 화물·특수차 및 전 차종 스마트키 마스터</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 15. 경남 마산 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경남 지부</span></div>
-          <h3 class="netRegion">경남 마산 (합포·회원)</h3>
-          <div class="netCoverage">마산합포구 · 회원구 · 내서읍 및 자유무역지역</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 정밀 픽킹 무손상 도어 개문 전문</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 16. 전남 여수 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">전남 지부</span></div>
-          <h3 class="netRegion">전남 여수</h3>
-          <div class="netCoverage">여수시 도심 · 여수국가산단 · 돌산·도서 연계</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 당일 즉시 제작 및 순정 부품 상시 보유</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 17. 전남 광양 · 순천 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">전남 지부</span></div>
-          <h3 class="netRegion">전남 광양 · 순천</h3>
-          <div class="netCoverage">광양제철소 산단 · 광양항 · 순천 인접 권역</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 산업단지 긴급 출장 및 키박스 수리</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 18. 대전 · 세종 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">충청 허브</span></div>
-          <h3 class="netRegion">대전 · 세종 지부</h3>
-          <div class="netCoverage">대전 광역시 전역 · 세종 특별자치시 도심권</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 정부청사 및 충청 중심 허브 신속 출동</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 19. 제주 특별자치도 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">제주 지부</span></div>
-          <h3 class="netRegion">제주 특별자치도</h3>
-          <div class="netCoverage">제주시 · 서귀포시 전역 및 관광특구 렌트카 긴급 지원</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 도서 관광지 즉시 출동 및 분실키 원스톱</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <!-- 20. 강원 광역 지부 -->
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">강원 지부</span></div>
+          <div class="netTopRow"><span class="netBadge">강원 영서·동해벨트</span></div>
           <h3 class="netRegion">강원 광역 지부</h3>
-          <div class="netCoverage">원주 · 춘천 · 강릉 동해안권 및 리조트 관광 권역</div>
-          <div class="netExp"><strong>20년 베테랑</strong> 산간·고속도로 휴게소 긴급 차키 복원</div>
+          <div class="cardCovText">원주 · 춘천 · 강릉 동해안권 및 리조트 일대</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 산간 도로·고속도로 휴게소 및 관광지 긴급 원스톱 복원</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
           </div>
         </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서북부 주거벨트</span></div>
+          <h3 class="netRegion">경기 고양 덕양구 지부</h3>
+          <div class="cardCovText">삼송·원흥·지축·향동 신도시 · 화정·행신 행정타운</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서울 서북 접경 및 대규모 신도시 긴급 원스톱 키 제작 출동망</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">한강신도시 거점</span></div>
+          <h3 class="netRegion">경기 김포시 지부</h3>
+          <div class="cardCovText">한강신도시(구래·운양·장기) · 풍무·사우 · 통진·양촌 산단</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대규모 주거단지 및 서북부 산업벨트 정밀 CNC 키 가공 즉시 해결</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동북부 메가신도시</span></div>
+          <h3 class="netRegion">경기 남양주시 지부</h3>
+          <div class="cardCovText">다산신도시 · 별내신도시 · 왕숙지구 · 호평·평내·화도</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축 및 동북부 신도시 신속 출장 순정 스마트키 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">도심 산단 거점</span></div>
+          <h3 class="netRegion">경기 부천시 지부</h3>
+          <div class="cardCovText">중동·상동 신도시 · 부천테크노파크 · 옥길·범박·소사</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 도심 밀집 상권 및 테크노파크 산업단지 특화 초고속 긴급출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">판교 테크노·분당</span></div>
+          <h3 class="netRegion">경기 성남 · 분당 지부</h3>
+          <div class="cardCovText">판교테크노밸리 · 분당신도시(서현·정자·수내) · 성남 본도심</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경기 남부 메인허브</span></div>
+          <h3 class="netRegion">경기 수원시 지부</h3>
+          <div class="cardCovText">영통(삼성디지털시티)·광교신도시·팔달·장안·권선 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">스마트산단 거점</span></div>
+          <h3 class="netRegion">경기 시흥시 지부</h3>
+          <div class="cardCovText">시화MTV·스마트허브·배곧신도시·은계·목감</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서해안 국가산단 및 해양 신도시 긴급 키 제작 및 무손상 개문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 펼치기 아코디언 내부 -->
+      <div class="networkMoreWrap" id="networkMoreWrap">
+        <!-- 경기 권역 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서해안 산업특구</span></div>
+          <h3 class="netRegion">경기 안산시 지부</h3>
+          <div class="cardCovText">반월국가산업단지 · 고잔신도시 · 상록구 · 단원구</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경기 남부 관문</span></div>
+          <h3 class="netRegion">경기 평택시 · 안성시 지부</h3>
+          <div class="cardCovText">평택 고덕국제신도시(삼성반도체) · 송탄 · 안중항만 · 안성시 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 반도체 캠퍼스 및 경기 남부 관문 특화 순정 스마트키 당일 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">수도권 남부 벨트</span></div>
+          <h3 class="netRegion">경기 안양 · 과천 · 의왕 지부</h3>
+          <div class="cardCovText">안양시(만안·동안) · 과천시 · 의왕시 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 순정 스마트키 당일 복원 및 정밀 무손상 개문 전문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">세교신도시·산단거점</span></div>
+          <h3 class="netRegion">경기 오산시 지부</h3>
+          <div class="cardCovText">오산 도심 · 세교1·2신도시 · 가장일반산업단지 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 세교 대규모 신도시 및 산업단지 특화 초고속 긴급출동 및 스마트키 원스톱 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">반도체·물류 메가벨트</span></div>
+          <h3 class="netRegion">경기 용인 · 광주 · 이천 지부</h3>
+          <div class="cardCovText">용인특례시(처인·기흥·수지) · 경기 광주시 · 이천시 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 반도체 클러스터 및 물류 거점 특화 순정 스마트키 현장 당일 제작 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경기 북부 축선</span></div>
+          <h3 class="netRegion">경기 의정부 · 동두천 · 포천 지부</h3>
+          <div class="cardCovText">의정부시 전역 · 동두천시 · 포천시 광역 일대</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북부 산업벨트 및 도심 긴급 원스톱 출동 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">마이스·호수공원 특화</span></div>
+          <h3 class="netRegion">경기 일산 지부</h3>
+          <div class="cardCovText">일산동구(마두·백석·식사) · 일산서구(킨텍스·대화·탄현)</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 킨텍스 마이스 특구 및 호수공원 주거벨트 순정 OBD 무손상 스마트키 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서북부 디스플레이벨트</span></div>
+          <h3 class="netRegion">경기 파주 · 문산 지부</h3>
+          <div class="cardCovText">운정신도시 · 파주출판도시 · 문산읍 · 월롱(LG디스플레이)</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대규모 신도시 및 첨단 디스플레이 산단 긴급 키 제작 및 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">첨단 모빌리티 거점</span></div>
+          <h3 class="netRegion">경기 화성시 지부</h3>
+          <div class="cardCovText">동탄1·2신도시 · 향남 · 남양(현대기아연구소) · 봉담 · 송산</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대규모 신도시 및 자동차 연구벨트 특화 스마트키 정밀 가공</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 충청 권역 (천안·아산 정식 편입) -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">백년가게 공식인증</span></div>
+          <h3 class="netRegion">충남 천안시 · 아산시 지부</h3>
+          <div class="cardCovText">천안시(불당·두정·신부) · 아산시(배방·탕정 디스플레이시티)</div>
+          <div class="cardExpText"><strong>중기부 공식인증 백년가게 (친절열쇠)</strong> 20년 현장 장인 충남 첨단산업벨트 원스톱 긴급 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 경남/경북/영남 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경남 해양산단</span></div>
+          <h3 class="netRegion">경남 마산 (합포·회원) 지부</h3>
+          <div class="cardCovText">마산합포구 · 회원구 · 내서읍 산단 일대</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 정밀 픽킹 무손상 도어 개문 및 순정키 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">국가산단 메카</span></div>
+          <h3 class="netRegion">경남 창원 (의창·성산) 지부</h3>
+          <div class="cardCovText">창원 도심 · 국가산단 · 진해구 권역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 화물·특수차 및 국산 전 차종 스마트키 마스터</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북도청 신도시</span></div>
+          <h3 class="netRegion">경북 안동 · 예천 지부</h3>
+          <div class="cardCovText">안동 도심 · 경북도청 신도시 · 예천군</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 이모빌라이저 키 & 스마트키 순정 코딩 등록</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경북 북부 내륙</span></div>
+          <h3 class="netRegion">경북 영주 · 봉화 지부</h3>
+          <div class="cardCovText">영주시 전역 · 봉화군 광역 지원망</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 분실키 즉시 판독 및 무손상 개문 전문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동해벨트·관광특구</span></div>
+          <h3 class="netRegion">경북 포항 · 경주 · 영덕 · 영천 지부</h3>
+          <div class="cardCovText">포항시(남·북구) · 경주시 · 영덕군 · 영천시 광역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 철강공단·관광단지·동해선 국산 스마트키 완벽 복원 및 전용 장비 상시 보유</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">소백산 관광특구</span></div>
+          <h3 class="netRegion">경북 풍기 지부</h3>
+          <div class="cardCovText">풍기읍 및 소백산 국립공원 관광 권역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 긴급 차키 복원 및 리모컨 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">영남 산업벨트</span></div>
+          <h3 class="netRegion">대구광역시 · 경산 · 구미 지부</h3>
+          <div class="cardCovText">대구 전역 · 경산 학원단지 · 구미 국가산단 일대</div>
+          <div class="cardExpText"><strong>20년 베테랑 마스터팀</strong> 국가산단 및 도심 긴급 출동 즉시 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">충청 행정허브</span></div>
+          <h3 class="netRegion">대전 · 세종 지부</h3>
+          <div class="cardCovText">대전광역시 전역 · 세종특별자치시</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 정부청사 및 충청 중심부 긴급 출동 지원망</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동남권 메가시티</span></div>
+          <h3 class="netRegion">부산 · 울산 · 김해 · 양산 지부</h3>
+          <div class="cardCovText">부산광역시 전역 · 울산광역시 · 김해시 · 양산시 일대</div>
+          <div class="cardExpText"><strong>20년 베테랑 마스터팀</strong> 동남권 전역 신속 출동 및 순정 스마트키 원스톱 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 서울 10대 지부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">강남·서초 비즈니스</span></div>
+          <h3 class="netRegion">서울 강남구 · 서초구 지부</h3>
+          <div class="cardCovText">테헤란로 IT밸리 · 압구정·청담 · 서초 법조타운·반포</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 핵심 비즈니스 및 고급 주거특구 무손상 개문 및 최신 스마트키 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동북부 주거벨트</span></div>
+          <h3 class="netRegion">서울 강북구 · 도봉구 · 노원구 지부</h3>
+          <div class="cardCovText">노원 중계에듀타운·상계 · 도봉 창동역세권 · 강북 미아</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서울 동북부 대규모 아파트단지 및 상권 신속 현장 출동망</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서울 서부 메인허브</span></div>
+          <h3 class="netRegion">서울 강서구 · 양천구 지부</h3>
+          <div class="cardCovText">마곡지구·화곡·방화·발산 · 목동·신정 에듀벨트</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 마곡 MICE 바이오클러스터 및 대단지 스마트키 15분 긴급 출동망</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">디지털밸리 특화</span></div>
+          <h3 class="netRegion">서울 구로구 · 금천구 지부</h3>
+          <div class="cardCovText">구로디지털단지(G밸리) · 가산디지털단지 · 신도림</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> IT벤처타운 및 비즈니스단지 특화 초고속 긴급 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동부 패션·대학가</span></div>
+          <h3 class="netRegion">서울 동대문구 · 중랑구 · 광진구 지부</h3>
+          <div class="cardCovText">동대문 패션타운 · 건대입구·구의 · 중랑 상봉역세권</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 쇼핑상권 및 대학·주거복합벨트 당일 즉시 키 가공 및 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">미디어·문화 특화</span></div>
+          <h3 class="netRegion">서울 마포구 지부</h3>
+          <div class="cardCovText">상암DMC 미디어센터 · 홍대·합정 · 공덕 비즈니스밸리</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 방송 미디어단지 및 도심 상권 긴급 분실 스마트키 현장 완벽 해결</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">역사문화·행정타운</span></div>
+          <h3 class="netRegion">서울 서대문구 · 종로구 지부</h3>
+          <div class="cardCovText">신촌·연희동 · 종로 행정타운 · 광화문·혜화</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 도심 행정지구 및 대학병원·캠퍼스타운 정밀 차키 복원 및 무손상 개문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동남권 메가주거특구</span></div>
+          <h3 class="netRegion">서울 송파구 · 강동구 지부</h3>
+          <div class="cardCovText">잠실 MICE·롯데월드몰 · 문정법조단지 · 고덕그라시움·천호</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대규모 하이엔드 주거타운 및 법조·상업단지 긴급 정밀 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">금융·여의도 벨트</span></div>
+          <h3 class="netRegion">서울 영등포구 · 동작구 지부</h3>
+          <div class="cardCovText">여의도 국제금융지구 · 문래창작촌 · 노량진 · 흑석·상도</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 금융업무지구 및 주거 밀집지 순정 OBD 진단 즉시 등록</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">북한산 생태주거</span></div>
+          <h3 class="netRegion">서울 은평구 지부</h3>
+          <div class="cardCovText">은평뉴타운(진관동) · 불광동 · 연신내역 상권 · 응암동</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서울 서북 관문 대규모 뉴타운 및 상권 신속 현장 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">도심 코어·국제업무</span></div>
+          <h3 class="netRegion">서울 중구 · 용산구 지부</h3>
+          <div class="cardCovText">명동·을지로 비즈니스센터 · 용산역·한남동·이태원</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 도심 중심 상권 및 고급 주거특구 긴급 무손상 개문 및 스마트키 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 인천 10대 세부 자치구 지부 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">도서·해양관광특구</span></div>
+          <h3 class="netRegion">인천 강화군 지부</h3>
+          <div class="cardCovText">강화읍 · 길상면 · 화도면(마니산) · 석모도·교동도 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 도서 및 해양 관광지 차키 분실 긴급 원스톱 가공 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">테크노밸리 거점</span></div>
+          <h3 class="netRegion">인천 계양구 지부</h3>
+          <div class="cardCovText">계양테크노밸리(3기 신도시) · 작전동 · 계산동 · 계양역세권</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서울 서부 관문 및 3기 신도시 첨단 스마트키 현장 당일 제작</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">북부 메가신도시</span></div>
+          <h3 class="netRegion">인천 검단구 지부</h3>
+          <div class="cardCovText">검단신도시(아라동·원당·당하) · 마전동 · 오류왕길 산단벨트</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북부 대규모 스마트 신도시 및 아라뱃길 축선 긴급 원스톱 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">국가산단·행정타운</span></div>
+          <h3 class="netRegion">인천 남동구 지부</h3>
+          <div class="cardCovText">남동국가산업단지 · 인천시청 행정타운 · 구월상권 · 논현해안벨트</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업차량 및 행정중심지 10분 즉시 출장 원스톱 키 가공</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">도시재생·산단거점</span></div>
+          <h3 class="netRegion">인천 미추홀구 지부</h3>
+          <div class="cardCovText">주안국가산업단지 · 인하대 캠퍼스 · 용현·학익 도시개발구역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 주안 공단 및 신규 주거벨트 특화 무손상 개문 및 스마트키 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">상권·제조 메카</span></div>
+          <h3 class="netRegion">인천 부평구 지부</h3>
+          <div class="cardCovText">부평역 지하상가 상권 · 한국GM 부평공장 · 삼산·갈산 IT밸리</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 초밀집 도심 상권 및 자동차 제조벨트 특화 초고속 긴급출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">국제금융·청라벨트</span></div>
+          <h3 class="netRegion">인천 서해구 지부</h3>
+          <div class="cardCovText">청라국제도시(하나금융타운) · 루원시티 · 경서·원창 산단 · 로봇랜드</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국제금융특구 및 첨단 비즈니스타운 순정 스마트키 당일 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">송도 바이오클러스터</span></div>
+          <h3 class="netRegion">인천 연수구 지부</h3>
+          <div class="cardCovText">송도국제업무지구(바이오단지) · 연수 에듀타운 · 옥련·동춘 주거벨트</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 송도 첨단 비즈니스 및 에듀벨트 특화 국산 전 차종 스마트키 즉시 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">글로벌 항공물류특구</span></div>
+          <h3 class="netRegion">인천 영종구 지부</h3>
+          <div class="cardCovText">인천국제공항 권역 · 영종하늘도시 · 운서·을왕리 리조트벨트</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 공항 여객·물류 및 리조트 특구 24시 긴급 키박스 복구 및 시동 등록</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">제물포 르네상스 원도심</span></div>
+          <h3 class="netRegion">인천 제물포구 지부</h3>
+          <div class="cardCovText">내항 1·8부두 재개발 · 동인천역세권 · 차이나타운 · 송현·화수 산단</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 해양문화관광 및 원도심 항만물류 특화 현장 CNC 정밀 가공</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <!-- 전남/충북 -->
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">제철·항만벨트</span></div>
+          <h3 class="netRegion">전남 광양 · 순천 지부</h3>
+          <div class="cardCovText">광양제철소 · 광양항 · 순천만 권역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 산업단지 긴급 출장 및 키박스 복구 전문</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">호남 광역 특구</span></div>
+          <h3 class="netRegion">전남 광주 · 나주 · 담양 · 장성 지부</h3>
+          <div class="cardCovText">광주광역시 전역 · 나주혁신도시 · 담양군 · 장성군</div>
+          <div class="cardExpText"><strong>20년 베테랑 마스터팀</strong> 호남 거점 긴급출동 · 스마트키 원스톱 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">국가산단·해양관광</span></div>
+          <h3 class="netRegion">전남 여수 지부</h3>
+          <div class="cardCovText">여수시 도심 · 국가산단 · 돌산 관광벨트</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 당일 즉시 제작 및 순정 부품 상시 보유</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">충북 북부 관광벨트</span></div>
+          <h3 class="netRegion">충북 제천 · 단양 지부</h3>
+          <div class="cardCovText">제천시 전역 · 단양군 및 인접 산간 권역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국산 전 차종 스마트키 당일 긴급 출동</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">기업도시·산단특화</span></div>
+          <h3 class="netRegion">충북 충주 · 음성 지부</h3>
+          <div class="cardCovText">충주시 도심 · 음성군 및 기업도시 산단 권역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 스마트키 제작 및 현장 정밀 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 펼치기/접기 버튼 -->
+      <div class="netMoreBtnArea">
+        <button class="btnNetworkToggle" id="btnNetworkToggle" onclick="toggleNetwork()">
+          <span id="networkBtnText">전국 52개 광역 네트워크 전체보기 (가나다순) ▼</span>
+        </button>
       </div>
 
       <div class="netCallBanner">
         <div class="netCallText">
-          📍 어디서든 <strong>대표전화 1600-9712</strong>로 연락 주시면 계신 곳에서 가장 가까운 <strong>20년 마스터 엔지니어</strong>에게 1초 만에 직통 연결됩니다.
+          📍 전국 어디서든 <strong>대표전화 1600-9712</strong>로 연락 주시면 계신 곳에서 가장 가까운 <strong>20년 베테랑 엔지니어팀</strong>에 1초 만에 직통 연결됩니다.
         </div>
-        <a class="btnAction btnBlack" style="padding:12px 24px; font-size:15px;" href="tel:16009712">📞 대표번호 직통 연결</a>
+        <a class="btnActionLarge btnNeonHighlight" style="padding:14px 28px; font-size:16px;" href="tel:16009712">📞 대표번호 직통 연결</a>
       </div>
     </div>
   </section>
@@ -1438,9 +1770,7 @@
         <article class="caseItem">
           <div class="caseDate">CASE 01</div>
           <div class="caseImg">
-            <img src="assets/case01.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80';" 
-                 alt="분실 차키 현장 제작">
+            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80" alt="분실 차키 복원">
           </div>
           <div>
             <h3 class="caseHeading">LOST CAR KEY RECOVERY</h3>
@@ -1452,28 +1782,24 @@
         <article class="caseItem">
           <div class="caseDate">CASE 02</div>
           <div class="caseImg">
-            <img src="assets/case02.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80';" 
-                 alt="스마트키 복제 및 등록">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80" alt="스마트키 등록">
           </div>
           <div>
             <h3 class="caseHeading">SMART KEY DUPLICATION</h3>
             <span class="caseBadge">OBD CODING SYSTEM</span>
-            <p class="caseDesc">현대, 기아, 르노, 쉐보레, 쌍용 KGM 정품 스마트키 부품을 상시 보유하여 현장에서 시동 및 무선 기능을 당일 완벽 코딩합니다.</p>
+            <p class="caseDesc">현대, 기아, 르노코리아, 쉐보레, KGM 쌍용 정품 스마트키 부품을 상시 보유하여 현장에서 시동 및 무선 기능을 당일 완벽 코딩합니다.</p>
           </div>
         </article>
 
         <article class="caseItem">
           <div class="caseDate">CASE 03</div>
           <div class="caseImg">
-            <img src="assets/case03.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80';" 
-                 alt="무손상 차문 개문">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80" alt="무손상 개문">
           </div>
           <div>
             <h3 class="caseHeading">NON-DAMAGE DOOR OPENING</h3>
             <span class="caseBadge">PRECISION PICKING</span>
-            <p class="caseDesc">차 문 틈새를 강제로 벌리지 않고 키홀 텐션 픽킹 방식을 적용하여 도장면이나 고무 몰딩 손상 없이 안전하게 잠금을 해제합니다.</p>
+            <p class="caseDesc">문 틈새를 강제로 벌리지 않고 키홀 텐션 픽킹 방식을 적용하여 도장면이나 방수 몰딩 손상 없이 안전하게 잠금을 해제합니다.</p>
           </div>
         </article>
       </div>
@@ -1483,10 +1809,8 @@
   <!-- 6. FAQ Section -->
   <section id="faq" class="faqSection">
     <div class="wrap">
-      <div class="faqHeader">
-        <div class="faqSubTitle">FREQUENTLY ASKED QUESTIONS</div>
-        <h2 class="faqMainTitle">DISCOVER YOUR ANSWERS</h2>
-        <p class="faqDesc">고객님들이 출동 전 가장 자주 문의하시는 현장 질문들을 모았습니다.</p>
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">FREQUENTLY ASKED QUESTIONS</h2>
       </div>
 
       <div class="faqList">
@@ -1496,7 +1820,7 @@
             <h3 class="faqQuestion">차키를 전부 잃어버렸는데 서비스센터 견인 없이 현장에서 되나요?</h3>
           </div>
           <p class="faqAnswer">
-            네, 100% 현장에서 가능합니다! 전용 이동식 CNC 정밀 가공 머신과 순정 스캐너를 보유하고 있어 견인할 필요 없이 계신 곳(주차장, 도로변, 공터 등)으로 직통 출동하여 즉시 키를 깎고 시동 등록까지 당일 완벽 복원해 드립니다.
+            네, 100% 현장에서 가능합니다! 이동식 CNC 정밀 가공 머신과 순정 스캐너를 보유하고 있어 견인할 필요 없이 계신 곳으로 직통 출동하여 즉시 키를 깎고 시동 등록까지 당일 완벽 복원해 드립니다.
           </p>
         </div>
 
@@ -1516,266 +1840,313 @@
             <h3 class="faqQuestion">차 안에 스마트키를 두고 문이 잠겼는데 차에 흠집이 안 나나요?</h3>
           </div>
           <p class="faqAnswer">
-            철사로 문틈을 벌리거나 강제로 쑤시는 구식 방식을 절대 쓰지 않습니다! 키 구멍(키홀)에 특수 텐션 툴을 걸어 열쇠를 넣고 돌린 것처럼 부드럽게 픽킹(Picking) 개문하므로 문짝 찌그러짐, 도장면 스크래치, 방수 고무 몰딩 손상이 전혀 없습니다.
+            철사로 문틈을 벌리는 구식 방식을 절대 쓰지 않습니다. 키 구멍에 특수 텐션 툴을 걸어 열쇠를 넣고 돌린 것처럼 부드럽게 여는 픽킹 개문 방식을 쓰므로 도장면 스크래치나 고무 몰딩 손상이 일체 없습니다.
           </p>
         </div>
 
         <div class="faqHiddenWrap" id="faqMoreWrap">
           <div class="faqCard">
             <div class="faqTopRow"><span class="faqBadge">Q4</span><h3 class="faqQuestion">수출차량키 제작도 가능한가요?</h3></div>
-            <p class="faqAnswer">모하비 더마스터, 팰리세이드, 싼타페TM, 카니발KA4 등 외국에서 인기 많은 차량의 경우 키 복제 후 등록까지 가능하기에 많은 수출 제휴를 맺고 현장 지원하고 있습니다.</p>
+            <p class="faqAnswer">모하비, 팰리세이드, 싼타페, 카니발 등 해외 인기 국산 차량의 키 복제 후 등록까지 가능하여 많은 수출 제휴를 지원하고 있습니다.</p>
           </div>
           <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q5</span><h3 class="faqQuestion">중고차 매매 마켓 스마트키 리모컨키 복제 가능한가요?</h3></div>
-            <p class="faqAnswer">KB국민차매매단지, 엠파크, 오토플렉스, SKV1 등 많은 대형 매매단지 상사와 제휴를 맺어 신속하게 해결하고 있습니다. 한 분야에서 20년간 살아남은 네트워크이기에 단골 매매상사가 많습니다.</p>
+            <div class="faqTopRow"><span class="faqBadge">Q5</span><h3 class="faqQuestion">중고차 매매단지 제휴 복제도 되나요?</h3></div>
+            <p class="faqAnswer">KB국민차, 엠파크, 오토플렉스, SKV1 등 대형 매매단지 상사와 오랜 현장 신뢰를 바탕으로 단골 상사 제휴를 신속하게 해결해 드리고 있습니다.</p>
           </div>
           <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q6</span><h3 class="faqQuestion">내 차량이 렌트카인데 키복사 절차가 왜이리 까다롭나요?</h3></div>
-            <p class="faqAnswer">렌트카 차량의 경우에도 폴딩차키, 스마트키 분실 제작부터 기존 차키 추가 복제까지 당일 현장에서 원스톱으로 가능합니다.</p>
+            <div class="faqTopRow"><span class="faqBadge">Q6</span><h3 class="faqQuestion">화물차(포터2, 봉고3) 리모컨키도 되나요?</h3></div>
+            <p class="faqAnswer">버튼 고무가 찢어진 순정 리모컨키를 내구성 강한 최신 일체형 폴딩키로 당일 튼튼하게 교체 제작해 드립니다.</p>
           </div>
           <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q7</span><h3 class="faqQuestion">키 제작하는 김에 예비키 한 개 더 하려는데 바로 가능한가요?</h3></div>
-            <p class="faqAnswer">기본 스마트키 1개 제작 후 추가 복제 시 차량용 부품 재고가 있다면 즉시 연속 등록이 가능합니다. 현장 출동 시 미리 말씀해 주시면 여유분을 준비해 갑니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q8</span><h3 class="faqQuestion">이모빌라이저 차키는 무엇인가요?</h3></div>
-            <p class="faqAnswer">일반 쇠 막대기 키로 제작한 후 시동을 돌려도 차 내부의 ECU와 일치하는 암호가 없으면 시동이 걸리지 않는 도난 방지 시스템입니다. 일종의 차량용 OTP 번호 등록 작업입니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q9</span><h3 class="faqQuestion">쌍용자동차 KGM 신형품번 재고 있나요?</h3></div>
-            <p class="faqAnswer">토레스 등 KGM 사명 변경 후 새롭게 출시된 신형 스마트키 재고를 확보하고 있으며, 현장에서 없는 차키 제작부터 등록까지 가능합니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q10</span><h3 class="faqQuestion">폴딩리모컨 차키도 가능한가요?</h3></div>
-            <p class="faqAnswer">접이식 폴딩키 제작 및 등록이 모두 가능하며, 이모빌라이저가 미적용된 차량의 경우 일반 비상 막대키도 여유분으로 복제하여 함께 드립니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q11</span><h3 class="faqQuestion">현대모비스 순정 부품인가요?</h3></div>
-            <p class="faqAnswer">네, 현대차와 기아차 모두 공인된 현대 모비스 순정 정품 스마트키 부품으로 정확하게 작업해 드립니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q12</span><h3 class="faqQuestion">어디든 출장을 나와서 작업이 되나요?</h3></div>
-            <p class="faqAnswer">포장 도로뿐 아니라 지하주차장 구석, 논밭, 야외 공터, 공사 현장 등 장비 진입이 가능한 웬만한 모든 곳으로 즉시 출동합니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q13</span><h3 class="faqQuestion">슬롯에 꽂아서 시동 걸어주는 구형 스마트키도 재고 있나요?</h3></div>
-            <p class="faqAnswer">차량 슬롯 콘솔에 직접 꽂아 키를 인식시키는 1세대·2세대 구형 스마트키 재고 역시 상시 보유하고 있어 당일 작업이 가능합니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q14</span><h3 class="faqQuestion">배터리 방전 충전도 해주시나요?</h3></div>
-            <p class="faqAnswer">쉐보레 차량 등은 키 등록 시 배터리 전압 소모가 많아 보조 전원 배터리를 연결한 후 작업을 진행해 드립니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q15</span><h3 class="faqQuestion">포터2, 봉고3, 스타렉스 등 생업용 화물차 리모컨키 되나요?</h3></div>
-            <p class="faqAnswer">기존에 쓰시던 버튼 고무가 찢어졌거나 파손된 경우 튼튼한 플라스틱 버튼형 일체형 폴딩키로 당일 튼튼하게 교체 제작해 드립니다.</p>
-          </div>
-          <div class="faqCard">
-            <div class="faqTopRow"><span class="faqBadge">Q16</span><h3 class="faqQuestion">독일 3사(벤츠, BMW, 아우디) 작업도 가능한가요?</h3></div>
-            <p class="faqAnswer" style="color:#ff8585;">독일 3사(벤츠, BMW, 아우디) 차키 제작 견적 문의는 사절하며 일체 작업하지 않습니다. 현대, 기아, 르노, 쉐보레, 쌍용 KGM 및 주요 지원 수입 차종에 집중합니다.</p>
+            <div class="faqTopRow"><span class="faqBadge">Q7</span><h3 class="faqQuestion">차키 제작 시 어떤 브랜드를 주로 취급하나요?</h3></div>
+            <p class="faqAnswer">현대, 기아, 제네시스, 르노코리아, 쉐보레, KGM 쌍용 등 국산 전 차종 스마트키, 폴딩키, 이모빌라이저 차키를 전문으로 신속 제작합니다.</p>
           </div>
         </div>
       </div>
 
       <div class="faqMoreArea">
-        <button class="btnFaqMore" id="btnFaqToggle" onclick="toggleFaq()">
-          <span id="faqBtnText">VIEW MORE FAQ (13) +</span>
-          <svg id="faqPlusIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        </button>
+        <button class="btnFaqMore" id="btnFaqToggle" onclick="toggleFaq()">자주 묻는 질문 더보기 +</button>
       </div>
     </div>
   </section>
 
-  <!-- 7. Store Section -->
-  <section id="store" class="storeSection">
-    <div class="wrap">
-      <div class="secHeader">
-        <h2 class="secHeaderTitle">KEY & KEY STORE</h2>
-        <span class="secHeaderSubKo">스마트키 케이스 & 키홀더 전 품목</span>
-      </div>
-
-      <div class="storeFilterNav">
-        <button class="storeTab active">전체보기 (ALL)</button>
-        <button class="storeTab">현대 / 제네시스</button>
-        <button class="storeTab">기아 (KIA)</button>
-        <button class="storeTab">르노코리아</button>
-        <button class="storeTab">쉐보레 (CHEVROLET)</button>
-        <button class="storeTab">KGM 쌍용</button>
-        <button class="storeTab">가죽 키홀더 & 키링</button>
-      </div>
-
-      <div class="storeGrid">
-        <article class="storeCard">
-          <img src="assets/store01.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=600&q=80';" 
-               alt="현대 기아 스마트키 케이스">
-          <h3 class="storeName">HYUNDAI / KIA PREMIUM CASE</h3>
-          <p class="storeInfo">버튼 밀착감과 스크래치 방지를 완벽 지원하는 정밀 맞춤형 케이스</p>
-          <div class="storeBottom">
-            <span class="storePrice">₩ 25,000</span>
-            <a class="btnAction btnBlack" style="padding: 8px 18px; font-size: 13px;" href="tel:16009712">BUY NOW</a>
-          </div>
-        </article>
-
-        <article class="storeCard">
-          <img src="assets/store02.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80';" 
-               alt="르노 쉐보레 가죽 키케이스">
-          <h3 class="storeName">RENAULT / CHEVROLET LEATHER</h3>
-          <p class="storeInfo">손에 감기는 최상의 그립감과 오랜 내구성을 갖춘 최고급 천연 가죽 케이스</p>
-          <div class="storeBottom">
-            <span class="storePrice">₩ 28,000</span>
-            <a class="btnAction btnBlack" style="padding: 8px 18px; font-size: 13px;" href="tel:16009712">BUY NOW</a>
-          </div>
-        </article>
-
-        <article class="storeCard">
-          <img src="assets/store03.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600&q=80';" 
-               alt="KGM 쌍용 메탈 케이스">
-          <h3 class="storeName">KGM SSANGYONG METAL CASE</h3>
-          <p class="storeInfo">신형 토레스 및 티볼리 완벽 호환, 단단한 엣지 보호 메탈 프레임</p>
-          <div class="storeBottom">
-            <span class="storePrice">₩ 26,000</span>
-            <a class="btnAction btnBlack" style="padding: 8px 18px; font-size: 13px;" href="tel:16009712">BUY NOW</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. Blog Section -->
+  <!-- 7. Blog Section -->
   <section id="blogs" class="blogSection">
     <div class="wrap">
       <div class="secHeader">
         <h2 class="secHeaderTitle">LATEST BLOG STORIES</h2>
-        <span class="secHeaderSubKo">블로그 실전 사례</span>
+        <span class="secHeaderSubKoBig" style="font-size:22px; padding:8px 20px;">출동 실전 후기</span>
       </div>
       <div class="blogGrid">
         <article class="blogCard">
           <div class="blogDate">NAVER BLOG STORY 01</div>
           <h3 class="blogTitle">SM7 르노삼성 스마트키 분실 현장 복원</h3>
           <p class="blogExcerpt">르노삼성 스마트키를 전부 분실한 긴급 상황, 현장으로 출동하여 인텔리전트 키 데이터 복구와 시동 등록을 원스톱으로 마쳤습니다.</p>
-          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">READ ARTICLE →</a>
+          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">상세 후기 보기 →</a>
         </article>
 
         <article class="blogCard">
           <div class="blogDate">NAVER BLOG STORY 02</div>
           <h3 class="blogTitle">쉐보레 트랙스 당일 정품키 재발급 출동</h3>
-          <p class="blogExcerpt">서비스센터 입고 없이 현장에서 정품 스마트키를 직접 가공 및 등록하여 차주분의 일정을 지켜드린 실제 사례입니다.</p>
-          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">READ ARTICLE →</a>
+          <p class="blogExcerpt">서비스센터 입고 없이 현장에서 정품 스마트키를 직접 가공 및 등록하여 일정을 지켜드린 실제 사례입니다.</p>
+          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">상세 후기 보기 →</a>
         </article>
 
         <article class="blogCard">
           <div class="blogDate">NAVER BLOG STORY 03</div>
           <h3 class="blogTitle">쌍용 KGM 코란도스포츠 스마트키 제작</h3>
-          <p class="blogExcerpt">KGM 최신 부품 재고를 상시 확보하고 있어 분실 현장에서 지체 없이 시동 및 비상 인서트 키까지 완벽하게 출고해 드렸습니다.</p>
-          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">READ ARTICLE →</a>
+          <p class="blogExcerpt">KGM 최신 부품 재고를 상시 확보하고 있어 분실 현장에서 지체 없이 시동 및 비상키까지 완벽 제작했습니다.</p>
+          <a class="blogLink" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">상세 후기 보기 →</a>
         </article>
       </div>
     </div>
   </section>
 </main>
 
-<!-- 9. Footer -->
+<!-- 8. Footer (출동시간 08~22시 야간 출장 마감 & 텍스트 밝기 대폭 상향) -->
 <footer id="footer" class="footer">
   <div class="wrap">
     <div class="footerGrid">
       <div class="footerCol footerAbout">
         <h4>키앤키닷컴</h4>
-        <p>전국 마스터 엔지니어가 함께하는 자동차키·스마트키 긴급 제작 광역 네트워크 키앤키닷컴입니다.</p>
+        <p>전국 마스터 엔지니어팀이 함께하는 자동차키·스마트키 긴급 제작 광역 네트워크 키앤키닷컴입니다.</p>
         <div class="socialBox">
-          <a class="socialBtn btnKakao" target="_blank" rel="noopener" href="https://open.kakao.com" title="카카오톡 1:1 상담">
-            <svg class="socialIcon" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.87 1.884 5.39 4.747 6.772l-1.206 4.425c-.105.388.337.697.669.467l5.244-3.493c.18.019.362.029.546.029 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
-            카카오톡 문의
-          </a>
-          <a class="socialBtn btnSms" href="sms:01082424649" title="차키 사진 문자 전송">
-            <svg class="socialIcon" viewBox="0 0 24 24" fill="#FFF"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg>
-            문자 상담 (사진전송)
-          </a>
-          <a class="socialBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">
-            <svg class="socialIcon" viewBox="0 0 24 24" fill="#03C75A"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg>
-            네이버 블로그
-          </a>
-          <a class="socialBtn" target="_blank" rel="noopener" href="https://youtube.com">
-            <svg class="socialIcon" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            유튜브
-          </a>
-          <a class="socialBtn" target="_blank" rel="noopener" href="https://instagram.com">
-            <svg class="socialIcon" viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            인스타그램
-          </a>
+          <a class="socialBtn btnKakao" target="_blank" rel="noopener" href="https://open.kakao.com">카카오톡</a>
+          <a class="socialBtn btnPlusFriend" target="_blank" rel="noopener" href="https://pf.kakao.com">플러스친구</a>
+          <a class="socialBtn btnSms" href="sms:01082424649">문자상담</a>
+          <a class="socialBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">블로그</a>
+          <a class="socialBtn btnYoutube" target="_blank" rel="noopener" href="https://youtube.com">유튜브</a>
+          <a class="socialBtn btnInsta" target="_blank" rel="noopener" href="https://instagram.com">인스타그램</a>
+          <a class="socialBtn btnFacebook" target="_blank" rel="noopener" href="https://facebook.com">페이스북</a>
         </div>
       </div>
 
       <div class="footerCol">
-        <h4 class="enColTitle">QUICK LINKS</h4>
+        <h4>QUICK LINKS</h4>
         <ul class="footerLinks">
           <li><a href="#about">키앤키 소개 (About Us)</a></li>
           <li><a href="#network">전국 광역 네트워크</a></li>
           <li><a href="#cases">현장 출동 작업 사례</a></li>
           <li><a href="#faq">자주 묻는 질문 (FAQ)</a></li>
-          <li><a href="#store">스마트키 케이스 스토어</a></li>
         </ul>
       </div>
 
       <div class="footerCol">
-        <h4 class="enColTitle">RESOURCES</h4>
+        <h4>RESOURCES</h4>
         <ul class="footerLinks">
           <li><a href="#cases">스마트키 코딩 시스템</a></li>
           <li><a href="#cases">CNC 정밀 키 가공 안내</a></li>
           <li><a href="#cases">무손상 차문 개문 원리</a></li>
-          <li><a href="#footer">이용약관 및 개인정보처리</a></li>
         </ul>
       </div>
 
       <div class="footerCol">
-        <h4 class="enColTitle">CONTACT US</h4>
+        <h4>CONTACT US</h4>
         <ul class="footerLinks">
           <li>대표전화 : 1600-9712</li>
           <li>직통문의 : 010-8242-4649</li>
-          <li>이메일 : keynkey1313@gmail.com</li>
           <li>상담시간 : 08:00 - 20:00</li>
+          <li style="color:var(--neon-yellow); font-weight:700;">출동시간 : 08:00 - 22:00 (야간 출장 마감)</li>
         </ul>
       </div>
     </div>
 
-    <!-- 하단 사업자 정보 -->
+    <!-- 밝고 선명한 사업자 정보 -->
     <div class="bizInfoBox">
       <div>
-        <span class="bizTitleBig">상호명 : 키앤키닷컴</span> | 대표 : 차상준 | 사업자등록번호 : 122-10-65938<br>
+        <strong>상호명 : 키앤키닷컴</strong> | 대표 : 차상준 | 사업자등록번호 : 122-10-65938<br>
         통신판매업 신고번호 : 제2016-경기부천-1677호<br>
         주소 : 서울특별시 강서구 마곡중앙6로 21 이너매스마곡1차 512호
       </div>
-      <div>Copyright © 키앤키닷컴 (KEYNKEY.COM) All Rights Reserved.</div>
+      <div>Copyright © 키앤키닷컴 All Rights Reserved.</div>
     </div>
   </div>
 </footer>
 
-<!-- 10. Mobile Floating Bar -->
+<!-- 9. 스마트폰 모바일 하단 고정 바 -->
 <div class="mobileBar">
-  <a class="btnMStore" href="#store">🛒 스토어</a>
-  <a class="btnMSms" href="sms:01082424649">💬 문자상담</a>
-  <a class="btnMCall" href="tel:16009712">📞 전화상담</a>
+  <a class="btnMSms" href="sms:01082424649">💬 사진전송</a>
+  <a class="btnMCall" href="tel:16009712">📞 대표전화</a>
 </div>
 
-<!-- 스크립트 -->
+<!-- ================= 지도 인터랙티브 데이터 및 스크립트 ================= -->
 <script>
+  var regionMapData = {
+    incheon: {
+      title: "📍 인천광역시 10대 세부 자치구 지부",
+      branches: [
+        { badge: "상권·제조 메카", name: "인천 부평구 지부", cov: "부평역 상권 · 한국GM 부평공장 · 삼산·갈산 IT밸리", exp: "초밀집 도심 상권 및 자동차 제조벨트 특화 초고속 긴급출동" },
+        { badge: "테크노밸리 거점", name: "인천 계양구 지부", cov: "계양테크노밸리(3기 신도시) · 작전동 · 계산동 · 계양역세권", exp: "서울 서부 관문 및 3기 신도시 첨단 스마트키 현장 당일 제작" },
+        { badge: "국가산단·행정타운", name: "인천 남동구 지부", cov: "남동국가산단 · 인천시청 행정타운 · 구월상권 · 논현해안벨트", exp: "국가산단 기업차량 및 행정중심지 10분 즉시 출장 원스톱 키 가공" },
+        { badge: "송도 바이오클러스터", name: "인천 연수구 지부", cov: "송도국제업무지구(바이오단지) · 연수 에듀타운 · 옥련·동춘 주거벨트", exp: "송도 첨단 비즈니스 및 에듀벨트 특화 국산 전 차종 스마트키 즉시 복원" },
+        { badge: "도시재생·산단거점", name: "인천 미추홀구 지부", cov: "주안국가산단 · 인하대 캠퍼스 · 용현·학익 도시개발구역", exp: "주안 공단 및 신규 주거벨트 특화 무손상 개문 및 스마트키 코딩" },
+        { badge: "제물포 르네상스 원도심", name: "인천 제물포구 지부", cov: "내항 1·8부두 재개발 · 동인천역세권 · 차이나타운 · 송현·화수 산단", exp: "해양문화관광 및 원도심 항만물류 특화 현장 CNC 정밀 가공" },
+        { badge: "글로벌 항공물류특구", name: "인천 영종구 지부", cov: "인천국제공항 권역 · 영종하늘도시 · 운서·을왕리 리조트벨트", exp: "공항 여객·물류 및 리조트 특구 24시 긴급 키박스 복구 및 시동 등록" },
+        { badge: "북부 메가신도시", name: "인천 검단구 지부", cov: "검단신도시(아라동·원당·당하) · 마전동 · 오류왕길 산단벨트", exp: "북부 대규모 스마트 신도시 및 아라뱃길 축선 긴급 원스톱 코딩" },
+        { badge: "국제금융·청라벨트", name: "인천 서해구 지부", cov: "청라국제도시(하나금융타운) · 루원시티 · 경서·원창 산단 · 로봇랜드", exp: "국제금융특구 및 첨단 비즈니스타운 순정 스마트키 당일 복원" },
+        { badge: "도서·해양관광특구", name: "인천 강화군 지부", cov: "강화읍 · 길상면 · 화도면(마니산) · 석모도·교동도 전역", exp: "도서 및 해양 관광지 차키 분실 긴급 원스톱 가공 복원" }
+      ]
+    },
+    seoul: {
+      title: "📍 서울특별시 핵심 10대 지부",
+      branches: [
+        { badge: "서울 서부 메인허브", name: "서울 강서구 · 양천구 지부", cov: "마곡지구·화곡·방화·발산 · 목동·신정 에듀벨트", exp: "마곡 MICE 바이오클러스터 및 대단지 스마트키 15분 긴급 출동망" },
+        { badge: "디지털밸리 특화", name: "서울 구로구 · 금천구 지부", cov: "구로디지털단지(G밸리) · 가산디지털단지 · 신도림", exp: "IT벤처타운 및 비즈니스단지 특화 초고속 긴급 출동" },
+        { badge: "강남·서초 비즈니스", name: "서울 강남구 · 서초구 지부", cov: "테헤란로 IT밸리 · 압구정·청담 · 서초 법조타운·반포", exp: "핵심 비즈니스 및 고급 주거특구 무손상 개문 및 최신 스마트키 코딩" },
+        { badge: "동남권 메가주거특구", name: "서울 송파구 · 강동구 지부", cov: "잠실 MICE·롯데월드몰 · 문정법조단지 · 고덕그라시움·천호", exp: "대규모 하이엔드 주거타운 및 법조·상업단지 긴급 정밀 코딩" },
+        { badge: "미디어·문화 특화", name: "서울 마포구 지부", cov: "상암DMC 미디어센터 · 홍대·합정 · 공덕 비즈니스밸리", exp: "방송 미디어단지 및 도심 상권 긴급 분실 스마트키 현장 완벽 해결" },
+        { badge: "역사문화·행정타운", name: "서울 서대문구 · 종로구 지부", cov: "신촌·연희동 · 종로 행정타운 · 광화문·혜화", exp: "도심 행정지구 및 대학병원·캠퍼스타운 정밀 차키 복원 및 무손상 개문" },
+        { badge: "도심 코어·국제업무", name: "서울 중구 · 용산구 지부", cov: "명동·을지로 비즈니스센터 · 용산역·한남동·이태원", exp: "도심 중심 상권 및 고급 주거특구 긴급 무손상 개문 및 스마트키 코딩" },
+        { badge: "금융·여의도 벨트", name: "서울 영등포구 · 동작구 지부", cov: "여의도 국제금융지구 · 문래창작촌 · 노량진 · 흑석·상도", exp: "금융업무지구 및 주거 밀집지 순정 OBD 진단 즉시 등록" },
+        { badge: "북한산 생태주거", name: "서울 은평구 지부", cov: "은평뉴타운(진관동) · 불광동 · 연신내역 상권 · 응암동", exp: "서울 서북 관문 대규모 뉴타운 및 상권 신속 현장 출동" },
+        { badge: "동북부 주거벨트", name: "서울 강북구 · 도봉구 · 노원구 지부", cov: "노원 중계에듀타운·상계 · 도봉 창동역세권 · 강북 미아", exp: "서울 동북부 대규모 아파트단지 및 상권 신속 현장 출동망" },
+        { badge: "동부 패션·대학가", name: "서울 동대문구 · 중랑구 · 광진구 지부", cov: "동대문 패션타운 · 건대입구·구의 · 중랑 상봉역세권", exp: "쇼핑상권 및 대학·주거복합벨트 당일 즉시 키 가공 및 코딩" }
+      ]
+    },
+    gyeonggi_north: {
+      title: "📍 경기도 북부 핵심 관제 지부",
+      branches: [
+        { badge: "서북부 주거벨트", name: "경기 고양 덕양구 지부", cov: "삼송·원흥·지축·향동 신도시 · 화정·행신 행정타운", exp: "서울 서북 접경 및 대규모 신도시 긴급 원스톱 키 제작 출동망" },
+        { badge: "마이스·호수공원 특화", name: "경기 일산 지부", cov: "일산동구(마두·백석·식사) · 일산서구(킨텍스·대화·탄현)", exp: "킨텍스 마이스 특구 및 호수공원 주거벨트 순정 OBD 무손상 스마트키 복원" },
+        { badge: "서북부 디스플레이벨트", name: "경기 파주 · 문산 지부", cov: "운정신도시 · 파주출판도시 · 문산읍 · 월롱(LG디스플레이)", exp: "대규모 신도시 및 첨단 디스플레이 산단 긴급 키 제작 및 코딩" },
+        { badge: "경기 북부 축선", name: "경기 의정부 · 동두천 · 포천 지부", cov: "의정부시 전역 · 동두천시 · 포천시 광역 일대", exp: "북부 산업벨트 및 도심 긴급 원스톱 출동 복원" },
+        { badge: "동북부 메가신도시", name: "경기 남양주시 지부", cov: "다산신도시 · 별내신도시 · 왕숙지구 · 호평·평내·화도", exp: "북한강 교통축 및 동북부 신도시 신속 출장 순정 스마트키 코딩" }
+      ]
+    },
+    gyeonggi_south: {
+      title: "📍 경기도 남부 핵심 관제 지부",
+      branches: [
+        { badge: "경기 남부 메인허브", name: "경기 수원시 지부", cov: "영통(삼성디지털시티)·광교신도시·팔달·장안·권선 전역", exp: "첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원" },
+        { badge: "판교 테크노·분당", name: "경기 성남 · 분당 지부", cov: "판교테크노밸리 · 분당신도시(서현·정자·수내) · 성남 본도심", exp: "IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원" },
+        { badge: "반도체·물류 메가벨트", name: "경기 용인 · 광주 · 이천 지부", cov: "용인특례시(처인·기흥·수지) · 경기 광주시 · 이천시 전역", exp: "첨단 반도체 클러스터 및 물류 거점 특화 순정 스마트키 현장 당일 제작 코딩" },
+        { badge: "첨단 모빌리티 거점", name: "경기 화성시 지부", cov: "동탄1·2신도시 · 향남 · 남양(현대기아연구소) · 봉담 · 송산", exp: "대규모 신도시 및 자동차 연구벨트 특화 스마트키 정밀 가공" },
+        { badge: "경기 남부 관문", name: "경기 평택시 · 안성시 지부", cov: "평택 고덕국제신도시(삼성반도체) · 송탄 · 안중항만 · 안성시 전역", exp: "첨단 반도체 캠퍼스 및 경기 남부 관문 특화 순정 스마트키 당일 복원" },
+        { badge: "도심 산단 거점", name: "경기 부천시 지부", cov: "중동·상동 신도시 · 부천테크노파크 · 옥길·범박·소사", exp: "도심 밀집 상권 및 테크노파크 산업단지 특화 초고속 긴급출동" },
+        { badge: "스마트산단 거점", name: "경기 시흥시 지부", cov: "시화MTV·스마트허브·배곧신도시·은계·목감", exp: "서해안 국가산단 및 해양 신도시 긴급 키 제작 및 무손상 개문" },
+        { badge: "서해안 산업특구", name: "경기 안산시 지부", cov: "반월국가산업단지 · 고잔신도시 · 상록구 · 단원구", exp: "국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩" },
+        { badge: "한강신도시 거점", name: "경기 김포시 지부", cov: "한강신도시(구래·운양·장기) · 풍무·사우 · 통진·양촌 산단", exp: "대규모 주거단지 및 서북부 산업벨트 정밀 CNC 키 가공 즉시 해결" },
+        { badge: "수도권 남부 벨트", name: "경기 안양 · 과천 · 의왕 지부", cov: "안양시(만안·동안) · 과천시 · 의왕시 전역", exp: "순정 스마트키 당일 복원 및 정밀 무손상 개문 전문" },
+        { badge: "세교신도시·산단거점", name: "경기 오산시 지부", cov: "오산 도심 · 세교1·2신도시 · 가장일반산업단지 전역", exp: "세교 대규모 신도시 및 산업단지 특화 초고속 긴급출동" }
+      ]
+    },
+    gangwon: {
+      title: "📍 강원 광역 지부",
+      branches: [
+        { badge: "강원 영서·동해벨트", name: "강원 광역 지부", cov: "원주 · 춘천 · 강릉 동해안권 및 리조트 일대", exp: "산간 도로·고속도로 휴게소 및 관광지 긴급 원스톱 복원" }
+      ]
+    },
+    chungbuk: {
+      title: "📍 충북 (제천 · 충주 · 단양 · 음성) 내륙 지부",
+      branches: [
+        { badge: "충북 북부 관광벨트", name: "충북 제천 · 단양 지부", cov: "제천시 전역 · 단양군 및 인접 산간 권역", exp: "국산 전 차종 스마트키 당일 긴급 현장 출동" },
+        { badge: "기업도시·산단특화", name: "충북 충주 · 음성 지부", cov: "충주시 도심 · 음성군 및 기업도시 산단 권역", exp: "스마트키 제작 및 현장 정밀 OBD 코딩" }
+      ]
+    },
+    chungcheong: {
+      title: "📍 대전 · 세종 · 충남 광역 지부",
+      branches: [
+        { badge: "충청 행정허브", name: "대전 · 세종 지부", cov: "대전광역시 전역 · 세종특별자치시", exp: "정부청사 및 충청 중심부 긴급 출동 지원망" },
+        { badge: "백년가게 공식인증", name: "충남 천안시 · 아산시 지부", cov: "천안시(불당·두정·신부) · 아산시(배방·탕정 디스플레이시티)", exp: "중기부 공식인증 백년가게 (친절열쇠) 20년 현장 장인 충남 첨단산업벨트 원스톱 긴급 출동" }
+      ]
+    },
+    tk: {
+      title: "📍 대구 · 경북 광역 관제 지부",
+      branches: [
+        { badge: "영남 산업벨트", name: "대구광역시 · 경산 · 구미 지부", cov: "대구 전역 · 경산 학원단지 · 구미 국가산단 일대", exp: "국가산단 및 도심 긴급 출동 즉시 복원" },
+        { badge: "동해벨트·관광특구", name: "경북 포항 · 경주 · 영덕 · 영천 지부", cov: "포항시(남·북구) · 경주시 · 영덕군 · 영천시 광역", exp: "철강공단·관광단지·동해선 국산 스마트키 완벽 복원 및 전용 장비 상시 보유" },
+        { badge: "경북도청 신도시", name: "경북 안동 · 예천 지부", cov: "안동 도심 · 경북도청 신도시 · 예천군", exp: "이모빌라이저 키 & 스마트키 순정 코딩 등록" },
+        { badge: "경북 북부 내륙", name: "경북 영주 · 봉화 지부", cov: "영주시 전역 · 봉화군 광역 지원망", exp: "분실키 즉시 판독 및 무손상 개문 전문" },
+        { badge: "소백산 관광특구", name: "경북 풍기 지부", cov: "풍기읍 및 소백산 국립공원 관광 권역", exp: "긴급 차키 복원 및 리모컨 코딩" }
+      ]
+    },
+    pk: {
+      title: "📍 부산 · 울산 · 경남 메가시티 지부",
+      branches: [
+        { badge: "동남권 메가시티", name: "부산 · 울산 · 김해 · 양산 지부", cov: "부산광역시 전역 · 울산광역시 · 김해시 · 양산시 일대", exp: "동남권 전역 신속 출동 및 순정 스마트키 원스톱 복원" },
+        { badge: "국가산단 메카", name: "경남 창원 (의창·성산) 지부", cov: "창원 도심 · 국가산단 · 진해구 권역", exp: "화물·특수차 및 국산 전 차종 스마트키 마스터" },
+        { badge: "경남 해양산단", name: "경남 마산 (합포·회원) 지부", cov: "마산합포구 · 회원구 · 내서읍 산단 일대", exp: "정밀 픽킹 무손상 도어 개문 및 순정키 복원" }
+      ]
+    },
+    honam: {
+      title: "📍 호남 (광주·전남) 광역 특구 지부",
+      branches: [
+        { badge: "호남 광역 특구", name: "전남 광주 · 나주 · 담양 · 장성 지부", cov: "광주광역시 전역 · 나주혁신도시 · 담양군 · 장성군", exp: "호남 거점 긴급출동 · 스마트키 원스톱 복원" },
+        { badge: "국가산단·해양관광", name: "전남 여수 지부", cov: "여수시 도심 · 국가산단 · 돌산 관광벨트", exp: "당일 즉시 제작 및 순정 부품 상시 보유" },
+        { badge: "제철·항만벨트", name: "전남 광양 · 순천 지부", cov: "광양제철소 · 광양항 · 순천만 권역", exp: "산업단지 긴급 출장 및 키박스 복구 전문" }
+      ]
+    }
+  };
+
+  function selectMapRegion(key) {
+    var paths = document.querySelectorAll('.geoPath');
+    paths.forEach(function(p) { p.classList.remove('selected', 'selectedPink'); });
+
+    if(key === 'incheon') {
+      var p1 = document.getElementById('geo-incheon');
+      var p2 = document.getElementById('geo-incheon-ganghwa');
+      var p3 = document.getElementById('geo-incheon-yeongjong');
+      if(p1) p1.classList.add('selectedPink');
+      if(p2) p2.classList.add('selectedPink');
+      if(p3) p3.classList.add('selectedPink');
+    } else {
+      var targetPath = document.getElementById('geo-' + key);
+      if(targetPath) targetPath.classList.add('selected');
+    }
+
+    var data = regionMapData[key];
+    if(!data) return;
+
+    document.getElementById('ctrlBoardTitle').innerText = data.title;
+    document.getElementById('ctrlBoardCount').innerHTML = `<span style="font-size:12px;">●</span> ${data.branches.length}개 지부 실시간 관제`;
+
+    var board = document.getElementById('ctrlBoardCards');
+    board.innerHTML = "";
+
+    data.branches.forEach(function(b) {
+      var item = document.createElement('article');
+      item.className = 'boardCard';
+      item.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
+        </div>
+        <h4 style="font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
+        <div class="cardCovText">${b.cov}</div>
+        <div class="cardExpText">${b.exp}</div>
+        <div class="panelBtnRow">
+          <a href="tel:16009712" class="panelBtn call">📞 직통전화</a>
+          <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
+        </div>
+      `;
+      board.appendChild(item);
+    });
+  }
+
+  // 기본 세팅: 인천광역시 지부 리스트 오픈 (지도는 깔끔한 기본 톤)
+  window.addEventListener('DOMContentLoaded', function() {
+    selectMapRegion('incheon');
+  });
+
+  function toggleNetwork() {
+    var wrap = document.getElementById('networkMoreWrap');
+    var btnText = document.getElementById('networkBtnText');
+    if (wrap.style.display === 'grid') {
+      wrap.style.display = 'none';
+      btnText.innerText = '전국 52개 광역 네트워크 전체보기 (가나다순) ▼';
+    } else {
+      wrap.style.display = 'grid';
+      btnText.innerText = '전국 지부 리스트 접기 ▲';
+    }
+  }
+
   function toggleFaq() {
     var wrap = document.getElementById('faqMoreWrap');
-    var btnText = document.getElementById('faqBtnText');
     var btn = document.getElementById('btnFaqToggle');
-    
     if (wrap.style.display === 'flex') {
       wrap.style.display = 'none';
-      btnText.innerText = 'VIEW MORE FAQ (13) +';
-      btn.classList.remove('active');
+      btn.innerText = '자주 묻는 질문 더보기 +';
     } else {
       wrap.style.display = 'flex';
-      btnText.innerText = 'CLOSE FAQ -';
-      btn.classList.add('active');
+      btn.innerText = '닫기 -';
     }
   }
 
