@@ -41,17 +41,21 @@
       --bg-card: #1E293B;
       --border-card: #334155;
       --neon-yellow: #FEE838;
+      --neon-yellow-glow: rgba(254, 232, 56, 0.95);
       --neon-pink: #FF007A;
       --neon-pink-glow: rgba(255, 0, 122, 0.75);
+      --neon-red: #FF1E44;
+      --neon-red-glow: rgba(255, 30, 68, 0.85);
       --clear-cyan: #67E8F9;
+      --clear-cyan-glow: rgba(103, 232, 249, 0.95);
       --text-main: #FFFFFF;
       --text-clean: #E2E8F0;
       --text-bright: #F1F5F9;
       --text-muted: #94A3B8;
       --black: #000000;
-      --map-sea: #0A111F;
-      --map-land: #26354D;
-      --map-stroke: #475B7A;
+      --map-sea: #080D18;
+      --map-land: #1E2B40;
+      --map-stroke: #526E96;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,12 +83,12 @@
     img, video { max-width: 100%; height: auto; display: block; }
     .wrap { max-width: 1380px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
-    /* ================= 0. Top Clock Bar (시간 엄수 상단 듀얼 시계) ================= */
+    /* ================= 0. Top Clock Bar ================= */
     .topClockTicker {
       background: #060911;
-      border-bottom: 1px solid #1E293B;
-      padding: 7px 0;
-      font-size: 13px;
+      border-bottom: 1.5px solid #1E293B;
+      padding: 10px 0;
+      font-size: 14px;
       color: var(--text-muted);
       letter-spacing: -0.01em;
     }
@@ -98,22 +102,53 @@
     .clockMotto {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       color: var(--text-clean);
       font-weight: 600;
     }
     .clockMottoDot {
-      width: 7px;
-      height: 7px;
+      width: 9px;
+      height: 9px;
       background: var(--neon-yellow);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--neon-yellow);
+      box-shadow: 0 0 12px var(--neon-yellow);
       animation: alertPulse 1.8s infinite;
     }
     .clockMotto b {
       color: var(--neon-yellow);
       font-weight: 700;
     }
+    
+    .tagFraudShield {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #000;
+      color: #FF2E93;
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 900;
+      padding: 5px 15px;
+      margin-left: 10px;
+      border-radius: 5px;
+      border: 2px solid var(--neon-pink);
+      box-shadow: 0 0 14px var(--neon-pink-glow);
+      letter-spacing: -0.01em;
+      animation: fraudAlertPulse 1.6s infinite ease-in-out;
+    }
+    @keyframes fraudAlertPulse {
+      0%, 100% {
+        box-shadow: 0 0 12px rgba(255, 0, 122, 0.4);
+        border-color: #FF007A;
+        color: #FF2E93;
+      }
+      50% {
+        box-shadow: 0 0 28px rgba(255, 30, 68, 0.95), inset 0 0 8px rgba(255, 0, 122, 0.4);
+        border-color: #FFFFFF;
+        color: #FFFFFF;
+      }
+    }
+
     .clockTimesWrap {
       display: flex;
       align-items: center;
@@ -243,7 +278,7 @@
       padding: 85px 0 95px;
       width: 100%;
     }
-    .heroGrid { display: grid; grid-template-columns: 1.25fr 0.75fr; align-items: center; gap: 50px; }
+    .heroGrid { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 40px; }
 
     .reserveBadgeBig {
       display: inline-flex;
@@ -326,67 +361,138 @@
       transform: translateY(-3px);
     }
 
-    .sideHeroArea { max-width: 460px; margin-left: auto; width: 100%; display: flex; flex-direction: column; }
-    .sideHeroMedia { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 3px solid var(--border-card); box-shadow: 0 12px 30px rgba(0,0,0,0.7); margin-bottom: 14px; background: #000; border-radius: 6px; }
-    .sideCardTitle { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.02em; color: var(--neon-yellow); }
-    
-    .sideTagRow { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 12px; width: 100%; }
-    .sideTagBtn {
-      border: 2px solid var(--border-card);
-      height: 56px;
-      background: var(--bg-surface);
+    /* 우측 4단계 슬라이더 */
+    .heroStepSliderWrap {
+      width: 100%;
+      background: #080E1B;
+      border: 3px solid var(--border-card);
+      border-radius: 10px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sliderHeaderBar {
+      background: #0D1629;
+      border-bottom: 2px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sliderHeaderTitle {
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--neon-yellow);
+      letter-spacing: 0.05em;
       display: flex;
       align-items: center;
+      gap: 8px;
+    }
+    .sliderAutoDot {
+      width: 9px;
+      height: 9px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10B981;
+      animation: pulseLive 1.5s infinite;
+    }
+    .sliderTrack {
+      position: relative;
+      width: 100%;
+      min-height: 380px;
+      overflow: hidden;
+    }
+    .slideItem {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      padding: 34px 28px;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      white-space: nowrap;
-      padding: 0 12px;
-      color: #fff;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      cursor: pointer;
+      pointer-events: none;
     }
-    .sideTagBtn:hover {
-      border-color: var(--neon-yellow);
-      transform: translateY(-2px);
-      box-shadow: 0 0 15px rgba(254, 232, 56, 0.35);
+    .slideItem.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
     }
-    .sideTagBtn.tagPhone {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 26px;
-      font-weight: 900;
-      line-height: 1;
-      color: var(--neon-yellow);
-      letter-spacing: -0.01em;
-    }
-    .sideTagBtn.tagKo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      color: #ffffff;
-    }
-
-    /* 공통 섹션 헤더 */
-    .secHeader { margin-bottom: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-    .secHeaderTitle { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; text-transform: uppercase; line-height: 1; color: #fff; letter-spacing: 0.02em; }
-    
-    .secHeaderBadgePulse {
-      display: inline-flex;
+    .slideBadgeRow {
+      display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .slideBadgeNum {
       background: #000;
       color: var(--neon-yellow);
-      font-size: 22px;
-      font-weight: 900;
-      padding: 12px 26px;
-      border: 3px solid var(--neon-yellow);
-      border-radius: 6px;
-      box-shadow: 0 0 20px rgba(254, 232, 56, 0.45);
-      animation: alertPulse 1.8s infinite ease-in-out;
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 4px;
+      box-shadow: 0 0 14px rgba(254, 232, 56, 0.35);
     }
+    .slideTag {
+      background: rgba(103, 232, 249, 0.15);
+      color: var(--clear-cyan);
+      font-size: 13.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--clear-cyan);
+    }
+    .slideHeading {
+      font-size: 25px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 18px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+    .slideBodyText {
+      font-size: 17px;
+      color: var(--text-clean);
+      line-height: 1.8;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 18px;
+      letter-spacing: -0.015em;
+    }
+    .slideBodyText strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .sliderIndicatorRow {
+      background: #09101E;
+      border-top: 1.5px solid #23334D;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sliderDots { display: flex; gap: 8px; }
+    .sDot {
+      width: 14px;
+      height: 6px;
+      background: #334155;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .sDot.active {
+      width: 32px;
+      background: var(--neon-yellow);
+      box-shadow: 0 0 10px rgba(254, 232, 56, 0.7);
+    }
+    .sliderLiveNotice { font-size: 12.5px; font-weight: 700; color: var(--text-muted); }
 
-    /* ================= 3. About Us Section ================= */
+    /* ================= 3. About Us Section & 카드뉴스 슬라이더 ================= */
     .aboutSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
     .aboutGrid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
     
@@ -448,7 +554,159 @@
     .statBox { border: 2px solid var(--border-card); padding: 18px 14px; background: var(--bg-surface); text-align: center; border-radius: 4px; }
     .statNum { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; display: block; line-height: 1; margin-bottom: 6px; color: var(--neon-yellow); }
     .statLabel { font-size: 13.5px; font-weight: 700; color: var(--text-muted); }
-    .aboutMediaBox { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 3px solid var(--border-card); box-shadow: 0 15px 35px rgba(0,0,0,0.7); background: #000; border-radius: 6px; }
+
+    /* ABOUT US 전용 카드뉴스 슬라이더 (기존 잠망경 영상/사진 완전 대체) */
+    .aboutNewsSliderBox {
+      width: 100%;
+      background: #09101E;
+      border: 3px solid var(--border-card);
+      border-radius: 10px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .newsSliderTopBar {
+      background: #0F1A2E;
+      border-bottom: 2px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .newsTopBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--clear-cyan);
+      letter-spacing: 0.05em;
+    }
+    .newsTopDot {
+      width: 8px;
+      height: 8px;
+      background: var(--clear-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--clear-cyan);
+      animation: alertPulse 1.8s infinite;
+    }
+    .newsTrackArea {
+      position: relative;
+      width: 100%;
+      min-height: 440px;
+      overflow: hidden;
+    }
+    .newsSlideItem {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      padding: 32px 28px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .newsSlideItem.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .newsCopyBadge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border: 1.5px solid var(--neon-yellow);
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px rgba(254, 232, 56, 0.25);
+    }
+    .newsHeadline {
+      font-size: 22.5px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .newsContentList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 16px;
+      margin-bottom: 18px;
+    }
+    .newsContentList li {
+      font-size: 15.5px;
+      color: var(--text-clean);
+      line-height: 1.7;
+      position: relative;
+      padding-left: 18px;
+      letter-spacing: -0.01em;
+    }
+    .newsContentList li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--clear-cyan);
+      font-size: 18px;
+    }
+    .newsTagRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .newsTag {
+      background: #152238;
+      color: var(--clear-cyan);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #273854;
+      letter-spacing: -0.01em;
+    }
+    .newsSliderControlBar {
+      background: #0B1424;
+      border-top: 1.5px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .newsDots { display: flex; gap: 8px; }
+    .nDot {
+      width: 14px;
+      height: 6px;
+      background: #334155;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nDot.active {
+      width: 32px;
+      background: var(--clear-cyan);
+      box-shadow: 0 0 10px rgba(103, 232, 249, 0.7);
+    }
+    .newsTimerText {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
 
     /* ================= 4. 전국 인터랙티브 관제 지도 ================= */
     .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
@@ -460,13 +718,13 @@
       box-shadow: 0 20px 45px rgba(0,0,0,0.75);
       padding: 34px;
       display: grid;
-      grid-template-columns: 710px 1fr;
+      grid-template-columns: 740px 1fr;
       gap: 36px;
       border-radius: 8px;
       position: relative;
     }
     .mapViewWrapper {
-      background: #09101E;
+      background: #060B14;
       border: 2px solid #23334D;
       padding: 24px 18px;
       display: flex;
@@ -507,35 +765,64 @@
 
     .koreaDetailedSvg {
       width: 100%;
-      max-width: 670px;
+      max-width: 710px;
       height: auto;
-      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
+      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.85));
       touch-action: manipulation;
     }
     .geoPath {
       fill: var(--map-land);
       stroke: var(--map-stroke);
-      stroke-width: 2.2;
+      stroke-width: 3.2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
       cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .geoPath:hover {
-      fill: #394C6D !important;
+      fill: #2B3D59 !important;
       stroke: var(--neon-yellow) !important;
-      stroke-width: 4.5 !important;
-      filter: drop-shadow(0 0 20px rgba(254, 232, 56, 0.95)) !important;
+      stroke-width: 5 !important;
+      filter: drop-shadow(0 0 24px rgba(254, 232, 56, 0.95)) !important;
     }
+    
+    .geoPath.directTerritoryRedGlow {
+      fill: #142033 !important;
+      stroke: var(--neon-red) !important;
+      stroke-width: 3.6 !important;
+      filter: drop-shadow(0 0 10px rgba(255, 30, 68, 0.75));
+    }
+    .geoPath.directTerritoryRedGlow:hover {
+      fill: #0E3656 !important;
+      stroke: var(--clear-cyan) !important;
+      stroke-width: 5.5 !important;
+      filter: drop-shadow(0 0 32px var(--clear-cyan-glow)) !important;
+    }
+
+    .geoPath.seoulBrightCenter {
+      fill: url(#seoulGoldGradient) !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 4.5 !important;
+      filter: drop-shadow(0 0 22px var(--neon-yellow-glow)) drop-shadow(0 0 6px #FFFFFF) !important;
+    }
+    .geoPath.seoulBrightCenter:hover {
+      fill: #FFFFFF !important;
+      stroke: var(--neon-yellow) !important;
+      stroke-width: 6 !important;
+      filter: drop-shadow(0 0 35px rgba(254, 232, 56, 1)) !important;
+    }
+
     .geoPath.selectedPink {
       fill: var(--neon-pink) !important;
       stroke: #FFFFFF !important;
-      stroke-width: 4 !important;
-      filter: drop-shadow(0 0 25px var(--neon-pink-glow)) !important;
+      stroke-width: 5 !important;
+      filter: drop-shadow(0 0 28px var(--neon-pink-glow)) !important;
     }
     .geoPath.selected {
       fill: #2563EB !important;
       stroke: #FFFFFF !important;
-      stroke-width: 4 !important;
-      filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.9)) !important;
+      stroke-width: 5 !important;
+      filter: drop-shadow(0 0 28px rgba(37, 99, 235, 0.9)) !important;
     }
 
     .mapCityLabel {
@@ -546,13 +833,15 @@
       text-anchor: middle;
       paint-order: stroke fill;
       stroke: #0A111E;
-      stroke-width: 6px;
+      stroke-width: 7px;
       stroke-linecap: round;
       stroke-linejoin: round;
       letter-spacing: -0.02em;
     }
     .mapCityLabel.mainLarge { font-size: 24px; fill: var(--neon-yellow); }
     .mapCityLabel.subIsland { font-size: 17px; fill: var(--clear-cyan); }
+    .mapCityLabel.subNodeText { font-size: 14.5px; fill: var(--clear-cyan); }
+    .mapCityLabel.seoulBoldText { font-size: 27px; fill: #000000; stroke: #FFFFFF; stroke-width: 4.5px; font-weight: 900; }
 
     .mapPinNode { cursor: pointer; transition: transform 0.2s; }
     .mapPinNode:hover { transform: scale(1.3); }
@@ -789,15 +1078,94 @@
     .netCallText { font-size: 17.5px; font-weight: 700; color: #fff; }
     .netCallText strong { color: var(--neon-yellow); }
 
-    /* ================= 5. Cases Section ================= */
+    /* ================= 5. Cases Section (4단계 원스톱 프로세스) ================= */
     .caseSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
-    .caseList { display: flex; flex-direction: column; gap: 40px; }
-    .caseItem { display: grid; grid-template-columns: 140px 320px 1fr; align-items: start; gap: 30px; }
-    .caseDate { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: var(--neon-yellow); }
-    .caseImg img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 2px solid var(--border-card); background: #000; border-radius: 4px; }
-    .caseHeading { font-family: 'Oswald', sans-serif; font-size: 34px; line-height: 1.1; font-weight: 700; margin-bottom: 10px; color: #fff; }
-    .caseBadge { display: inline-block; border: 1.5px solid var(--neon-yellow); padding: 5px 12px; font-size: 12px; font-weight: 700; background: #000; color: var(--neon-yellow); margin-bottom: 12px; border-radius: 3px; }
-    .caseDesc { font-size: 16.5px; font-weight: 400; line-height: 1.7; max-width: 620px; color: var(--text-clean); }
+    .stepProcessGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .stepProcessCard {
+      background: var(--bg-card);
+      border: 2px solid var(--border-card);
+      border-radius: 8px;
+      padding: 30px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: all 0.25s ease;
+    }
+    .stepProcessCard:hover {
+      border-color: var(--neon-yellow);
+      transform: translateY(-4px);
+      box-shadow: 0 0 22px rgba(254, 232, 56, 0.35);
+    }
+    .stepBadgeRow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .stepBadgeNum {
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border: 1.5px solid var(--neon-yellow);
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .stepGuaranteeTag {
+      background: rgba(103, 232, 249, 0.12);
+      color: var(--clear-cyan);
+      font-size: 13.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--clear-cyan);
+      letter-spacing: -0.02em;
+    }
+    .stepTitle {
+      font-size: 23px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+    .stepDescList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 16px;
+    }
+    .stepDescList li {
+      font-size: 16px;
+      color: var(--text-clean);
+      line-height: 1.75;
+      position: relative;
+      padding-left: 20px;
+      letter-spacing: -0.015em;
+    }
+    .stepDescList li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--neon-yellow);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .stepDescList li strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
 
     /* ================= 6. FAQ Section ================= */
     .faqSection { background-color: var(--bg-surface); color: #fff; padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
@@ -863,10 +1231,6 @@
       .navCallLarge .badgeText { font-size: 14px; }
       .navCallLarge b { font-size: 19px; }
 
-      .clockTickerInner { justify-content: center; gap: 8px; }
-      .clockMotto { display: none; }
-      .clockTimesWrap { gap: 12px; font-size: 12px; }
-
       .heroSection { padding: 45px 0 55px; }
       .heroGrid { grid-template-columns: 1fr; gap: 28px; }
       .reserveBadgeBig { font-size: 15px; padding: 10px 16px; width: 100%; justify-content: center; }
@@ -874,26 +1238,39 @@
       .mainDesc { font-size: 16px; }
       .ctaGroup { flex-direction: column; width: 100%; gap: 12px; }
       .btnActionLarge { width: 100%; padding: 15px; font-size: 16.5px; }
-      .sideHeroArea { margin-left: 0; max-width: 100%; }
-
-      .secHeaderTitle { font-size: 32px; }
-      .secHeaderBadgePulse { font-size: 17px; padding: 8px 16px; }
+      
+      .heroStepSliderWrap { margin-top: 10px; }
+      .sliderTrack { min-height: 330px; }
+      .slideItem { padding: 24px 18px; }
+      .slideHeading { font-size: 20px; }
+      .slideBodyText { font-size: 15px; }
 
       .aboutSection { padding: 55px 0 65px; }
-      .aboutGrid { grid-template-columns: 1fr; gap: 26px; }
+      .aboutGrid { grid-template-columns: 1fr; gap: 32px; }
       .aboutHeading { font-size: 26px; }
       .aboutTistoryBtnBig { font-size: 15px; padding: 14px; }
+      .newsTrackArea { min-height: 410px; }
+      .newsSlideItem { padding: 24px 18px; }
+      .newsHeadline { font-size: 19px; }
+      .newsContentList li { font-size: 14.5px; }
 
       .mapControlCenter { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
       .boardScrollArea { grid-template-columns: 1fr; max-height: 380px; }
+
+      .clockTickerInner { justify-content: center; gap: 8px; }
+      .clockMotto { flex-direction: column; gap: 4px; }
+      .clockTimesWrap { gap: 12px; font-size: 12px; }
+
+      .secHeaderTitle { font-size: 32px; }
+      .secHeaderBadgePulse { font-size: 17px; padding: 8px 16px; }
 
       .networkSection { padding: 55px 0 65px; }
       .networkGrid, .networkMoreWrap { grid-template-columns: 1fr; gap: 14px; }
       .netCallBanner { flex-direction: column; align-items: flex-start; }
 
       .caseSection { padding: 55px 0 65px; }
-      .caseItem { grid-template-columns: 1fr; gap: 14px; border-bottom: 1.5px dashed var(--border-card); padding-bottom: 24px; }
-      .caseHeading { font-size: 26px; }
+      .stepProcessGrid { grid-template-columns: 1fr; gap: 16px; }
+      .stepTitle { font-size: 20px; }
 
       .faqSection { padding: 55px 0 65px; }
       .faqMainTitle { font-size: 32px; }
@@ -932,12 +1309,13 @@
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-<!-- 0. Top Clock Bar (최상단 실시간 디지털 시계) -->
+<!-- 0. Top Clock Bar (최상단 실시간 디지털 시계 & 강력 점멸 부정클릭 감시) -->
 <div class="topClockTicker">
   <div class="wrap clockTickerInner">
     <div class="clockMotto">
       <span class="clockMottoDot"></span>
       <span>긴급출동 생명선 · <b>시간 약속 엄수(Punctuality)</b> 실시간 관제 중</span>
+      <span class="tagFraudShield">🚨 부정클릭 IP 실시간 감시 중</span>
     </div>
     <div class="clockTimesWrap">
       <div class="clockItem">
@@ -976,7 +1354,7 @@
 </header>
 
 <main id="top">
-  <!-- 2. Hero Section -->
+  <!-- 2. Hero Section (우측: 4단계 자동 슬라이드 쇼 카드) -->
   <section class="heroSection">
     <div class="wrap heroGrid">
       <div>
@@ -999,22 +1377,80 @@
         </div>
       </div>
 
-      <div class="sideHeroArea">
-        <video class="sideHeroMedia" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80">
-          <source src="내 영상 1.mp4" type="video/mp4">
-          <source src="assets/내 영상 1.mp4" type="video/mp4">
-          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="차키 시동 실전">
-        </video>
-        <div class="sideCardTitle">SMART KEY - PRODUCTION & CODING</div>
-        <div class="sideTagRow">
-          <a class="sideTagBtn tagPhone" href="tel:16009712">1600-9712</a>
-          <a class="sideTagBtn tagKo" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">키앤키닷컴</a>
+      <!-- 우측 4단계 라이브 인터랙티브 슬라이드 쇼 -->
+      <div class="heroStepSliderWrap">
+        <div class="sliderHeaderBar">
+          <div class="sliderHeaderTitle">
+            <span class="sliderAutoDot"></span>
+            <span>원스톱 현장 접수 & 해결 4단계 프로세스</span>
+          </div>
+          <span style="font-size:12px; font-weight:800; color:var(--clear-cyan); letter-spacing:0.05em;">AUTO PLAY</span>
+        </div>
+
+        <div class="sliderTrack">
+          <!-- SLIDE 1 -->
+          <div class="slideItem active" id="heroSlide-0">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 01</span>
+              <span class="slideTag">100% 사전 확정 정찰제</span>
+            </div>
+            <h3 class="slideHeading">사전 정보 확인 & 100% 확정 정찰 견적</h3>
+            <p class="slideBodyText">
+              대표번호(<strong>1600-9712</strong>)로 <strong>[차량 번호]</strong>와 <strong>시동 방식</strong>(버튼 스마트키 / 폴딩키 / 꽂는 키)을 확인 후, 현장에서 1원의 추가금도 없는 <strong>'100% 사전 확정 정찰 견적'</strong>을 투명하게 안내합니다.
+            </p>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="slideItem" id="heroSlide-1">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 02</span>
+              <span class="slideTag">시간 엄수 책임 보증</span>
+            </div>
+            <h3 class="slideHeading">약속 시간 엄수를 위한 책임 예약 보증</h3>
+            <p class="slideBodyText">
+              100% 시간 약속 엄수를 위해 <strong>'책임 예약 보증제'</strong>로 운영됩니다. 상호 신뢰를 위한 예약 확인 즉시 관제망을 통해 가장 인접한 <strong>20년 베테랑 엔지니어가 전담 배차</strong>되어 출동 준비를 마칩니다.
+            </p>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="slideItem" id="heroSlide-2">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 03</span>
+              <span class="slideTag">도난 방지 법적 절차</span>
+            </div>
+            <h3 class="slideHeading">현장 직통 출동 & 필수 본인 확인 절차</h3>
+            <p class="slideBodyText">
+              지하주차장, 비탈길 상관없이 <strong>모바일 랩(전용 출동차)이 현장으로 즉시 도착</strong>합니다. 도난·무단복제 방지를 위해 <strong>[신분증]</strong>과 <strong>[자동차등록증]</strong> 일치 여부를 대조 확인 후 안전하게 작업을 개시합니다.
+            </p>
+          </div>
+
+          <!-- SLIDE 4 -->
+          <div class="slideItem" id="heroSlide-3">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 04</span>
+              <span class="slideTag">정품 검수 & 매너 시공</span>
+            </div>
+            <h3 class="slideHeading">무손상 정밀 가공 · 배터리 전압 실측 & 인도</h3>
+            <p class="slideBodyText">
+              <strong>100% 무손상 픽킹 및 최첨단 CNC 가공</strong>을 거칩니다. 조립 전 고객님 눈앞에서 <strong>배터리 전압(3.0V 이상)을 실측 검수</strong>하며, <strong>비탑승·무접촉 청결 매너</strong>로 완벽한 시동 키를 최종 인도합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="sliderIndicatorRow">
+          <div class="sliderDots">
+            <div class="sDot active" onclick="gotoHeroSlide(0)"></div>
+            <div class="sDot" onclick="gotoHeroSlide(1)"></div>
+            <div class="sDot" onclick="gotoHeroSlide(2)"></div>
+            <div class="sDot" onclick="gotoHeroSlide(3)"></div>
+          </div>
+          <span class="sliderLiveNotice">⏱ 3.8초 단위 자동 순환 관제</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. About Us Section -->
+  <!-- 3. About Us Section (우측: 20년 현장 엔지니어 직통 카드뉴스 4초 자동 순환 슬라이더) -->
   <section id="about" class="aboutSection">
     <div class="wrap">
       <div class="secHeader">
@@ -1042,31 +1478,92 @@
           </div>
         </div>
 
-        <div class="aboutImgBox">
-          <video class="aboutMediaBox" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80">
-            <source src="내 영상 2.mp4" type="video/mp4">
-            <source src="assets/내 영상 2.mp4" type="video/mp4">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="키앤키 현장 장비 및 작업">
-          </video>
+        <!-- ABOUT US 우측: 20년 현장 엔지니어 직통 카드뉴스 (4초 자동 순환형) -->
+        <div class="aboutNewsSliderBox">
+          <div class="newsSliderTopBar">
+            <div class="newsTopBadge">
+              <span class="newsTopDot"></span>
+              <span>20+ YEARS MASTER CARD NEWS</span>
+            </div>
+            <span style="font-size:12px; font-weight:800; color:var(--neon-yellow); letter-spacing:0.05em;">AUTO PLAY</span>
+          </div>
+
+          <div class="newsTrackArea">
+            <!-- CARD 01 -->
+            <div class="newsSlideItem active" id="newsSlide-0">
+              <span class="newsCopyBadge">DIRECT MASTER CONSULTING</span>
+              <h4 class="newsHeadline">"차도 모르는 일반 상담원이 중간에서 전달하는 콜센터가 아닙니다."</h4>
+              <ul class="newsContentList">
+                <li>현장 기술을 전혀 모르는 콜센터가 기계적으로 접수해 하청 넘기는 플랫폼 구조를 완전히 차단합니다.</li>
+                <li><strong>20년 현장 엔지니어 대표가 직접 전화</strong>를 받아 차종·연식·증상·키 타입을 1초 만에 정확히 진단합니다.</li>
+                <li>현장을 아는 마스터가 직접 소통하기에 말단 전달 오류와 불필요한 대기 시간이 <strong>0%</strong>입니다.</li>
+              </ul>
+              <div class="newsTagRow">
+                <span class="newsTag">#엔지니어직접상담</span>
+                <span class="newsTag">#콜센터하청차단</span>
+                <span class="newsTag">#정확한현장진단</span>
+              </div>
+            </div>
+
+            <!-- CARD 02 -->
+            <div class="newsSlideItem" id="newsSlide-1">
+              <span class="newsCopyBadge">TRUSTED BY METICULOUS DRIVERS</span>
+              <h4 class="newsHeadline">"디테일에 민감한 여성 고객과 약속 시간이 생명인 분들의 1순위 선택"</h4>
+              <ul class="newsContentList">
+                <li>견적 뻥튀기나 불친절 없는 <strong>100% 투명 사전 정찰제</strong>로 여성 차주분들의 만족도와 재이용률이 압도적입니다.</li>
+                <li>바쁜 일정을 방해하지 않는 <strong>'100% 사전 예약 우선제'</strong>로 고객과의 약속 시간을 분 단위까지 철저히 엄수합니다.</li>
+                <li>차키 가공부터 시동 코딩까지 차주님 보는 앞에서 한 치의 오차 없이 깔끔하고 안전하게 복원을 완료합니다.</li>
+              </ul>
+              <div class="newsTagRow">
+                <span class="newsTag">#여성운전자안심업체</span>
+                <span class="newsTag">#시간약속분단위엄수</span>
+                <span class="newsTag">#사전정밀예약제</span>
+              </div>
+            </div>
+
+            <!-- CARD 03 -->
+            <div class="newsSlideItem" id="newsSlide-2">
+              <span class="newsCopyBadge">20+ YEARS CRAFTSMANSHIP & MANNER</span>
+              <h4 class="newsHeadline">"20년 베테랑의 기술력에 단정한 청결 매너를 더했습니다."</h4>
+              <ul class="newsContentList">
+                <li>초보 기사를 전면 배제하고, 각 지역에서 <strong>20년 이상 검증된 정통 장인들</strong>만 모인 순수 기술 네트워크입니다.</li>
+                <li>불필요하게 차내에 탑승하지 않는 <strong>'비탑승·무접촉 청결 작업'</strong>으로 시트 오염 및 내부 손상을 원천 방지합니다.</li>
+                <li>차문 강제 벌림 없는 <strong>100% 정밀 픽킹</strong> & 조립 전 <strong>배터리 3.0V 테스터기 실측 검수</strong> 후 안전하게 인도합니다.</li>
+              </ul>
+              <div class="newsTagRow">
+                <span class="newsTag">#중개수수료0원</span>
+                <span class="newsTag">#비탑승청결매너</span>
+                <span class="newsTag">#20년베테랑마스터</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="newsSliderControlBar">
+            <div class="newsDots">
+              <div class="nDot active" onclick="gotoNewsSlide(0)"></div>
+              <div class="nDot" onclick="gotoNewsSlide(1)"></div>
+              <div class="nDot" onclick="gotoNewsSlide(2)"></div>
+            </div>
+            <span class="newsTimerText">⏱ 4.0초 단위 자동 순환 카드뉴스</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. 전국 인터랙티브 관제 지도 -->
+  <!-- 4. 전국 인터랙티브 관제 지도 (서울 환한 골드 & 호남 4대 거점 핀) -->
   <section id="network" class="networkSection">
     <div class="wrap">
       <div class="secHeader">
         <h2 class="secHeaderTitle">NATIONWIDE MASTERS NETWORK</h2>
         <span class="secHeaderBadgePulse">
-          <span>⏱️️ 실시간 긴급출동 관제망</span>
+          <span>⏱ 실시간 긴급출동 관제망</span>
         </span>
       </div>
       <p class="networkIntro">
         키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역을 유기적으로 관제·출동합니다.
       </p>
 
-      <!-- 대형 관제 센터 그래픽 지도 -->
       <div class="mapControlCenter">
         <div class="mapViewWrapper">
           <div class="mapTopStatus">
@@ -1074,8 +1571,15 @@
             <span>지역을 누르면 상세 지부가 실시간 전환됩니다</span>
           </div>
 
-          <svg class="koreaDetailedSvg" viewBox="0 0 640 940" xmlns="http://www.w3.org/2000/svg">
+          <!-- 대형화된 꽉 찬 남한 전도 SVG -->
+          <svg class="koreaDetailedSvg" viewBox="0 0 660 940" xmlns="http://www.w3.org/2000/svg">
             <defs>
+              <linearGradient id="seoulGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF566" />
+                <stop offset="50%" stop-color="#FEE838" />
+                <stop offset="100%" stop-color="#EAB308" />
+              </linearGradient>
+
               <filter id="glowBigPinkPin" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="6" result="blur" />
                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -1086,45 +1590,56 @@
               </filter>
             </defs>
 
-            <!-- [1. 지형 PATH 그룹] -->
+            <!-- [1. 지형 PATH 그룹: 틈새 0px 완전 결합 & 호남 축소 & 서울 황금빛 입체 강조] -->
             <g id="map-geo-paths">
-              <path class="geoPath" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
-                    d="M 205,120 L 295,110 L 335,170 L 330,215 L 285,215 L 205,200 L 190,165 Z" />
+              <!-- 경기 북부 -->
+              <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
+                    d="M 175,195 L 205,120 L 295,100 L 335,160 L 335,225 L 290,215 L 270,185 L 210,185 L 180,210 Z" />
 
-              <path class="geoPath" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
-                    d="M 185,265 L 285,260 L 335,245 L 340,310 L 300,380 L 220,375 L 175,335 L 175,270 Z" />
+              <!-- 서울 특별시 (황금빛 골드 네온 발광) -->
+              <path class="geoPath seoulBrightCenter" id="geo-seoul" onclick="selectMapRegion('seoul')"
+                    d="M 180,210 L 210,185 L 270,185 L 290,215 L 295,255 L 265,270 L 205,270 L 175,250 Z" />
 
+              <!-- 경기 남부 -->
+              <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
+                    d="M 175,250 L 205,270 L 265,270 L 295,255 L 335,225 L 340,320 L 300,380 L 220,380 L 160,270 L 175,250 Z" />
+
+              <!-- 강원 영서·동해벨트 -->
               <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
-                    d="M 295,110 L 420,95 L 525,195 L 580,305 L 475,360 L 340,310 L 335,170 Z" />
+                    d="M 295,100 L 420,85 L 530,190 L 590,305 L 475,360 L 340,320 L 335,160 Z" />
 
+              <!-- 인천광역시 전역 -->
               <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
-                    d="M 80,110 L 145,100 L 150,155 L 115,170 L 75,145 Z" />
+                    d="M 80,105 L 150,95 L 155,155 L 115,170 L 75,145 Z" />
               <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
-                    d="M 35,200 L 100,190 L 110,250 L 55,265 L 30,235 Z" />
+                    d="M 35,195 L 105,185 L 115,250 L 55,265 L 30,235 Z" />
               <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
-                    d="M 115,195 L 175,195 L 170,260 L 180,305 L 130,315 L 100,280 L 100,220 Z" />
+                    d="M 115,195 L 175,195 L 175,250 L 160,270 L 125,320 L 95,280 L 100,215 Z" />
 
-              <path class="geoPath" id="geo-seoul" onclick="selectMapRegion('seoul')"
-                    d="M 195,185 L 275,175 L 285,245 L 205,255 L 185,220 Z" />
-
+              <!-- 충북 제천·충주 내륙특구 -->
               <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
-                    d="M 335,270 L 415,285 L 440,365 L 385,420 L 300,380 L 340,310 Z" />
+                    d="M 340,320 L 475,360 L 440,430 L 380,430 L 300,380 Z" />
 
+              <!-- 대전·세종·충남 -->
               <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
-                    d="M 160,270 L 220,375 L 300,380 L 385,420 L 360,520 L 235,510 L 125,435 L 110,335 Z" />
+                    d="M 160,270 L 220,380 L 300,380 L 380,430 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
 
+              <!-- 대구·경북 TK -->
               <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
-                    d="M 475,360 L 580,305 L 630,460 L 610,550 L 490,560 L 430,530 L 440,430 L 385,420 Z" />
+                    d="M 475,360 L 590,305 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 L 440,430 Z" />
 
+              <!-- 부산·울산·경남 PK -->
               <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
-                    d="M 430,530 L 490,560 L 610,550 L 595,650 L 545,715 L 415,720 L 365,605 L 420,535 Z" />
+                    d="M 370,520 L 420,535 L 490,560 L 615,550 L 600,655 L 550,720 L 400,720 L 345,595 Z" />
 
+              <!-- 호남 (광주·전남) -->
               <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
-                    d="M 125,435 L 235,510 L 360,520 L 365,605 L 415,720 L 305,790 L 160,785 L 85,640 L 80,500 Z" />
+                    d="M 120,440 L 235,510 L 370,520 L 345,595 L 400,720 L 290,780 L 160,775 L 80,630 Z" />
             </g>
 
             <!-- [2. 펄스 핀 레이어] -->
             <g id="map-radar-pins">
+              <!-- 인천 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
                 <circle class="pinPulse" cx="140" cy="285" r="9" fill="none" stroke="#FF007A" />
                 <circle cx="140" cy="285" r="9" fill="#FF007A" stroke="#FFFFFF" stroke-width="2.5" filter="url(#glowBigPinkPin)" />
@@ -1137,41 +1652,94 @@
                 <circle class="pinPulse" cx="115" cy="160" r="7" fill="none" stroke="#FF007A" />
                 <circle cx="115" cy="160" r="6.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
+
+              <!-- 서울 핀 (골드 입체 발광) -->
               <g class="mapPinNode" onclick="selectMapRegion('seoul')">
-                <circle class="pinPulse" cx="240" cy="245" r="9.5" fill="none" stroke="#FEE838" />
-                <circle cx="240" cy="245" r="10" fill="#FEE838" stroke="#000" stroke-width="2.5" filter="url(#glowBigPin)" />
+                <circle class="pinPulse" cx="240" cy="225" r="10" fill="none" stroke="#FEE838" />
+                <circle cx="240" cy="225" r="11" fill="#FEE838" stroke="#000" stroke-width="2.8" filter="url(#glowBigPin)" />
               </g>
+
+              <!-- 경기 북부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <circle class="pinPulse" cx="265" cy="175" r="8" fill="none" stroke="#10B981" />
-                <circle cx="265" cy="175" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="265" cy="160" r="8" fill="none" stroke="#10B981" />
+                <circle cx="265" cy="160" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
               </g>
+
+              <!-- 경기 남부 메인 핀 (수원·성남) -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <circle class="pinPulse" cx="250" cy="335" r="8" fill="none" stroke="#10B981" />
-                <circle cx="250" cy="335" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="230" cy="305" r="8" fill="none" stroke="#10B981" />
+                <circle cx="230" cy="305" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
               </g>
+
+              <!-- 경기 남부 거점 핀: [용인 · 광주 · 이천] -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="295" cy="315" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="295" cy="315" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="2" />
+              </g>
+
+              <!-- 경기 남부 거점 핀: [평택 · 안성 · 천안] -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="255" cy="365" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="255" cy="365" r="7.5" fill="#FEE838" stroke="#000" stroke-width="2" />
+              </g>
+
+              <!-- 강원 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
-                <circle class="pinPulse" cx="430" cy="255" r="9" fill="none" stroke="#38BDF8" />
-                <circle cx="430" cy="255" r="9" fill="#38BDF8" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="430" cy="245" r="9" fill="none" stroke="#38BDF8" />
+                <circle cx="430" cy="245" r="9" fill="#38BDF8" stroke="#000" stroke-width="2" />
               </g>
+              <!-- 충북 제천·충주 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
-                <circle class="pinPulse" cx="370" cy="375" r="8.5" fill="none" stroke="#38BDF8" />
-                <circle cx="370" cy="375" r="8.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="375" cy="375" r="8.5" fill="none" stroke="#38BDF8" />
+                <circle cx="375" cy="375" r="8.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
               </g>
+              <!-- 대전·세종·충남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
-                <circle class="pinPulse" cx="230" cy="460" r="9" fill="none" stroke="#F59E0B" />
-                <circle cx="230" cy="460" r="9" fill="#F59E0B" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="215" cy="455" r="9" fill="none" stroke="#F59E0B" />
+                <circle cx="215" cy="455" r="9" fill="#F59E0B" stroke="#000" stroke-width="2" />
               </g>
+
+              <!-- 대구·경북 세분화 1: [대구 · 구미 · 경산] -->
               <g class="mapPinNode" onclick="selectMapRegion('tk')">
-                <circle class="pinPulse" cx="505" cy="495" r="9" fill="none" stroke="#EF4444" />
-                <circle cx="505" cy="495" r="9" fill="#EF4444" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="485" cy="495" r="9" fill="none" stroke="#EF4444" />
+                <circle cx="485" cy="495" r="9" fill="#EF4444" stroke="#000" stroke-width="2.5" />
               </g>
+              <!-- 대구·경북 세분화 2: [포항 · 영덕 · 영천] -->
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="560" cy="460" r="8" fill="none" stroke="#F97316" />
+                <circle cx="560" cy="460" r="8" fill="#F97316" stroke="#000" stroke-width="2" />
+              </g>
+
+              <!-- 부산·울산·경남 세분화 1: [부산 · 울산] -->
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <circle class="pinPulse" cx="525" cy="670" r="9.5" fill="none" stroke="#EF4444" />
-                <circle cx="525" cy="670" r="9.5" fill="#EF4444" stroke="#000" stroke-width="2.5" />
+                <circle class="pinPulse" cx="550" cy="640" r="9.5" fill="none" stroke="#EF4444" />
+                <circle cx="550" cy="640" r="9.5" fill="#EF4444" stroke="#000" stroke-width="2.5" />
               </g>
+              <!-- 부산·울산·경남 세분화 2: [창원 · 마산] -->
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="460" cy="645" r="8" fill="none" stroke="#38BDF8" />
+                <circle cx="460" cy="645" r="8" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+
+              <!-- 호남 세분화 1: [광주 · 나주 거점 핀] -->
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
-                <circle class="pinPulse" cx="205" cy="675" r="9" fill="none" stroke="#A855F7" />
-                <circle cx="205" cy="675" r="9" fill="#A855F7" stroke="#000" stroke-width="2" />
+                <circle class="pinPulse" cx="205" cy="620" r="8.5" fill="none" stroke="#A855F7" />
+                <circle cx="205" cy="620" r="8.5" fill="#A855F7" stroke="#000" stroke-width="2.5" />
+              </g>
+              <!-- 호남 세분화 2: [담양 · 장성 북부 핀] -->
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="215" cy="550" r="7.5" fill="none" stroke="#C084FC" />
+                <circle cx="215" cy="550" r="7.5" fill="#C084FC" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 호남 세분화 3: [여수 해양산단 핀] -->
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="305" cy="700" r="8" fill="none" stroke="#EC4899" />
+                <circle cx="305" cy="700" r="8" fill="#EC4899" stroke="#000" stroke-width="2" />
+              </g>
+              <!-- 호남 세분화 4: [광양 · 순천 제철항만 핀] -->
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="295" cy="635" r="8" fill="none" stroke="#A855F7" />
+                <circle cx="295" cy="635" r="8" fill="#A855F7" stroke="#000" stroke-width="2" />
               </g>
             </g>
 
@@ -1181,18 +1749,33 @@
               <text class="mapCityLabel subIsland" x="70" y="235">영종도</text>
               <text class="mapCityLabel mainLarge" x="140" y="265">인천광역시</text>
               
-              <text class="mapCityLabel mainLarge" x="240" y="225" style="font-size:27px;">서울</text>
-              <text class="mapCityLabel" x="265" y="155">경기북부</text>
-              <text class="mapCityLabel" x="250" y="315">경기남부</text>
-              <text class="mapCityLabel mainLarge" x="430" y="235">강원</text>
-
-              <text class="mapCityLabel" x="370" y="355">충북 (제천·충주)</text>
-              <text class="mapCityLabel" x="230" y="440">대전·세종·충남</text>
+              <!-- 서울: 황금빛 중앙 강조 라벨 -->
+              <text class="mapCityLabel seoulBoldText" x="240" y="228">서울</text>
               
-              <text class="mapCityLabel" x="505" y="475">대구·경북</text>
-              <text class="mapCityLabel" x="525" y="650">부산·울산·경남</text>
+              <text class="mapCityLabel" x="265" y="145">경기북부</text>
+              
+              <!-- 경기남부 및 세부 거점 라벨 -->
+              <text class="mapCityLabel" x="210" y="300">경기남부</text>
+              <text class="mapCityLabel subNodeText" x="315" y="305">용인·광주·이천</text>
+              <text class="mapCityLabel subNodeText" x="260" y="390">평택·안성·천안</text>
 
-              <text class="mapCityLabel" x="205" y="655">호남 (광주·전남)</text>
+              <text class="mapCityLabel mainLarge" x="430" y="225">강원</text>
+              <text class="mapCityLabel" x="385" y="365">충북 (제천·충주)</text>
+              <text class="mapCityLabel" x="215" y="440">대전·세종·충남</text>
+              
+              <!-- 대구·경북 세분화 라벨 -->
+              <text class="mapCityLabel" x="485" y="465">대구·구미·경산</text>
+              <text class="mapCityLabel subNodeText" x="575" y="440">포항·영덕·영천</text>
+
+              <!-- 부산·울산·경남 세분화 라벨 -->
+              <text class="mapCityLabel" x="560" y="615">부산·울산</text>
+              <text class="mapCityLabel subNodeText" x="450" y="625">창원·마산</text>
+
+              <!-- 호남 4대 거점 라벨 -->
+              <text class="mapCityLabel" x="175" y="620">광주·나주</text>
+              <text class="mapCityLabel subNodeText" x="215" y="535">담양·장성</text>
+              <text class="mapCityLabel subNodeText" x="330" y="630">광양·순천</text>
+              <text class="mapCityLabel subNodeText" x="325" y="725">여수</text>
             </g>
           </svg>
         </div>
@@ -1206,19 +1789,17 @@
             </span>
           </div>
 
-          <div class="boardScrollArea" id="ctrlBoardCards">
-            <!-- 지도를 누르면 즉각 반응하여 지부 카드가 렌더링됩니다 -->
-          </div>
+          <div class="boardScrollArea" id="ctrlBoardCards"></div>
         </div>
       </div>
 
-      <!-- 전체 지부 가나다순 리스트 -->
+      <!-- ================= 📋 전체 54개 지부 가나다순 리스트 ================= -->
       <div class="secHeader" style="margin-top:60px;">
         <h3 class="secHeaderTitle" style="font-size:32px;">ALL REGIONAL NETWORKS</h3>
         <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 16px;">전국 가나다순 전체보기</span>
       </div>
       <div class="sortNotice">
-        ℹ️ 전국 지부 안내는 고객 편의를 위해 <strong>'가나다(ㄱ-ㄴ-ㄷ) 지역명 순'</strong>으로 공평하고 체계적으로 정렬되어 있습니다.
+        ℹ️ 전국 지부 안내는 고객 편의를 위해 <strong>'가나다(ㄱ-ㄴ-ㄷ) 지역명 순'</strong>으로 공평하고 체계적으로 정렬되어 있습니다. (총 54개 광역 지부망)
       </div>
 
       <!-- 상위 8개 상시 노출 카드 -->
@@ -1312,8 +1893,9 @@
         </article>
       </div>
 
-      <!-- 펼치기 아코디언 내부 -->
+      <!-- 펼치기 아코디언 내부 (총 46개 카드) -->
       <div class="networkMoreWrap" id="networkMoreWrap">
+        <!-- 경기 권역 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">서해안 산업특구</span></div>
           <h3 class="netRegion">경기 안산시 지부</h3>
@@ -1424,6 +2006,7 @@
           </div>
         </article>
 
+        <!-- 경남/경북/영남 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">경남 해양산단</span></div>
           <h3 class="netRegion">경남 마산 (합포·회원) 지부</h3>
@@ -1523,6 +2106,7 @@
           </div>
         </article>
 
+        <!-- 서울 13대 지부 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">강남·서초 비즈니스</span></div>
           <h3 class="netRegion">서울 강남구 · 서초구 지부</h3>
@@ -1550,6 +2134,17 @@
           <h3 class="netRegion">서울 강서구 · 양천구 지부</h3>
           <div class="cardCovText">마곡지구·화곡·방화·발산 · 목동·신정 에듀벨트</div>
           <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 마곡 MICE 바이오클러스터 및 대단지 스마트키 15분 긴급 출동망</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서울 남부 청년·에듀벨트</span></div>
+          <h3 class="netRegion">서울 관악구 지부</h3>
+          <div class="cardCovText">신림선 경전철 라인 · 샤로수길(서울대입구) · 봉천동 주거타운 · 난곡</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 관악 남부 거점 청년 1인 가구 및 주거 밀집지 15분 긴급 무손상 차키 복원</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -1601,6 +2196,17 @@
         </article>
 
         <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">성수IT·동북 메가타운</span></div>
+          <h3 class="netRegion">서울 성동구 · 성북구 지부</h3>
+          <div class="cardCovText">성수동 팝업·IT밸리 · 왕십리 민자역사 · 길음뉴타운 · 정릉·성북동</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 성수 패션·벤처밸리 및 동북부 대규모 뉴타운 정밀 CNC 스마트키 원스톱 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">동남권 메가주거특구</span></div>
           <h3 class="netRegion">서울 송파구 · 강동구 지부</h3>
           <div class="cardCovText">잠실 MICE·롯데월드몰 · 문정법조단지 · 고덕그라시움·천호</div>
@@ -1644,6 +2250,7 @@
           </div>
         </article>
 
+        <!-- 인천 10대 세부 자치구 지부 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">도서·해양관광특구</span></div>
           <h3 class="netRegion">인천 강화군 지부</h3>
@@ -1754,6 +2361,7 @@
           </div>
         </article>
 
+        <!-- 전남/충북 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">제철·항만벨트</span></div>
           <h3 class="netRegion">전남 광양 · 순천 지부</h3>
@@ -1813,7 +2421,7 @@
       <!-- 펼치기/접기 버튼 -->
       <div class="netMoreBtnArea">
         <button class="btnNetworkToggle" id="btnNetworkToggle" onclick="toggleNetwork()">
-          <span id="networkBtnText">전국 52개 광역 네트워크 전체보기 (가나다순) ▼</span>
+          <span id="networkBtnText">전국 54개 광역 네트워크 전체보기 (가나다순) ▼</span>
         </button>
       </div>
 
@@ -1826,61 +2434,84 @@
     </div>
   </section>
 
-  <!-- 5. Case Section -->
+  <!-- 5. Cases Section (현장 4단계 프로세스 상세) -->
   <section id="cases" class="caseSection">
     <div class="wrap">
       <div class="secHeader">
-        <h2 class="secHeaderTitle">UPCOMING & WORK CASES</h2>
+        <h2 class="secHeaderTitle">WORK PROCESS & CASES</h2>
+        <span class="secHeaderSubKoBig" style="font-size:20px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
+          원스톱 접수 & 현장 해결 4단계
+        </span>
       </div>
-      <div class="caseList">
-        <article class="caseItem">
-          <div class="caseDate">CASE 01</div>
-          <div class="caseImg">
-            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80" alt="분실 차키 복원">
+
+      <div class="stepProcessGrid">
+        <!-- STEP 01 -->
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 01</span>
+            <span class="stepGuaranteeTag">100% 사전 확정 정찰제</span>
           </div>
-          <div>
-            <h3 class="caseHeading">LOST CAR KEY RECOVERY</h3>
-            <span class="caseBadge">ON-SITE SERVICE</span>
-            <p class="caseDesc">차키를 전부 분실하셨어도 견인 없이 현장으로 출동하여 키박스 데이터 판독 후 현장 CNC 정밀 가공으로 원키와 동일하게 복원합니다.</p>
-          </div>
+          <h3 class="stepTitle">사전 정보 확인 및 100% 확정 정찰 견적 접수</h3>
+          <ul class="stepDescList">
+            <li>대표번호(<strong>1600-9712</strong>) 또는 직통 상담을 통해 <strong>[차량 번호]</strong>(또는 정확한 차종·연식)와 <strong>시동 방식</strong>(버튼 스마트키 / 폴딩키 / 꽂는 일반 키)을 확인합니다.</li>
+            <li>부품 품번과 전용 코딩 장비를 즉시 매칭하여, <strong>현장에서 1원의 추가금도 발생하지 않는 '100% 사전 확정 정찰 견적'</strong>을 투명하게 안내합니다.</li>
+          </ul>
         </article>
 
-        <article class="caseItem">
-          <div class="caseDate">CASE 02</div>
-          <div class="caseImg">
-            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80" alt="스마트키 등록">
+        <!-- STEP 02 -->
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 02</span>
+            <span class="stepGuaranteeTag">약속 시간 엄수 보증</span>
           </div>
-          <div>
-            <h3 class="caseHeading">SMART KEY DUPLICATION</h3>
-            <span class="caseBadge">OBD CODING SYSTEM</span>
-            <p class="caseDesc">현대, 기아, 르노코리아, 쉐보레, KGM 쌍용 정품 스마트키 부품을 상시 보유하여 현장에서 시동 및 무선 기능을 당일 완벽 코딩합니다.</p>
-          </div>
+          <h3 class="stepTitle">약속 시간 엄수를 위한 책임 예약 보증</h3>
+          <ul class="stepDescList">
+            <li>키앤키닷컴은 100% 시간 약속 엄수를 위해 <strong>'책임 예약 보증제'</strong>로 운영됩니다.</li>
+            <li>사전 상담 후 상호 신뢰를 위한 책임 예약금 확인 즉시, 관제 시스템을 통해 고객님 위치와 가장 인접한 <strong>20년 현장 엔지니어가 전담 배차</strong>되어 신속한 출동 준비를 마칩니다.</li>
+          </ul>
         </article>
 
-        <article class="caseItem">
-          <div class="caseDate">CASE 03</div>
-          <div class="caseImg">
-            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80" alt="무손상 개문">
+        <!-- STEP 03 -->
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 03</span>
+            <span class="stepGuaranteeTag">도난 방지 법적 필수 절차</span>
           </div>
-          <div>
-            <h3 class="caseHeading">NON-DAMAGE DOOR OPENING</h3>
-            <span class="caseBadge">PRECISION PICKING</span>
-            <p class="caseDesc">문 틈새를 강제로 벌리지 않고 키홀 텐션 픽킹 방식을 적용하여 도장면이나 방수 몰딩 손상 없이 안전하게 잠금을 해제합니다.</p>
+          <h3 class="stepTitle">현장 직통 출동 & 필수 본인 확인 절차</h3>
+          <ul class="stepDescList">
+            <li>견인차가 진입하기 힘든 지하주차장, 비탈길 등 고객님이 계신 위치로 <strong>모바일 랩(전용 출동 차량)이 즉시 현장 도착</strong>합니다.</li>
+            <li>차량 도난 및 무단 복제 방지를 위한 법적 필수 절차로, 현장에서 의뢰인의 <strong>[신분증]</strong>과 <strong>[자동차등록증(또는 보험 가입 증명)]</strong> 일치 여부를 대조 확인한 뒤 안전하게 작업을 개시합니다.</li>
+          </ul>
+        </article>
+
+        <!-- STEP 04 -->
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 04</span>
+            <span class="stepGuaranteeTag">배터리 전압 실측 검수</span>
           </div>
+          <h3 class="stepTitle">무손상 정밀 제작 · 배터리 전압 실측 및 비탑승 매너 인도</h3>
+          <ul class="stepDescList">
+            <li><strong>100% 무손상 픽킹 기술</strong>로 도어 잠금을 해제하고, 최첨단 CNC 자동 가공기로 순정 비상키를 오차 없이 정밀 가공합니다.</li>
+            <li>제조사 순정 정품 파츠를 적용하며, 조립 전 고객님 눈앞에서 디지털 테스터기로 <strong>배터리 전압(3.0V 이상 정상치)을 실측 검수</strong>합니다.</li>
+            <li>전문 진단 스캐너로 ECU/OBD 보안 코딩을 완료한 후, <strong>'비탑승·무접촉 청결 매너'</strong>를 철저히 지켜 완벽하게 시동 가능한 키를 최종 인도합니다.</li>
+          </ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- 6. FAQ Section (상단 3개 상시 노출 + 더보기 아코디언) -->
+  <!-- 6. FAQ Section -->
   <section id="faq" class="faqSection">
     <div class="wrap">
       <div class="secHeader">
         <h2 class="secHeaderTitle">FREQUENTLY ASKED QUESTIONS</h2>
+        <span class="secHeaderSubKoBig" style="font-size:22px; padding:8px 20px; background:var(--neon-yellow); color:#000; border-radius:4px; font-weight:800;">
+          FAQ / 자주 묻는 질문
+        </span>
       </div>
 
       <div class="faqList">
-        <!-- 상시 노출 Q1~Q3 (핵심 문의 3개) -->
         <div class="faqCard">
           <div class="faqTopRow">
             <span class="faqBadge">Q1</span>
@@ -1911,7 +2542,6 @@
           </p>
         </div>
 
-        <!-- 더보기 클릭 시 펼쳐지는 Q4~Q11 (추가 8개) -->
         <div class="faqHiddenWrap" id="faqMoreWrap">
           <div class="faqCard">
             <div class="faqTopRow">
@@ -2100,13 +2730,12 @@
   <a class="btnMCall" href="tel:16009712">📞 대표전화</a>
 </div>
 
-<!-- ================= 지도 인터랙티브 데이터 및 스크립트 ================= -->
+<!-- ================= 지도 및 슬라이더 스크립트 ================= -->
 <script>
-  // 1초 단위 실시간 시계 (한국 서울 & 미국 뉴욕 동부 표준시)
+  // 1초 단위 실시간 시계
   function updateWorldClocks() {
     var now = new Date();
     
-    // 한국 시간 (KST, UTC+9)
     var krTimeStr = now.toLocaleTimeString('en-US', {
       timeZone: 'Asia/Seoul',
       hour12: false,
@@ -2115,7 +2744,6 @@
       second: '2-digit'
     });
     
-    // 미국 동부 뉴욕 시간 (EDT/EST)
     var usTimeStr = now.toLocaleTimeString('en-US', {
       timeZone: 'America/New_York',
       hour12: false,
@@ -2132,6 +2760,61 @@
   setInterval(updateWorldClocks, 1000);
   updateWorldClocks();
 
+  // 1) 히어로 우측 4단계 슬라이더 (3.8초 단위)
+  var currentHeroSlide = 0;
+  var totalHeroSlides = 4;
+  function showHeroSlide(index) {
+    for (var i = 0; i < totalHeroSlides; i++) {
+      var slide = document.getElementById('heroSlide-' + i);
+      var dot = document.querySelectorAll('.sliderDots .sDot')[i];
+      if (slide) slide.classList.remove('active');
+      if (dot) dot.classList.remove('active');
+    }
+    var targetSlide = document.getElementById('heroSlide-' + index);
+    var targetDot = document.querySelectorAll('.sliderDots .sDot')[index];
+    if (targetSlide) targetSlide.classList.add('active');
+    if (targetDot) targetDot.classList.add('active');
+    currentHeroSlide = index;
+  }
+  function nextHeroSlide() {
+    var next = (currentHeroSlide + 1) % totalHeroSlides;
+    showHeroSlide(next);
+  }
+  var heroSlideTimer = setInterval(nextHeroSlide, 3800);
+  function gotoHeroSlide(idx) {
+    clearInterval(heroSlideTimer);
+    showHeroSlide(idx);
+    heroSlideTimer = setInterval(nextHeroSlide, 3800);
+  }
+
+  // 2) ABOUT US 카드뉴스 3장 슬라이더 (4.0초 단위 자동 순환)
+  var currentNewsSlide = 0;
+  var totalNewsSlides = 3;
+  function showNewsSlide(index) {
+    for (var i = 0; i < totalNewsSlides; i++) {
+      var slide = document.getElementById('newsSlide-' + i);
+      var dot = document.querySelectorAll('.newsDots .nDot')[i];
+      if (slide) slide.classList.remove('active');
+      if (dot) dot.classList.remove('active');
+    }
+    var targetSlide = document.getElementById('newsSlide-' + index);
+    var targetDot = document.querySelectorAll('.newsDots .nDot')[index];
+    if (targetSlide) targetSlide.classList.add('active');
+    if (targetDot) targetDot.classList.add('active');
+    currentNewsSlide = index;
+  }
+  function nextNewsSlide() {
+    var next = (currentNewsSlide + 1) % totalNewsSlides;
+    showNewsSlide(next);
+  }
+  var newsSlideTimer = setInterval(nextNewsSlide, 4000);
+  function gotoNewsSlide(idx) {
+    clearInterval(newsSlideTimer);
+    showNewsSlide(idx);
+    newsSlideTimer = setInterval(nextNewsSlide, 4000);
+  }
+
+  // 전국 관제 데이터 (총 54개 지부망)
   var regionMapData = {
     incheon: {
       title: "📍 인천광역시 10대 세부 자치구 지부",
@@ -2149,7 +2832,7 @@
       ]
     },
     seoul: {
-      title: "📍 서울특별시 핵심 10대 지부",
+      title: "📍 서울특별시 핵심 13대 지부 (25개 구 전역 관제)",
       branches: [
         { badge: "서울 서부 메인허브", name: "서울 강서구 · 양천구 지부", cov: "마곡지구·화곡·방화·발산 · 목동·신정 에듀벨트", exp: "마곡 MICE 바이오클러스터 및 대단지 스마트키 15분 긴급 출동망" },
         { badge: "디지털밸리 특화", name: "서울 구로구 · 금천구 지부", cov: "구로디지털단지(G밸리) · 가산디지털단지 · 신도림", exp: "IT벤처타운 및 비즈니스단지 특화 초고속 긴급 출동" },
@@ -2159,6 +2842,8 @@
         { badge: "역사문화·행정타운", name: "서울 서대문구 · 종로구 지부", cov: "신촌·연희동 · 종로 행정타운 · 광화문·혜화", exp: "도심 행정지구 및 대학병원·캠퍼스타운 정밀 차키 복원 및 무손상 개문" },
         { badge: "도심 코어·국제업무", name: "서울 중구 · 용산구 지부", cov: "명동·을지로 비즈니스센터 · 용산역·한남동·이태원", exp: "도심 중심 상권 및 고급 주거특구 긴급 무손상 개문 및 스마트키 코딩" },
         { badge: "금융·여의도 벨트", name: "서울 영등포구 · 동작구 지부", cov: "여의도 국제금융지구 · 문래창작촌 · 노량진 · 흑석·상도", exp: "금융업무지구 및 주거 밀집지 순정 OBD 진단 즉시 등록" },
+        { badge: "서울 남부 청년·에듀벨트", name: "서울 관악구 지부", cov: "신림선 경전철 라인 · 샤로수길(서울대입구) · 봉천동 주거타운 · 난곡", exp: "관악 남부 거점 청년 1인 가구 및 주거 밀집지 15분 긴급 무손상 차키 복원" },
+        { badge: "성수IT·동북 메가타운", name: "서울 성동구 · 성북구 지부", cov: "성수동 팝업·IT밸리 · 왕십리 민자역사 · 길음뉴타운 · 정릉·성북동", exp: "성수 패션·벤처밸리 및 동북부 대규모 뉴타운 정밀 CNC 스마트키 원스톱 코딩" },
         { badge: "북한산 생태주거", name: "서울 은평구 지부", cov: "은평뉴타운(진관동) · 불광동 · 연신내역 상권 · 응암동", exp: "서울 서북 관문 대규모 뉴타운 및 상권 신속 현장 출동" },
         { badge: "동북부 주거벨트", name: "서울 강북구 · 도봉구 · 노원구 지부", cov: "노원 중계에듀타운·상계 · 도봉 창동역세권 · 강북 미아", exp: "서울 동북부 대규모 아파트단지 및 상권 신속 현장 출동망" },
         { badge: "동부 패션·대학가", name: "서울 동대문구 · 중랑구 · 광진구 지부", cov: "동대문 패션타운 · 건대입구·구의 · 중랑 상봉역세권", exp: "쇼핑상권 및 대학·주거복합벨트 당일 즉시 키 가공 및 코딩" }
@@ -2175,7 +2860,7 @@
       ]
     },
     gyeonggi_south: {
-      title: "📍 경기도 남부 핵심 관제 지부",
+      title: "📍 경기도 남부 광역 관제 지부 (영토 및 거점 확장)",
       branches: [
         { badge: "경기 남부 메인허브", name: "경기 수원시 지부", cov: "영통(삼성디지털시티)·광교신도시·팔달·장안·권선 전역", exp: "첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원" },
         { badge: "판교 테크노·분당", name: "경기 성남 · 분당 지부", cov: "판교테크노밸리 · 분당신도시(서현·정자·수내) · 성남 본도심", exp: "IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원" },
@@ -2211,7 +2896,7 @@
       ]
     },
     tk: {
-      title: "📍 대구 · 경북 광역 관제 지부",
+      title: "📍 대구 · 경북 광역 관제 지부 (내륙 및 동해안 세분화)",
       branches: [
         { badge: "영남 산업벨트", name: "대구광역시 · 경산 · 구미 지부", cov: "대구 전역 · 경산 학원단지 · 구미 국가산단 일대", exp: "국가산단 및 도심 긴급 출동 즉시 복원" },
         { badge: "동해벨트·관광특구", name: "경북 포항 · 경주 · 영덕 · 영천 지부", cov: "포항시(남·북구) · 경주시 · 영덕군 · 영천시 광역", exp: "철강공단·관광단지·동해선 국산 스마트키 완벽 복원 및 전용 장비 상시 보유" },
@@ -2221,7 +2906,7 @@
       ]
     },
     pk: {
-      title: "📍 부산 · 울산 · 경남 메가시티 지부",
+      title: "📍 부산 · 울산 · 경남 메가시티 지부 (부산·울산 & 창원·마산 세분화)",
       branches: [
         { badge: "동남권 메가시티", name: "부산 · 울산 · 김해 · 양산 지부", cov: "부산광역시 전역 · 울산광역시 · 김해시 · 양산시 일대", exp: "동남권 전역 신속 출동 및 순정 스마트키 원스톱 복원" },
         { badge: "국가산단 메카", name: "경남 창원 (의창·성산) 지부", cov: "창원 도심 · 국가산단 · 진해구 권역", exp: "화물·특수차 및 국산 전 차종 스마트키 마스터" },
@@ -2229,11 +2914,12 @@
       ]
     },
     honam: {
-      title: "📍 호남 (광주·전남) 광역 특구 지부",
+      title: "📍 호남 (광주·전남) 4대 핵심 거점 지부",
       branches: [
-        { badge: "호남 광역 특구", name: "전남 광주 · 나주 · 담양 · 장성 지부", cov: "광주광역시 전역 · 나주혁신도시 · 담양군 · 장성군", exp: "호남 거점 긴급출동 · 스마트키 원스톱 복원" },
-        { badge: "국가산단·해양관광", name: "전남 여수 지부", cov: "여수시 도심 · 국가산단 · 돌산 관광벨트", exp: "당일 즉시 제작 및 순정 부품 상시 보유" },
-        { badge: "제철·항만벨트", name: "전남 광양 · 순천 지부", cov: "광양제철소 · 광양항 · 순천만 권역", exp: "산업단지 긴급 출장 및 키박스 복구 전문" }
+        { badge: "호남 행정·메가허브", name: "전남 광주 · 나주 지부", cov: "광주광역시 전역 · 나주혁신도시 권역", exp: "호남 메인 거점 초고속 긴급출동 및 스마트키 원스톱 복원" },
+        { badge: "호남 북부 광역축", name: "전남 담양 · 장성 지부", cov: "담양군 · 장성군 및 호남 북부 내륙 일대", exp: "20년 베테랑 엔지니어팀 산간 도로 및 관내 현장 즉시 복원" },
+        { badge: "국가산단·해양관광", name: "전남 여수 지부", cov: "여수시 도심 · 국가산단 · 돌산 관광벨트", exp: "당일 즉시 제작 및 순정 부품 상시 보유 완벽 코딩" },
+        { badge: "제철·항만벨트", name: "전남 광양 · 순천 지부", cov: "광양제철소 · 광양항 · 순천만 권역", exp: "산업단지 긴급 출장 및 키박스 정밀 복구 전문" }
       ]
     }
   };
@@ -2291,7 +2977,7 @@
     var btnText = document.getElementById('networkBtnText');
     if (wrap.style.display === 'grid') {
       wrap.style.display = 'none';
-      btnText.innerText = '전국 52개 광역 네트워크 전체보기 (가나다순) ▼';
+      btnText.innerText = '전국 54개 광역 네트워크 전체보기 (가나다순) ▼';
     } else {
       wrap.style.display = 'grid';
       btnText.innerText = '전국 지부 리스트 접기 ▲';
