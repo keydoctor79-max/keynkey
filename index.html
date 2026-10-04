@@ -4,26 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
   <title>키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크 1600-9712</title>
+  <meta name="description" content="전국 20년 현장 엔지니어 직통 출동, 분실 차키·스마트키 현장 당일 제작 및 순정 코딩 복원. 1600-9712">
   <meta name="theme-color" content="#0F172A">
+
+  <!-- Open Graph 메타태그 (카카오톡 / 네이버 링크 공유용) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크">
+  <meta property="og:description" content="견인 없는 당일 현장 차키 복원 및 무손상 개문 전문. 대표전화 1600-9712">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80">
 
   <!-- 상업용 무료 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  
   <style>
     @font-face {
       font-family: 'GmarketSans';
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
       font-weight: 700;
       font-style: normal;
+      font-display: swap;
     }
     @font-face {
       font-family: 'GmarketSans';
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
       font-weight: 500;
       font-style: normal;
+      font-display: swap;
     }
 
     :root {
@@ -69,6 +78,68 @@
     a { text-decoration: none; color: inherit; }
     img, video { max-width: 100%; height: auto; display: block; }
     .wrap { max-width: 1380px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    /* ================= 0. Top Clock Bar (시간 엄수 상단 듀얼 시계) ================= */
+    .topClockTicker {
+      background: #060911;
+      border-bottom: 1px solid #1E293B;
+      padding: 7px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: -0.01em;
+    }
+    .clockTickerInner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .clockMotto {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-clean);
+      font-weight: 600;
+    }
+    .clockMottoDot {
+      width: 7px;
+      height: 7px;
+      background: var(--neon-yellow);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--neon-yellow);
+      animation: alertPulse 1.8s infinite;
+    }
+    .clockMotto b {
+      color: var(--neon-yellow);
+      font-weight: 700;
+    }
+    .clockTimesWrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .clockItem {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .clockItem .tag {
+      background: #111827;
+      color: var(--clear-cyan);
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      border: 1px solid #1F2937;
+      letter-spacing: 0.05em;
+    }
+    .clockItem .val {
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
 
     /* ================= 1. Header Navigation ================= */
     .topNav {
@@ -379,7 +450,7 @@
     .statLabel { font-size: 13.5px; font-weight: 700; color: var(--text-muted); }
     .aboutMediaBox { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 3px solid var(--border-card); box-shadow: 0 15px 35px rgba(0,0,0,0.7); background: #000; border-radius: 6px; }
 
-    /* ================= 4. 전국 인터랙티브 관제 지도 (깔끔한 회색 바탕 & 슬림한 패널 버튼) ================= */
+    /* ================= 4. 전국 인터랙티브 관제 지도 ================= */
     .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
     .networkIntro { font-size: 19px; font-weight: 400; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: var(--text-clean); }
 
@@ -439,6 +510,7 @@
       max-width: 670px;
       height: auto;
       filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
+      touch-action: manipulation;
     }
     .geoPath {
       fill: var(--map-land);
@@ -581,7 +653,6 @@
       font-weight: 700;
     }
 
-    /* 우측 관제 패널 전용 단정하고 정갈한 버튼 (모양새 복원) */
     .panelBtnRow {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -611,7 +682,7 @@
       border-color: #fff;
     }
 
-    /* 하단 가나다순 지부 리스트용 큼직한 버튼 스타일 */
+    /* 하단 가나다순 지부 리스트 */
     .netBtnRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .netMiniBtn {
       border: 1.5px solid var(--border-card);
@@ -637,7 +708,6 @@
       border-color: #fff;
     }
 
-    /* ================= 하단 가나다순 전체 지부 목록 ================= */
     .sortNotice {
       font-size: 15px;
       font-weight: 700;
@@ -756,7 +826,7 @@
     .blogExcerpt { font-size: 15px; color: var(--text-clean); line-height: 1.6; margin-bottom: 16px; flex: 1; }
     .blogLink { font-size: 14.5px; font-weight: 700; color: var(--clear-cyan); text-decoration: underline; }
 
-    /* ================= 8. Footer (출동시간 08~22시 야간 출장 마감) ================= */
+    /* ================= 8. Footer ================= */
     .footer { background: #070A0F; border-top: 2px solid var(--border-card); padding: 75px 0 95px; width: 100%; }
     .footerGrid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 35px; margin-bottom: 45px; }
     .footerCol h4 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: var(--neon-yellow); }
@@ -793,6 +863,10 @@
       .navCallLarge .badgeText { font-size: 14px; }
       .navCallLarge b { font-size: 19px; }
 
+      .clockTickerInner { justify-content: center; gap: 8px; }
+      .clockMotto { display: none; }
+      .clockTimesWrap { gap: 12px; font-size: 12px; }
+
       .heroSection { padding: 45px 0 55px; }
       .heroGrid { grid-template-columns: 1fr; gap: 28px; }
       .reserveBadgeBig { font-size: 15px; padding: 10px 16px; width: 100%; justify-content: center; }
@@ -828,24 +902,25 @@
 
       .blogSection { padding: 55px 0 65px; }
       .blogGrid { grid-template-columns: 1fr; gap: 16px; }
-      .footer { padding: 45px 0 95px; }
+      .footer { padding: 45px 0 110px; }
       .footerGrid { grid-template-columns: 1fr; gap: 24px; }
       .bizInfoBox { flex-direction: column; align-items: flex-start; }
 
       .mobileBar {
         display: grid;
-        grid-template-columns: 1.3fr 1.3fr;
+        grid-template-columns: 1fr 1fr;
         position: fixed;
         left: 0; right: 0; bottom: 0;
         z-index: 999;
         background: #0B0F19;
         border-top: 2px solid var(--border-card);
+        padding-bottom: env(safe-area-inset-bottom);
       }
       .mobileBar a {
         padding: 15px 4px;
         text-align: center;
         font-weight: 800;
-        font-size: 15px;
+        font-size: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -856,6 +931,26 @@
   </style>
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+<!-- 0. Top Clock Bar (최상단 실시간 디지털 시계) -->
+<div class="topClockTicker">
+  <div class="wrap clockTickerInner">
+    <div class="clockMotto">
+      <span class="clockMottoDot"></span>
+      <span>긴급출동 생명선 · <b>시간 약속 엄수(Punctuality)</b> 실시간 관제 중</span>
+    </div>
+    <div class="clockTimesWrap">
+      <div class="clockItem">
+        <span class="tag">KOREA (SEOUL)</span>
+        <span class="val" id="time-kr">--:--:--</span>
+      </div>
+      <div class="clockItem">
+        <span class="tag">USA (NEW YORK)</span>
+        <span class="val" id="time-us">--:--:--</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- 1. Header -->
 <header class="topNav">
@@ -892,7 +987,7 @@
         <h1 class="mainTitle">
           "오늘 당일, 시간 약속 지켜서<br>
           차키를 완벽 해결해 줄<br>
-          <span>믿을 수 있는 전문가</span>는 없을까?"
+          <span>믿을 수 있는 </span><span style="color: var(--clear-cyan);">전문가</span>는 없을까?"
         </h1>
         <p class="mainDesc">
           키앤키닷컴은 철저한 사전 상담과 <strong>‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과의 약속 시간을 엄수하여 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결합니다.
@@ -958,7 +1053,7 @@
     </div>
   </section>
 
-  <!-- 4. 전국 인터랙티브 관제 지도 (인천 회색 기본 톤 복원 & 경계 점선 삭제) -->
+  <!-- 4. 전국 인터랙티브 관제 지도 -->
   <section id="network" class="networkSection">
     <div class="wrap">
       <div class="secHeader">
@@ -971,7 +1066,7 @@
         키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역을 유기적으로 관제·출동합니다.
       </p>
 
-      <!-- ================= 🗺️ 대형 관제 센터 그래픽 지도 ================= -->
+      <!-- 대형 관제 센터 그래픽 지도 -->
       <div class="mapControlCenter">
         <div class="mapViewWrapper">
           <div class="mapTopStatus">
@@ -979,7 +1074,6 @@
             <span>지역을 누르면 상세 지부가 실시간 전환됩니다</span>
           </div>
 
-          <!-- 위아래 940px 웅장한 전도 SVG -->
           <svg class="koreaDetailedSvg" viewBox="0 0 640 940" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <filter id="glowBigPinkPin" x="-50%" y="-50%" width="200%" height="200%">
@@ -992,21 +1086,17 @@
               </filter>
             </defs>
 
-            <!-- [1. 지형 PATH 그룹: 실제 남한 지형 정밀 반영] -->
+            <!-- [1. 지형 PATH 그룹] -->
             <g id="map-geo-paths">
-              <!-- 경기 북부 -->
               <path class="geoPath" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
                     d="M 205,120 L 295,110 L 335,170 L 330,215 L 285,215 L 205,200 L 190,165 Z" />
 
-              <!-- 경기 남부 (평택 포함) -->
               <path class="geoPath" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
                     d="M 185,265 L 285,260 L 335,245 L 340,310 L 300,380 L 220,375 L 175,335 L 175,270 Z" />
 
-              <!-- 강원 -->
               <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
                     d="M 295,110 L 420,95 L 525,195 L 580,305 L 475,360 L 340,310 L 335,170 Z" />
 
-              <!-- 인천광역시 전역 & 강화도 & 영종도 (기본 회색 톤 복원) -->
               <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
                     d="M 80,110 L 145,100 L 150,155 L 115,170 L 75,145 Z" />
               <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
@@ -1014,89 +1104,71 @@
               <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
                     d="M 115,195 L 175,195 L 170,260 L 180,305 L 130,315 L 100,280 L 100,220 Z" />
 
-              <!-- 서울 특별시 (확대 랜드마크) -->
               <path class="geoPath" id="geo-seoul" onclick="selectMapRegion('seoul')"
                     d="M 195,185 L 275,175 L 285,245 L 205,255 L 185,220 Z" />
 
-              <!-- 충북 제천 · 충주 내륙 특구 -->
               <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
                     d="M 335,270 L 415,285 L 440,365 L 385,420 L 300,380 L 340,310 Z" />
 
-              <!-- 대전 · 세종 · 충남 (천안·아산 포함) -->
               <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
                     d="M 160,270 L 220,375 L 300,380 L 385,420 L 360,520 L 235,510 L 125,435 L 110,335 Z" />
 
-              <!-- 대구 · 경북 (TK) -->
               <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
                     d="M 475,360 L 580,305 L 630,460 L 610,550 L 490,560 L 430,530 L 440,430 L 385,420 Z" />
 
-              <!-- 부산 · 울산 · 경남 (PK) -->
               <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
                     d="M 430,530 L 490,560 L 610,550 L 595,650 L 545,715 L 415,720 L 365,605 L 420,535 Z" />
 
-              <!-- 호남 (광주·전남) -->
               <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
                     d="M 125,435 L 235,510 L 360,520 L 365,605 L 415,720 L 305,790 L 160,785 L 85,640 L 80,500 Z" />
             </g>
 
             <!-- [2. 펄스 핀 레이어] -->
             <g id="map-radar-pins">
-              <!-- 인천 본토 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
                 <circle class="pinPulse" cx="140" cy="285" r="9" fill="none" stroke="#FF007A" />
                 <circle cx="140" cy="285" r="9" fill="#FF007A" stroke="#FFFFFF" stroke-width="2.5" filter="url(#glowBigPinkPin)" />
               </g>
-              <!-- 영종도 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
                 <circle class="pinPulse" cx="70" cy="255" r="7" fill="none" stroke="#FF007A" />
                 <circle cx="70" cy="255" r="7" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
-              <!-- 강화도 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
                 <circle class="pinPulse" cx="115" cy="160" r="7" fill="none" stroke="#FF007A" />
                 <circle cx="115" cy="160" r="6.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
-              <!-- 서울 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('seoul')">
                 <circle class="pinPulse" cx="240" cy="245" r="9.5" fill="none" stroke="#FEE838" />
                 <circle cx="240" cy="245" r="10" fill="#FEE838" stroke="#000" stroke-width="2.5" filter="url(#glowBigPin)" />
               </g>
-              <!-- 경기 북부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
                 <circle class="pinPulse" cx="265" cy="175" r="8" fill="none" stroke="#10B981" />
                 <circle cx="265" cy="175" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
               </g>
-              <!-- 경기 남부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="250" cy="335" r="8" fill="none" stroke="#10B981" />
                 <circle cx="250" cy="335" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
               </g>
-              <!-- 강원 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
                 <circle class="pinPulse" cx="430" cy="255" r="9" fill="none" stroke="#38BDF8" />
                 <circle cx="430" cy="255" r="9" fill="#38BDF8" stroke="#000" stroke-width="2" />
               </g>
-              <!-- 충북 제천·충주 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
                 <circle class="pinPulse" cx="370" cy="375" r="8.5" fill="none" stroke="#38BDF8" />
                 <circle cx="370" cy="375" r="8.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
               </g>
-              <!-- 대전·세종·충남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
                 <circle class="pinPulse" cx="230" cy="460" r="9" fill="none" stroke="#F59E0B" />
                 <circle cx="230" cy="460" r="9" fill="#F59E0B" stroke="#000" stroke-width="2" />
               </g>
-              <!-- 대구·경북 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('tk')">
                 <circle class="pinPulse" cx="505" cy="495" r="9" fill="none" stroke="#EF4444" />
                 <circle cx="505" cy="495" r="9" fill="#EF4444" stroke="#000" stroke-width="2" />
               </g>
-              <!-- 부산·울산·경남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
                 <circle class="pinPulse" cx="525" cy="670" r="9.5" fill="none" stroke="#EF4444" />
                 <circle cx="525" cy="670" r="9.5" fill="#EF4444" stroke="#000" stroke-width="2.5" />
               </g>
-              <!-- 호남 (광주·전남) 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="205" cy="675" r="9" fill="none" stroke="#A855F7" />
                 <circle cx="205" cy="675" r="9" fill="#A855F7" stroke="#000" stroke-width="2" />
@@ -1140,13 +1212,13 @@
         </div>
       </div>
 
-      <!-- ================= 📋 전체 52개 지부 가나다순 리스트 ================= -->
+      <!-- 전체 지부 가나다순 리스트 -->
       <div class="secHeader" style="margin-top:60px;">
         <h3 class="secHeaderTitle" style="font-size:32px;">ALL REGIONAL NETWORKS</h3>
         <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 16px;">전국 가나다순 전체보기</span>
       </div>
       <div class="sortNotice">
-        ℹ️ 전국 지부 안내는 고객 편의를 위해 <strong>'가나다(ㄱ-ㄴ-ㄷ) 지역명 순'</strong>으로 공평하고 체계적으로 정렬되어 있습니다.
+        ℹ️️ 전국 지부 안내는 고객 편의를 위해 <strong>'가나다(ㄱ-ㄴ-ㄷ) 지역명 순'</strong>으로 공평하고 체계적으로 정렬되어 있습니다.
       </div>
 
       <!-- 상위 8개 상시 노출 카드 -->
@@ -1242,7 +1314,6 @@
 
       <!-- 펼치기 아코디언 내부 -->
       <div class="networkMoreWrap" id="networkMoreWrap">
-        <!-- 경기 권역 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">서해안 산업특구</span></div>
           <h3 class="netRegion">경기 안산시 지부</h3>
@@ -1342,7 +1413,6 @@
           </div>
         </article>
 
-        <!-- 충청 권역 (천안·아산 정식 편입) -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">백년가게 공식인증</span></div>
           <h3 class="netRegion">충남 천안시 · 아산시 지부</h3>
@@ -1354,7 +1424,6 @@
           </div>
         </article>
 
-        <!-- 경남/경북/영남 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">경남 해양산단</span></div>
           <h3 class="netRegion">경남 마산 (합포·회원) 지부</h3>
@@ -1454,7 +1523,6 @@
           </div>
         </article>
 
-        <!-- 서울 10대 지부 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">강남·서초 비즈니스</span></div>
           <h3 class="netRegion">서울 강남구 · 서초구 지부</h3>
@@ -1576,7 +1644,6 @@
           </div>
         </article>
 
-        <!-- 인천 10대 세부 자치구 지부 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">도서·해양관광특구</span></div>
           <h3 class="netRegion">인천 강화군 지부</h3>
@@ -1687,7 +1754,6 @@
           </div>
         </article>
 
-        <!-- 전남/충북 -->
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">제철·항만벨트</span></div>
           <h3 class="netRegion">전남 광양 · 순천 지부</h3>
@@ -1903,7 +1969,7 @@
   </section>
 </main>
 
-<!-- 8. Footer (출동시간 08~22시 야간 출장 마감 & 텍스트 밝기 대폭 상향) -->
+<!-- 8. Footer -->
 <footer id="footer" class="footer">
   <div class="wrap">
     <div class="footerGrid">
@@ -1951,7 +2017,7 @@
       </div>
     </div>
 
-    <!-- 밝고 선명한 사업자 정보 -->
+    <!-- 사업자 정보 -->
     <div class="bizInfoBox">
       <div>
         <strong>상호명 : 키앤키닷컴</strong> | 대표 : 차상준 | 사업자등록번호 : 122-10-65938<br>
@@ -1971,6 +2037,36 @@
 
 <!-- ================= 지도 인터랙티브 데이터 및 스크립트 ================= -->
 <script>
+  // 1초 단위 실시간 시계 (한국 서울 & 미국 뉴욕 동부 표준시)
+  function updateWorldClocks() {
+    var now = new Date();
+    
+    // 한국 시간 (KST, UTC+9)
+    var krTimeStr = now.toLocaleTimeString('en-US', {
+      timeZone: 'Asia/Seoul',
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    
+    // 미국 동부 뉴욕 시간 (EDT/EST)
+    var usTimeStr = now.toLocaleTimeString('en-US', {
+      timeZone: 'America/New_York',
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    
+    var elKr = document.getElementById('time-kr');
+    var elUs = document.getElementById('time-us');
+    if(elKr) elKr.innerText = krTimeStr;
+    if(elUs) elUs.innerText = usTimeStr;
+  }
+  setInterval(updateWorldClocks, 1000);
+  updateWorldClocks();
+
   var regionMapData = {
     incheon: {
       title: "📍 인천광역시 10대 세부 자치구 지부",
@@ -2121,7 +2217,6 @@
     });
   }
 
-  // 기본 세팅: 인천광역시 지부 리스트 오픈 (지도는 깔끔한 기본 톤)
   window.addEventListener('DOMContentLoaded', function() {
     selectMapRegion('incheon');
   });
