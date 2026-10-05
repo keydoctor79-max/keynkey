@@ -806,27 +806,16 @@
     .geoPath.seoulBrightCenter {
       fill: url(#seoulCyanGradient) !important;
       stroke: #FFFFFF !important;
-      stroke-width: 4.5 !important;
-      filter: drop-shadow(0 0 24px var(--clear-cyan-glow)) drop-shadow(0 0 8px #FFFFFF) !important;
-    }
-    .geoPath.seoulBrightCenter:hover {
-      fill: #FFFFFF !important;
-      stroke: var(--clear-cyan) !important;
-      stroke-width: 6 !important;
-      filter: drop-shadow(0 0 35px rgba(103, 232, 249, 1)) !important;
+      stroke-width: 3.8 !important;
+      filter: drop-shadow(0 0 20px var(--clear-cyan-glow)) !important;
     }
 
-    .geoPath.selectedPink {
-      fill: var(--neon-pink) !important;
-      stroke: #FFFFFF !important;
-      stroke-width: 5 !important;
-      filter: drop-shadow(0 0 28px var(--neon-pink-glow)) !important;
-    }
+    /* ★ 모든 영토 클릭 시 통일된 100% 네온 옐로우 골드 활성화 효과 ★ */
     .geoPath.selected {
-      fill: #2563EB !important;
-      stroke: #FFFFFF !important;
-      stroke-width: 5 !important;
-      filter: drop-shadow(0 0 28px rgba(37, 99, 235, 0.9)) !important;
+      fill: #18263E !important;
+      stroke: var(--neon-yellow) !important;
+      stroke-width: 5.5 !important;
+      filter: drop-shadow(0 0 30px var(--neon-yellow-glow)) drop-shadow(0 0 8px #FFFFFF) !important;
     }
 
     .mapCityLabel {
@@ -843,11 +832,11 @@
       letter-spacing: -0.02em;
     }
     .mapCityLabel.mainLarge { font-size: 24px; fill: var(--neon-yellow); }
-    .mapCityLabel.subIsland { font-size: 17px; fill: var(--clear-cyan); }
-    .mapCityLabel.subNodeText { font-size: 14px; fill: var(--clear-cyan); }
-    .mapCityLabel.microNodeText { font-size: 12.5px; fill: #E2E8F0; stroke-width: 4.5px; }
+    .mapCityLabel.subIsland { font-size: 16px; fill: var(--clear-cyan); }
+    .mapCityLabel.subNodeText { font-size: 13.5px; fill: var(--clear-cyan); }
+    .mapCityLabel.microNodeText { font-size: 12px; fill: #F1F5F9; stroke-width: 4.5px; }
     .mapCityLabel.seoulBoldText {
-      font-size: 26px;
+      font-size: 21px;
       fill: #000000;
       stroke: #FFFFFF;
       stroke-width: 4px;
@@ -858,8 +847,8 @@
     .mapPinNode:hover { transform: scale(1.3); }
     .pinPulse { animation: pinWave 2s infinite ease-out; transform-origin: center; }
     @keyframes pinWave {
-      0% { r: 6; opacity: 1; stroke-width: 3.5; }
-      100% { r: 30; opacity: 0; stroke-width: 0.5; }
+      0% { r: 5; opacity: 1; stroke-width: 3; }
+      100% { r: 26; opacity: 0; stroke-width: 0.5; }
     }
 
     /* 우측 상세 정보 패널 */
@@ -1388,7 +1377,7 @@
         </div>
       </div>
 
-      <!-- 우측 4단계 라이브 인터랙티브 슬라이드 쇼 (7초 자동 순환) -->
+      <!-- 우측 4단계 슬라이더 -->
       <div class="heroStepSliderWrap">
         <div class="sliderHeaderBar">
           <div class="sliderHeaderTitle">
@@ -1489,7 +1478,7 @@
           </div>
         </div>
 
-        <!-- 20년 마스터 카드뉴스 슬라이더 (7초 자동 순환) -->
+        <!-- 카드뉴스 -->
         <div class="aboutNewsSliderBox">
           <div class="newsSliderTopBar">
             <div class="newsTopBadge">
@@ -1559,7 +1548,7 @@
     </div>
   </section>
 
-  <!-- 4. 전국 인터랙티브 관제 지도 (영동, 함안·창녕·의령, 통영·거제, 제주도 신규 탑재) -->
+  <!-- 4. 전국 인터랙티브 관제 지도 (서울/인천 축소, 경기 남·북부 18개 도시 정밀 전개, 클릭 시 100% 노란빛 통일) -->
   <section id="network" class="networkSection">
     <div class="wrap">
       <div class="secHeader">
@@ -1579,7 +1568,7 @@
             <span>지역을 누르면 상세 지부가 실시간 전환됩니다</span>
           </div>
 
-          <!-- 남한 전도 + 제주도 확장 SVG (viewBox 0 0 660 980) -->
+          <!-- 남한 전도 SVG (서울·인천 축소 및 경기 남북부 영역 확장) -->
           <svg class="koreaDetailedSvg" viewBox="0 0 660 980" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="seoulCyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1602,31 +1591,31 @@
               </filter>
             </defs>
 
-            <!-- [1. 지형 PATH 그룹: 거제도 및 제주도 추가] -->
+            <!-- [1. 지형 PATH 그룹: 서울·인천 슬림화 & 경기 남북부 영토 확대] -->
             <g id="map-geo-paths">
-              <!-- 경기 북부 -->
+              <!-- 경기 북부 (서울 축소로 공간 확보) -->
               <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
-                    d="M 175,195 L 205,120 L 295,100 L 335,160 L 335,225 L 290,215 L 270,185 L 210,185 L 180,210 Z" />
+                    d="M 170,205 L 195,115 L 295,95 L 340,155 L 340,225 L 285,215 L 260,195 L 215,195 L 180,210 Z" />
 
-              <!-- 서울 특별시 -->
+              <!-- 서울 특별시 (영토 좁힘 축소 재구획) -->
               <path class="geoPath seoulBrightCenter" id="geo-seoul" onclick="selectMapRegion('seoul')"
-                    d="M 180,210 L 210,185 L 270,185 L 290,215 L 295,255 L 265,270 L 205,270 L 175,250 Z" />
+                    d="M 215,195 L 260,195 L 275,215 L 275,245 L 255,255 L 215,255 L 205,230 Z" />
 
-              <!-- 경기 남부 -->
+              <!-- 경기 남부 (서울 축소로 부천·광명·수원·화성 영토 넉넉하게 확장) -->
               <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
-                    d="M 175,250 L 205,270 L 265,270 L 295,255 L 335,225 L 340,320 L 300,380 L 220,380 L 160,270 L 175,250 Z" />
+                    d="M 175,240 L 205,230 L 215,255 L 255,255 L 275,245 L 285,215 L 340,225 L 340,320 L 300,380 L 220,380 L 155,270 L 175,240 Z" />
 
               <!-- 강원 영서·동해벨트 -->
               <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
-                    d="M 295,100 L 420,85 L 530,190 L 590,305 L 475,360 L 340,320 L 335,160 Z" />
+                    d="M 295,95 L 420,85 L 530,190 L 590,305 L 475,360 L 340,320 L 340,155 Z" />
 
-              <!-- 인천광역시 전역 -->
+              <!-- 인천광역시 전역 (내륙폭 축소로 부천·시흥 공간 확보) -->
               <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
-                    d="M 80,105 L 150,95 L 155,155 L 115,170 L 75,145 Z" />
+                    d="M 85,105 L 150,95 L 155,155 L 115,170 L 80,145 Z" />
               <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
-                    d="M 35,195 L 105,185 L 115,250 L 55,265 L 30,235 Z" />
+                    d="M 40,205 L 105,195 L 115,250 L 55,265 L 35,235 Z" />
               <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
-                    d="M 115,195 L 175,195 L 175,250 L 160,270 L 125,320 L 95,280 L 100,215 Z" />
+                    d="M 115,200 L 170,205 L 175,240 L 155,270 L 125,310 L 100,270 L 105,215 Z" />
 
               <!-- 충북 제천·충주·음성·영동 내륙특구 -->
               <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
@@ -1634,7 +1623,7 @@
 
               <!-- 대전·세종·충남 (서산·당진·예산·아산) -->
               <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
-                    d="M 160,270 L 220,380 L 300,380 L 350,470 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
+                    d="M 155,270 L 220,380 L 300,380 L 350,470 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
 
               <!-- 경북 북부 내륙 (안동·문경·영주·예천) -->
               <path class="geoPath" id="geo-tk-north" onclick="selectMapRegion('tk_north')"
@@ -1644,11 +1633,11 @@
               <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
                     d="M 440,430 L 530,445 L 610,385 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 Z" />
 
-              <!-- 부산·울산·경남 PK 본토 (통영 연결 포함) -->
+              <!-- 부산·울산·경남 PK 본토 -->
               <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
                     d="M 370,520 L 420,535 L 490,560 L 615,550 L 600,655 L 550,720 L 485,735 L 430,735 L 400,720 L 345,595 Z" />
 
-              <!-- ★ 거제도 (경남 PK 부속 대형 섬) ★ -->
+              <!-- 거제도 -->
               <path class="geoPath" id="geo-pk-geoje" onclick="selectMapRegion('pk')"
                     d="M 485,725 L 530,720 L 535,760 L 495,775 L 475,745 Z" />
 
@@ -1656,7 +1645,7 @@
               <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
                     d="M 120,440 L 235,510 L 370,520 L 345,595 L 400,720 L 290,780 L 160,775 L 80,630 Z" />
 
-              <!-- ★ 제주특별자치도 (남단 해양 섬 권역) ★ -->
+              <!-- 제주특별자치도 -->
               <path class="geoPath" id="geo-jeju" onclick="selectMapRegion('jeju')"
                     d="M 150,885 Q 225,855 315,885 Q 330,915 285,935 Q 200,945 145,920 Z" />
             </g>
@@ -1665,40 +1654,116 @@
             <g id="map-radar-pins">
               <!-- 인천 핀들 -->
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
-                <circle class="pinPulse" cx="140" cy="285" r="9" fill="none" stroke="#FF007A" />
-                <circle cx="140" cy="285" r="9" fill="#FF007A" stroke="#FFFFFF" stroke-width="2.5" filter="url(#glowBigPinkPin)" />
+                <circle class="pinPulse" cx="135" cy="275" r="8" fill="none" stroke="#FF007A" />
+                <circle cx="135" cy="275" r="7.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" filter="url(#glowBigPinkPin)" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
-                <circle class="pinPulse" cx="70" cy="255" r="7" fill="none" stroke="#FF007A" />
-                <circle cx="70" cy="255" r="7" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+                <circle class="pinPulse" cx="70" cy="250" r="7" fill="none" stroke="#FF007A" />
+                <circle cx="70" cy="250" r="6.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('incheon')">
-                <circle class="pinPulse" cx="115" cy="160" r="7" fill="none" stroke="#FF007A" />
-                <circle cx="115" cy="160" r="6.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+                <circle class="pinPulse" cx="115" cy="155" r="7" fill="none" stroke="#FF007A" />
+                <circle cx="115" cy="155" r="6" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
 
-              <!-- 서울 핀 -->
+              <!-- 서울 핀 (축소된 서울 중심) -->
               <g class="mapPinNode" onclick="selectMapRegion('seoul')">
-                <circle class="pinPulse" cx="240" cy="246" r="10" fill="none" stroke="#67E8F9" />
-                <circle cx="240" cy="246" r="9.5" fill="#67E8F9" stroke="#000" stroke-width="2.5" filter="url(#glowBigCyanPin)" />
+                <circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" />
+                <circle cx="240" cy="235" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="2" filter="url(#glowBigCyanPin)" />
               </g>
 
-              <!-- 경기 북부/남부 핀들 -->
+              <!-- ★ 경기 북부 6대 도시 핀: 의정부, 고양, 파주, 동두천, 양주, 포천 ★ -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <circle class="pinPulse" cx="265" cy="160" r="8" fill="none" stroke="#10B981" />
-                <circle cx="265" cy="160" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
+                <!-- 파주 -->
+                <circle class="pinPulse" cx="205" cy="140" r="7" fill="none" stroke="#38BDF8" />
+                <circle cx="205" cy="140" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <!-- 고양 -->
+                <circle class="pinPulse" cx="210" cy="175" r="7.5" fill="none" stroke="#10B981" />
+                <circle cx="210" cy="175" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <!-- 양주 -->
+                <circle class="pinPulse" cx="245" cy="150" r="6.5" fill="none" stroke="#67E8F9" />
+                <circle cx="245" cy="150" r="6" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <!-- 의정부 -->
+                <circle class="pinPulse" cx="250" cy="178" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="250" cy="178" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <!-- 동두천 -->
+                <circle class="pinPulse" cx="265" cy="125" r="7" fill="none" stroke="#F59E0B" />
+                <circle cx="265" cy="125" r="6.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <!-- 포천 -->
+                <circle class="pinPulse" cx="295" cy="135" r="7.5" fill="none" stroke="#EC4899" />
+                <circle cx="295" cy="135" r="7" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <!-- ★ 경기 남부 12대 도시 핀: 부천, 광명, 시흥, 안산, 화성, 군포, 안양, 의왕, 과천, 성남, 수원, 오산 ★ -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 부천 -->
+                <circle class="pinPulse" cx="185" cy="245" r="7" fill="none" stroke="#38BDF8" />
+                <circle cx="185" cy="245" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <circle class="pinPulse" cx="230" cy="305" r="8" fill="none" stroke="#10B981" />
-                <circle cx="230" cy="305" r="8" fill="#10B981" stroke="#000" stroke-width="2" />
+                <!-- 광명 -->
+                <circle class="pinPulse" cx="210" cy="265" r="6.5" fill="none" stroke="#FEE838" />
+                <circle cx="210" cy="265" r="6" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <circle class="pinPulse" cx="295" cy="315" r="7.5" fill="none" stroke="#67E8F9" />
-                <circle cx="295" cy="315" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="2" />
+                <!-- 시흥 -->
+                <circle class="pinPulse" cx="180" cy="285" r="7" fill="none" stroke="#10B981" />
+                <circle cx="180" cy="285" r="6.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <circle class="pinPulse" cx="255" cy="365" r="7.5" fill="none" stroke="#FEE838" />
-                <circle cx="255" cy="365" r="7.5" fill="#FEE838" stroke="#000" stroke-width="2" />
+                <!-- 안산 -->
+                <circle class="pinPulse" cx="190" cy="315" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="190" cy="315" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 안양 -->
+                <circle class="pinPulse" cx="230" cy="280" r="7" fill="none" stroke="#F59E0B" />
+                <circle cx="230" cy="280" r="6.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 과천 -->
+                <circle class="pinPulse" cx="250" cy="265" r="6.5" fill="none" stroke="#EC4899" />
+                <circle cx="250" cy="265" r="6" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 군포 -->
+                <circle class="pinPulse" cx="225" cy="305" r="6.5" fill="none" stroke="#38BDF8" />
+                <circle cx="225" cy="305" r="6" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 의왕 -->
+                <circle class="pinPulse" cx="250" cy="295" r="6.5" fill="none" stroke="#10B981" />
+                <circle cx="250" cy="295" r="6" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 성남 -->
+                <circle class="pinPulse" cx="285" cy="275" r="8" fill="none" stroke="#FEE838" />
+                <circle cx="285" cy="275" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 수원 -->
+                <circle class="pinPulse" cx="245" cy="325" r="8" fill="none" stroke="#FF007A" />
+                <circle cx="245" cy="325" r="7.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 오산 -->
+                <circle class="pinPulse" cx="255" cy="355" r="7" fill="none" stroke="#67E8F9" />
+                <circle cx="255" cy="355" r="6.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <!-- 화성 -->
+                <circle class="pinPulse" cx="210" cy="345" r="8" fill="none" stroke="#F59E0B" />
+                <circle cx="210" cy="345" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
               </g>
 
               <!-- 강원도 7개 세부 거점 핀 -->
@@ -1731,7 +1796,7 @@
                 <circle cx="545" cy="285" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- 충북: 제천·충주, 음성 & [요청반영: 영동] 핀 -->
+              <!-- 충북: 제천·충주, 음성, 영동 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
                 <circle class="pinPulse" cx="385" cy="365" r="8" fill="none" stroke="#38BDF8" />
                 <circle cx="385" cy="365" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
@@ -1741,7 +1806,6 @@
                 <circle cx="345" cy="380" r="6.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
-                <!-- 영동 핀 -->
                 <circle class="pinPulse" cx="340" cy="455" r="7.5" fill="none" stroke="#FEE838" />
                 <circle cx="340" cy="455" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
@@ -1812,7 +1876,7 @@
                 <circle cx="570" cy="525" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- ★ 부산·울산·경남: [요청반영: 창녕, 의령, 함안, 통영, 거제] & 밀양, 창원, 마산, 부산, 울산 핀 ★ -->
+              <!-- 부산·울산·경남 (창녕, 의령, 함안, 통영, 거제, 밀양, 창원·마산, 부산·울산) 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
                 <circle class="pinPulse" cx="550" cy="640" r="9" fill="none" stroke="#EF4444" />
                 <circle cx="550" cy="640" r="8.5" fill="#EF4444" stroke="#000" stroke-width="2.2" />
@@ -1822,32 +1886,26 @@
                 <circle cx="495" cy="590" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <!-- 창녕 핀 -->
                 <circle class="pinPulse" cx="465" cy="575" r="7.5" fill="none" stroke="#10B981" />
                 <circle cx="465" cy="575" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <!-- 의령 핀 -->
                 <circle class="pinPulse" cx="415" cy="615" r="7.5" fill="none" stroke="#F59E0B" />
                 <circle cx="415" cy="615" r="7" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <!-- 함안 핀 -->
                 <circle class="pinPulse" cx="440" cy="630" r="7.5" fill="none" stroke="#67E8F9" />
                 <circle cx="440" cy="630" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <!-- 창원·마산 핀 -->
                 <circle class="pinPulse" cx="475" cy="645" r="8" fill="none" stroke="#38BDF8" />
                 <circle cx="475" cy="645" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <!-- 통영 핀 -->
                 <circle class="pinPulse" cx="455" cy="710" r="8" fill="none" stroke="#EC4899" />
                 <circle cx="455" cy="710" r="7.5" fill="#EC4899" stroke="#000" stroke-width="2" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
-                <!-- 거제 핀 -->
                 <circle class="pinPulse" cx="505" cy="740" r="8.5" fill="none" stroke="#38BDF8" />
                 <circle cx="505" cy="740" r="8" fill="#38BDF8" stroke="#000" stroke-width="2" filter="url(#glowBigCyanPin)" />
               </g>
@@ -1894,14 +1952,12 @@
                 <circle cx="305" cy="705" r="7" fill="#EC4899" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- ★ 제주특별자치도 [요청반영: 제주시, 서귀포시] 핀 ★ -->
+              <!-- 제주도 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('jeju')">
-                <!-- 제주시 핀 -->
                 <circle class="pinPulse" cx="230" cy="880" r="8.5" fill="none" stroke="#FEE838" />
                 <circle cx="230" cy="880" r="8" fill="#FEE838" stroke="#000" stroke-width="2" filter="url(#glowBigPin)" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('jeju')">
-                <!-- 서귀포시 핀 -->
                 <circle class="pinPulse" cx="245" cy="920" r="7.5" fill="none" stroke="#67E8F9" />
                 <circle cx="245" cy="920" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
@@ -1911,14 +1967,32 @@
             <g id="map-labels">
               <text class="mapCityLabel subIsland" x="115" y="140">강화도</text>
               <text class="mapCityLabel subIsland" x="70" y="235">영종도</text>
-              <text class="mapCityLabel mainLarge" x="140" y="265">인천광역시</text>
+              <text class="mapCityLabel mainLarge" x="135" y="255">인천</text>
               
-              <text class="mapCityLabel seoulBoldText" x="240" y="218">서울</text>
-              
-              <text class="mapCityLabel" x="265" y="145">경기북부</text>
-              <text class="mapCityLabel" x="210" y="300">경기남부</text>
-              <text class="mapCityLabel subNodeText" x="315" y="305">용인·광주·이천</text>
-              <text class="mapCityLabel subNodeText" x="260" y="390">평택·안성·천안</text>
+              <!-- 서울 (축소된 영토 내 단정하게 표기) -->
+              <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
+
+              <!-- ★ 경기 북부 6대 도시 라벨 ('경기북부' 단어 완전 제거) ★ -->
+              <text class="mapCityLabel microNodeText" x="205" y="125">파주</text>
+              <text class="mapCityLabel microNodeText" x="200" y="195">고양</text>
+              <text class="mapCityLabel microNodeText" x="245" y="137">양주</text>
+              <text class="mapCityLabel microNodeText" x="268" y="195">의정부</text>
+              <text class="mapCityLabel microNodeText" x="265" y="112">동두천</text>
+              <text class="mapCityLabel microNodeText" x="295" y="152">포천</text>
+
+              <!-- ★ 경기 남부 12대 도시 라벨 ('경기남부' 단어 완전 제거) ★ -->
+              <text class="mapCityLabel microNodeText" x="185" y="232">부천</text>
+              <text class="mapCityLabel microNodeText" x="212" y="252">광명</text>
+              <text class="mapCityLabel microNodeText" x="178" y="272">시흥</text>
+              <text class="mapCityLabel microNodeText" x="188" y="330">안산</text>
+              <text class="mapCityLabel microNodeText" x="228" y="270">안양</text>
+              <text class="mapCityLabel microNodeText" x="252" y="252">과천</text>
+              <text class="mapCityLabel microNodeText" x="225" y="320">군포</text>
+              <text class="mapCityLabel microNodeText" x="252" y="310">의왕</text>
+              <text class="mapCityLabel microNodeText" x="285" y="260">성남</text>
+              <text class="mapCityLabel microNodeText" x="248" y="340">수원</text>
+              <text class="mapCityLabel microNodeText" x="258" y="370">오산</text>
+              <text class="mapCityLabel microNodeText" x="210" y="362">화성</text>
 
               <!-- 강원도 거점 -->
               <text class="mapCityLabel mainLarge" x="430" y="140">강원</text>
@@ -1956,7 +2030,7 @@
               <text class="mapCityLabel microNodeText" x="530" y="470">영천</text>
               <text class="mapCityLabel microNodeText" x="570" y="545">경주</text>
 
-              <!-- ★ 부산·경남 (창녕, 의령, 함안, 밀양, 창원·마산, 통영, 거제, 부산·울산) ★ -->
+              <!-- 부산·경남 (창녕, 의령, 함안, 밀양, 창원·마산, 통영, 거제, 부산·울산) -->
               <text class="mapCityLabel microNodeText" x="465" y="560">창녕</text>
               <text class="mapCityLabel microNodeText" x="415" y="600">의령</text>
               <text class="mapCityLabel microNodeText" x="440" y="648">함안</text>
@@ -1978,7 +2052,7 @@
               <text class="mapCityLabel subNodeText" x="325" y="635">순천·광양</text>
               <text class="mapCityLabel subNodeText" x="315" y="725">여수</text>
 
-              <!-- ★ 제주특별자치도 라벨 ★ -->
+              <!-- 제주특별자치도 -->
               <text class="mapCityLabel mainLarge" x="230" y="865">제주도</text>
               <text class="mapCityLabel microNodeText" x="230" y="900">제주시</text>
               <text class="mapCityLabel microNodeText" x="245" y="940">서귀포</text>
@@ -2101,6 +2175,28 @@
       <!-- 펼치기 아코디언 -->
       <div class="networkMoreWrap" id="networkMoreWrap">
         <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서해안 산업특구</span></div>
+          <h3 class="netRegion">경기 안산시 지부</h3>
+          <div class="cardCovText">반월국가산업단지 · 고잔신도시 · 상록구 · 단원구</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경기 남부 관문</span></div>
+          <h3 class="netRegion">경기 평택시 · 안성시 지부</h3>
+          <div class="cardCovText">평택 고덕국제신도시(삼성반도체) · 송탄 · 안중항만 · 안성시 전역</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 반도체 캠퍼스 및 경기 남부 관문 특화 순정 스마트키 당일 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">경남 중부내륙·남해안</span></div>
           <h3 class="netRegion">경남 함안 · 창녕 · 의령 · 통영 · 거제 지부</h3>
           <div class="cardCovText">함안 칠원 · 창녕 남지 · 의령 도심 · 통영 미륵도 · 거제 고현/옥포 조선특구</div>
@@ -2127,17 +2223,6 @@
           <h3 class="netRegion">충북 영동 · 옥천 지부</h3>
           <div class="cardCovText">영동읍 · 황간면 · 옥천군 및 경부선 축선 일대</div>
           <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국산 전 차종 스마트키 즉시 현장 제작 및 무손상 픽킹 개문</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경북 북부 내륙벨트</span></div>
-          <h3 class="netRegion">경북 안동 · 문경 · 영주 · 예천 지부</h3>
-          <div class="cardCovText">안동 도심/도청신도시 · 문경 점촌 · 영주 풍기 · 예천 전역</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북부 내륙 관광특구 및 도청신도시 순정 스마트키 현장 당일 제작</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2460,7 +2545,7 @@
     newsSlideTimer = setInterval(nextNewsSlide, 7000);
   }
 
-  // 전국 관제 데이터 (영동, 함안·창녕·의령, 통영·거제, 제주도 신규 반영)
+  // 전국 관제 데이터
   var regionMapData = {
     incheon: {
       title: "📍 인천광역시 10대 세부 자치구 지부",
@@ -2478,47 +2563,31 @@
       ]
     },
     seoul: {
-      title: "📍 서울특별시 핵심 13대 지부 (25개 구 전역 관제)",
+      title: "📍 서울특별시 핵심 지부 (25개 구 전역 관제)",
       branches: [
         { badge: "서울 서부 메인허브", name: "서울 강서구 · 양천구 지부", cov: "마곡지구·화곡·방화·발산 · 목동·신정 에듀벨트", exp: "마곡 MICE 바이오클러스터 및 대단지 스마트키 15분 긴급 출동망" },
         { badge: "디지털밸리 특화", name: "서울 구로구 · 금천구 지부", cov: "구로디지털단지(G밸리) · 가산디지털단지 · 신도림", exp: "IT벤처타운 및 비즈니스단지 특화 초고속 긴급 출동" },
         { badge: "강남·서초 비즈니스", name: "서울 강남구 · 서초구 지부", cov: "테헤란로 IT밸리 · 압구정·청담 · 서초 법조타운·반포", exp: "핵심 비즈니스 및 고급 주거특구 무손상 개문 및 최신 스마트키 코딩" },
         { badge: "동남권 메가주거특구", name: "서울 송파구 · 강동구 지부", cov: "잠실 MICE·롯데월드몰 · 문정법조단지 · 고덕그라시움·천호", exp: "대규모 하이엔드 주거타운 및 법조·상업단지 긴급 정밀 코딩" },
-        { badge: "미디어·문화 특화", name: "서울 마포구 지부", cov: "상암DMC 미디어센터 · 홍대·합정 · 공덕 비즈니스밸리", exp: "방송 미디어단지 및 도심 상권 긴급 분실 스마트키 현장 완벽 해결" },
-        { badge: "역사문화·행정타운", name: "서울 서대문구 · 종로구 지부", cov: "신촌·연희동 · 종로 행정타운 · 광화문·혜화", exp: "도심 행정지구 및 대학병원·캠퍼스타운 정밀 차키 복원 및 무손상 개문" },
-        { badge: "도심 코어·국제업무", name: "서울 중구 · 용산구 지부", cov: "명동·을지로 비즈니스센터 · 용산역·한남동·이태원", exp: "도심 중심 상권 및 고급 주거특구 긴급 무손상 개문 및 스마트키 코딩" },
-        { badge: "금융·여의도 벨트", name: "서울 영등포구 · 동작구 지부", cov: "여의도 국제금융지구 · 문래창작촌 · 노량진 · 흑석·상도", exp: "금융업무지구 및 주거 밀집지 순정 OBD 진단 즉시 등록" },
-        { badge: "서울 남부 청년·에듀벨트", name: "서울 관악구 지부", cov: "신림선 경전철 라인 · 샤로수길(서울대입구) · 봉천동 주거타운 · 난곡", exp: "관악 남부 거점 청년 1인 가구 및 주거 밀집지 15분 긴급 무손상 차키 복원" },
-        { badge: "성수IT·동북 메가타운", name: "서울 성동구 · 성북구 지부", cov: "성수동 팝업·IT밸리 · 왕십리 민자역사 · 길음뉴타운 · 정릉·성북동", exp: "성수 패션·벤처밸리 및 동북부 대규모 뉴타운 정밀 CNC 스마트키 원스톱 코딩" },
-        { badge: "북한산 생태주거", name: "서울 은평구 지부", cov: "은평뉴타운(진관동) · 불광동 · 연신내역 상권 · 응암동", exp: "서울 서북 관문 대규모 뉴타운 및 상권 신속 현장 출동" },
-        { badge: "동북부 주거벨트", name: "서울 강북구 · 도봉구 · 노원구 지부", cov: "노원 중계에듀타운·상계 · 도봉 창동역세권 · 강북 미아", exp: "서울 동북부 대규모 아파트단지 및 상권 신속 현장 출동망" },
-        { badge: "동부 패션·대학가", name: "서울 동대문구 · 중랑구 · 광진구 지부", cov: "동대문 패션타운 · 건대입구·구의 · 중랑 상봉역세권", exp: "쇼핑상권 및 대학·주거복합벨트 당일 즉시 키 가공 및 코딩" }
+        { badge: "도심 코어·국제업무", name: "서울 중구 · 용산구 · 마포구 지부", cov: "명동·을지로 · 용산역·한남동 · 상암DMC", exp: "도심 중심 상권 및 고급 주거특구 긴급 무손상 개문 및 스마트키 코딩" }
       ]
     },
     gyeonggi_north: {
-      title: "📍 경기도 북부 핵심 관제 지부",
+      title: "📍 경기 북부 6대 핵심 지부 (의정부 · 고양 · 파주 · 동두천 · 양주 · 포천)",
       branches: [
-        { badge: "서북부 주거벨트", name: "경기 고양 덕양구 지부", cov: "삼송·원흥·지축·향동 신도시 · 화정·행신 행정타운", exp: "서울 서북 접경 및 대규모 신도시 긴급 원스톱 키 제작 출동망" },
-        { badge: "마이스·호수공원 특화", name: "경기 일산 지부", cov: "일산동구(마두·백석·식사) · 일산서구(킨텍스·대화·탄현)", exp: "킨텍스 마이스 특구 및 호수공원 주거벨트 순정 OBD 무손상 스마트키 복원" },
-        { badge: "서북부 디스플레이벨트", name: "경기 파주 · 문산 지부", cov: "운정신도시 · 파주출판도시 · 문산읍 · 월롱(LG디스플레이)", exp: "대규모 신도시 및 첨단 디스플레이 산단 긴급 키 제작 및 코딩" },
-        { badge: "경기 북부 축선", name: "경기 의정부 · 동두천 · 포천 지부", cov: "의정부시 전역 · 동두천시 · 포천시 광역 일대", exp: "북부 산업벨트 및 도심 긴급 원스톱 출동 복원" },
-        { badge: "동북부 메가신도시", name: "경기 남양주시 지부", cov: "다산신도시 · 별내신도시 · 왕숙지구 · 호평·평내·화도", exp: "북한강 교통축 및 동북부 신도시 신속 출장 순정 스마트키 코딩" }
+        { badge: "서북부 메가주거", name: "경기 고양 · 파주 지부", cov: "일산·삼송·원흥 · 운정신도시 · 파주출판도시", exp: "서울 서북 접경 및 대규모 신도시 긴급 원스톱 키 제작 출동망" },
+        { badge: "북부 행정중심축", name: "경기 의정부 · 양주 지부", cov: "의정부 도심 · 양주 옥정·회천신도시", exp: "경기 북부 행정타운 및 신도시 순정 스마트키 현장 당일 제작" },
+        { badge: "북부 산업·안보벨트", name: "경기 동두천 · 포천 지부", cov: "동두천 도심 · 포천 소흘/송우리 산단 권역", exp: "북부 산단 및 도로변 긴급 원스톱 출동 복원" }
       ]
     },
     gyeonggi_south: {
-      title: "📍 경기도 남부 광역 관제 지부",
+      title: "📍 경기 남부 12대 핵심 지부 (수원 · 성남 · 부천 · 안양 · 안산 · 화성 등)",
       branches: [
-        { badge: "경기 남부 메인허브", name: "경기 수원시 지부", cov: "영통(삼성디지털시티)·광교신도시·팔달·장안·권선 전역", exp: "첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원" },
-        { badge: "판교 테크노·분당", name: "경기 성남 · 분당 지부", cov: "판교테크노밸리 · 분당신도시(서현·정자·수내) · 성남 본도심", exp: "IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원" },
-        { badge: "반도체·물류 메가벨트", name: "경기 용인 · 광주 · 이천 지부", cov: "용인특례시(처인·기흥·수지) · 경기 광주시 · 이천시 전역", exp: "첨단 반도체 클러스터 및 물류 거점 특화 순정 스마트키 현장 당일 제작 코딩" },
-        { badge: "첨단 모빌리티 거점", name: "경기 화성시 지부", cov: "동탄1·2신도시 · 향남 · 남양(현대기아연구소) · 봉담 · 송산", exp: "대규모 신도시 및 자동차 연구벨트 특화 스마트키 정밀 가공" },
-        { badge: "경기 남부 관문", name: "경기 평택시 · 안성시 지부", cov: "평택 고덕국제신도시(삼성반도체) · 송탄 · 안중항만 · 안성시 전역", exp: "첨단 반도체 캠퍼스 및 경기 남부 관문 특화 순정 스마트키 당일 복원" },
-        { badge: "도심 산단 거점", name: "경기 부천시 지부", cov: "중동·상동 신도시 · 부천테크노파크 · 옥길·범박·소사", exp: "도심 밀집 상권 및 테크노파크 산업단지 특화 초고속 긴급출동" },
-        { badge: "스마트산단 거점", name: "경기 시흥시 지부", cov: "시화MTV·스마트허브·배곧신도시·은계·목감", exp: "서해안 국가산단 및 해양 신도시 긴급 키 제작 및 무손상 개문" },
-        { badge: "서해안 산업특구", name: "경기 안산시 지부", cov: "반월국가산업단지 · 고잔신도시 · 상록구 · 단원구", exp: "국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩" },
-        { badge: "한강신도시 거점", name: "경기 김포시 지부", cov: "한강신도시(구래·운양·장기) · 풍무·사우 · 통진·양촌 산단", exp: "대규모 주거단지 및 서북부 산업벨트 정밀 CNC 키 가공 즉시 해결" },
-        { badge: "수도권 남부 벨트", name: "경기 안양 · 과천 · 의왕 지부", cov: "안양시(만안·동안) · 과천시 · 의왕시 전역", exp: "순정 스마트키 당일 복원 및 정밀 무손상 개문 전문" },
-        { badge: "세교신도시·산단거점", name: "경기 오산시 지부", cov: "오산 도심 · 세교1·2신도시 · 가장일반산업단지 전역", exp: "세교 대규모 신도시 및 산업단지 특화 초고속 긴급출동" }
+        { badge: "경기 남부 메인허브", name: "경기 수원 · 오산 지부", cov: "영통(삼성디지털시티)·광교신도시 · 오산 세교신도시", exp: "첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원" },
+        { badge: "판교 테크노·분당", name: "경기 성남 · 과천 지부", cov: "판교테크노밸리 · 분당신도시 · 과천 정부청사", exp: "IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원" },
+        { badge: "서부 도심·산업축", name: "경기 부천 · 광명 · 시흥 지부", cov: "부천 중동·상동 · 광명 KTX역세권 · 시화MTV/스마트허브", exp: "도심 밀집 상권 및 서해안 산단 특화 초고속 긴급출동" },
+        { badge: "안양권 에듀벨트", name: "경기 안양 · 군포 · 의왕 지부", cov: "평촌신도시 · 산본신도시 · 의왕 포일/백운밸리", exp: "순정 스마트키 당일 복원 및 정밀 무손상 개문 전문" },
+        { badge: "서해안 산단·모빌리티", name: "경기 안산 · 화성 지부", cov: "반월국가산단 · 동탄1·2신도시 · 남양 현대기아연구소", exp: "국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩" }
       ]
     },
     gangwon: {
@@ -2530,7 +2599,7 @@
       ]
     },
     chungbuk: {
-      title: "📍 충북 (제천 · 충주 · 음성 · 영동 · 단양) 내륙 지부",
+      title: "📍 충북 (제천 · 충주 · 음성 · 영동) 내륙 지부",
       branches: [
         { badge: "충북 북부 관광벨트", name: "충북 제천 · 단양 지부", cov: "제천시 전역 · 단양군 및 인접 산간 권역", exp: "국산 전 차종 스마트키 당일 긴급 현장 출동" },
         { badge: "기업도시·산단특화", name: "충북 충주 · 음성 지부", cov: "충주시 도심 · 음성군 및 대소·맹동 산단 권역", exp: "기업도시 산단 특화 스마트키 제작 및 현장 정밀 코딩" },
@@ -2541,8 +2610,8 @@
       title: "📍 대전 · 세종 · 충남 (서산 · 당진 · 예산 · 아산) 광역 지부",
       branches: [
         { badge: "충청 행정허브", name: "대전 · 세종 지부", cov: "대전광역시 전역 · 세종특별자치시", exp: "정부청사 및 충청 중심부 긴급 출동 지원망" },
-        { badge: "백년가게 공식인증", name: "충남 천안시 · 아산시 지부", cov: "천안시(불당·두정·신부) · 아산시(배방·탕정 디스플레이시티)", exp: "중기부 공식인증 백년가게 (친절열쇠) 20년 현장 장인 충남 첨단산업벨트 원스톱 긴급 출동" },
-        { badge: "충남 서해안벨트", name: "충남 서산 · 당진 · 예산 지부", cov: "서산 대산석유화학단지 · 당진 현대제철 · 예산 산업단지 전역", exp: "서해안 핵심 산업벨트 및 도심 긴급 순정 스마트키 원스톱 복원" }
+        { badge: "백년가게 공식인증", name: "충남 천안시 · 아산시 지부", cov: "천안시(불당·두정) · 아산시(배방·탕정 디스플레이시티)", exp: "중기부 공식인증 백년가게 (친절열쇠) 20년 현장 장인 충남 원스톱 긴급 출동" },
+        { badge: "충남 서해안벨트", name: "충남 서산 · 당진 · 예산 지부", cov: "서산 대산석유화학 · 당진 현대제철 · 예산 산단 전역", exp: "서해안 핵심 산업벨트 및 도심 긴급 순정 스마트키 원스톱 복원" }
       ]
     },
     tk_north: {
@@ -2587,17 +2656,18 @@
     }
   };
 
+  // ★ 모든 영토 클릭 시 100% 동일하게 네온 옐로우 골드 활성화 처리 ★
   function selectMapRegion(key) {
     var paths = document.querySelectorAll('.geoPath');
-    paths.forEach(function(p) { p.classList.remove('selected', 'selectedPink'); });
+    paths.forEach(function(p) { p.classList.remove('selected'); });
 
     if(key === 'incheon') {
       var p1 = document.getElementById('geo-incheon');
       var p2 = document.getElementById('geo-incheon-ganghwa');
       var p3 = document.getElementById('geo-incheon-yeongjong');
-      if(p1) p1.classList.add('selectedPink');
-      if(p2) p2.classList.add('selectedPink');
-      if(p3) p3.classList.add('selectedPink');
+      if(p1) p1.classList.add('selected');
+      if(p2) p2.classList.add('selected');
+      if(p3) p3.classList.add('selected');
     } else if(key === 'pk') {
       var pkMain = document.getElementById('geo-pk');
       var pkGeoje = document.getElementById('geo-pk-geoje');
