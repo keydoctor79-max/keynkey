@@ -810,7 +810,7 @@
       filter: drop-shadow(0 0 20px var(--clear-cyan-glow)) !important;
     }
 
-    /* ★ 모든 영토 클릭 시 통일된 100% 네온 옐로우 골드 활성화 효과 ★ */
+    /* 모든 영토 클릭 시 통일된 100% 네온 옐로우 골드 활성화 효과 */
     .geoPath.selected {
       fill: #18263E !important;
       stroke: var(--neon-yellow) !important;
@@ -1548,7 +1548,7 @@
     </div>
   </section>
 
-  <!-- 4. 전국 인터랙티브 관제 지도 (서울/인천 축소, 경기 남·북부 18개 도시 정밀 전개, 클릭 시 100% 노란빛 통일) -->
+  <!-- 4. 전국 인터랙티브 관제 지도 -->
   <section id="network" class="networkSection">
     <div class="wrap">
       <div class="secHeader">
@@ -1558,7 +1558,7 @@
         </span>
       </div>
       <p class="networkIntro">
-        키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역을 유기적으로 관제·출동합니다.
+        키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역(226개 시·군·구)을 8대 광역권 70개 거점으로 유기 관제·출동합니다.
       </p>
 
       <div class="mapControlCenter">
@@ -1568,7 +1568,7 @@
             <span>지역을 누르면 상세 지부가 실시간 전환됩니다</span>
           </div>
 
-          <!-- 남한 전도 SVG (서울·인천 축소 및 경기 남북부 영역 확장) -->
+          <!-- 남한 전도 SVG -->
           <svg class="koreaDetailedSvg" viewBox="0 0 660 980" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="seoulCyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1591,17 +1591,17 @@
               </filter>
             </defs>
 
-            <!-- [1. 지형 PATH 그룹: 서울·인천 슬림화 & 경기 남북부 영토 확대] -->
+            <!-- [1. 지형 PATH 그룹] -->
             <g id="map-geo-paths">
-              <!-- 경기 북부 (서울 축소로 공간 확보) -->
+              <!-- 경기 북부 -->
               <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
                     d="M 170,205 L 195,115 L 295,95 L 340,155 L 340,225 L 285,215 L 260,195 L 215,195 L 180,210 Z" />
 
-              <!-- 서울 특별시 (영토 좁힘 축소 재구획) -->
+              <!-- 서울 특별시 -->
               <path class="geoPath seoulBrightCenter" id="geo-seoul" onclick="selectMapRegion('seoul')"
                     d="M 215,195 L 260,195 L 275,215 L 275,245 L 255,255 L 215,255 L 205,230 Z" />
 
-              <!-- 경기 남부 (서울 축소로 부천·광명·수원·화성 영토 넉넉하게 확장) -->
+              <!-- 경기 남부 -->
               <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
                     d="M 175,240 L 205,230 L 215,255 L 255,255 L 275,245 L 285,215 L 340,225 L 340,320 L 300,380 L 220,380 L 155,270 L 175,240 Z" />
 
@@ -1609,7 +1609,7 @@
               <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
                     d="M 295,95 L 420,85 L 530,190 L 590,305 L 475,360 L 340,320 L 340,155 Z" />
 
-              <!-- 인천광역시 전역 (내륙폭 축소로 부천·시흥 공간 확보) -->
+              <!-- 인천광역시 전역 -->
               <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
                     d="M 85,105 L 150,95 L 155,155 L 115,170 L 80,145 Z" />
               <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
@@ -1617,19 +1617,19 @@
               <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
                     d="M 115,200 L 170,205 L 175,240 L 155,270 L 125,310 L 100,270 L 105,215 Z" />
 
-              <!-- 충북 제천·충주·음성·영동 내륙특구 -->
+              <!-- 충북 -->
               <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
                     d="M 340,320 L 475,360 L 440,430 L 380,430 L 350,470 L 300,380 Z" />
 
-              <!-- 대전·세종·충남 (서산·당진·예산·아산) -->
+              <!-- 충남/대전/세종 -->
               <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
                     d="M 155,270 L 220,380 L 300,380 L 350,470 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
 
-              <!-- 경북 북부 내륙 (안동·문경·영주·예천) -->
+              <!-- 경북 북부 내륙 -->
               <path class="geoPath" id="geo-tk-north" onclick="selectMapRegion('tk_north')"
                     d="M 475,360 L 590,305 L 610,385 L 530,445 L 440,430 Z" />
 
-              <!-- 대구·경북 남부 (대구·구미·김천·포항·경주·영천) -->
+              <!-- 대구·경북 남부 -->
               <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
                     d="M 440,430 L 530,445 L 610,385 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 Z" />
 
@@ -1641,7 +1641,7 @@
               <path class="geoPath" id="geo-pk-geoje" onclick="selectMapRegion('pk')"
                     d="M 485,725 L 530,720 L 535,760 L 495,775 L 475,745 Z" />
 
-              <!-- 호남 (전북·광주·전남) -->
+              <!-- 호남 -->
               <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
                     d="M 120,440 L 235,510 L 370,520 L 345,595 L 400,720 L 290,780 L 160,775 L 80,630 Z" />
 
@@ -1666,107 +1666,89 @@
                 <circle cx="115" cy="155" r="6" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
 
-              <!-- 서울 핀 (축소된 서울 중심) -->
+              <!-- 서울 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('seoul')">
                 <circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" />
                 <circle cx="240" cy="235" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="2" filter="url(#glowBigCyanPin)" />
               </g>
 
-              <!-- ★ 경기 북부 6대 도시 핀: 의정부, 고양, 파주, 동두천, 양주, 포천 ★ -->
+              <!-- 경기 북부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <!-- 파주 -->
                 <circle class="pinPulse" cx="205" cy="140" r="7" fill="none" stroke="#38BDF8" />
                 <circle cx="205" cy="140" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <!-- 고양 -->
                 <circle class="pinPulse" cx="210" cy="175" r="7.5" fill="none" stroke="#10B981" />
                 <circle cx="210" cy="175" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <!-- 양주 -->
                 <circle class="pinPulse" cx="245" cy="150" r="6.5" fill="none" stroke="#67E8F9" />
                 <circle cx="245" cy="150" r="6" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <!-- 의정부 -->
                 <circle class="pinPulse" cx="250" cy="178" r="7.5" fill="none" stroke="#FEE838" />
                 <circle cx="250" cy="178" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <!-- 동두천 -->
                 <circle class="pinPulse" cx="265" cy="125" r="7" fill="none" stroke="#F59E0B" />
                 <circle cx="265" cy="125" r="6.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
-                <!-- 포천 -->
                 <circle class="pinPulse" cx="295" cy="135" r="7.5" fill="none" stroke="#EC4899" />
                 <circle cx="295" cy="135" r="7" fill="#EC4899" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- ★ 경기 남부 12대 도시 핀: 부천, 광명, 시흥, 안산, 화성, 군포, 안양, 의왕, 과천, 성남, 수원, 오산 ★ -->
+              <!-- 경기 남부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 부천 -->
                 <circle class="pinPulse" cx="185" cy="245" r="7" fill="none" stroke="#38BDF8" />
                 <circle cx="185" cy="245" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 광명 -->
                 <circle class="pinPulse" cx="210" cy="265" r="6.5" fill="none" stroke="#FEE838" />
                 <circle cx="210" cy="265" r="6" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 시흥 -->
                 <circle class="pinPulse" cx="180" cy="285" r="7" fill="none" stroke="#10B981" />
                 <circle cx="180" cy="285" r="6.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 안산 -->
                 <circle class="pinPulse" cx="190" cy="315" r="7.5" fill="none" stroke="#67E8F9" />
                 <circle cx="190" cy="315" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 안양 -->
                 <circle class="pinPulse" cx="230" cy="280" r="7" fill="none" stroke="#F59E0B" />
                 <circle cx="230" cy="280" r="6.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 과천 -->
                 <circle class="pinPulse" cx="250" cy="265" r="6.5" fill="none" stroke="#EC4899" />
                 <circle cx="250" cy="265" r="6" fill="#EC4899" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 군포 -->
                 <circle class="pinPulse" cx="225" cy="305" r="6.5" fill="none" stroke="#38BDF8" />
                 <circle cx="225" cy="305" r="6" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 의왕 -->
                 <circle class="pinPulse" cx="250" cy="295" r="6.5" fill="none" stroke="#10B981" />
                 <circle cx="250" cy="295" r="6" fill="#10B981" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 성남 -->
                 <circle class="pinPulse" cx="285" cy="275" r="8" fill="none" stroke="#FEE838" />
                 <circle cx="285" cy="275" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 수원 -->
                 <circle class="pinPulse" cx="245" cy="325" r="8" fill="none" stroke="#FF007A" />
                 <circle cx="245" cy="325" r="7.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 오산 -->
                 <circle class="pinPulse" cx="255" cy="355" r="7" fill="none" stroke="#67E8F9" />
                 <circle cx="255" cy="355" r="6.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
-                <!-- 화성 -->
                 <circle class="pinPulse" cx="210" cy="345" r="8" fill="none" stroke="#F59E0B" />
                 <circle cx="210" cy="345" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- 강원도 7개 세부 거점 핀 -->
+              <!-- 강원도 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
                 <circle class="pinPulse" cx="370" cy="160" r="8" fill="none" stroke="#38BDF8" />
                 <circle cx="370" cy="160" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
@@ -1796,7 +1778,7 @@
                 <circle cx="545" cy="285" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- 충북: 제천·충주, 음성, 영동 핀 -->
+              <!-- 충북 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
                 <circle class="pinPulse" cx="385" cy="365" r="8" fill="none" stroke="#38BDF8" />
                 <circle cx="385" cy="365" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
@@ -1807,53 +1789,53 @@
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
                 <circle class="pinPulse" cx="340" cy="455" r="7.5" fill="none" stroke="#FEE838" />
-                <circle cx="340" cy="455" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+                <circle cx="340" cy="455" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- 충청권: 대전·세종, 당진, 서산, 예산, 아산 핀 -->
+              <!-- 충남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
                 <circle class="pinPulse" cx="255" cy="460" r="8.5" fill="none" stroke="#F59E0B" />
                 <circle cx="255" cy="460" r="8" fill="#F59E0B" stroke="#000" stroke-width="2" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
                 <circle class="pinPulse" cx="160" cy="355" r="7.5" fill="none" stroke="#67E8F9" />
-                <circle cx="160" cy="355" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+                <circle cx="160" cy="355" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
                 <circle class="pinPulse" cx="130" cy="385" r="7.5" fill="none" stroke="#38BDF8" />
-                <circle cx="130" cy="385" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+                <circle cx="130" cy="385" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
                 <circle class="pinPulse" cx="175" cy="405" r="7.5" fill="none" stroke="#FEE838" />
-                <circle cx="175" cy="405" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+                <circle cx="175" cy="405" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
                 <circle class="pinPulse" cx="215" cy="385" r="7.5" fill="none" stroke="#10B981" />
-                <circle cx="215" cy="385" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
+                <circle cx="215" cy="385" r="7.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- 경북 북부 내륙 (문경, 영주, 예천, 안동) 핀 -->
+              <!-- 경북 북부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
                 <circle class="pinPulse" cx="505" cy="365" r="7.5" fill="none" stroke="#38BDF8" />
-                <circle cx="505" cy="365" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+                <circle cx="505" cy="365" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
                 <circle class="pinPulse" cx="435" cy="390" r="7.5" fill="none" stroke="#F59E0B" />
-                <circle cx="435" cy="390" r="7" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+                <circle cx="435" cy="390" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
                 <circle class="pinPulse" cx="470" cy="395" r="7.5" fill="none" stroke="#67E8F9" />
-                <circle cx="470" cy="395" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+                <circle cx="470" cy="395" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
                 <circle class="pinPulse" cx="515" cy="410" r="8" fill="none" stroke="#FEE838" />
                 <circle cx="515" cy="410" r="7.5" fill="#FEE838" stroke="#000" stroke-width="2" />
               </g>
 
-              <!-- 대구·경북 남부 (김천, 구미, 대구, 포항, 영천, 경주) 핀 -->
+              <!-- 대구·경북 남부 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('tk')">
                 <circle class="pinPulse" cx="410" cy="460" r="7.5" fill="none" stroke="#38BDF8" />
-                <circle cx="410" cy="460" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+                <circle cx="410" cy="460" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('tk')">
                 <circle class="pinPulse" cx="455" cy="465" r="8" fill="none" stroke="#F97316" />
@@ -1873,10 +1855,10 @@
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('tk')">
                 <circle class="pinPulse" cx="570" cy="525" r="7.5" fill="none" stroke="#38BDF8" />
-                <circle cx="570" cy="525" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+                <circle cx="570" cy="525" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
 
-              <!-- 부산·울산·경남 (창녕, 의령, 함안, 통영, 거제, 밀양, 창원·마산, 부산·울산) 핀 -->
+              <!-- 부산·울산·경남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('pk')">
                 <circle class="pinPulse" cx="550" cy="640" r="9" fill="none" stroke="#EF4444" />
                 <circle cx="550" cy="640" r="8.5" fill="#EF4444" stroke="#000" stroke-width="2.2" />
@@ -1910,7 +1892,7 @@
                 <circle cx="505" cy="740" r="8" fill="#38BDF8" stroke="#000" stroke-width="2" filter="url(#glowBigCyanPin)" />
               </g>
 
-              <!-- 호남권: 군산, 김제, 전주, 정읍, 남원, 광주, 나주, 목포, 순천, 여수 핀 -->
+              <!-- 호남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="155" cy="475" r="7.5" fill="none" stroke="#38BDF8" />
                 <circle cx="155" cy="475" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
@@ -1969,10 +1951,10 @@
               <text class="mapCityLabel subIsland" x="70" y="235">영종도</text>
               <text class="mapCityLabel mainLarge" x="135" y="255">인천</text>
               
-              <!-- 서울 (축소된 영토 내 단정하게 표기) -->
+              <!-- 서울 -->
               <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
 
-              <!-- ★ 경기 북부 6대 도시 라벨 ('경기북부' 단어 완전 제거) ★ -->
+              <!-- 경기 북부 6대 도시 -->
               <text class="mapCityLabel microNodeText" x="205" y="125">파주</text>
               <text class="mapCityLabel microNodeText" x="200" y="195">고양</text>
               <text class="mapCityLabel microNodeText" x="245" y="137">양주</text>
@@ -1980,7 +1962,7 @@
               <text class="mapCityLabel microNodeText" x="265" y="112">동두천</text>
               <text class="mapCityLabel microNodeText" x="295" y="152">포천</text>
 
-              <!-- ★ 경기 남부 12대 도시 라벨 ('경기남부' 단어 완전 제거) ★ -->
+              <!-- 경기 남부 12대 도시 -->
               <text class="mapCityLabel microNodeText" x="185" y="232">부천</text>
               <text class="mapCityLabel microNodeText" x="212" y="252">광명</text>
               <text class="mapCityLabel microNodeText" x="178" y="272">시흥</text>
@@ -2004,25 +1986,25 @@
               <text class="mapCityLabel microNodeText" x="495" y="332">태백</text>
               <text class="mapCityLabel microNodeText" x="550" y="270">삼척</text>
 
-              <!-- 충북 (제천·충주, 음성, 영동) -->
+              <!-- 충북 -->
               <text class="mapCityLabel" x="385" y="350">제천·충주</text>
               <text class="mapCityLabel microNodeText" x="345" y="400">음성</text>
               <text class="mapCityLabel microNodeText" x="340" y="475">영동</text>
 
-              <!-- 충남 (대전·세종, 당진, 서산, 예산, 아산) -->
+              <!-- 충남 -->
               <text class="mapCityLabel" x="255" y="440">대전·세종</text>
               <text class="mapCityLabel microNodeText" x="160" y="342">당진</text>
               <text class="mapCityLabel microNodeText" x="125" y="405">서산</text>
               <text class="mapCityLabel microNodeText" x="175" y="425">예산</text>
               <text class="mapCityLabel microNodeText" x="215" y="372">아산</text>
               
-              <!-- 경북 북부 (영주, 문경, 예천, 안동) -->
+              <!-- 경북 북부 -->
               <text class="mapCityLabel microNodeText" x="505" y="352">영주</text>
               <text class="mapCityLabel microNodeText" x="435" y="377">문경</text>
               <text class="mapCityLabel microNodeText" x="470" y="415">예천</text>
               <text class="mapCityLabel microNodeText" x="515" y="430">안동</text>
 
-              <!-- 대구·경북 남부 (김천, 구미, 대구, 포항, 영천, 경주) -->
+              <!-- 대구·경북 남부 -->
               <text class="mapCityLabel microNodeText" x="410" y="445">김천</text>
               <text class="mapCityLabel microNodeText" x="455" y="450">구미</text>
               <text class="mapCityLabel" x="495" y="530">대구</text>
@@ -2030,7 +2012,7 @@
               <text class="mapCityLabel microNodeText" x="530" y="470">영천</text>
               <text class="mapCityLabel microNodeText" x="570" y="545">경주</text>
 
-              <!-- 부산·경남 (창녕, 의령, 함안, 밀양, 창원·마산, 통영, 거제, 부산·울산) -->
+              <!-- 부산·경남 -->
               <text class="mapCityLabel microNodeText" x="465" y="560">창녕</text>
               <text class="mapCityLabel microNodeText" x="415" y="600">의령</text>
               <text class="mapCityLabel microNodeText" x="440" y="648">함안</text>
@@ -2052,7 +2034,7 @@
               <text class="mapCityLabel subNodeText" x="325" y="635">순천·광양</text>
               <text class="mapCityLabel subNodeText" x="315" y="725">여수</text>
 
-              <!-- 제주특별자치도 -->
+              <!-- 제주도 -->
               <text class="mapCityLabel mainLarge" x="230" y="865">제주도</text>
               <text class="mapCityLabel microNodeText" x="230" y="900">제주시</text>
               <text class="mapCityLabel microNodeText" x="245" y="940">서귀포</text>
@@ -2063,7 +2045,7 @@
         <!-- 우측 관제 센터 실시간 상세 보드 -->
         <div class="mapDetailBoard">
           <div class="boardHead">
-            <h3 class="boardTitle" id="ctrlBoardTitle">📍 인천광역시 10대 세부 자치구 지부</h3>
+            <h3 class="boardTitle" id="ctrlBoardTitle">📍 인천광역시 10대 세부 자치구 관제 지부</h3>
             <span class="boardCountTagCustom" id="ctrlBoardCount">
               <span style="font-size:12px;">●</span> 10개 지부 실시간 관제
             </span>
@@ -2074,20 +2056,24 @@
       </div>
 
       <!-- ================= 전체 지부 가나다순 리스트 ================= -->
-      <div class="secHeader" style="margin-top:60px;">
-        <h3 class="secHeaderTitle" style="font-size:32px;">ALL REGIONAL NETWORKS</h3>
-        <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 16px;">전국 가나다순 전체보기</span>
+      <div class="secHeader" style="margin-top:65px;">
+        <h3 class="secHeaderTitle" style="font-size:32px;">NATIONWIDE INTEGRATED NETWORKS</h3>
+        <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
+          대한민국 8대 광역권역 · 70개 마스터 관제 네트워크
+        </span>
       </div>
+
       <div class="sortNotice">
-        ℹ️ 전국 지부 안내는 고객 편의를 위해 <strong>'가나다(ㄱ-ㄴ-ㄷ) 지역명 순'</strong>으로 공평하고 체계적으로 정렬되어 있습니다. (총 54개 광역 지부망)
+        🏛️ <strong>전국 관제 인프라 표준 안내</strong> : 키앤키닷컴은 대한민국 전역(226개 기초자치단체)을 8대 광역권 70개 핵심 거점으로 유기 관제하며, 고객 편의와 공평성을 위해 <strong>‘가나다(ㄱ-ㄴ-ㄷ) 지역 표준 순서’</strong>로 투명하게 공개합니다.
       </div>
 
-      <div class="networkGrid">
+      <!-- [상시 노출: 대표 8대 권역 거점 카드] -->
+      <div class="networkGrid" id="networkBaseGrid">
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">강원 영서·동해벨트</span></div>
-          <h3 class="netRegion">강원 광역 지부</h3>
-          <div class="cardCovText">원주 · 춘천 · 강릉 · 삼척 · 횡성 · 평창 · 영월 · 태백 전역</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 산간 도로·고속도로 휴게소 및 관광지 긴급 원스톱 복원</div>
+          <div class="netTopRow"><span class="netBadge">강원 영서 메디컬·행정허브</span></div>
+          <h3 class="netRegion">강원 춘천시 · 원주시 지부</h3>
+          <div class="cardCovText">강원도청 행정타운 · 춘천 레고랜드/퇴계지구 · 원주 혁신도시/기업도시(의료기기)</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 영서권 양대 거점 및 공공기관 주거타운 15분 긴급 출동, 순정 스마트키 원스톱 코딩</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2095,10 +2081,10 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">서북부 주거벨트</span></div>
-          <h3 class="netRegion">경기 고양 덕양구 지부</h3>
-          <div class="cardCovText">삼송·원흥·지축·향동 신도시 · 화정·행신 행정타운</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서울 서북 접경 및 대규모 신도시 긴급 원스톱 키 제작 출동망</div>
+          <div class="netTopRow"><span class="netBadge">서북부 메가주거·출판</span></div>
+          <h3 class="netRegion">경기 고양시 · 파주시 지부</h3>
+          <div class="cardCovText">일산 1기 신도시 · 삼송·창릉(3기) · 운정신도시 · 파주출판단지 · LCD산단</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 자유로·제2자유로 축선 및 서북부 대단지 아파트 특화 원스톱 스마트키 복원</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2106,10 +2092,10 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">한강신도시 거점</span></div>
-          <h3 class="netRegion">경기 김포시 지부</h3>
-          <div class="cardCovText">한강신도시(구래·운양·장기) · 풍무·사우 · 통진·양촌 산단</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대규모 주거단지 및 서북부 산업벨트 정밀 CNC 키 가공 즉시 해결</div>
+          <div class="netTopRow"><span class="netBadge">동북부 신도시·교통허브</span></div>
+          <h3 class="netRegion">경기 남양주시 · 구리시 지부</h3>
+          <div class="cardCovText">다산신도시 · 별내신도시 · 왕숙지구 · 화도·평내 · 구리 갈매·수택</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축선 및 대규모 동북부 주거타운 분실 스마트키 현장 CNC 가공 제작</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2117,10 +2103,10 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">동북부 메가신도시</span></div>
-          <h3 class="netRegion">경기 남양주시 지부</h3>
-          <div class="cardCovText">다산신도시 · 별내신도시 · 왕숙지구 · 호평·평내·화도</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축 및 동북부 신도시 신속 출장 순정 스마트키 코딩</div>
+          <div class="netTopRow"><span class="netBadge">서부 도심·스마트산단</span></div>
+          <h3 class="netRegion">경기 부천시 · 광명시 · 시흥시 지부</h3>
+          <div class="cardCovText">부천 중동·상동 · 부천테크노파크 · 광명KTX역세권 · 시화MTV · 배곧신도시</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 골목길 초밀집 상권 및 서해안 국가산단 특화 모바일 랩 직통 배차, 1원 추가 없는 정찰 견적</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2128,10 +2114,10 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">도심 산단 거점</span></div>
-          <h3 class="netRegion">경기 부천시 지부</h3>
-          <div class="cardCovText">중동·상동 신도시 · 부천테크노파크 · 옥길·범박·소사</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 도심 밀집 상권 및 테크노파크 산업단지 특화 초고속 긴급출동</div>
+          <div class="netTopRow"><span class="netBadge">판교 테크노·준강남벨트</span></div>
+          <h3 class="netRegion">경기 성남시 · 하남시 지부</h3>
+          <div class="cardCovText">판교 제1·2·3 테크노밸리 · 분당(정자·서현) · 위례신도시 · 미사강변도시</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 타운 및 고급 주거특구 최신 암호화 스마트키 보안 코딩 100% 당일 완료</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2139,10 +2125,10 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">판교 테크노·분당</span></div>
-          <h3 class="netRegion">경기 성남 · 분당 지부</h3>
-          <div class="cardCovText">판교테크노밸리 · 분당신도시(서현·정자·수내) · 성남 본도심</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원</div>
+          <div class="netTopRow"><span class="netBadge">경기 수부도시 메인허브</span></div>
+          <h3 class="netRegion">경기 수원시 지부 (4개 구)</h3>
+          <div class="cardCovText">영통(삼성디지털시티) · 광교신도시 · 수원역 민자역사 · 권선 · 장안 · 팔달</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대단지 복합빌딩 특화, 현장 배터리 전압 실측 후 완벽 시동 인도</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2150,10 +2136,10 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경기 남부 메인허브</span></div>
-          <h3 class="netRegion">경기 수원시 지부</h3>
-          <div class="cardCovText">영통(삼성디지털시티)·광교신도시·팔달·장안·권선 전역</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원</div>
+          <div class="netTopRow"><span class="netBadge">모빌리티·첨단제조 거점</span></div>
+          <h3 class="netRegion">경기 화성시 · 평택시 지부</h3>
+          <div class="cardCovText">동탄1·2신도시 · 남양 현대기아연구소 · 평택 고덕 삼성캠퍼스 · 평택항</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대한민국 자동차·반도체 핵심 전진기지 전 차종(화물·외제차 포함) 순정키 현장 즉석 복원</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
@@ -2161,85 +2147,30 @@
         </article>
 
         <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">스마트산단 거점</span></div>
-          <h3 class="netRegion">경기 시흥시 지부</h3>
-          <div class="cardCovText">시화MTV·스마트허브·배곧신도시·은계·목감</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 서해안 국가산단 및 해양 신도시 긴급 키 제작 및 무손상 개문</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-      </div>
-
-      <!-- 펼치기 아코디언 -->
-      <div class="networkMoreWrap" id="networkMoreWrap">
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">서해안 산업특구</span></div>
-          <h3 class="netRegion">경기 안산시 지부</h3>
-          <div class="cardCovText">반월국가산업단지 · 고잔신도시 · 상록구 · 단원구</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경기 남부 관문</span></div>
-          <h3 class="netRegion">경기 평택시 · 안성시 지부</h3>
-          <div class="cardCovText">평택 고덕국제신도시(삼성반도체) · 송탄 · 안중항만 · 안성시 전역</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 반도체 캠퍼스 및 경기 남부 관문 특화 순정 스마트키 당일 복원</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경남 중부내륙·남해안</span></div>
-          <h3 class="netRegion">경남 함안 · 창녕 · 의령 · 통영 · 거제 지부</h3>
-          <div class="cardCovText">함안 칠원 · 창녕 남지 · 의령 도심 · 통영 미륵도 · 거제 고현/옥포 조선특구</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 내륙 산업벨트 및 해양조선단지 순정 스마트키 당일 복원 및 개문</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">제주 전역 특별관제</span></div>
-          <h3 class="netRegion">제주 제주시 · 서귀포시 지부</h3>
-          <div class="cardCovText">제주국제공항 권역 · 제주시 도심 · 서귀포 중문관광단지 전역</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 렌터카 및 도민 차량 긴급 차키 분실 현장 즉시 제작 및 코딩</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">충북 남부 과수·관광축</span></div>
-          <h3 class="netRegion">충북 영동 · 옥천 지부</h3>
-          <div class="cardCovText">영동읍 · 황간면 · 옥천군 및 경부선 축선 일대</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 국산 전 차종 스마트키 즉시 현장 제작 및 무손상 픽킹 개문</div>
+          <div class="netTopRow"><span class="netBadge">해양비즈니스·관광수도</span></div>
+          <h3 class="netRegion">부산광역시 지부 (16개 구·군)</h3>
+          <div class="cardCovText">해운대 센텀/마린시티 · 서면 메디컬상권 · 강서 명지·녹산산단 · 기장 오시리아</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 MICE 단지 및 해안선 전역 관제 배차, 수입차 및 국산 전 차종 15분 즉시 해결</div>
           <div class="netBtnRow">
             <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
             <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
           </div>
         </article>
       </div>
+
+      <!-- [더보기 클릭 시 펼쳐지는 전국 세부 네트워크 그리드 (동적 렌더링)] -->
+      <div class="networkMoreWrap" id="networkMoreWrap"></div>
 
       <!-- 펼치기/접기 버튼 -->
       <div class="netMoreBtnArea">
         <button class="btnNetworkToggle" id="btnNetworkToggle" onclick="toggleNetwork()">
-          <span id="networkBtnText">전국 54개 광역 네트워크 전체보기 (가나다순) ▼</span>
+          <span id="networkBtnText">🏛️ 전국 8대 광역 70개 마스터 네트워크 전체보기 (가나다순) ▼</span>
         </button>
       </div>
 
       <div class="netCallBanner">
         <div class="netCallText">
-          📍 전국 어디서든 <strong>대표전화 1600-9712</strong>로 연락 주시면 계신 곳에서 가장 가까운 <strong>20년 베테랑 엔지니어팀</strong>에 1초 만에 직통 연결됩니다.
+          📍 대한민국 전역 어디서든 <strong>대표전화 1600-9712</strong>로 접수 시, 인공지능 통합 관제망을 통해 현장과 가장 인접한 <strong>20년 베테랑 엔지니어팀</strong>이 1초 만에 직통 배차됩니다.
         </div>
         <a class="btnActionLarge btnNeonHighlight" style="padding:14px 28px; font-size:16px;" href="tel:16009712">📞 대표번호 직통 연결</a>
       </div>
@@ -2545,118 +2476,491 @@
     newsSlideTimer = setInterval(nextNewsSlide, 7000);
   }
 
-  // 전국 관제 데이터
+  // ================= 대한민국 8대 광역권 70개 거점 지부 정밀 데이터 =================
   var regionMapData = {
     incheon: {
-      title: "📍 인천광역시 10대 세부 자치구 지부",
+      title: "📍 인천광역시 10대 세부 자치구 관제 지부",
       branches: [
-        { badge: "상권·제조 메카", name: "인천 부평구 지부", cov: "부평역 상권 · 한국GM 부평공장 · 삼산·갈산 IT밸리", exp: "초밀집 도심 상권 및 자동차 제조벨트 특화 초고속 긴급출동" },
-        { badge: "테크노밸리 거점", name: "인천 계양구 지부", cov: "계양테크노밸리(3기 신도시) · 작전동 · 계산동 · 계양역세권", exp: "서울 서부 관문 및 3기 신도시 첨단 스마트키 현장 당일 제작" },
-        { badge: "국가산단·행정타운", name: "인천 남동구 지부", cov: "남동국가산단 · 인천시청 행정타운 · 구월상권 · 논현해안벨트", exp: "국가산단 기업차량 및 행정중심지 10분 즉시 출장 원스톱 키 가공" },
-        { badge: "송도 바이오클러스터", name: "인천 연수구 지부", cov: "송도국제업무지구(바이오단지) · 연수 에듀타운 · 옥련·동춘 주거벨트", exp: "송도 첨단 비즈니스 및 에듀벨트 특화 국산 전 차종 스마트키 즉시 복원" },
-        { badge: "도시재생·산단거점", name: "인천 미추홀구 지부", cov: "주안국가산단 · 인하대 캠퍼스 · 용현·학익 도시개발구역", exp: "주안 공단 및 신규 주거벨트 특화 무손상 개문 및 스마트키 코딩" },
-        { badge: "제물포 르네상스 원도심", name: "인천 제물포구 지부", cov: "내항 1·8부두 재개발 · 동인천역세권 · 차이나타운 · 송현·화수 산단", exp: "해양문화관광 및 원도심 항만물류 특화 현장 CNC 정밀 가공" },
-        { badge: "글로벌 항공물류특구", name: "인천 영종구 지부", cov: "인천국제공항 권역 · 영종하늘도시 · 운서·을왕리 리조트벨트", exp: "공항 여객·물류 및 리조트 특구 24시 긴급 키박스 복구 및 시동 등록" },
-        { badge: "북부 메가신도시", name: "인천 검단구 지부", cov: "검단신도시(아라동·원당·당하) · 마전동 · 오류왕길 산단벨트", exp: "북부 대규모 스마트 신도시 및 아라뱃길 축선 긴급 원스톱 코딩" },
-        { badge: "국제금융·청라벨트", name: "인천 서해구 지부", cov: "청라국제도시(하나금융타운) · 루원시티 · 경서·원창 산단 · 로봇랜드", exp: "국제금융특구 및 첨단 비즈니스타운 순정 스마트키 당일 복원" },
-        { badge: "도서·해양관광특구", name: "인천 강화군 지부", cov: "강화읍 · 길상면 · 화도면(마니산) · 석모도·교동도 전역", exp: "도서 및 해양 관광지 차키 분실 긴급 원스톱 가공 복원" }
+        {
+          badge: "상권·제조 메카",
+          name: "인천 부평구 지부",
+          cov: "부평역 상권 · 한국GM 부평공장 · 삼산·갈산 IT단지 · 십정동",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 초밀집 도심 골목길 및 자동차 공업단지 특화 초고속 긴급출동 & 현장 즉시 제작"
+        },
+        {
+          badge: "3기 신도시 거점",
+          name: "인천 계양구 지부",
+          cov: "계양테크노밸리 · 작전·서운동 산단 · 계산택지 · 계양역세권",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 서울 서부 관문 및 첨단 신도시 주거지구 순정 스마트키 현장 당일 100% 코딩"
+        },
+        {
+          badge: "국가산단·행정타운",
+          name: "인천 남동구 지부",
+          cov: "남동국가산업단지 · 인천시청 행정타운 · 구월 로데오 · 논현해안벨트",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업 화물·승용차 및 행정타운 10분 직통 무손상 개문 및 원스톱 키 복원"
+        },
+        {
+          badge: "바이오·에듀특구",
+          name: "인천 연수구 지부",
+          cov: "송도국제업무지구 · 바이오클러스터 · 연수 에듀타운 · 옥련·동춘",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 하이엔드 수입차 및 국산 전 차종 스마트키 현장 CNC 밀링 가공 & 전압 실측 인도"
+        },
+        {
+          badge: "공단·대학가 특화",
+          name: "인천 미추홀구 지부",
+          cov: "주안국가산단 · 인하대 캠퍼스타운 · 용현·학익 도시개발구역",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 공단 업무용 차량 및 밀집 주거지역 지하주차장 긴급 픽킹 개문 & 키박스 완벽 복구"
+        },
+        {
+          badge: "항만·원도심 르네상스",
+          name: "인천 제물포구 지부",
+          cov: "내항 1·8부두 항만배후지 · 동인천역세권 · 차이나타운 · 송현·화수 산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 부두 물류트럭 및 원도심 골목 상권 특화 비상키 현장 즉석 판독 & 완벽 복원"
+        },
+        {
+          badge: "항공물류·공항특구",
+          name: "인천 영종구 지부",
+          cov: "인천국제공항 T1·T2 · 영종하늘도시 · 운서복합단지 · 을왕리 리조트",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 공항 장기주차장 차키 분실 및 도서 리조트 차량 긴급 24시 출동 현장 해결"
+        },
+        {
+          badge: "북부 스마트 신도시",
+          name: "인천 검단구 지부",
+          cov: "검단신도시(아라동·원당·당하) · 마전·불로 · 오류왕길 산업단지",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 신규 아파트 단지 및 아라뱃길 산업축선 특화 정밀 스마트키 신속 출동"
+        },
+        {
+          badge: "국제금융·첨단복합",
+          name: "인천 서해구(청라) 지부",
+          cov: "청라국제도시(하나금융타운) · 루원시티 · 원창·경서 산단 · 로봇랜드",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 최신 스마트키 코딩 장비 완비로 신도시 지하주차장 무손상 개문 및 즉석 키 복원"
+        },
+        {
+          badge: "도서·해양관광특구",
+          name: "인천 강화군 지부",
+          cov: "강화읍 · 길상·초지대교권 · 화도면(마니산) · 석모도 · 교동도 전역",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 캠핑·관광 명소 및 농어촌 산간 도로 차키 분실 시 견인 없는 현장 직통 제작"
+        }
       ]
     },
     seoul: {
-      title: "📍 서울특별시 핵심 지부 (25개 구 전역 관제)",
+      title: "📍 서울특별시 핵심 8대 권역 관제 지부 (25개 자치구 전역)",
       branches: [
-        { badge: "서울 서부 메인허브", name: "서울 강서구 · 양천구 지부", cov: "마곡지구·화곡·방화·발산 · 목동·신정 에듀벨트", exp: "마곡 MICE 바이오클러스터 및 대단지 스마트키 15분 긴급 출동망" },
-        { badge: "디지털밸리 특화", name: "서울 구로구 · 금천구 지부", cov: "구로디지털단지(G밸리) · 가산디지털단지 · 신도림", exp: "IT벤처타운 및 비즈니스단지 특화 초고속 긴급 출동" },
-        { badge: "강남·서초 비즈니스", name: "서울 강남구 · 서초구 지부", cov: "테헤란로 IT밸리 · 압구정·청담 · 서초 법조타운·반포", exp: "핵심 비즈니스 및 고급 주거특구 무손상 개문 및 최신 스마트키 코딩" },
-        { badge: "동남권 메가주거특구", name: "서울 송파구 · 강동구 지부", cov: "잠실 MICE·롯데월드몰 · 문정법조단지 · 고덕그라시움·천호", exp: "대규모 하이엔드 주거타운 및 법조·상업단지 긴급 정밀 코딩" },
-        { badge: "도심 코어·국제업무", name: "서울 중구 · 용산구 · 마포구 지부", cov: "명동·을지로 · 용산역·한남동 · 상암DMC", exp: "도심 중심 상권 및 고급 주거특구 긴급 무손상 개문 및 스마트키 코딩" }
+        {
+          badge: "서남 1권역 (MICE·주거)",
+          name: "서울 강서구 · 양천구 지부",
+          cov: "마곡 MICE·바이오단지 · 화곡 · 발산 · 목동 신시가지 · 신정 에듀벨트",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 연구복합단지 및 학원가 주거특구 15분 긴급 배차, 순정 스마트키 원스톱 등록"
+        },
+        {
+          badge: "서남 2권역 (디지털·금융)",
+          name: "서울 구로구 · 금천구 · 영등포구 지부",
+          cov: "구로/가산 디지털단지(G밸리) · 신도림역 · 여의도 금융업무지구 · 문래 창작촌",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> IT벤처타운 및 여의도 비즈니스 빌딩 지하주차장 특화 신속 진입 & 무손상 픽킹 개문"
+        },
+        {
+          badge: "서남 3권역 (청년·교통거점)",
+          name: "서울 관악구 · 동작구 지부",
+          cov: "서울대입구 · 신림·봉천동 · 사당·이수 교통축 · 노량진 · 흑석뉴타운",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 구릉지대 골목 및 고밀도 주거단지 모바일 랩 직통 출동, 현장 키 판독 CNC 밀링 제작"
+        },
+        {
+          badge: "동남 1권역 (비즈니스·하이엔드)",
+          name: "서울 강남구 · 서초구 지부",
+          cov: "테헤란로 IT밸리 · 압구정·청담 · 서초 법조타운 · 양재 R&D · 반포",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 최고급 수입차 및 최신 제네시스/현대/기아 순정 스마트키 암호화 보안 코딩 전문"
+        },
+        {
+          badge: "동남 2권역 (메가주거·상업)",
+          name: "서울 송파구 · 강동구 지부",
+          cov: "잠실 MICE·롯데타워 · 문정법조단지 · 위례신도시 · 고덕그라시움 · 천호",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대단지 아파트 및 대형 복합몰 지하주차장 분실 차키 견인 없이 100% 현장 즉시 해결"
+        },
+        {
+          badge: "도심 코어 (국제업무·역사상권)",
+          name: "서울 종로구 · 중구 · 용산구 지부",
+          cov: "광화문·을지로 CBD · 명동·동대문 상권 · 용산 국제업무지구 · 한남·이태원",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 도심 복잡 상권 및 고급 주거단지 비탑승·무접촉 청결 매너 시공 & 3.0V 전압 검수"
+        },
+        {
+          badge: "서북 권역 (미디어·대학가)",
+          name: "서울 마포구 · 서대문구 · 은평구 지부",
+          cov: "상암 DMC 미디어밸리 · 홍대·신촌 대학로 · 은평뉴타운 · 불광·연신내",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 은평뉴타운 주거축 및 미디어 복합단지 특화 분실키 당일 현장 복원 및 이모빌라이저 코딩"
+        },
+        {
+          badge: "동북 권역 (IT밸리·메가베드타운)",
+          name: "서울 성동·광진·동대문·중랑·성북·강북·도봉·노원 지부",
+          cov: "성수 IT밸리 · 청량리 환승허브 · 건대입구 · 노원·도봉 대규모 아파트 벨트",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 동북부 전역 관제 배차, 키 실린더 손상 없는 100% 무파괴 개문 및 정품 키 현장 인도"
+        }
       ]
     },
     gyeonggi_north: {
-      title: "📍 경기 북부 6대 핵심 지부 (의정부 · 고양 · 파주 · 동두천 · 양주 · 포천)",
+      title: "📍 경기 북부 5대 광역 관제 지부 (10개 시·군 전역)",
       branches: [
-        { badge: "서북부 메가주거", name: "경기 고양 · 파주 지부", cov: "일산·삼송·원흥 · 운정신도시 · 파주출판도시", exp: "서울 서북 접경 및 대규모 신도시 긴급 원스톱 키 제작 출동망" },
-        { badge: "북부 행정중심축", name: "경기 의정부 · 양주 지부", cov: "의정부 도심 · 양주 옥정·회천신도시", exp: "경기 북부 행정타운 및 신도시 순정 스마트키 현장 당일 제작" },
-        { badge: "북부 산업·안보벨트", name: "경기 동두천 · 포천 지부", cov: "동두천 도심 · 포천 소흘/송우리 산단 권역", exp: "북부 산단 및 도로변 긴급 원스톱 출동 복원" }
+        {
+          badge: "서북부 메가주거·출판",
+          name: "경기 고양시 · 파주시 지부",
+          cov: "일산 1기 신도시 · 삼송·창릉(3기) · 운정신도시 · 파주출판단지 · LCD산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 자유로·제2자유로 축선 및 서북부 대단지 아파트 지하주차장 특화 원스톱 스마트키 복원"
+        },
+        {
+          badge: "북부 행정·스마트 신도시",
+          name: "경기 의정부시 · 양주시 지부",
+          cov: "경기도청 북부청사 · 의정부역 상권 · 민락지구 · 양주 옥정·회천신도시",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 경기북부 광역행정타운 및 3기 연결 주거벨트 순정 OBD 코딩 장비 완비로 15분 즉시 출동"
+        },
+        {
+          badge: "동북부 신도시·교통허브",
+          name: "경기 남양주시 · 구리시 지부",
+          cov: "다산신도시 · 별내신도시 · 왕숙지구 · 화도·평내 · 구리 갈매·수택",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축선 및 대규모 동북부 주거타운 분실 스마트키 현장 CNC 가공 제작"
+        },
+        {
+          badge: "산단·관광 휴양벨트",
+          name: "경기 포천시 · 가평군 지부",
+          cov: "포천 소흘·송우 가구섬유산단 · 신읍 도심 · 산정호수 · 가평 청평·자라섬",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 국도변 공단 밀집지 및 북한강변 펜션·캠핑장 차키 분실 견인 없는 현장 즉시 제작"
+        },
+        {
+          badge: "경원선 접경·안보축선",
+          name: "경기 동두천시 · 연천군 지부",
+          cov: "동두천 지행·중앙역 도심 · 소요산 권역 · 연천 전곡리 · 백학산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 3번 국도 접경벨트 및 군부대 영외 주차장 특화 이모빌라이저 키 정밀 복원 & 무손상 개문"
+        }
       ]
     },
     gyeonggi_south: {
-      title: "📍 경기 남부 12대 핵심 지부 (수원 · 성남 · 부천 · 안양 · 안산 · 화성 등)",
+      title: "📍 경기 남부 8대 광역 관제 지부 (21개 시·군 전역)",
       branches: [
-        { badge: "경기 남부 메인허브", name: "경기 수원 · 오산 지부", cov: "영통(삼성디지털시티)·광교신도시 · 오산 세교신도시", exp: "첨단 디지털연구단지 및 대규모 주거벨트 순정 스마트키 즉시 복원" },
-        { badge: "판교 테크노·분당", name: "경기 성남 · 과천 지부", cov: "판교테크노밸리 · 분당신도시 · 과천 정부청사", exp: "IT비즈니스 밸리 및 핵심 주거특구 순정 OBD 진단 당일 복원" },
-        { badge: "서부 도심·산업축", name: "경기 부천 · 광명 · 시흥 지부", cov: "부천 중동·상동 · 광명 KTX역세권 · 시화MTV/스마트허브", exp: "도심 밀집 상권 및 서해안 산단 특화 초고속 긴급출동" },
-        { badge: "안양권 에듀벨트", name: "경기 안양 · 군포 · 의왕 지부", cov: "평촌신도시 · 산본신도시 · 의왕 포일/백운밸리", exp: "순정 스마트키 당일 복원 및 정밀 무손상 개문 전문" },
-        { badge: "서해안 산단·모빌리티", name: "경기 안산 · 화성 지부", cov: "반월국가산단 · 동탄1·2신도시 · 남양 현대기아연구소", exp: "국가산업단지 기업차량 및 신도시 전 차종 스마트키 원스톱 코딩" }
-      ]
-    },
-    gangwon: {
-      title: "📍 강원도 7대 거점 광역 관제 지부",
-      branches: [
-        { badge: "강원 영서 중심", name: "강원 춘천 · 횡성 지부", cov: "춘천시 전역 · 횡성군 및 인접 산간 권역", exp: "산간 도로 및 도심 긴급 원스톱 스마트키 복원" },
-        { badge: "동해안 해양특구", name: "강원 강릉 · 삼척 지부", cov: "강릉 동해안권 · 삼척시 전역", exp: "관광지 및 동해안 고속도로 휴게소 24시 긴급 출동" },
-        { badge: "고원 산악 관광특구", name: "강원 평창 · 영월 · 태백 지부", cov: "평창 리조트벨트 · 영월군 · 태백 고원 권역", exp: "산악지대 및 관광지 분실키 즉시 제작 및 시동 코딩" }
+        {
+          badge: "경기 수부도시 메인허브",
+          name: "경기 수원시 지부 (4개 구)",
+          cov: "영통(삼성디지털시티) · 광교신도시 · 수원역 민자역사 · 권선 · 장안 · 팔달",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대단지 복합빌딩 특화, 현장 배터리 전압 실측 후 완벽 시동 인도"
+        },
+        {
+          badge: "판교 테크노·준강남벨트",
+          name: "경기 성남시(분당·수정·중원) · 하남시 지부",
+          cov: "판교 제1·2·3 테크노밸리 · 분당(정자·서현) · 위례신도시 · 미사강변도시",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 타운 및 고급 주거특구 최신 암호화 스마트키 보안 코딩 100% 당일 완료"
+        },
+        {
+          badge: "글로벌 메가 반도체축",
+          name: "경기 용인시(수지·기흥·처인) · 안성시 지부",
+          cov: "남사·원삼 메가반도체 클러스터 · 기흥 삼성캠퍼스 · 수지 주거타운 · 안성 도심",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 산업단지 공사현장 및 아파트단지 24시 긴급 출동 키박스 무손상 정밀 판독"
+        },
+        {
+          badge: "모빌리티·첨단제조 거점",
+          name: "경기 화성시 · 평택시 지부",
+          cov: "동탄1·2신도시 · 남양 현대기아연구소 · 평택 고덕 삼성캠퍼스 · 평택항",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대한민국 자동차·반도체 핵심 전진기지 전 차종(화물·외제차 포함) 순정키 현장 즉석 복원"
+        },
+        {
+          badge: "서부 도심·스마트산단",
+          name: "경기 부천시 · 광명시 · 시흥시 지부",
+          cov: "부천 중동·상동 · 부천테크노파크 · 광명KTX역세권 · 시화MTV · 배곧신도시",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 골목길 초밀집 상권 및 서해안 국가산단 특화 모바일 랩 직통 배차, 1원 추가 없는 정찰 견적"
+        },
+        {
+          badge: "서해안 최대 국가산단",
+          name: "경기 안산시(단원구·상록구) 지부",
+          cov: "반월국가산업단지 · 고잔신도시 · 중앙역 상권 · 대부도 해양관광특구",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업차량 긴급 출동 및 도심/관광지 분실 스마트키 현장 CNC 밀링 가공"
+        },
+        {
+          badge: "안양권 에듀·비즈니스",
+          name: "경기 안양 · 군포 · 의왕 · 과천 지부",
+          cov: "평촌 학원가 · 산본 신도시 · 의왕 백운밸리/포일IT · 과천 정부청사/지식정보타운",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 차문 강제 벌림 없는 100% 정밀 픽킹 개문 및 비탑승·무접촉 청결 작업 원칙 고수"
+        },
+        {
+          badge: "동남부 물류·반도체 벨트",
+          name: "경기 오산 · 이천 · 여주 · 양평 지부",
+          cov: "오산 세교신도시 · 이천 SK하이닉스 본사 · 여주 프리미엄아울렛 · 양평 남한강변",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 고속도로 IC 연계 물류단지 및 관광벨트 분실 차키 긴급 원스톱 코딩 복원"
+        }
       ]
     },
     chungbuk: {
-      title: "📍 충북 (제천 · 충주 · 음성 · 영동) 내륙 지부",
+      title: "📍 충청북도 4대 광역 관제 지부 (11개 시·군 전역)",
       branches: [
-        { badge: "충북 북부 관광벨트", name: "충북 제천 · 단양 지부", cov: "제천시 전역 · 단양군 및 인접 산간 권역", exp: "국산 전 차종 스마트키 당일 긴급 현장 출동" },
-        { badge: "기업도시·산단특화", name: "충북 충주 · 음성 지부", cov: "충주시 도심 · 음성군 및 대소·맹동 산단 권역", exp: "기업도시 산단 특화 스마트키 제작 및 현장 정밀 코딩" },
-        { badge: "충북 남부 과수·관광축", name: "충북 영동 지부", cov: "영동읍 · 황간면 · 옥천군 접경 일대", exp: "남부 내륙권 긴급 원스톱 스마트키 복원 및 무손상 개문" }
+        {
+          badge: "충북 중심 바이오·2차전지",
+          name: "충북 청주시 지부 (상당·흥덕·청원·서원)",
+          cov: "오송 바이오폴리스 · 오창 2차전지산단 · 청주국제공항 · 오창과학산단 · 율량·가경",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 R&D 산업단지 및 도심 아파트 지하주차장 스마트키 15분 긴급 출동 코딩망"
+        },
+        {
+          badge: "북부 내륙 기업도시·관광",
+          name: "충북 충주시 · 제천시 · 단양군 지부",
+          cov: "충주 첨단기업도시 · 제천 한방바이오밸리 · 단양 시멘트산단 · 단양팔경 관광축",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 중원 내륙 산업단지 및 산악 국립공원 관광지 분실 스마트키 현장 당일 즉시 복구"
+        },
+        {
+          badge: "혁신도시·중부 물류특구",
+          name: "충북 진천군 · 음성군 지부",
+          cov: "충북혁신도시(공공기관) · 대소·맹동 산단 · 진천 광혜원 도심 · 중부고속도로축",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 기업 물류 화물차 및 공공기관 출장 차량 비상키 CNC 밀링 가공 & 전압 3.0V 검수"
+        },
+        {
+          badge: "남부·중부 전원 산간축",
+          name: "충북 영동군 · 옥천군 · 보은군 · 괴산군 지부",
+          cov: "영동 과수·와인밸리 · 옥천 경부선축 · 보은 속리산 권역 · 괴산 유기농산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 농어촌 산간 도로 및 고속도로 휴게소 차키 분실 견인차 없는 현장 원스톱 해결"
+        }
       ]
     },
     chungcheong: {
-      title: "📍 대전 · 세종 · 충남 (서산 · 당진 · 예산 · 아산) 광역 지부",
+      title: "📍 대전 · 세종 · 충남 8대 광역 관제 지부 (20개 시·군·구 전역)",
       branches: [
-        { badge: "충청 행정허브", name: "대전 · 세종 지부", cov: "대전광역시 전역 · 세종특별자치시", exp: "정부청사 및 충청 중심부 긴급 출동 지원망" },
-        { badge: "백년가게 공식인증", name: "충남 천안시 · 아산시 지부", cov: "천안시(불당·두정) · 아산시(배방·탕정 디스플레이시티)", exp: "중기부 공식인증 백년가게 (친절열쇠) 20년 현장 장인 충남 원스톱 긴급 출동" },
-        { badge: "충남 서해안벨트", name: "충남 서산 · 당진 · 예산 지부", cov: "서산 대산석유화학 · 당진 현대제철 · 예산 산단 전역", exp: "서해안 핵심 산업벨트 및 도심 긴급 순정 스마트키 원스톱 복원" }
+        {
+          badge: "R&D 국가 메카·광역교통",
+          name: "대전광역시 지부 (유성·서구·중구·동구·대덕)",
+          cov: "대덕연구개발특구(카이스트) · 둔산 행정타운 · 유성온천 · 대전역 광역환승센터",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 중부권 최대 메트로폴리스 전역 15분 즉시 배차, 전 차종 순정 스마트키 원스톱 코딩"
+        },
+        {
+          badge: "대한민국 행정수도",
+          name: "세종특별자치시 지부",
+          cov: "정부세종청사 행정중심복합도시(보람·나성·어진·아름) · 조치원읍 스마트산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 정부청사 공무원 및 신도시 주민 대상 약속 시간 분 단위 엄수 책임 예약 출동제"
+        },
+        {
+          badge: "중기부 공식 백년가게 인증",
+          name: "충남 천안시 지부 (동남구·서북구)",
+          cov: "불당 신도시 · 백석·성성 테크노밸리 · 두정 상권 · 천안IC 교통허브",
+          exp: "<strong>중기부 인증 백년가게 (친절열쇠)</strong> 20년 현장 장인 직접 출동, 충남 북부 최정예 픽킹 개문 및 정품 키 발급"
+        },
+        {
+          badge: "글로벌 디스플레이·완성차",
+          name: "충남 아산시 지부",
+          cov: "탕정 삼성디스플레이시티 · 배방 KTX역세권 · 인주 현대자동차 아산공장 · 온양온천",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단산단 협력업체 및 신도시 차주 대상 100% 현장 즉시 제작 및 시동 테스트"
+        },
+        {
+          badge: "서해안 철강·석유화학",
+          name: "충남 서산시 · 당진시 지부",
+          cov: "서산 대산석유화학단지 · 테크노밸리 · 당진 현대제철소 · 송악·송산 산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가 기간산업 플랜트 및 대형 철강산단 특화 공단 출동 키박스 완벽 복원"
+        },
+        {
+          badge: "충남도청 행정타운·해양축",
+          name: "충남 홍성군 · 예산군 · 보령시 · 태안군 · 서천군 지부",
+          cov: "내포 충남도청 신도시 · 예산 산단 · 대천해수욕장 항만 · 안면도 해안관광지",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 충남 행정타운 및 서해안 주요 관광지·해수욕장 피서객 긴급 스마트키 당일 복원"
+        },
+        {
+          badge: "백제 역사문화·금강수계",
+          name: "충남 공주시 · 부여군 · 청양군 지부",
+          cov: "공주 신관·원도심 · 부여 백제유적지구 · 청양 칠갑산 권역 · 공주IC",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 역사문화 관광지 및 금강 도로변 분실 키 견인 없는 100% 현장 출장 제작"
+        },
+        {
+          badge: "국방·안보 메카 및 물류",
+          name: "충남 논산시 · 계룡시 · 금산군 지부",
+          cov: "논산 육군훈련소 · 계룡대 3군본부 · 연무대 · 금산 인삼유통특구",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 입소 차량 및 군 장병·가족 대상 안심 출장, 1원 추가 없는 확정 정찰제 시공"
+        }
       ]
     },
     tk_north: {
-      title: "📍 경북 북부 내륙 관제 지부 (안동 · 문경 · 영주 · 예천)",
+      title: "📍 경북 북부 내륙 4대 광역 관제 지부 (안동·영주·문경·동해안)",
       branches: [
-        { badge: "경북도청 신도시", name: "경북 안동 · 예천 지부", cov: "안동 도심 · 경북도청 신도시 · 예천군 전역", exp: "20년 베테랑 엔지니어팀 이모빌라이저 키 & 스마트키 순정 코딩 등록" },
-        { badge: "소백산·문경새재 관광축", name: "경북 영주 · 문경 지부", cov: "영주시 풍기읍 · 문경시(점촌·문경새재) 일대", exp: "산간 도로 및 관광특구 분실 스마트키 현장 당일 판독 및 완벽 복원" }
+        {
+          badge: "경북도청 행정신도시",
+          name: "경북 안동시 · 예천군 지부",
+          cov: "경북도청 신도시 · 풍천면 행정타운 · 안동 옥동·정하 주거단지 · 하회마을 유적지",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 광역 행정타운 및 유교문화 관광지 특화, 분실 스마트키 현장 즉석 순정 코딩 등록"
+        },
+        {
+          badge: "소백산·첨단베어링축",
+          name: "경북 영주시 · 봉화군 지부",
+          cov: "영주 첨단베어링 국가산단 · 풍기인삼특구 · 가흥택지지구 · 봉화 춘양 억지춘양시장",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업차량 및 소백산 국립공원 관광객 차량 비상키 CNC 밀링 가공"
+        },
+        {
+          badge: "문경새재·스마트팜축",
+          name: "경북 문경시 · 상주시 지부",
+          cov: "문경 점촌도심 · 문경새재 도립공원 · 상주 스마트팜 혁신밸리 · 낙동강 자전거길",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 중부내륙고속도로 IC 인근 및 관광 휴양지 차키 분실 견인 없는 현장 즉시 제작"
+        },
+        {
+          badge: "원자력·동해북부벨트",
+          name: "경북 울진군 · 영덕군 · 청송군 · 영양군 지부",
+          cov: "울진 한울원자력발전소 · 영덕 강구항 대게거리 · 청송 주왕산국립공원 · 영양 풍력발전단지",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 동해안 해안국도변 및 산간 도로 분실 차키 모바일 랩 직통 출동, 3.0V 전압 실측 인도"
+        }
       ]
     },
     tk: {
-      title: "📍 대구 · 경북 남부 광역 관제 지부 (구미 · 김천 · 포항 · 경주 · 영천)",
+      title: "📍 대구 · 경북 남부 5대 광역 관제 지부 (대구·구미·포항·경주·경산)",
       branches: [
-        { badge: "영남 전자산업벨트", name: "대구광역시 · 구미 · 김천 지부", cov: "대구 전역 · 구미 국가산단 · 김천 혁신도시 일대", exp: "국가산단 및 도심 긴급 출동 즉시 복원 및 스마트키 코딩" },
-        { badge: "동해벨트·역사문화", name: "경북 포항 · 경주 · 영천 지부", cov: "포항시 철강공단 · 경주시 관광특구 · 영천시", exp: "동해선 국산 전 차종 스마트키 완벽 복원 및 상시 부품 확보" }
+        {
+          badge: "영남 중심 메가시티",
+          name: "대구광역시 지부 (8개 구 · 군위군)",
+          cov: "수성구 범어 법조타운 · 달서구 성서산단 · 동대구역 광역복합환승센터 · 칠곡·테크노폴리스",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 도심 초밀집 상권 및 아파트단지 지하주차장 15분 긴급 배차, 순정 스마트키 당일 복원"
+        },
+        {
+          badge: "대한민국 반도체·전자 수도",
+          name: "경북 구미시 · 김천시 · 칠곡군 지부",
+          cov: "구미 1~5국가산업단지 · 옥계·인동 신시가지 · 김천 KTX혁신도시 · 칠곡 왜관산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 IT산단 출퇴근 차량 및 공단 화물차량 100% 무손상 픽킹 개문 및 즉석 키 복원"
+        },
+        {
+          badge: "철강·2차전지 메가클러스터",
+          name: "경북 포항시 지부 (남구·북구)",
+          cov: "포스코 포항제철소 본원 · 영일만 일반산단(2차전지) · 블루밸리국가산단 · 죽도시장 · 영일대",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대형 철강플랜트 및 신항만 해안선 특화 긴급출동, 암호화 키 데이터 현장 완벽 매칭"
+        },
+        {
+          badge: "자동차부품·천년고도",
+          name: "경북 경주시 · 영천시 지부",
+          cov: "경주 외동 자동차전문부품산단 · 보문관광단지 · 황리단길 · 영천 첨단부품소재산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 완성차 1차 협력업체 단지 및 대규모 관광지 렌터카 분실키 현장 1원 추가 없는 정찰 견적"
+        },
+        {
+          badge: "대학연구·경북 남부벨트",
+          name: "경북 경산시 · 청도군 · 고령군 · 성주군 지부",
+          cov: "경산 대학로·지식산업지구 · 청도 대남 권역 · 고령 다산주철산단 · 성주 참외스마트밸리",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대구 외곽순환망 및 농공산단 연계 출장, 비탑승·무접촉 청결 매너 시공 원칙 준수"
+        }
       ]
     },
     pk: {
-      title: "📍 부산 · 울산 · 경남 메가시티 지부 (함안 · 창녕 · 의령 · 통영 · 거제)",
+      title: "📍 부산 · 울산 · 경남 6대 메가시티 관제 지부 (PK 전역)",
       branches: [
-        { badge: "동남권 메가시티", name: "부산 · 울산 · 양산 지부", cov: "부산광역시 전역 · 울산광역시 · 양산시 일대", exp: "동남권 전역 신속 출동 및 순정 스마트키 원스톱 복원" },
-        { badge: "국가산단 메카", name: "경남 창원 · 마산 · 밀양 지부", cov: "창원 도심 · 마산합포·회원구 · 밀양시 전역", exp: "정밀 픽킹 무손상 도어 개문 및 순정키 복원" },
-        { badge: "경남 중부 내륙벨트", name: "경남 함안 · 창녕 · 의령 지부", cov: "함안 칠원 · 창녕 남지 · 의령 도심 일대", exp: "내륙 교통축 및 산단 긴급 스마트키 당일 제작" },
-        { badge: "해양관광·조선특구", name: "경남 통영 · 거제 지부", cov: "통영 미륵도 · 거제 고현/옥포 조선소 일대", exp: "남해안 해양특구 및 대규모 조선산단 긴급 차키 복원" }
+        {
+          badge: "해양비즈니스·관광수도",
+          name: "부산광역시 지부 (16개 구·군 전역)",
+          cov: "해운대 센텀시티/마린시티 · 서면 메디컬상권 · 강서 명지·녹산국가산단 · 기장 오시리아 관광단지",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 MICE 단지 및 해안선 전역 관제 배차, 수입차 및 국산 전 차종 15분 즉시 해결"
+        },
+        {
+          badge: "자동차·조선·석유화학 메카",
+          name: "울산광역시 지부 (남구·중구·동구·북구·울주군)",
+          cov: "현대자동차 울산공장 · 현대중공업 미포조선소 · 온산국가산업단지 · 삼산 도심 · 송정신도시",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대한민국 3대 중공업 벨트 근로자 차량 및 신도시 특화 순정 OBD 코딩 장비 전담 출동"
+        },
+        {
+          badge: "정밀기계·방위산업 허브",
+          name: "경남 창원시 지부 (의창·성산·마산·진해)",
+          cov: "창원국가산단(두산/한화) · 마산자유무역지역 · 진해 해군기지/신항만 · 상남 중심상업지구",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 산업단지 정밀 픽킹 무파괴 차문 개방 및 최첨단 CNC 자동 가공기 원스톱 복원"
+        },
+        {
+          badge: "동남권 제조·주거 관문",
+          name: "경남 김해시 · 양산시 지부",
+          cov: "김해 골든루트산단 · 장유·율하신도시 · 양산 물금 증산신도시 · 덕계 웅상공단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 부산 접경 메가베드타운 및 부품공단 밀집구역 분실 스마트키 현장 당일 100% 코딩"
+        },
+        {
+          badge: "세계 1위 조선·해양관광",
+          name: "경남 거제시 · 통영시 지부",
+          cov: "거제 한화오션(옥포) · 삼성중공업(고현) · 아주동 주거타운 · 통영 미륵도 요트마리나",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 조선소 사내 주차장 및 남해안 섬·해안 관광지 차키 분실 견인 없는 현장 즉시 구원"
+        },
+        {
+          badge: "항공우주·서부경남 거점",
+          name: "경남 진주시 · 사천시 · 밀양/함안/창녕/의령 지부",
+          cov: "사천 우주항공청/KAI 공장 · 진주 충무공 혁신도시 · 밀양 나노산단 · 함안 칠원 · 창녕 남지",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 우주항공복합도시 및 경남 내륙 교통축선 상시 순찰 출동망 완비, 배터리 3.0V 검수"
+        }
       ]
     },
     honam: {
-      title: "📍 호남 (전북 · 광주 · 전남) 광역 관제 지부",
+      title: "📍 호남 6대 광역 관제 지부 (전북 · 광주 · 전남 41개 시·군·구)",
       branches: [
-        { badge: "전북 중서부 중심축", name: "전북 전주 · 군산 · 김제 지부", cov: "전주혁신도시 · 군산 국가산단/항만 · 김제 새만금 축선", exp: "전북 광역 산업벨트 및 도심 스마트키 정밀 코딩 즉시 출동망" },
-        { badge: "호남 내륙 관문", name: "전북 정읍시 · 남원시 지부", cov: "정읍시 도심 · 남원시 및 인접 내륙 권역", exp: "20년 베테랑 엔지니어팀 산간 도로 및 관내 현장 즉시 복원" },
-        { badge: "호남 중심 메가허브", name: "광주광역시 · 나주시 지부", cov: "광주광역시 전역 · 나주혁신도시 권역", exp: "호남 메인 거점 초고속 긴급출동 및 스마트키 원스톱 복원" },
-        { badge: "서남해안 해양물류", name: "전남 목포시 지부", cov: "목포시 전역 · 서남해안 항만 권역", exp: "항만 및 도심 분실 스마트키 현장 당일 복원" },
-        { badge: "산단·해양관광특구", name: "전남 여수 · 순천 · 광양 지부", cov: "여수국가산단 · 순천만 · 광양항 권역", exp: "산업단지 긴급 출장 및 키박스 정밀 복구 전문" }
+        {
+          badge: "호남 메가허브·모빌리티",
+          name: "광주광역시 지부 (5개 구 전역)",
+          cov: "기아 광주공장 · 첨단3지구 AI연구단지 · 상무 행정타운 · 수완지구 메가단지 · 빛그린산단",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 호남 최대 중심도시 15분 즉시 배차, 차문 흠집 제로 무손상 개문 및 최신 스마트키 코딩"
+        },
+        {
+          badge: "전북 수부도시·상용차 메카",
+          name: "전북 전주시 · 완주군 지부",
+          cov: "전북혁신도시(공공기관) · 에코시티 · 효천지구 · 완주 현대자동차 상용차공장/테크노밸리",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 공공기관 출장자 및 대형트럭·승용차 스마트키 분실 현장 즉시 출장 원스톱 해결"
+        },
+        {
+          badge: "서해안 철강·새만금 관문",
+          name: "전북 군산시 · 익산시 · 김제시 지부",
+          cov: "군산 국가산업단지/항만 · 새만금 산단 · 익산 국가식품클러스터/영등동 · 김제 혁신농업특구",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 서해안 해양물류 거점 및 국가식품산단 기업차량 특화 비상키 CNC 밀링 가공"
+        },
+        {
+          badge: "석유화학·철강·생태수도",
+          name: "전남 여수시 · 순천시 · 광양시 지부",
+          cov: "여수국가석유화학단지 · 웅천신도시 · 포스코 광양제철소/항만 · 순천만 국가정원 · 신대지구",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 광양만권 중화학공업벨트 및 해양관광지 피서객 대상 현장 당일 순정 코딩 복원"
+        },
+        {
+          badge: "전남도청 행정타운·조선항만",
+          name: "전남 목포시 · 무안군 · 영암군 지부",
+          cov: "남악·오룡 전남도청 행정타운 · 목포 평화광장/북항 · 영암 대불국가산단(현대삼호)",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 서남권 행정중심지 및 대형 조선소 출퇴근 차량 1원 추가 없는 확정 정찰제 시공"
+        },
+        {
+          badge: "에너지수도·호남 내륙벨트",
+          name: "전남 나주시 · 정읍/남원/장성/해남/완도 전역",
+          cov: "나주 빛가람 한국전력 혁신도시 · 정읍 첨단방사선산단 · 남원 지리산권 · 해남 땅끝/완도항",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 한전 본사 및 국립공원·서남해 도서항만 분실키 견인 없는 현장 직통 모바일 랩 복구"
+        }
+      ]
+    },
+    gangwon: {
+      title: "📍 강원도 4대 광역 관제 지부 (18개 시·군 전역)",
+      branches: [
+        {
+          badge: "강원 영서 메디컬·행정허브",
+          name: "강원 춘천시 · 원주시 지부",
+          cov: "강원도청 행정타운 · 춘천 레고랜드/퇴계지구 · 원주 혁신도시/기업도시(의료기기) · 무실동",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 영서권 양대 대도시 및 공공기관 주거타운 15분 긴급 출동, 순정 스마트키 원스톱 코딩"
+        },
+        {
+          badge: "동해안 사계절 해양관광축",
+          name: "강원 강릉시 · 속초시 · 양양군 · 고성군 지부",
+          cov: "강릉 경포·안목 커피거리 · 유천지구 · 속초 해수욕장/관광수산시장 · 양양 서피비치 서핑로드",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 동해안 7번 국도 관광벨트 피서객 차키 분실 특화, 24시 현장 무손상 개문 & 즉석 키 복원"
+        },
+        {
+          badge: "남부 내륙 산업·에너지항만",
+          name: "강원 동해시 · 삼척시 · 영월군 · 태백시 지부",
+          cov: "동해 북평국가산단 · 삼척 LNG/수소특구 · 영월 한반도지형 · 태백 고원산악/오투리조트",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 동해선 산업축 및 고원 관광특구 산간 도로변 분실 키 정밀 픽킹 및 비상키 밀링 가공"
+        },
+        {
+          badge: "백두대간 메가리조트축",
+          name: "강원 홍천군 · 횡성군 · 평창군 · 정선군 지부",
+          cov: "홍천 비발디파크 · 횡성 둔내 유천축 · 평창 알펜시아/용평스키장 · 정선 강원랜드/하이원",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 대형 스키장·골프장 리조트 주차장 차키 분실 시 렉카 진입 불가 구역 모바일 랩 직통 구원"
+        }
       ]
     },
     jeju: {
-      title: "📍 제주특별자치도 긴급출동 관제 지부",
+      title: "📍 제주특별자치도 2대 긴급출동 관제 지부 (도 전역)",
       branches: [
-        { badge: "제주공항·북부권", name: "제주 제주시 지부", cov: "제주국제공항 · 제주시 도심 · 애월/한림 해안벨트", exp: "공항 렌터카 및 도민 차량 15분 긴급 무손상 키 복원" },
-        { badge: "중문관광·남부권", name: "제주 서귀포시 지부", cov: "서귀포시 도심 · 중문관광단지 · 성산일출봉 권역", exp: "관광단지 및 리조트 긴급 분실 스마트키 현장 당일 완벽 코딩" }
+        {
+          badge: "제주공항·북부 해안벨트",
+          name: "제주 제주시 지부",
+          cov: "제주국제공항 렌터카하우스 · 노형·연동 신도심 · 아라지구 · 애월/한림 해안카페거리",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 공항 도착 렌터카 및 도민 차량 15분 긴급 배차, 비행기 시간 맞춤형 초고속 키 복원"
+        },
+        {
+          badge: "중문관광·영어교육도시",
+          name: "제주 서귀포시 지부",
+          cov: "서귀포 중문관광단지 특급호텔가 · 대정 신화월드/영어교육도시 · 서귀포 신시가지 · 성산일출봉",
+          exp: "<strong>20년 베테랑 엔지니어팀</strong> 고급 리조트 투숙객 및 글로벌 교육단지 차량 특화 무접촉 청결 매너 시공 & 3.0V 실측 인도"
+        }
       ]
     }
   };
 
-  // ★ 모든 영토 클릭 시 100% 동일하게 네온 옐로우 골드 활성화 처리 ★
+  // 모든 영토 클릭 시 100% 동일하게 네온 옐로우 골드 활성화 처리
   function selectMapRegion(key) {
     var paths = document.querySelectorAll('.geoPath');
     paths.forEach(function(p) { p.classList.remove('selected'); });
@@ -2706,21 +3010,63 @@
     });
   }
 
-  window.addEventListener('DOMContentLoaded', function() {
-    selectMapRegion('incheon');
-  });
+  // 전국 지부 전체 데이터 동적 생성 및 아코디언 토글
+  var isNetworkLoaded = false;
+
+  function renderAllNetworkCards() {
+    var moreWrap = document.getElementById('networkMoreWrap');
+    if (!moreWrap || isNetworkLoaded) return;
+
+    var allBranches = [];
+    for (var regKey in regionMapData) {
+      if (regionMapData.hasOwnProperty(regKey) && regionMapData[regKey].branches) {
+        allBranches = allBranches.concat(regionMapData[regKey].branches);
+      }
+    }
+
+    allBranches.sort(function(a, b) {
+      return a.name.localeCompare(b.name, 'ko');
+    });
+
+    moreWrap.innerHTML = "";
+    allBranches.forEach(function(b) {
+      var card = document.createElement('article');
+      card.className = 'networkCard';
+      card.innerHTML = `
+        <div class="netTopRow"><span class="netBadge">${b.badge}</span></div>
+        <h3 class="netRegion">${b.name}</h3>
+        <div class="cardCovText">${b.cov}</div>
+        <div class="cardExpText">${b.exp}</div>
+        <div class="netBtnRow">
+          <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+          <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+        </div>
+      `;
+      moreWrap.appendChild(card);
+    });
+
+    isNetworkLoaded = true;
+  }
 
   function toggleNetwork() {
     var wrap = document.getElementById('networkMoreWrap');
     var btnText = document.getElementById('networkBtnText');
+
     if (wrap.style.display === 'grid') {
       wrap.style.display = 'none';
-      btnText.innerText = '전국 54개 광역 네트워크 전체보기 (가나다순) ▼';
+      btnText.innerText = '🏛️ 전국 8대 광역 70개 마스터 네트워크 전체보기 (가나다순) ▼';
     } else {
+      if (!isNetworkLoaded) {
+        renderAllNetworkCards();
+      }
       wrap.style.display = 'grid';
-      btnText.innerText = '전국 지부 리스트 접기 ▲';
+      btnText.innerText = '전국 마스터 지부 리스트 접기 ▲';
     }
   }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    selectMapRegion('incheon');
+  });
 
   function toggleFaq() {
     var wrap = document.getElementById('faqMoreWrap');
