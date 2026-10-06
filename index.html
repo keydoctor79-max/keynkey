@@ -342,7 +342,6 @@
       letter-spacing: -0.02em;
       font-weight: 900;
     }
-    /* 지부 확인 메인 강조 버튼 (네온 옐로우 & 펄스) */
     .btnMainHighlight {
       background: var(--neon-yellow);
       color: #000;
@@ -368,7 +367,6 @@
         transform: scale(1.02);
       }
     }
-    /* 출동 상담 서브 버튼 (톤다운) */
     .btnSubMuted {
       background: #111827;
       color: var(--text-muted);
@@ -734,9 +732,80 @@
       color: var(--text-muted);
     }
 
-    /* ================= 4. 전국 인터랙티브 관제 지도 ================= */
+    /* ================= 4. 전국 인터랙티브 관제 지도 & 실시간 검색창 ================= */
     .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
     .networkIntro { font-size: 19px; font-weight: 400; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: var(--text-clean); }
+
+    .secHeaderFlex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .secHeaderTitleGroup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .networkSearchBox {
+      display: inline-flex;
+      align-items: center;
+      background: #080D18;
+      border: 2px solid var(--border-card);
+      border-radius: 6px;
+      padding: 5px 6px 5px 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+    }
+    .networkSearchBox:focus-within {
+      border-color: var(--neon-yellow);
+      box-shadow: 0 0 16px rgba(254, 232, 56, 0.4);
+    }
+    .networkSearchInput {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      width: 220px;
+    }
+    .networkSearchInput::placeholder {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .btnNetSearch {
+      background: var(--neon-yellow);
+      color: #000;
+      border: none;
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btnNetSearch:hover {
+      background: #fff;
+    }
+    .btnNetReset {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 8px;
+      cursor: pointer;
+    }
+    .btnNetReset:hover {
+      color: var(--neon-pink);
+    }
 
     .mapControlCenter {
       background: var(--map-sea);
@@ -1204,12 +1273,12 @@
     /* ================= 7. Blog Section ================= */
     .blogSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
     .blogGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .blogCard { border: 1.5px solid var(--border-card); background: var(--bg-card); padding: 24px; display: flex; flex-direction: column; border-radius: 6px; transition: all 0.2s; }
+    .blogCard { border: 1.5px solid var(--border-card); background: var(--bg-card); padding: 26px; display: flex; flex-direction: column; border-radius: 6px; transition: all 0.2s; }
     .blogCard:hover { border-color: var(--neon-yellow); transform: translateY(-3px); box-shadow: 0 0 16px rgba(254, 232, 56, 0.25); }
-    .blogDate { font-size: 13.5px; font-weight: 700; color: var(--neon-yellow); margin-bottom: 8px; font-family: 'Oswald', sans-serif; }
-    .blogTitle { font-size: 19px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; color: #fff; }
-    .blogExcerpt { font-size: 15px; color: var(--text-clean); line-height: 1.6; margin-bottom: 16px; flex: 1; }
-    .blogLink { font-size: 14.5px; font-weight: 700; color: var(--clear-cyan); text-decoration: underline; }
+    .blogDate { font-size: 13.5px; font-weight: 800; color: var(--neon-yellow); margin-bottom: 10px; font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
+    .blogTitle { font-size: 19px; font-weight: 700; margin-bottom: 14px; line-height: 1.45; color: #fff; }
+    .blogExcerpt { font-size: 15px; color: var(--text-clean); line-height: 1.65; margin-bottom: 18px; flex: 1; }
+    .blogLink { font-size: 15px; font-weight: 800; color: var(--clear-cyan); text-decoration: underline; }
 
     /* ================= 8. Footer ================= */
     .footer { background: #070A0F; border-top: 2px solid var(--border-card); padding: 75px 0 95px; width: 100%; }
@@ -1267,6 +1336,10 @@
       .newsSlideItem { padding: 24px 18px; }
       .newsHeadline { font-size: 19px; }
       .newsContentList li { font-size: 14.5px; }
+
+      .secHeaderFlex { flex-direction: column; align-items: flex-start; }
+      .networkSearchBox { width: 100%; }
+      .networkSearchInput { flex: 1; width: auto; }
 
       .mapControlCenter { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
       .boardScrollArea { grid-template-columns: 1fr; max-height: 380px; }
@@ -1381,7 +1454,7 @@
           키앤키닷컴은 철저한 사전 상담과 <strong>‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과의 약속 시간을 엄수하여 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결합니다.
         </p>
 
-        <!-- 히어로 버튼 그룹 (지부 확인 최우선 강조 배치 & 출동 상담 톤다운) -->
+        <!-- 히어로 버튼 그룹 -->
         <div class="ctaGroup">
           <a class="btnActionLarge btnMainHighlight" href="#network">
             🌐 내 지역 전국 광역 지부 확인하기
@@ -1465,7 +1538,7 @@
     </div>
   </section>
 
-  <!-- 3. About Us Section & 카드뉴스 (15년 이상 엔지니어 문구 정밀 반영) -->
+  <!-- 3. About Us Section & 카드뉴스 -->
   <section id="about" class="aboutSection">
     <div class="wrap">
       <div class="secHeader">
@@ -1563,15 +1636,31 @@
     </div>
   </section>
 
-  <!-- 4. 전국 인터랙티브 관제 지도 (8대 권역 70개 지부 정밀 데이터 내장) -->
+  <!-- 4. 전국 인터랙티브 관제 지도 (실시간 지부 검색창 내장) -->
   <section id="network" class="networkSection">
     <div class="wrap">
-      <div class="secHeader">
-        <h2 class="secHeaderTitle">NATIONWIDE MASTERS NETWORK</h2>
-        <span class="secHeaderBadgePulse">
-          <span>⏱ 실시간 긴급출동 관제망</span>
-        </span>
+      <div class="secHeader secHeaderFlex">
+        <div class="secHeaderTitleGroup">
+          <h2 class="secHeaderTitle" style="margin-bottom:0;">NATIONWIDE MASTERS NETWORK</h2>
+          <span class="secHeaderBadgePulse">
+            <span>⏱ 실시간 긴급출동 관제망</span>
+          </span>
+        </div>
+
+        <!-- 소비자가 원하는 지역 검색창 -->
+        <div class="networkSearchBox">
+          <input 
+            type="text" 
+            id="netSearchInput" 
+            class="networkSearchInput" 
+            placeholder="지역명 검색 (예: 부평, 김포, 부천)" 
+            onkeydown="if(event.key === 'Enter') handleNetworkSearch();"
+          >
+          <button type="button" class="btnNetReset" onclick="resetNetworkSearch()" title="검색 초기화">✕</button>
+          <button type="button" class="btnNetSearch" onclick="handleNetworkSearch()">검색</button>
+        </div>
       </div>
+
       <p class="networkIntro">
         키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역(226개 시·군·구)을 8대 광역권 70개 거점으로 유기 관제·출동합니다.
       </p>
@@ -1580,7 +1669,7 @@
         <div class="mapViewWrapper">
           <div class="mapTopStatus">
             <span class="statusLive"><span class="statusLiveDot"></span> REAL-TIME EMERGENCY DISPATCH SYSTEM</span>
-            <span>지역을 누르면 상세 지부가 실시간 전환됩니다</span>
+            <span>지역을 누르거나 상단 검색창에 지역명을 입력하세요</span>
           </div>
 
           <!-- 남한 전도 SVG -->
@@ -1707,7 +1796,7 @@
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="210" cy="265" r="6.5" fill="none" stroke="#FEE838" />
-                <circle cx="210" cy="265" r="6" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+                <circle cx="210" cy="265" r="6.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="180" cy="285" r="7" fill="none" stroke="#10B981" />
@@ -1723,7 +1812,7 @@
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="250" cy="265" r="6.5" fill="none" stroke="#EC4899" />
-                <circle cx="250" cy="265" r="6" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+                <circle cx="250" cy="265" r="6.5" fill="#EC4899" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="225" cy="305" r="6.5" fill="none" stroke="#38BDF8" />
@@ -1897,7 +1986,7 @@
               <!-- 호남 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="155" cy="475" r="7.5" fill="none" stroke="#38BDF8" />
-                <circle cx="155" cy="475" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+                <circle cx="155" cy="475" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="180" cy="505" r="7.5" fill="none" stroke="#67E8F9" />
@@ -1921,19 +2010,19 @@
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="190" cy="650" r="7.5" fill="none" stroke="#C084FC" />
-                <circle cx="190" cy="650" r="7" fill="#C084FC" stroke="#000" stroke-width="1.8" />
+                <circle cx="190" cy="650" r="7.5" fill="#C084FC" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="140" cy="685" r="7.5" fill="none" stroke="#38BDF8" />
-                <circle cx="140" cy="685" r="7" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+                <circle cx="140" cy="685" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="295" cy="640" r="7.5" fill="none" stroke="#A855F7" />
-                <circle cx="295" cy="640" r="7" fill="#A855F7" stroke="#000" stroke-width="1.8" />
+                <circle cx="295" cy="640" r="7.5" fill="#A855F7" stroke="#000" stroke-width="1.8" />
               </g>
               <g class="mapPinNode" onclick="selectMapRegion('honam')">
                 <circle class="pinPulse" cx="305" cy="705" r="7.5" fill="none" stroke="#EC4899" />
-                <circle cx="305" cy="705" r="7" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+                <circle cx="305" cy="705" r="7.5" fill="#EC4899" stroke="#000" stroke-width="1.8" />
               </g>
 
               <!-- 제주도 핀 -->
@@ -2046,7 +2135,7 @@
         </div>
       </div>
 
-      <!-- ================= 전체 지부 가나다순 리스트 ================= -->
+      <!-- 전체 지부 가나다순 리스트 -->
       <div class="secHeader" style="margin-top:65px;">
         <h3 class="secHeaderTitle" style="font-size:32px;">NATIONWIDE INTEGRATED NETWORKS</h3>
         <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
@@ -2058,7 +2147,7 @@
         🏛️ <strong>전국 관제 인프라 표준 안내</strong> : 키앤키닷컴은 대한민국 전역(226개 기초자치단체)을 8대 광역권 70개 핵심 거점으로 유기 관제하며, 고객 편의와 공평성을 위해 <strong>‘가나다(ㄱ-ㄴ-ㄷ) 지역 표준 순서’</strong>로 투명하게 공개합니다.
       </div>
 
-      <!-- [상시 노출: 대표 8대 권역 거점 카드] -->
+      <!-- 상시 노출: 대표 8대 권역 거점 카드 -->
       <div class="networkGrid" id="networkBaseGrid">
         <article class="networkCard">
           <div class="netTopRow"><span class="netBadge">강원 영서 메디컬·행정허브</span></div>
@@ -2149,7 +2238,7 @@
         </article>
       </div>
 
-      <!-- [더보기 클릭 시 펼쳐지는 전국 세부 네트워크 그리드 (동적 렌더링)] -->
+      <!-- 더보기 클릭 시 펼쳐지는 전국 세부 네트워크 그리드 -->
       <div class="networkMoreWrap" id="networkMoreWrap"></div>
 
       <!-- 펼치기/접기 버튼 -->
@@ -2230,7 +2319,7 @@
     </div>
   </section>
 
-  <!-- 6. FAQ Section (기본 4문항 + 실전문항 17개 전격 통합: 총 21문항) -->
+  <!-- 6. FAQ Section -->
   <section id="faq" class="faqSection">
     <div class="wrap">
       <div class="secHeader">
@@ -2241,7 +2330,6 @@
       </div>
 
       <div class="faqList">
-        <!-- 기본 상시 노출 4문항 -->
         <div class="faqCard">
           <div class="faqTopRow">
             <span class="faqBadge">Q1</span>
@@ -2282,7 +2370,7 @@
           </p>
         </div>
 
-        <!-- 더보기 클릭 시 펼쳐지는 추가 17문항 (실전 캡처 데이터 100% 반영) -->
+        <!-- 추가 17문항 -->
         <div class="faqHiddenWrap" id="faqMoreWrap">
           <div class="faqCard">
             <div class="faqTopRow">
@@ -2462,45 +2550,45 @@
     </div>
   </section>
 
-  <!-- 7. Blog Section (출동 실전 후기 노란색 강조 라벨 적용 & 자동갱신 세팅) -->
+  <!-- 7. Blog Section (세트 1 적용: 1-2-3 유기적 3단계 안내문 연동) -->
   <section id="blogs" class="blogSection">
     <div class="wrap">
       <div class="secHeader">
         <h2 class="secHeaderTitle">LATEST BLOG STORIES</h2>
         <span class="secHeaderSubKoBig" style="font-size:22px; padding:8px 20px; background:var(--neon-yellow); color:#000; border-radius:4px; font-weight:800;">
-          출동 실전 후기
+          실시간 출동 일지 & 블로그 검색 안내
         </span>
       </div>
       <div class="blogGrid">
-        <!-- 첫 번째 블록 (keynkey00) -->
+        <!-- 첫 번째 블록 (STEP 01: 최신 일지 안내) -->
         <article class="blogCard" id="blog-card-1">
-          <div class="blogDate" id="blog-date-1">NAVER BLOG STORY 01</div>
-          <h3 class="blogTitle" id="blog-title-1">SM7 르노삼성 스마트키 분실 현장 복원</h3>
-          <p class="blogExcerpt" id="blog-desc-1">르노삼성 스마트키를 전부 분실한 긴급 상황, 현장으로 출동하여 인텔리전트 키 데이터 복구와 시동 등록을 원스톱으로 마쳤습니다.</p>
-          <a class="blogLink" id="blog-link-1" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey00">상세 후기 보기 →</a>
+          <div class="blogDate" id="blog-date-1">STEP 01 · REAL-TIME TODAY</div>
+          <h3 class="blogTitle" id="blog-title-1">"오늘 방금 올라온 가장 따끈따끈한 전국 실시간 출동 일지입니다"</h3>
+          <p class="blogExcerpt" id="blog-desc-1">지금 이 시간에도 전국 각지에서 20년 마스터들이 직접 발로 뛰며 해결하고 있는 생생한 당일 출동 기록을 투명하게 업데이트합니다.</p>
+          <a class="blogLink" id="blog-link-1" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey00">실시간 출동 일지 보기 →</a>
         </article>
 
-        <!-- 두 번째 블록 (keynkey77) -->
+        <!-- 두 번째 블록 (STEP 02: 내 차종/지역 검색 방법 제시) -->
         <article class="blogCard" id="blog-card-2">
-          <div class="blogDate" id="blog-date-2">NAVER BLOG STORY 02</div>
-          <h3 class="blogTitle" id="blog-title-2">쉐보레 트랙스 당일 정품키 재발급 출동</h3>
-          <p class="blogExcerpt" id="blog-desc-2">서비스센터 입고 없이 현장에서 정품 스마트키를 직접 가공 및 등록하여 일정을 지켜드린 실제 사례입니다.</p>
-          <a class="blogLink" id="blog-link-2" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">상세 후기 보기 →</a>
+          <div class="blogDate" id="blog-date-2">STEP 02 · SMART SEARCH</div>
+          <h3 class="blogTitle" id="blog-title-2">"블로그 검색창에 ‘내 차종’이나 ‘동네 이름’을 입력해 보세요"</h3>
+          <p class="blogExcerpt" id="blog-desc-2">[아반떼], [쏘렌토], [BMW], [부평], [일산] 등 내 차종이나 지역명만 검색하시면 축적된 수천 건의 실제 시공 데이터가 즉시 뜹니다.</p>
+          <a class="blogLink" id="blog-link-2" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">블로그 검색창 이동하기 →</a>
         </article>
 
-        <!-- 세 번째 블록 (keynkey11) -->
+        <!-- 세 번째 블록 (STEP 03: 동일 사례 확인 & 안심 종결) -->
         <article class="blogCard" id="blog-card-3">
-          <div class="blogDate" id="blog-date-3">NAVER BLOG STORY 03</div>
-          <h3 class="blogTitle" id="blog-title-3">쌍용 KGM 코란도스포츠 스마트키 제작</h3>
-          <p class="blogExcerpt" id="blog-desc-3">KGM 최신 부품 재고를 상시 확보하고 있어 분실 현장에서 지체 없이 시동 및 비상키까지 완벽 제작했습니다.</p>
-          <a class="blogLink" id="blog-link-3" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey11">상세 후기 보기 →</a>
+          <div class="blogDate" id="blog-date-3">STEP 03 · PROVEN SOLUTION</div>
+          <h3 class="blogTitle" id="blog-title-3">"내 차와 똑같은 실제 해결 사례를 눈으로 직접 확인하세요"</h3>
+          <p class="blogExcerpt" id="blog-desc-3">키 실린더 손상 없는 무파괴 개문부터 순정 OBD 코딩까지, 완벽하게 시동을 터뜨린 실제 결과를 확인 후 안심하고 문의하세요.</p>
+          <a class="blogLink" id="blog-link-3" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey11">성공 해결 사례 확인 →</a>
         </article>
       </div>
     </div>
   </section>
 </main>
 
-<!-- 8. Footer (대표님 실전 직통 소셜 채널 4종 완벽 연동) -->
+<!-- 8. Footer -->
 <footer id="footer" class="footer">
   <div class="wrap">
     <div class="footerGrid">
@@ -3172,6 +3260,82 @@
       `;
       board.appendChild(item);
     });
+  }
+
+  // ================= 전국 지부 실시간 검색 기능 =================
+  function handleNetworkSearch() {
+    var input = document.getElementById('netSearchInput');
+    if (!input) return;
+    var query = input.value.trim().toLowerCase();
+    if (!query) {
+      alert("검색할 지역명을 입력해주세요. (예: 부평, 김포, 부천 등)");
+      return;
+    }
+
+    var matchResults = [];
+    for (var regKey in regionMapData) {
+      if (regionMapData.hasOwnProperty(regKey) && regionMapData[regKey].branches) {
+        var branches = regionMapData[regKey].branches;
+        for (var i = 0; i < branches.length; i++) {
+          var b = branches[i];
+          var combinedStr = (b.name + " " + b.badge + " " + b.cov + " " + b.exp).toLowerCase();
+          if (combinedStr.indexOf(query) !== -1) {
+            matchResults.push(b);
+          }
+        }
+      }
+    }
+
+    var paths = document.querySelectorAll('.geoPath');
+    paths.forEach(function(p) { p.classList.remove('selected'); });
+
+    var titleEl = document.getElementById('ctrlBoardTitle');
+    var countEl = document.getElementById('ctrlBoardCount');
+    var board = document.getElementById('ctrlBoardCards');
+
+    if (titleEl) titleEl.innerText = `🔍 '${query}' 검색 결과`;
+    if (countEl) countEl.innerHTML = `<span style="font-size:12px;">●</span> ${matchResults.length}개 지부 검색됨`;
+
+    if (!board) return;
+    board.innerHTML = "";
+
+    if (matchResults.length === 0) {
+      board.innerHTML = `
+        <div style="grid-column: 1 / -1; padding: 40px 20px; text-align: center; background: var(--bg-card); border: 1.5px dashed var(--border-card); border-radius: 6px;">
+          <p style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px;">'${query}'에 해당하는 전용 지부를 찾지 못했습니다.</p>
+          <p style="font-size: 14.5px; color: var(--text-clean); margin-bottom: 18px; line-height: 1.6;">
+            키앤키닷컴은 전국 226개 시·군·구 전역에 비상 출동 네트워크를 운영 중입니다.<br>
+            대표번호로 문의하시면 가장 인접한 마스터 엔지니어가 즉시 배차됩니다.
+          </p>
+          <a href="tel:16009712" class="panelBtn call" style="display:inline-block; padding: 10px 24px; font-size: 15px;">📞 1600-9712 직통 출동 확인</a>
+        </div>
+      `;
+      return;
+    }
+
+    matchResults.forEach(function(b) {
+      var item = document.createElement('article');
+      item.className = 'boardCard';
+      item.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
+        </div>
+        <h4 style="font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
+        <div class="cardCovText">${b.cov}</div>
+        <div class="cardExpText">${b.exp}</div>
+        <div class="panelBtnRow">
+          <a href="tel:16009712" class="panelBtn call">📞 직통전화</a>
+          <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
+        </div>
+      `;
+      board.appendChild(item);
+    });
+  }
+
+  function resetNetworkSearch() {
+    var input = document.getElementById('netSearchInput');
+    if (input) input.value = "";
+    selectMapRegion('incheon');
   }
 
   var isNetworkLoaded = false;
