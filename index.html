@@ -1757,6 +1757,12 @@
                 <circle cx="115" cy="155" r="6" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
               </g>
 
+              <!-- 김포 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="160" cy="195" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="160" cy="195" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+
               <!-- 서울 핀 -->
               <g class="mapPinNode" onclick="selectMapRegion('seoul')">
                 <circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" />
@@ -1826,6 +1832,25 @@
                 <circle class="pinPulse" cx="285" cy="275" r="8" fill="none" stroke="#FEE838" />
                 <circle cx="285" cy="275" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
               </g>
+
+              <!-- 경기 광주 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="295" cy="290" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="295" cy="290" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <!-- 용인 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="280" cy="320" r="8" fill="none" stroke="#F59E0B" />
+                <circle cx="280" cy="320" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <!-- 이천 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="315" cy="315" r="7.5" fill="none" stroke="#10B981" />
+                <circle cx="315" cy="315" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="245" cy="325" r="8" fill="none" stroke="#FF007A" />
                 <circle cx="245" cy="325" r="7.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
@@ -1837,6 +1862,24 @@
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
                 <circle class="pinPulse" cx="210" cy="345" r="8" fill="none" stroke="#F59E0B" />
                 <circle cx="210" cy="345" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <!-- 평택 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="230" cy="375" r="8" fill="none" stroke="#FF1E44" />
+                <circle cx="230" cy="375" r="7.5" fill="#FF1E44" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+
+              <!-- 안성 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="280" cy="365" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="280" cy="365" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <!-- 천안 핀 추가 -->
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="245" cy="405" r="8" fill="none" stroke="#38BDF8" />
+                <circle cx="245" cy="405" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
               </g>
 
               <!-- 강원도 핀 -->
@@ -2041,6 +2084,7 @@
               <text class="mapCityLabel subIsland" x="115" y="140">강화도</text>
               <text class="mapCityLabel subIsland" x="70" y="235">영종도</text>
               <text class="mapCityLabel mainLarge" x="135" y="255">인천</text>
+              <text class="mapCityLabel microNodeText" x="160" y="185">김포</text>
               
               <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
 
@@ -2060,9 +2104,14 @@
               <text class="mapCityLabel microNodeText" x="225" y="320">군포</text>
               <text class="mapCityLabel microNodeText" x="252" y="310">의왕</text>
               <text class="mapCityLabel microNodeText" x="285" y="260">성남</text>
+              <text class="mapCityLabel microNodeText" x="295" y="280">광주</text>
+              <text class="mapCityLabel microNodeText" x="280" y="335">용인</text>
+              <text class="mapCityLabel microNodeText" x="315" y="330">이천</text>
               <text class="mapCityLabel microNodeText" x="248" y="340">수원</text>
               <text class="mapCityLabel microNodeText" x="258" y="370">오산</text>
               <text class="mapCityLabel microNodeText" x="210" y="362">화성</text>
+              <text class="mapCityLabel microNodeText" x="230" y="390">평택</text>
+              <text class="mapCityLabel microNodeText" x="280" y="380">안성</text>
 
               <text class="mapCityLabel mainLarge" x="430" y="140">강원</text>
               <text class="mapCityLabel microNodeText" x="370" y="145">춘천</text>
@@ -2077,6 +2126,7 @@
               <text class="mapCityLabel microNodeText" x="345" y="400">음성</text>
               <text class="mapCityLabel microNodeText" x="340" y="475">영동</text>
 
+              <text class="mapCityLabel microNodeText" x="245" y="420">천안</text>
               <text class="mapCityLabel" x="255" y="440">대전·세종</text>
               <text class="mapCityLabel microNodeText" x="160" y="342">당진</text>
               <text class="mapCityLabel microNodeText" x="125" y="405">서산</text>
