@@ -1,0 +1,2580 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <title>키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크 1600-9712</title>
+  <meta name="description" content="전국 적어도 15년 이상 현장 엔지니어 직통 출동, 분실 차키·스마트키 현장 당일 제작 및 순정 코딩 복원. 1600-9712">
+  <meta name="theme-color" content="#0F172A">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크">
+  <meta property="og:description" content="견인 없는 당일 현장 차키 복원 및 무손상 개문 전문. 대표전화 1600-9712">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  
+  <style>
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg-main: #0B0F19;
+      --bg-surface: #151D2E;
+      --bg-card: #1E293B;
+      --border-card: #334155;
+      --neon-yellow: #FEE838;
+      --neon-yellow-glow: rgba(254, 232, 56, 0.95);
+      --neon-pink: #FF007A;
+      --neon-pink-glow: rgba(255, 0, 122, 0.75);
+      --neon-red: #FF1E44;
+      --neon-red-glow: rgba(255, 30, 68, 0.85);
+      --clear-cyan: #67E8F9;
+      --clear-cyan-glow: rgba(103, 232, 249, 0.95);
+      --text-main: #FFFFFF;
+      --text-clean: #E2E8F0;
+      --text-bright: #F1F5F9;
+      --text-muted: #94A3B8;
+      --black: #000000;
+      --map-sea: #080D18;
+      --map-land: #1E2B40;
+      --map-stroke: #526E96;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      -webkit-user-select: none;
+      user-select: none;
+      line-height: 1.6;
+      word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .brandLogo, .menuBtn, .secHeaderSubKoBig, .reserveBadgeBig, .btnActionLarge {
+      font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: 1380px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    /* 0. Top Clock Bar */
+    .topClockTicker {
+      background: #060911;
+      border-bottom: 1.5px solid #1E293B;
+      padding: 10px 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      letter-spacing: -0.01em;
+    }
+    .clockTickerInner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .clockMotto {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-clean);
+      font-weight: 600;
+    }
+    .clockMottoDot {
+      width: 9px;
+      height: 9px;
+      background: var(--neon-yellow);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--neon-yellow);
+      animation: alertPulse 1.8s infinite;
+    }
+    .clockMotto b { color: var(--neon-yellow); font-weight: 700; }
+    
+    .tagFraudShield {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #000;
+      color: #FF2E93;
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 900;
+      padding: 5px 15px;
+      margin-left: 10px;
+      border-radius: 5px;
+      border: 2px solid var(--neon-pink);
+      box-shadow: 0 0 14px var(--neon-pink-glow);
+      letter-spacing: -0.01em;
+      animation: fraudAlertPulse 1.6s infinite ease-in-out;
+    }
+    @keyframes fraudAlertPulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(255, 0, 122, 0.4); border-color: #FF007A; color: #FF2E93; }
+      50% { box-shadow: 0 0 28px rgba(255, 30, 68, 0.95), inset 0 0 8px rgba(255, 0, 122, 0.4); border-color: #FFFFFF; color: #FFFFFF; }
+    }
+
+    .clockTimesWrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .clockItem { display: inline-flex; align-items: center; gap: 6px; }
+    .clockItem .tag {
+      background: #111827;
+      color: var(--clear-cyan);
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      border: 1px solid #1F2937;
+      letter-spacing: 0.05em;
+    }
+    .clockItem .val { color: #FFFFFF; letter-spacing: 0.04em; }
+
+    /* 1. Header Navigation */
+    .topNav {
+      background: rgba(11, 15, 25, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border-card);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+    }
+    .navInner {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brandLogo {
+      background: #000;
+      color: #fff;
+      padding: 0 18px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      border: 2px solid var(--neon-yellow);
+      box-shadow: 0 0 12px rgba(254, 232, 56, 0.25);
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .brandLogo:hover { box-shadow: 0 0 20px rgba(254, 232, 56, 0.6); transform: translateY(-2px); }
+    .brandLogo .logoKo { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; transform: translateY(1.5px); }
+    .brandLogo .logoEn { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: var(--neon-yellow); letter-spacing: 0.03em; }
+
+    .centerMenu { display: flex; gap: 10px; }
+    .menuBtn {
+      border: 1.5px solid var(--border-card);
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .menuBtn:hover {
+      background: var(--neon-yellow);
+      color: #000;
+      border-color: var(--neon-yellow);
+      box-shadow: 0 0 14px rgba(254, 232, 56, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .navCallLarge {
+      background: var(--neon-yellow);
+      color: #000;
+      padding: 0 22px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2.5px solid #000;
+      white-space: nowrap;
+      box-shadow: 0 0 18px rgba(254, 232, 56, 0.45);
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .navCallLarge:hover { background: #fff; transform: scale(1.03); }
+    .navCallLarge .badgeText { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
+    .navCallLarge b { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.01em; transform: translateY(1px); }
+
+    /* 2. Hero Section */
+    .heroSection {
+      background: linear-gradient(180deg, #0F172A 0%, #151F33 100%);
+      border-bottom: 2px solid var(--border-card);
+      padding: 85px 0 95px;
+      width: 100%;
+    }
+    .heroGrid { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 40px; }
+    .reserveBadgeBig {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #000;
+      color: var(--neon-yellow);
+      font-size: 21px;
+      font-weight: 900;
+      padding: 15px 28px;
+      margin-bottom: 26px;
+      border: 3px solid var(--neon-yellow);
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(254, 232, 56, 0.45);
+      animation: alertPulse 1.8s infinite ease-in-out;
+    }
+    @keyframes alertPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(254, 232, 56, 0.35); border-color: var(--neon-yellow); }
+      50% { box-shadow: 0 0 32px rgba(254, 232, 56, 0.85); border-color: #ffffff; }
+    }
+
+    .mainTitle { font-size: 52px; line-height: 1.25; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 24px; color: #fff; }
+    .mainTitle span { color: var(--neon-yellow); }
+    .mainDesc { font-size: 19px; font-weight: 400; max-width: 640px; margin-bottom: 38px; line-height: 1.8; color: var(--text-clean); letter-spacing: -0.01em; }
+    .ctaGroup { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    
+    .btnActionLarge { display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 6px; transition: all 0.2s ease; letter-spacing: -0.02em; font-weight: 900; }
+    .btnMainHighlight {
+      background: var(--neon-yellow);
+      color: #000;
+      border: 3px solid var(--neon-yellow);
+      box-shadow: 0 0 25px rgba(254, 232, 56, 0.6);
+      font-size: 21px;
+      padding: 22px 38px;
+      animation: ctaPulse 2s infinite ease-in-out;
+    }
+    .btnMainHighlight:hover { background: #fff; border-color: #fff; transform: translateY(-3px); box-shadow: 0 0 32px rgba(255, 255, 255, 0.85); }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 16px rgba(254, 232, 56, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 30px rgba(254, 232, 56, 0.85); transform: scale(1.02); }
+    }
+    .btnSubMuted { background: #111827; color: var(--text-muted); border: 2px solid #283548; font-size: 17px; padding: 18px 26px; }
+    .btnSubMuted:hover { background: #1a2333; border-color: #475569; color: #fff; transform: translateY(-2px); }
+
+    .heroStepSliderWrap {
+      width: 100%;
+      background: #080E1B;
+      border: 3px solid var(--border-card);
+      border-radius: 10px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sliderHeaderBar {
+      background: #0D1629;
+      border-bottom: 2px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sliderHeaderTitle { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 700; color: var(--neon-yellow); letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px; }
+    .sliderAutoDot { width: 9px; height: 9px; background: #10B981; border-radius: 50%; box-shadow: 0 0 10px #10B981; animation: pulseLive 1.5s infinite; }
+    @keyframes pulseLive { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.6; } }
+
+    .sliderTrack { position: relative; width: 100%; min-height: 380px; overflow: hidden; }
+    .slideItem {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      padding: 34px 28px;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .slideItem.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+    .slideBadgeRow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .slideBadgeNum {
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 4px;
+      box-shadow: 0 0 14px rgba(254, 232, 56, 0.35);
+    }
+    .slideTag { background: rgba(103, 232, 249, 0.15); color: var(--clear-cyan); font-size: 13.5px; font-weight: 800; padding: 4px 12px; border-radius: 4px; border: 1px solid var(--clear-cyan); }
+    .slideHeading { font-size: 25px; font-weight: 700; color: #FFFFFF; margin-bottom: 18px; line-height: 1.4; letter-spacing: -0.02em; }
+    .slideBodyText { font-size: 17px; color: var(--text-clean); line-height: 1.8; border-top: 1px dashed var(--border-card); padding-top: 18px; letter-spacing: -0.015em; }
+    .slideBodyText strong { color: #FFFFFF; font-weight: 700; }
+    .sliderIndicatorRow { background: #09101E; border-top: 1.5px solid #23334D; padding: 12px 22px; display: flex; align-items: center; justify-content: space-between; }
+    .sliderDots { display: flex; gap: 8px; }
+    .sDot { width: 14px; height: 6px; background: #334155; border-radius: 3px; cursor: pointer; transition: all 0.3s; }
+    .sDot.active { width: 32px; background: var(--neon-yellow); box-shadow: 0 0 10px rgba(254, 232, 56, 0.7); }
+    .sliderLiveNotice { font-size: 12.5px; font-weight: 700; color: var(--text-muted); }
+
+    /* ================= [대표님 전용 신설 칸] 실물 순정 부품 & 정밀 장비 쇼케이스 ================= */
+    .partsShowcaseSection {
+      background: #070B14;
+      border-bottom: 2px solid var(--border-card);
+      padding: 75px 0 85px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .partsHeaderWrap { text-align: center; margin-bottom: 35px; }
+    .partsTagBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #000;
+      color: var(--neon-yellow);
+      border: 1.5px solid var(--neon-yellow);
+      padding: 6px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 12px rgba(254, 232, 56, 0.25);
+    }
+    .partsMainTitle { font-size: 34px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .partsMainTitle span { color: var(--neon-yellow); }
+    .partsSubDesc { font-size: 17px; color: var(--text-clean); max-width: 880px; margin: 0 auto; line-height: 1.7; }
+    .partsSubDesc b { color: #fff; }
+
+    .marqueeViewport {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 15px 0;
+      mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    }
+    .marqueeTrack {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: marqueeScroll 45s linear infinite;
+    }
+    .marqueeViewport:hover .marqueeTrack { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .partsPhotoCard {
+      width: 320px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-card);
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      position: relative;
+      transition: all 0.25s ease;
+    }
+    .partsPhotoCard:hover {
+      border-color: var(--neon-yellow);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(254, 232, 56, 0.35);
+    }
+    .partsImgBox {
+      width: 100%;
+      height: 220px;
+      background: #0f172a;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .partsImgBox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .partsPhotoCard:hover .partsImgBox img { transform: scale(1.06); }
+    .partsTagOverlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.85);
+      color: var(--neon-yellow);
+      border: 1px solid var(--neon-yellow);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-family: 'Oswald', sans-serif;
+      z-index: 2;
+    }
+    .partsInfoBox { padding: 16px 18px; }
+    .partsInfoTitle { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 6px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .partsInfoDesc { font-size: 13.5px; color: var(--text-clean); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    /* 3. About Us */
+    .aboutSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .aboutGrid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
+    .aboutHeading { font-size: 36px; font-weight: 700; line-height: 1.4; margin-bottom: 24px; color: #fff; }
+    .highlightTag3D {
+      background: var(--neon-yellow);
+      color: #000;
+      padding: 5px 16px;
+      margin-right: 8px;
+      display: inline-block;
+      font-weight: 900;
+      border: 2.5px solid #000;
+      box-shadow: 3px 3px 0px rgba(254, 232, 56, 0.6);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .highlightTag3D:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+    .aboutText { font-size: 18px; font-weight: 400; line-height: 1.8; color: var(--text-clean); margin-bottom: 28px; }
+    
+    .aboutTistoryBtnBig {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: var(--bg-surface);
+      color: #fff;
+      font-size: 19px;
+      font-weight: 800;
+      padding: 20px 28px;
+      border: 2px solid var(--border-card);
+      border-radius: 6px;
+      margin-bottom: 30px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+    .aboutTistoryBtnBig:hover { border-color: var(--neon-pink); color: #fff; transform: translateY(-2px); box-shadow: 0 0 20px var(--neon-pink-glow); }
+    .aboutTistoryBtnBig .tistoryIconPink {
+      background: var(--neon-pink);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      padding: 6px 14px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px var(--neon-pink-glow);
+    }
+
+    .aboutStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .statBox { border: 2px solid var(--border-card); padding: 18px 14px; background: var(--bg-surface); text-align: center; border-radius: 4px; }
+    .statNum { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; display: block; line-height: 1; margin-bottom: 6px; color: var(--neon-yellow); }
+    .statLabel { font-size: 13.5px; font-weight: 700; color: var(--text-muted); }
+
+    .aboutNewsSliderBox {
+      width: 100%;
+      background: #09101E;
+      border: 3px solid var(--border-card);
+      border-radius: 10px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .newsSliderTopBar {
+      background: #0F1A2E;
+      border-bottom: 2px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .newsTopBadge { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; color: var(--clear-cyan); letter-spacing: 0.05em; }
+    .newsTopDot { width: 8px; height: 8px; background: var(--clear-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--clear-cyan); animation: alertPulse 1.8s infinite; }
+    .newsTrackArea { position: relative; width: 100%; min-height: 440px; overflow: hidden; }
+    .newsSlideItem {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      padding: 32px 28px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .newsSlideItem.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .newsCopyBadge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border: 1.5px solid var(--neon-yellow);
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px rgba(254, 232, 56, 0.25);
+    }
+    .newsHeadline { font-size: 22.5px; font-weight: 800; line-height: 1.45; color: #FFFFFF; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .newsContentList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 16px;
+      margin-bottom: 18px;
+    }
+    .newsContentList li { font-size: 15.5px; color: var(--text-clean); line-height: 1.7; position: relative; padding-left: 18px; letter-spacing: -0.01em; }
+    .newsContentList li::before { content: '▪'; position: absolute; left: 0; top: -1px; color: var(--clear-cyan); font-size: 18px; }
+    .newsTagRow { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+    .newsTag { background: #152238; color: var(--clear-cyan); font-size: 12.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid #273854; letter-spacing: -0.01em; }
+    .newsSliderControlBar { background: #0B1424; border-top: 1.5px solid #23334D; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; }
+    .newsDots { display: flex; gap: 8px; }
+    .nDot { width: 14px; height: 6px; background: #334155; border-radius: 3px; cursor: pointer; transition: all 0.3s; }
+    .nDot.active { width: 32px; background: var(--clear-cyan); box-shadow: 0 0 10px rgba(103, 232, 249, 0.7); }
+    .newsTimerText { font-size: 12.5px; font-weight: 700; color: var(--text-muted); }
+
+    /* 4. 전국 지도 */
+    .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
+    .networkIntro { font-size: 19px; font-weight: 400; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: var(--text-clean); }
+
+    .secHeaderFlex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+    .secHeaderTitleGroup { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .networkSearchBox {
+      display: inline-flex;
+      align-items: center;
+      background: #080D18;
+      border: 2px solid var(--border-card);
+      border-radius: 6px;
+      padding: 5px 6px 5px 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+    }
+    .networkSearchBox:focus-within { border-color: var(--neon-yellow); box-shadow: 0 0 16px rgba(254, 232, 56, 0.4); }
+    .networkSearchInput { background: transparent; border: none; outline: none; color: #fff; font-family: 'Pretendard', sans-serif; font-size: 15px; font-weight: 600; width: 220px; }
+    .networkSearchInput::placeholder { color: var(--text-muted); font-size: 14px; font-weight: 400; }
+    .btnNetSearch { background: var(--neon-yellow); color: #000; border: none; font-family: 'GmarketSans', sans-serif; font-size: 14px; font-weight: 800; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.15s ease; }
+    .btnNetSearch:hover { background: #fff; }
+    .btnNetReset { background: transparent; border: none; color: var(--text-muted); font-size: 13px; font-weight: 600; padding: 0 8px; cursor: pointer; }
+    .btnNetReset:hover { color: var(--neon-pink); }
+
+    .mapControlCenter {
+      background: var(--map-sea);
+      border: 3px solid var(--border-card);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.75);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 740px 1fr;
+      gap: 36px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .mapViewWrapper {
+      background: #060B14;
+      border: 2px solid #23334D;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.95);
+    }
+    .mapTopStatus {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #2A3C59;
+      font-size: 15px;
+      color: #94A3B8;
+      font-weight: 700;
+    }
+    .statusLive { display: inline-flex; align-items: center; gap: 10px; color: #10B981; font-weight: 800; letter-spacing: 0.05em; }
+    .statusLiveDot { width: 14px; height: 14px; background: #10B981; border-radius: 50%; box-shadow: 0 0 14px #10B981; animation: pulseLive 1.5s infinite; }
+
+    .koreaDetailedSvg { width: 100%; max-width: 710px; height: auto; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.85)); touch-action: manipulation; }
+    .geoPath {
+      fill: var(--map-land);
+      stroke: var(--map-stroke);
+      stroke-width: 3.2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .geoPath:hover { fill: #2B3D59 !important; stroke: var(--neon-yellow) !important; stroke-width: 5 !important; filter: drop-shadow(0 0 24px rgba(254, 232, 56, 0.95)) !important; }
+    .geoPath.directTerritoryRedGlow { fill: #142033 !important; stroke: var(--neon-red) !important; stroke-width: 3.6 !important; filter: drop-shadow(0 0 10px rgba(255, 30, 68, 0.75)); }
+    .geoPath.directTerritoryRedGlow:hover { fill: #0E3656 !important; stroke: var(--clear-cyan) !important; stroke-width: 5.5 !important; filter: drop-shadow(0 0 32px var(--clear-cyan-glow)) !important; }
+    .geoPath.seoulBrightCenter { fill: url(#seoulCyanGradient) !important; stroke: #FFFFFF !important; stroke-width: 3.8 !important; filter: drop-shadow(0 0 20px var(--clear-cyan-glow)) !important; }
+    .geoPath.selected { fill: #18263E !important; stroke: var(--neon-yellow) !important; stroke-width: 5.5 !important; filter: drop-shadow(0 0 30px var(--neon-yellow-glow)) drop-shadow(0 0 8px #FFFFFF) !important; }
+
+    .mapCityLabel { font-size: 21px; font-weight: 900; fill: #FFFFFF; pointer-events: none; text-anchor: middle; paint-order: stroke fill; stroke: #0A111E; stroke-width: 7px; stroke-linecap: round; stroke-linejoin: round; letter-spacing: -0.02em; }
+    .mapCityLabel.mainLarge { font-size: 24px; fill: var(--neon-yellow); }
+    .mapCityLabel.subIsland { font-size: 16px; fill: var(--clear-cyan); }
+    .mapCityLabel.subNodeText { font-size: 13.5px; fill: var(--clear-cyan); }
+    .mapCityLabel.microNodeText { font-size: 12px; fill: #F1F5F9; stroke-width: 4.5px; }
+    .mapCityLabel.seoulBoldText { font-size: 21px; fill: #000000; stroke: #FFFFFF; stroke-width: 4px; font-weight: 900; }
+
+    .mapPinNode { cursor: pointer; transition: transform 0.2s; }
+    .mapPinNode:hover { transform: scale(1.3); }
+    .pinPulse { animation: pinWave 2s infinite ease-out; transform-origin: center; }
+    @keyframes pinWave { 0% { r: 5; opacity: 1; stroke-width: 3; } 100% { r: 26; opacity: 0; stroke-width: 0.5; } }
+
+    .mapDetailBoard { display: flex; flex-direction: column; gap: 18px; color: #fff; }
+    .boardHead { border-bottom: 2px solid #23334D; padding-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .boardTitle { font-size: 26px; font-weight: 700; color: var(--neon-yellow); display: flex; align-items: center; gap: 8px; }
+    .boardCountTagCustom {
+      background: #064E3B;
+      color: #34D399;
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border: 1.5px solid #10B981;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .boardScrollArea { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-height: 700px; overflow-y: auto; padding-right: 8px; }
+    .boardScrollArea::-webkit-scrollbar { width: 6px; }
+    .boardScrollArea::-webkit-scrollbar-thumb { background: var(--neon-pink); border-radius: 3px; }
+
+    .boardCard {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-card);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+      border-radius: 6px;
+    }
+    .boardCard:hover { border-color: var(--neon-pink); box-shadow: 0 0 16px var(--neon-pink-glow); transform: translateY(-2px); }
+    .cardCovText { font-family: 'Pretendard', sans-serif; font-size: 15.5px; font-weight: 500; color: var(--clear-cyan); margin-bottom: 10px; line-height: 1.6; letter-spacing: -0.015em; }
+    .cardExpText { font-family: 'Pretendard', sans-serif; font-size: 14px; font-weight: 400; color: var(--text-clean); line-height: 1.65; border-top: 1px dashed var(--border-card); padding-top: 10px; margin-top: auto; margin-bottom: 14px; letter-spacing: -0.01em; }
+    .cardExpText strong { color: #FFFFFF; font-weight: 700; }
+
+    .panelBtnRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+    .panelBtn { border: 1.5px solid var(--border-card); padding: 8px 4px; font-size: 13px; font-weight: 700; text-align: center; background: var(--bg-surface); color: #fff; border-radius: 4px; transition: all 0.15s; }
+    .panelBtn:hover { background: var(--border-card); }
+    .panelBtn.call { background: var(--neon-yellow); color: #000; border-color: var(--neon-yellow); font-weight: 800; }
+    .panelBtn.call:hover { background: #fff; border-color: #fff; }
+
+    .netBtnRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .netMiniBtn { border: 1.5px solid var(--border-card); padding: 12px 4px; font-size: 16.5px; font-weight: 900; text-align: center; background: var(--bg-surface); color: #fff; border-radius: 4px; transition: all 0.15s; letter-spacing: -0.02em; }
+    .netMiniBtn:hover { background: var(--border-card); }
+    .netMiniBtn.call { background: var(--neon-yellow); color: #000; border-color: var(--neon-yellow); font-weight: 900; }
+    .netMiniBtn.call:hover { background: #fff; border-color: #fff; }
+
+    .sortNotice { font-size: 15px; font-weight: 700; color: #fff; background: rgba(22, 26, 34, 0.9); display: inline-block; padding: 7px 18px; border: 1.5px solid var(--border-card); margin-bottom: 26px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+    .networkGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .networkCard { background: var(--bg-card); border: 1.5px solid var(--border-card); padding: 20px; display: flex; flex-direction: column; transition: all 0.2s ease; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+    .networkCard:hover { border-color: var(--neon-yellow); box-shadow: 0 0 18px rgba(254, 232, 56, 0.45); transform: translateY(-3px); }
+    .netTopRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .netBadge { background: #000; color: var(--neon-yellow); font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 700; padding: 3px 9px; border: 1px solid var(--neon-yellow); border-radius: 3px; }
+    .netRegion { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; color: #fff; }
+
+    .networkMoreWrap { display: none; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
+    .netMoreBtnArea { margin-top: 40px; text-align: center; }
+    .btnNetworkToggle { background: var(--bg-card); color: var(--neon-yellow); font-family: 'GmarketSans', sans-serif; font-size: 18px; font-weight: 700; padding: 16px 40px; display: inline-flex; align-items: center; gap: 10px; border: 2px solid var(--neon-yellow); border-radius: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 0 15px rgba(254, 232, 56, 0.2); }
+    .btnNetworkToggle:hover { background: var(--neon-yellow); color: #000; transform: translateY(-2px); box-shadow: 0 0 25px rgba(254, 232, 56, 0.5); }
+    .netCallBanner { background: var(--bg-card); border: 2px solid var(--border-card); box-shadow: 0 8px 25px rgba(0,0,0,0.6); padding: 24px 28px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; border-radius: 6px; }
+    .netCallText { font-size: 17.5px; font-weight: 700; color: #fff; }
+    .netCallText strong { color: var(--neon-yellow); }
+
+    /* 5. Cases Section */
+    .caseSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .stepProcessGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 20px; }
+    .stepProcessCard { background: var(--bg-card); border: 2px solid var(--border-card); border-radius: 8px; padding: 30px 28px; display: flex; flex-direction: column; position: relative; box-shadow: 0 8px 20px rgba(0,0,0,0.5); transition: all 0.25s ease; }
+    .stepProcessCard:hover { border-color: var(--neon-yellow); transform: translateY(-4px); box-shadow: 0 0 22px rgba(254, 232, 56, 0.35); }
+    .stepBadgeRow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .stepBadgeNum { background: #000; color: var(--neon-yellow); font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; padding: 4px 14px; border: 1.5px solid var(--neon-yellow); border-radius: 4px; letter-spacing: 0.05em; }
+    .stepGuaranteeTag { background: rgba(103, 232, 249, 0.12); color: var(--clear-cyan); font-size: 13.5px; font-weight: 800; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--clear-cyan); letter-spacing: -0.02em; }
+    .stepTitle { font-size: 23px; font-weight: 700; color: #FFFFFF; margin-bottom: 16px; line-height: 1.4; letter-spacing: -0.02em; }
+    .stepDescList { list-style: none; display: flex; flex-direction: column; gap: 12px; border-top: 1px dashed var(--border-card); padding-top: 16px; }
+    .stepDescList li { font-size: 16px; color: var(--text-clean); line-height: 1.75; position: relative; padding-left: 20px; letter-spacing: -0.015em; }
+    .stepDescList li::before { content: '✔'; position: absolute; left: 0; top: 0; color: var(--neon-yellow); font-size: 13px; font-weight: 900; }
+    .stepDescList li strong { color: #FFFFFF; font-weight: 700; }
+
+    /* 6. FAQ Section */
+    .faqSection { background-color: var(--bg-surface); color: #fff; padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .faqList { display: flex; flex-direction: column; gap: 16px; max-width: 940px; margin: 0 auto 35px; }
+    .faqCard { background: var(--bg-card); border: 1.5px solid var(--border-card); padding: 22px 26px; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .faqTopRow { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+    .faqBadge { background: var(--neon-yellow); color: #000; font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; padding: 3px 10px; flex-shrink: 0; border-radius: 3px; }
+    .faqQuestion { font-size: 18.5px; font-weight: 700; color: #fff; }
+    .faqAnswer { font-size: 16px; color: var(--text-clean); line-height: 1.7; padding-left: 48px; }
+    .faqHiddenWrap { display: none; flex-direction: column; gap: 16px; }
+    .faqMoreArea { text-align: center; }
+    .btnFaqMore { background: var(--neon-yellow); color: #000; font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 700; padding: 14px 34px; border: 2px solid #000; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+    .btnFaqMore:hover { background: #fff; transform: translateY(-2px); }
+
+    /* 7. Blog Section */
+    .blogSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .blogGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .blogCard { border: 1.5px solid var(--border-card); background: var(--bg-card); padding: 26px; display: flex; flex-direction: column; border-radius: 6px; transition: all 0.2s; }
+    .blogCard:hover { border-color: var(--neon-yellow); transform: translateY(-3px); box-shadow: 0 0 16px rgba(254, 232, 56, 0.25); }
+    .blogDate { font-size: 13.5px; font-weight: 800; color: var(--neon-yellow); margin-bottom: 10px; font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
+    .blogTitle { font-size: 19px; font-weight: 700; margin-bottom: 14px; line-height: 1.45; color: #fff; }
+    .blogExcerpt { font-size: 15px; color: var(--text-clean); line-height: 1.65; margin-bottom: 18px; flex: 1; }
+    .blogLink { font-size: 15px; font-weight: 800; color: var(--clear-cyan); text-decoration: underline; }
+
+    /* 8. Footer */
+    .footer { background: #070A0F; border-top: 2px solid var(--border-card); padding: 75px 0 95px; width: 100%; }
+    .footerGrid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 35px; margin-bottom: 45px; }
+    .footerCol h4 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: var(--neon-yellow); }
+    .footerLinks { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footerLinks li { font-size: 15px; color: var(--text-bright); }
+    .footerLinks a { color: var(--text-bright); transition: color 0.15s; }
+    .footerLinks a:hover { color: var(--neon-yellow); }
+    .footerAbout p { font-size: 15px; line-height: 1.7; margin-bottom: 18px; color: var(--text-bright); }
+    
+    .socialBox { display: flex; gap: 8px; flex-wrap: wrap; }
+    .socialBtn { border: 1px solid var(--border-card); background: var(--bg-surface); color: #fff; padding: 7px 14px; font-size: 13px; font-weight: 700; border-radius: 4px; transition: all 0.15s; }
+    .socialBtn:hover { border-color: var(--neon-yellow); color: var(--neon-yellow); transform: translateY(-2px); }
+    .btnKakao { background: #FEE500; color: #000; border: none; font-weight: 800; }
+    .btnPlusFriend { background: #3B1E1E; color: #FEE500; border: 1px solid #FEE500; font-weight: 800; }
+    .btnSms { background: var(--neon-yellow); color: #000; border: none; font-weight: 800; }
+
+    .bizInfoBox { border-top: 1px dashed var(--border-card); padding-top: 28px; font-size: 14.5px; line-height: 1.85; color: var(--text-bright); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .bizInfoBox strong { color: #FFFFFF; font-weight: 700; }
+
+    .mobileBar { display: none; }
+
+    @media (max-width: 920px) {
+      .centerMenu { display: none !important; }
+      .wrap { padding: 0 16px !important; }
+      .navInner { height: 64px; }
+      .brandLogo { height: 44px; padding: 0 10px; }
+      .brandLogo .logoKo { font-size: 18px; }
+      .brandLogo .logoEn { font-size: 15px; }
+      .navCallLarge { height: 44px; padding: 0 12px; }
+      .navCallLarge .badgeText { font-size: 14px; }
+      .navCallLarge b { font-size: 19px; }
+
+      .heroSection { padding: 45px 0 55px; }
+      .heroGrid { grid-template-columns: 1fr; gap: 28px; }
+      .reserveBadgeBig { font-size: 15px; padding: 10px 16px; width: 100%; justify-content: center; }
+      .mainTitle { font-size: 30px; line-height: 1.3; }
+      .mainDesc { font-size: 16px; }
+      .ctaGroup { flex-direction: column; width: 100%; gap: 12px; }
+      .btnActionLarge { width: 100%; padding: 15px; font-size: 16.5px; }
+      
+      .heroStepSliderWrap { margin-top: 10px; }
+      .sliderTrack { min-height: 330px; }
+      .slideItem { padding: 24px 18px; }
+      .slideHeading { font-size: 20px; }
+      .slideBodyText { font-size: 15px; }
+
+      .partsShowcaseSection { padding: 45px 0 55px; }
+      .partsMainTitle { font-size: 24px; }
+      .partsSubDesc { font-size: 15px; }
+      .partsPhotoCard { width: 260px; }
+      .partsImgBox { height: 180px; }
+
+      .aboutSection { padding: 55px 0 65px; }
+      .aboutGrid { grid-template-columns: 1fr; gap: 32px; }
+      .aboutHeading { font-size: 26px; }
+      .aboutTistoryBtnBig { font-size: 15px; padding: 14px; }
+      .newsTrackArea { min-height: 410px; }
+      .newsSlideItem { padding: 24px 18px; }
+      .newsHeadline { font-size: 19px; }
+      .newsContentList li { font-size: 14.5px; }
+
+      .secHeaderFlex { flex-direction: column; align-items: flex-start; }
+      .networkSearchBox { width: 100%; }
+      .networkSearchInput { flex: 1; width: auto; }
+
+      .mapControlCenter { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
+      .boardScrollArea { grid-template-columns: 1fr; max-height: 380px; }
+
+      .clockTickerInner { justify-content: center; gap: 8px; }
+      .clockMotto { flex-direction: column; gap: 4px; }
+      .clockTimesWrap { gap: 12px; font-size: 12px; }
+
+      .networkSection { padding: 55px 0 65px; }
+      .networkGrid, .networkMoreWrap { grid-template-columns: 1fr; gap: 14px; }
+      .netCallBanner { flex-direction: column; align-items: flex-start; }
+
+      .caseSection { padding: 55px 0 65px; }
+      .stepProcessGrid { grid-template-columns: 1fr; gap: 16px; }
+      .stepTitle { font-size: 20px; }
+
+      .faqSection { padding: 55px 0 65px; }
+      .faqQuestion { font-size: 16.5px; }
+      .faqAnswer { padding-left: 0; }
+
+      .blogSection { padding: 55px 0 65px; }
+      .blogGrid { grid-template-columns: 1fr; gap: 16px; }
+      .footer { padding: 45px 0 110px; }
+      .footerGrid { grid-template-columns: 1fr; gap: 24px; }
+      .bizInfoBox { flex-direction: column; align-items: flex-start; }
+
+      .mobileBar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 999;
+        background: #0B0F19;
+        border-top: 2px solid var(--border-card);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      .mobileBar a {
+        padding: 15px 4px;
+        text-align: center;
+        font-weight: 800;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobileBar .btnMSms { background: #151D2E; color: var(--neon-yellow); border-right: 1.5px solid var(--border-card); }
+      .mobileBar .btnMCall { background: var(--neon-yellow); color: #000; }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+<!-- 0. Top Clock Bar -->
+<div class="topClockTicker">
+  <div class="wrap clockTickerInner">
+    <div class="clockMotto">
+      <span class="clockMottoDot"></span>
+      <span>긴급출동 생명선 · <b>시간 약속 엄수(Punctuality)</b> 실시간 관제 중</span>
+      <span class="tagFraudShield">🚨 부정클릭 IP 실시간 감시 중</span>
+    </div>
+    <div class="clockTimesWrap">
+      <div class="clockItem">
+        <span class="tag">KOREA (SEOUL)</span>
+        <span class="val" id="time-kr">--:--:--</span>
+      </div>
+      <div class="clockItem">
+        <span class="tag">USA (NEW YORK)</span>
+        <span class="val" id="time-us">--:--:--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. Header -->
+<header class="topNav">
+  <div class="wrap navInner">
+    <a class="brandLogo" href="#network" title="전국 실시간 관제 지도 바로가기">
+      <span class="logoKo">키앤키닷컴</span>
+      <span class="logoEn">KEYNKEY.COM</span>
+    </a>
+
+    <nav class="centerMenu">
+      <a class="menuBtn" href="#genuine-parts"><span>🔑</span> 순정·정밀 파츠</a>
+      <a class="menuBtn" href="#about"><span>👤</span> ABOUT</a>
+      <a class="menuBtn" href="#network"><span>🌐</span> NETWORK</a>
+      <a class="menuBtn" href="#cases"><span>💼</span> CASES</a>
+      <a class="menuBtn" href="#faq"><span>❓</span> FAQ</a>
+      <a class="menuBtn" href="#blogs"><span>📝</span> BLOGS</a>
+    </nav>
+
+    <a class="navCallLarge" href="tel:16009712">
+      <span class="badgeText">대표전화</span>
+      <b>1600-9712</b>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 2. Hero Section -->
+  <section class="heroSection">
+    <div class="wrap heroGrid">
+      <div>
+        <div class="reserveBadgeBig">
+          <span>⏱ 100% 예약 우선 출동 원칙 · 시간 약속 엄수</span>
+        </div>
+
+        <h1 class="mainTitle">
+          "오늘 당일, 시간 약속 지켜서<br>
+          차키를 완벽 해결해 줄<br>
+          <span>믿을 수 있는 </span><span style="color: var(--clear-cyan);">전문가</span>는 없을까?"
+        </h1>
+        <p class="mainDesc">
+          키앤키닷컴은 철저한 사전 상담과 <strong>‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과의 약속 시간을 엄수하여 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결합니다.
+        </p>
+
+        <div class="ctaGroup">
+          <a class="btnActionLarge btnMainHighlight" href="#network">
+            🌐 내 지역 전국 광역 지부 확인하기
+          </a>
+          <a class="btnActionLarge btnSubMuted" href="tel:16009712">
+            📞 예약 및 출동 상담
+          </a>
+        </div>
+      </div>
+
+      <!-- 우측 4단계 슬라이더 -->
+      <div class="heroStepSliderWrap">
+        <div class="sliderHeaderBar">
+          <div class="sliderHeaderTitle">
+            <span class="sliderAutoDot"></span>
+            <span>원스톱 현장 접수 & 해결 4단계 프로세스</span>
+          </div>
+          <span style="font-size:12px; font-weight:800; color:var(--clear-cyan); letter-spacing:0.05em;">AUTO PLAY</span>
+        </div>
+
+        <div class="sliderTrack">
+          <div class="slideItem active" id="heroSlide-0">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 01</span>
+              <span class="slideTag">100% 사전 확정 정찰제</span>
+            </div>
+            <h3 class="slideHeading">사전 정보 확인 & 100% 확정 정찰 견적</h3>
+            <p class="slideBodyText">
+              대표번호(<strong>1600-9712</strong>)로 <strong>[차량 번호]</strong>와 <strong>시동 방식</strong>을 확인 후, 현장에서 1원의 추가금도 없는 <strong>'100% 사전 확정 정찰 견적'</strong>을 투명하게 안내합니다.
+            </p>
+          </div>
+
+          <div class="slideItem" id="heroSlide-1">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 02</span>
+              <span class="slideTag">시간 엄수 책임 보증</span>
+            </div>
+            <h3 class="slideHeading">약속 시간 엄수를 위한 책임 예약 보증</h3>
+            <p class="slideBodyText">
+              100% 시간 약속 엄수를 위해 <strong>'책임 예약 보증제'</strong>로 운영됩니다. 상호 신뢰를 위한 예약 확인 즉시 관제망을 통해 가장 인접한 <strong>20년 베테랑 엔지니어가 전담 배차</strong>되어 출동 준비를 마칩니다.
+            </p>
+          </div>
+
+          <div class="slideItem" id="heroSlide-2">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 03</span>
+              <span class="slideTag">도난 방지 법적 절차</span>
+            </div>
+            <h3 class="slideHeading">현장 직통 출동 & 필수 본인 확인 절차</h3>
+            <p class="slideBodyText">
+              지하주차장, 비탈길 상관없이 <strong>모바일 랩(전용 출동차)이 현장으로 즉시 도착</strong>합니다. 도난·무단복제 방지를 위해 <strong>[신분증]</strong>과 <strong>[자동차등록증]</strong> 일치 여부를 대조 확인 후 안전하게 작업을 개시합니다.
+            </p>
+          </div>
+
+          <div class="slideItem" id="heroSlide-3">
+            <div class="slideBadgeRow">
+              <span class="slideBadgeNum">STEP 04</span>
+              <span class="slideTag">정품 검수 & 매너 시공</span>
+            </div>
+            <h3 class="slideHeading">무손상 정밀 가공 · 배터리 전압 실측 & 인도</h3>
+            <p class="slideBodyText">
+              <strong>100% 무손상 픽킹 및 최첨단 CNC 가공</strong>을 거칩니다. 조립 전 고객님 눈앞에서 <strong>배터리 전압(3.0V 이상)을 실측 검수</strong>하며, <strong>비탑승·무접촉 청결 매너</strong>로 완벽한 시동 키를 최종 인도합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="sliderIndicatorRow">
+          <div class="sliderDots">
+            <div class="sDot active" onclick="gotoHeroSlide(0)"></div>
+            <div class="sDot" onclick="gotoHeroSlide(1)"></div>
+            <div class="sDot" onclick="gotoHeroSlide(2)"></div>
+            <div class="sDot" onclick="gotoHeroSlide(3)"></div>
+          </div>
+          <span class="sliderLiveNotice">⏱ 7.0초 단위 자동 순환 관제</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= [대표님 전용 신설 칸] 실물 순정 부품 & 정밀 장비 쇼케이스 ================= -->
+  <section id="genuine-parts" class="partsShowcaseSection">
+    <div class="wrap partsHeaderWrap">
+      <div class="partsTagBadge">
+        <span>🛡️ GENUINE OEM PRIORITY & VERIFIED CUSTOM GEAR</span>
+      </div>
+      <h2 class="partsMainTitle">
+        "제조사 미개봉 <span>순정 파츠 최우선 시공 원칙</span>[cite: 2, 8], 단종 차량도 끝까지 살려냅니다"
+      </h2>
+      <p class="partsSubDesc">
+        키앤키닷컴은 현대 모비스, 기아, 콘티넨탈 등 <b>제조사 정품 스마트키 시공을 최우선</b>으로 진행합니다[cite: 2, 3, 8].<br>
+        만약 구형 단종 차종이나 부품 단종으로 순정 수급이 불가한 비상 상황이라도, <b>검증된 대체 규격 파츠와 정밀 가공 기술로 당일 즉시 차량 운행이 가능하도록 끝까지 책임</b>집니다[cite: 7].
+      </p>
+    </div>
+
+    <div class="marqueeViewport">
+      <div class="marqueeTrack" id="genuineMarqueeTrack">
+        <!-- 자바스크립트로 10장의 실물 카드 자동 주입 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. About Us Section & 카드뉴스 -->
+  <section id="about" class="aboutSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">ABOUT US</h2>
+      </div>
+      <div class="aboutGrid">
+        <div>
+          <h3 class="aboutHeading">
+            <a class="highlightTag3D" target="_blank" rel="noopener" href="https://keynkey.tistory.com">20년 현장 노하우 ↗</a> 로 완성하는<br>
+            원스톱 차키 출장 솔루션
+          </h3>
+          <p class="aboutText">
+            키앤키닷컴은 분실된 차키와 스마트키를 현장에서 견인 없이 즉시 가공·복원하는 대한민국 대표 자동차키 전문 네트워크입니다. 최첨단 CNC 자동 가공기와 순정 OBD 진단 코딩 시스템을 통해 차량 손상 없는 완벽한 시동을 약속드립니다.
+          </p>
+
+          <a class="aboutTistoryBtnBig" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">
+            <span class="tistoryIconPink">STORY</span>
+            <span>20년 현장 일기 & 진심 스토리 전문 읽기 →</span>
+          </a>
+
+          <div class="aboutStats">
+            <div class="statBox"><span class="statNum">20+</span><span class="statLabel">YEARS EXP</span></div>
+            <div class="statBox"><span class="statNum">100%</span><span class="statLabel">ON-SITE FIX</span></div>
+            <div class="statBox"><span class="statNum">0%</span><span class="statLabel">NO DAMAGE</span></div>
+          </div>
+        </div>
+
+        <!-- 카드뉴스 -->
+        <div class="aboutNewsSliderBox">
+          <div class="newsSliderTopBar">
+            <div class="newsTopBadge">
+              <span class="newsTopDot"></span>
+              <span>20+ YEARS MASTER CARD NEWS</span>
+            </div>
+            <span style="font-size:12px; font-weight:800; color:var(--neon-yellow); letter-spacing:0.05em;">AUTO PLAY</span>
+          </div>
+
+          <div class="newsTrackArea">
+            <div class="newsSlideItem active" id="newsSlide-0">
+              <span class="newsCopyBadge">DIRECT MASTER CONSULTING</span>
+              <h4 class="newsHeadline">"차도 모르는 일반 상담원이 중간에서 전달하는 콜센터가 아닙니다."</h4>
+              <ul class="newsContentList">
+                <li>현장 기술을 전혀 모르는 콜센터가 기계적으로 접수해 하청 넘기는 플랫폼 구조를 완전히 차단합니다.</li>
+                <li><strong>적어도 15년 이상 현장 엔지니어 대표가 직접 전화</strong>를 받아 차종·연식·증상·키 타입을 1초 만에 정확히 진단합니다.</li>
+                <li>현장을 아는 마스터가 직접 소통하기에 말단 전달 오류와 불필요한 대기 시간이 <strong>0%</strong>입니다.</li>
+              </ul>
+              <div class="newsTagRow">
+                <span class="newsTag">#엔지니어직접상담</span>
+                <span class="newsTag">#콜센터하청차단</span>
+                <span class="newsTag">#정확한현장진단</span>
+              </div>
+            </div>
+
+            <div class="newsSlideItem" id="newsSlide-1">
+              <span class="newsCopyBadge">TRUSTED BY METICULOUS DRIVERS</span>
+              <h4 class="newsHeadline">"디테일에 민감한 여성 고객과 약속 시간이 생명인 분들의 1순위 선택"</h4>
+              <ul class="newsContentList">
+                <li>견적 뻥튀기나 불친절 없는 <strong>100% 투명 사전 정찰제</strong>로 여성 차주분들의 만족도와 재이용률이 압도적입니다.</li>
+                <li>바쁜 일정을 방해하지 않는 <strong>'100% 사전 예약 우선제'</strong>로 고객과의 약속 시간을 분 단위까지 철저히 엄수합니다.</li>
+                <li>차키 가공부터 시동 코딩까지 차주님 보는 앞에서 한 치의 오차 없이 깔끔하고 안전하게 복원을 완료합니다.</li>
+              </ul>
+              <div class="newsTagRow">
+                <span class="newsTag">#여성운전자안심업체</span>
+                <span class="newsTag">#시간약속분단위엄수</span>
+                <span class="newsTag">#사전정밀예약제</span>
+              </div>
+            </div>
+
+            <div class="newsSlideItem" id="newsSlide-2">
+              <span class="newsCopyBadge">20+ YEARS CRAFTSMANSHIP & MANNER</span>
+              <h4 class="newsHeadline">"20년 베테랑의 기술력에 단정한 청결 매너를 더했습니다."</h4>
+              <ul class="newsContentList">
+                <li>초보 기사를 전면 배제하고, 각 지역에서 <strong>적어도 15년 이상 검증된 정통 장인들</strong>만 모인 순수 기술 네트워크입니다.</li>
+                <li>불필요하게 차내에 탑승하지 않는 <strong>'비탑승·무접촉 청결 작업'</strong>으로 시트 오염 및 내부 손상을 원천 방지합니다.</li>
+                <li>차문 강제 벌림 없는 <strong>100% 정밀 픽킹</strong> & 조립 전 <strong>배터리 3.0V 테스터기 실측 검수</strong> 후 안전하게 인도합니다.</li>
+              </ul>
+              <div class="newsTagRow">
+                <span class="newsTag">#중개수수료0원</span>
+                <span class="newsTag">#비탑승청결매너</span>
+                <span class="newsTag">#20년베테랑마스터</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="newsSliderControlBar">
+            <div class="newsDots">
+              <div class="nDot active" onclick="gotoNewsSlide(0)"></div>
+              <div class="nDot" onclick="gotoNewsSlide(1)"></div>
+              <div class="nDot" onclick="gotoNewsSlide(2)"></div>
+            </div>
+            <span class="newsTimerText">⏱ 7.0초 단위 자동 순환 카드뉴스</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 전국 인터랙티브 관제 지도 -->
+  <section id="network" class="networkSection">
+    <div class="wrap">
+      <div class="secHeader secHeaderFlex">
+        <div class="secHeaderTitleGroup">
+          <h2 class="secHeaderTitle" style="margin-bottom:0;">NATIONWIDE MASTERS NETWORK</h2>
+          <span class="secHeaderBadgePulse">
+            <span>⏱ 실시간 긴급출동 관제망</span>
+          </span>
+        </div>
+
+        <div class="networkSearchBox">
+          <input 
+            type="text" 
+            id="netSearchInput" 
+            class="networkSearchInput" 
+            placeholder="지역명 검색 (예: 부평, 김포, 부천)" 
+            onkeydown="if(event.key === 'Enter') handleNetworkSearch();"
+          >
+          <button type="button" class="btnNetReset" onclick="resetNetworkSearch()" title="검색 초기화">✕</button>
+          <button type="button" class="btnNetSearch" onclick="handleNetworkSearch()">검색</button>
+        </div>
+      </div>
+
+      <p class="networkIntro">
+        키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역(226개 시·군·구)을 8대 광역권 70개 거점으로 유기 관제·출동합니다.
+      </p>
+
+      <div class="mapControlCenter">
+        <div class="mapViewWrapper">
+          <div class="mapTopStatus">
+            <span class="statusLive"><span class="statusLiveDot"></span> REAL-TIME EMERGENCY DISPATCH SYSTEM</span>
+            <span>지역을 누르거나 상단 검색창에 지역명을 입력하세요</span>
+          </div>
+
+          <!-- 남한 전도 SVG -->
+          <svg class="koreaDetailedSvg" viewBox="0 0 660 980" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="seoulCyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E0F2FE" />
+                <stop offset="40%" stop-color="#67E8F9" />
+                <stop offset="100%" stop-color="#0284C7" />
+              </linearGradient>
+
+              <filter id="glowBigPinkPin" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <filter id="glowBigCyanPin" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <filter id="glowBigPin" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- 지형 PATH 그룹 -->
+            <g id="map-geo-paths">
+              <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
+                    d="M 170,205 L 195,115 L 295,95 L 340,155 L 340,225 L 285,215 L 260,195 L 215,195 L 180,210 Z" />
+
+              <path class="geoPath seoulBrightCenter" id="geo-seoul" onclick="selectMapRegion('seoul')"
+                    d="M 215,195 L 260,195 L 275,215 L 275,245 L 255,255 L 215,255 L 205,230 Z" />
+
+              <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
+                    d="M 175,240 L 205,230 L 215,255 L 255,255 L 275,245 L 285,215 L 340,225 L 340,320 L 300,380 L 220,380 L 155,270 L 175,240 Z" />
+
+              <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
+                    d="M 295,95 L 420,85 L 530,190 L 590,305 L 475,360 L 340,320 L 340,155 Z" />
+
+              <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
+                    d="M 85,105 L 150,95 L 155,155 L 115,170 L 80,145 Z" />
+              <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
+                    d="M 40,205 L 105,195 L 115,250 L 55,265 L 35,235 Z" />
+              <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
+                    d="M 115,200 L 170,205 L 175,240 L 155,270 L 125,310 L 100,270 L 105,215 Z" />
+
+              <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
+                    d="M 340,320 L 475,360 L 440,430 L 380,430 L 350,470 L 300,380 Z" />
+
+              <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
+                    d="M 155,270 L 220,380 L 300,380 L 350,470 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
+
+              <path class="geoPath" id="geo-tk-north" onclick="selectMapRegion('tk_north')"
+                    d="M 475,360 L 590,305 L 610,385 L 530,445 L 440,430 Z" />
+
+              <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
+                    d="M 440,430 L 530,445 L 610,385 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 Z" />
+
+              <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
+                    d="M 370,520 L 420,535 L 490,560 L 615,550 L 600,655 L 550,720 L 485,735 L 430,735 L 400,720 L 345,595 Z" />
+
+              <path class="geoPath" id="geo-pk-geoje" onclick="selectMapRegion('pk')"
+                    d="M 485,725 L 530,720 L 535,760 L 495,775 L 475,745 Z" />
+
+              <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
+                    d="M 120,440 L 235,510 L 370,520 L 345,595 L 400,720 L 290,780 L 160,775 L 80,630 Z" />
+
+              <path class="geoPath" id="geo-jeju" onclick="selectMapRegion('jeju')"
+                    d="M 150,885 Q 225,855 315,885 Q 330,915 285,935 Q 200,945 145,920 Z" />
+            </g>
+
+            <!-- 펄스 핀 레이어 -->
+            <g id="map-radar-pins">
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')">
+                <circle class="pinPulse" cx="135" cy="275" r="8" fill="none" stroke="#FF007A" />
+                <circle cx="135" cy="275" r="7.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" filter="url(#glowBigPinkPin)" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')">
+                <circle class="pinPulse" cx="70" cy="250" r="7" fill="none" stroke="#FF007A" />
+                <circle cx="70" cy="250" r="6.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')">
+                <circle class="pinPulse" cx="115" cy="155" r="7" fill="none" stroke="#FF007A" />
+                <circle cx="115" cy="155" r="6" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="160" cy="195" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="160" cy="195" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('seoul')">
+                <circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" />
+                <circle cx="240" cy="235" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="2" filter="url(#glowBigCyanPin)" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="205" cy="140" r="7" fill="none" stroke="#38BDF8" />
+                <circle cx="205" cy="140" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="210" cy="175" r="7.5" fill="none" stroke="#10B981" />
+                <circle cx="210" cy="175" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="245" cy="150" r="6.5" fill="none" stroke="#67E8F9" />
+                <circle cx="245" cy="150" r="6" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="250" cy="178" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="250" cy="178" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="265" cy="125" r="7" fill="none" stroke="#F59E0B" />
+                <circle cx="265" cy="125" r="6.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')">
+                <circle class="pinPulse" cx="295" cy="135" r="7.5" fill="none" stroke="#EC4899" />
+                <circle cx="295" cy="135" r="7" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="185" cy="245" r="7" fill="none" stroke="#38BDF8" />
+                <circle cx="185" cy="245" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="210" cy="265" r="6.5" fill="none" stroke="#FEE838" />
+                <circle cx="210" cy="265" r="6.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="180" cy="285" r="7" fill="none" stroke="#10B981" />
+                <circle cx="180" cy="285" r="6.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="190" cy="315" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="190" cy="315" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="230" cy="280" r="7" fill="none" stroke="#F59E0B" />
+                <circle cx="230" cy="280" r="6.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="250" cy="265" r="6.5" fill="none" stroke="#EC4899" />
+                <circle cx="250" cy="265" r="6.5" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="225" cy="305" r="6.5" fill="none" stroke="#38BDF8" />
+                <circle cx="225" cy="305" r="6.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="250" cy="295" r="6.5" fill="none" stroke="#10B981" />
+                <circle cx="250" cy="295" r="6.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="285" cy="275" r="8" fill="none" stroke="#FEE838" />
+                <circle cx="285" cy="275" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="295" cy="290" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="295" cy="290" r="7" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="280" cy="320" r="8" fill="none" stroke="#F59E0B" />
+                <circle cx="280" cy="320" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="315" cy="315" r="7.5" fill="none" stroke="#10B981" />
+                <circle cx="315" cy="315" r="7" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="245" cy="325" r="8" fill="none" stroke="#FF007A" />
+                <circle cx="245" cy="325" r="7.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="255" cy="355" r="7" fill="none" stroke="#67E8F9" />
+                <circle cx="255" cy="355" r="6.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="210" cy="345" r="8" fill="none" stroke="#F59E0B" />
+                <circle cx="210" cy="345" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="230" cy="375" r="8" fill="none" stroke="#FF1E44" />
+                <circle cx="230" cy="375" r="7.5" fill="#FF1E44" stroke="#FFFFFF" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')">
+                <circle class="pinPulse" cx="280" cy="365" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="280" cy="365" r="7" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="245" cy="405" r="8" fill="none" stroke="#38BDF8" />
+                <circle cx="245" cy="405" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="370" cy="160" r="8" fill="none" stroke="#38BDF8" />
+                <circle cx="370" cy="160" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="380" cy="220" r="7" fill="none" stroke="#67E8F9" />
+                <circle cx="380" cy="220" r="6.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="510" cy="205" r="8.5" fill="none" stroke="#38BDF8" />
+                <circle cx="510" cy="205" r="8.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="440" cy="245" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="440" cy="245" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="420" cy="300" r="7" fill="none" stroke="#34D399" />
+                <circle cx="420" cy="300" r="6.5" fill="#34D399" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="495" cy="310" r="7" fill="none" stroke="#F472B6" />
+                <circle cx="495" cy="310" r="6.5" fill="#F472B6" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')">
+                <circle class="pinPulse" cx="545" cy="285" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="545" cy="285" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
+                <circle class="pinPulse" cx="385" cy="365" r="8" fill="none" stroke="#38BDF8" />
+                <circle cx="385" cy="365" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
+                <circle class="pinPulse" cx="345" cy="380" r="7" fill="none" stroke="#67E8F9" />
+                <circle cx="345" cy="380" r="6.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')">
+                <circle class="pinPulse" cx="340" cy="455" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="340" cy="455" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="255" cy="460" r="8.5" fill="none" stroke="#F59E0B" />
+                <circle cx="255" cy="460" r="8" fill="#F59E0B" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="160" cy="355" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="160" cy="355" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="130" cy="385" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="130" cy="385" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="175" cy="405" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="175" cy="405" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')">
+                <circle class="pinPulse" cx="215" cy="385" r="7.5" fill="none" stroke="#10B981" />
+                <circle cx="215" cy="385" r="7.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
+                <circle class="pinPulse" cx="505" cy="365" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="505" cy="365" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
+                <circle class="pinPulse" cx="435" cy="390" r="7.5" fill="none" stroke="#F59E0B" />
+                <circle cx="435" cy="390" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
+                <circle class="pinPulse" cx="470" cy="395" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="470" cy="395" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk_north')">
+                <circle class="pinPulse" cx="515" cy="410" r="8" fill="none" stroke="#FEE838" />
+                <circle cx="515" cy="410" r="7.5" fill="#FEE838" stroke="#000" stroke-width="2" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="410" cy="460" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="410" cy="460" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="455" cy="465" r="8" fill="none" stroke="#F97316" />
+                <circle cx="455" cy="465" r="7.5" fill="#F97316" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="495" cy="505" r="8.5" fill="none" stroke="#EF4444" />
+                <circle cx="495" cy="505" r="8" fill="#EF4444" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="575" cy="455" r="8" fill="none" stroke="#F97316" />
+                <circle cx="575" cy="455" r="7.5" fill="#F97316" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="530" cy="485" r="7" fill="none" stroke="#FEE838" />
+                <circle cx="530" cy="485" r="6.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('tk')">
+                <circle class="pinPulse" cx="570" cy="525" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="570" cy="525" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="550" cy="640" r="9" fill="none" stroke="#EF4444" />
+                <circle cx="550" cy="640" r="8.5" fill="#EF4444" stroke="#000" stroke-width="2.2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="495" cy="590" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="495" cy="590" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="465" cy="575" r="7.5" fill="none" stroke="#10B981" />
+                <circle cx="465" cy="575" r="7.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="415" cy="615" r="7.5" fill="none" stroke="#F59E0B" />
+                <circle cx="415" cy="615" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="440" cy="630" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="440" cy="630" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="475" cy="645" r="8" fill="none" stroke="#38BDF8" />
+                <circle cx="475" cy="645" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="455" cy="710" r="8" fill="none" stroke="#EC4899" />
+                <circle cx="455" cy="710" r="7.5" fill="#EC4899" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('pk')">
+                <circle class="pinPulse" cx="505" cy="740" r="8.5" fill="none" stroke="#38BDF8" />
+                <circle cx="505" cy="740" r="8" fill="#38BDF8" stroke="#000" stroke-width="2" filter="url(#glowBigCyanPin)" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="155" cy="475" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="155" cy="475" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="180" cy="505" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="180" cy="505" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="225" cy="495" r="8" fill="none" stroke="#10B981" />
+                <circle cx="225" cy="495" r="7.5" fill="#10B981" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="195" cy="545" r="7.5" fill="none" stroke="#F59E0B" />
+                <circle cx="195" cy="545" r="7.5" fill="#F59E0B" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="265" cy="565" r="7.5" fill="none" stroke="#FEE838" />
+                <circle cx="265" cy="565" r="7.5" fill="#FEE838" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="215" cy="615" r="8.5" fill="none" stroke="#A855F7" />
+                <circle cx="215" cy="615" r="8" fill="#A855F7" stroke="#000" stroke-width="2" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="190" cy="650" r="7.5" fill="none" stroke="#C084FC" />
+                <circle cx="190" cy="650" r="7.5" fill="#C084FC" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="140" cy="685" r="7.5" fill="none" stroke="#38BDF8" />
+                <circle cx="140" cy="685" r="7.5" fill="#38BDF8" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="295" cy="640" r="7.5" fill="none" stroke="#A855F7" />
+                <circle cx="295" cy="640" r="7.5" fill="#A855F7" stroke="#000" stroke-width="1.8" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('honam')">
+                <circle class="pinPulse" cx="305" cy="705" r="7.5" fill="none" stroke="#EC4899" />
+                <circle cx="305" cy="705" r="7.5" fill="#EC4899" stroke="#000" stroke-width="1.8" />
+              </g>
+
+              <g class="mapPinNode" onclick="selectMapRegion('jeju')">
+                <circle class="pinPulse" cx="230" cy="880" r="8.5" fill="none" stroke="#FEE838" />
+                <circle cx="230" cy="880" r="8" fill="#FEE838" stroke="#000" stroke-width="2" filter="url(#glowBigPin)" />
+              </g>
+              <g class="mapPinNode" onclick="selectMapRegion('jeju')">
+                <circle class="pinPulse" cx="245" cy="920" r="7.5" fill="none" stroke="#67E8F9" />
+                <circle cx="245" cy="920" r="7.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" />
+              </g>
+            </g>
+
+            <!-- 라벨 레이어 -->
+            <g id="map-labels">
+              <text class="mapCityLabel subIsland" x="115" y="140">강화도</text>
+              <text class="mapCityLabel subIsland" x="70" y="235">영종도</text>
+              <text class="mapCityLabel mainLarge" x="135" y="255">인천</text>
+              <text class="mapCityLabel microNodeText" x="160" y="185">김포</text>
+              
+              <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
+
+              <text class="mapCityLabel microNodeText" x="205" y="125">파주</text>
+              <text class="mapCityLabel microNodeText" x="200" y="195">고양</text>
+              <text class="mapCityLabel microNodeText" x="245" y="137">양주</text>
+              <text class="mapCityLabel microNodeText" x="268" y="195">의정부</text>
+              <text class="mapCityLabel microNodeText" x="265" y="112">동두천</text>
+              <text class="mapCityLabel microNodeText" x="295" y="152">포천</text>
+
+              <text class="mapCityLabel microNodeText" x="185" y="232">부천</text>
+              <text class="mapCityLabel microNodeText" x="212" y="252">광명</text>
+              <text class="mapCityLabel microNodeText" x="178" y="272">시흥</text>
+              <text class="mapCityLabel microNodeText" x="188" y="330">안산</text>
+              <text class="mapCityLabel microNodeText" x="228" y="270">안양</text>
+              <text class="mapCityLabel microNodeText" x="252" y="252">과천</text>
+              <text class="mapCityLabel microNodeText" x="225" y="320">군포</text>
+              <text class="mapCityLabel microNodeText" x="252" y="310">의왕</text>
+              <text class="mapCityLabel microNodeText" x="285" y="260">성남</text>
+              <text class="mapCityLabel microNodeText" x="295" y="280">광주</text>
+              <text class="mapCityLabel microNodeText" x="280" y="335">용인</text>
+              <text class="mapCityLabel microNodeText" x="315" y="330">이천</text>
+              <text class="mapCityLabel microNodeText" x="248" y="340">수원</text>
+              <text class="mapCityLabel microNodeText" x="258" y="370">오산</text>
+              <text class="mapCityLabel microNodeText" x="210" y="362">화성</text>
+              <text class="mapCityLabel microNodeText" x="230" y="390">평택</text>
+              <text class="mapCityLabel microNodeText" x="280" y="380">안성</text>
+
+              <text class="mapCityLabel mainLarge" x="430" y="140">강원</text>
+              <text class="mapCityLabel microNodeText" x="370" y="145">춘천</text>
+              <text class="mapCityLabel microNodeText" x="380" y="205">횡성</text>
+              <text class="mapCityLabel microNodeText" x="510" y="190">강릉</text>
+              <text class="mapCityLabel microNodeText" x="440" y="230">평창</text>
+              <text class="mapCityLabel microNodeText" x="420" y="322">영월</text>
+              <text class="mapCityLabel microNodeText" x="495" y="332">태백</text>
+              <text class="mapCityLabel microNodeText" x="550" y="270">삼척</text>
+
+              <text class="mapCityLabel" x="385" y="350">제천·충주</text>
+              <text class="mapCityLabel microNodeText" x="345" y="400">음성</text>
+              <text class="mapCityLabel microNodeText" x="340" y="475">영동</text>
+
+              <text class="mapCityLabel microNodeText" x="245" y="420">천안</text>
+              <text class="mapCityLabel" x="255" y="440">대전·세종</text>
+              <text class="mapCityLabel microNodeText" x="160" y="342">당진</text>
+              <text class="mapCityLabel microNodeText" x="125" y="405">서산</text>
+              <text class="mapCityLabel microNodeText" x="175" y="425">예산</text>
+              <text class="mapCityLabel microNodeText" x="215" y="372">아산</text>
+              
+              <text class="mapCityLabel microNodeText" x="505" y="352">영주</text>
+              <text class="mapCityLabel microNodeText" x="435" y="377">문경</text>
+              <text class="mapCityLabel microNodeText" x="470" y="415">예천</text>
+              <text class="mapCityLabel microNodeText" x="515" y="430">안동</text>
+
+              <text class="mapCityLabel microNodeText" x="410" y="445">김천</text>
+              <text class="mapCityLabel microNodeText" x="455" y="450">구미</text>
+              <text class="mapCityLabel" x="495" y="530">대구</text>
+              <text class="mapCityLabel microNodeText" x="575" y="440">포항</text>
+              <text class="mapCityLabel microNodeText" x="530" y="470">영천</text>
+              <text class="mapCityLabel microNodeText" x="570" y="545">경주</text>
+
+              <text class="mapCityLabel microNodeText" x="465" y="560">창녕</text>
+              <text class="mapCityLabel microNodeText" x="415" y="600">의령</text>
+              <text class="mapCityLabel microNodeText" x="440" y="648">함안</text>
+              <text class="mapCityLabel microNodeText" x="495" y="575">밀양</text>
+              <text class="mapCityLabel" x="560" y="615">부산·울산</text>
+              <text class="mapCityLabel subNodeText" x="480" y="665">창원·마산</text>
+              <text class="mapCityLabel microNodeText" x="455" y="730">통영</text>
+              <text class="mapCityLabel microNodeText" x="505" y="760">거제</text>
+
+              <text class="mapCityLabel microNodeText" x="155" y="460">군산</text>
+              <text class="mapCityLabel microNodeText" x="180" y="492">김제</text>
+              <text class="mapCityLabel microNodeText" x="225" y="480">전주</text>
+              <text class="mapCityLabel microNodeText" x="195" y="530">정읍</text>
+              <text class="mapCityLabel microNodeText" x="265" y="550">남원</text>
+              <text class="mapCityLabel" x="215" y="600">광주</text>
+              <text class="mapCityLabel microNodeText" x="190" y="670">나주</text>
+              <text class="mapCityLabel microNodeText" x="140" y="705">목포</text>
+              <text class="mapCityLabel subNodeText" x="325" y="635">순천·광양</text>
+              <text class="mapCityLabel subNodeText" x="315" y="725">여수</text>
+
+              <text class="mapCityLabel mainLarge" x="230" y="865">제주도</text>
+              <text class="mapCityLabel microNodeText" x="230" y="900">제주시</text>
+              <text class="mapCityLabel microNodeText" x="245" y="940">서귀포</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 관제 센터 실시간 상세 보드 -->
+        <div class="mapDetailBoard">
+          <div class="boardHead">
+            <h3 class="boardTitle" id="ctrlBoardTitle">📍 인천광역시 10대 세부 자치구 관제 지부</h3>
+            <span class="boardCountTagCustom" id="ctrlBoardCount">
+              <span style="font-size:12px;">●</span> 10개 지부 실시간 관제
+            </span>
+          </div>
+
+          <div class="boardScrollArea" id="ctrlBoardCards"></div>
+        </div>
+      </div>
+
+      <!-- 70개 지부 리스트 -->
+      <div class="secHeader" style="margin-top:65px;">
+        <h3 class="secHeaderTitle" style="font-size:32px;">NATIONWIDE INTEGRATED NETWORKS</h3>
+        <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
+          대한민국 8대 광역권역 · 70개 마스터 관제 네트워크
+        </span>
+      </div>
+
+      <div class="sortNotice">
+        🏛️ <strong>전국 관제 인프라 표준 안내</strong> : 키앤키닷컴은 대한민국 전역(226개 기초자치단체)을 8대 광역권 70개 핵심 거점으로 유기 관제하며, 고객 편의와 공평성을 위해 <strong>‘가나다(ㄱ-ㄴ-ㄷ) 지역 표준 순서’</strong>로 투명하게 공개합니다.
+      </div>
+
+      <div class="networkGrid" id="networkBaseGrid">
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">강원 영서 메디컬·행정허브</span></div>
+          <h3 class="netRegion">강원 춘천시 · 원주시 지부</h3>
+          <div class="cardCovText">강원도청 행정타운 · 춘천 레고랜드/퇴계지구 · 원주 혁신도시/기업도시(의료기기)</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 영서권 양대 거점 및 공공기관 주거타운 15분 긴급 출동, 순정 스마트키 원스톱 코딩</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서북부 메가주거·출판</span></div>
+          <h3 class="netRegion">경기 고양시 · 파주시 지부</h3>
+          <div class="cardCovText">일산 1기 신도시 · 삼송·창릉(3기) · 운정신도시 · 파주출판단지 · LCD산단</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 자유로·제2자유로 축선 및 서북부 대단지 아파트 특화 원스톱 스마트키 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">동북부 신도시·교통허브</span></div>
+          <h3 class="netRegion">경기 남양주시 · 구리시 지부</h3>
+          <div class="cardCovText">다산신도시 · 별내신도시 · 왕숙지구 · 화도·평내 · 구리 갈매·수택</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축선 및 대규모 동북부 주거타운 분실 스마트키 현장 CNC 가공 제작</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">서부 도심·스마트산단</span></div>
+          <h3 class="netRegion">경기 부천시 · 광명시 · 시흥시 지부</h3>
+          <div class="cardCovText">부천 중동·상동 · 부천테크노파크 · 광명KTX역세권 · 시화MTV · 배곧신도시</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 골목길 초밀집 상권 및 서해안 국가산단 특화 모바일 랩 직통 배차, 1원 추가 없는 정찰 견적</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">판교 테크노·준강남벨트</span></div>
+          <h3 class="netRegion">경기 성남시 · 하남시 지부</h3>
+          <div class="cardCovText">판교 제1·2·3 테크노밸리 · 분당(정자·서현) · 위례신도시 · 미사강변도시</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 타운 및 고급 주거특구 최신 암호화 스마트키 보안 코딩 당일 완료</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">경기 수부도시 메인허브</span></div>
+          <h3 class="netRegion">경기 수원시 지부 (4개 구)</h3>
+          <div class="cardCovText">영통(삼성디지털시티) · 광교신도시 · 수원역 민자역사 · 권선 · 장안 · 팔달</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대단지 복합빌딩 특화, 현장 배터리 전압 실측 후 완벽 시동 인도</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">모빌리티·첨단제조 거점</span></div>
+          <h3 class="netRegion">경기 화성시 · 평택시 지부</h3>
+          <div class="cardCovText">동탄1·2신도시 · 남양 현대기아연구소 · 평택 고덕 삼성캠퍼스 · 평택항</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 자동차·반도체 핵심 전진기지 전 차종(화물·외제차 포함) 순정키 현장 즉석 복원</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+
+        <article class="networkCard">
+          <div class="netTopRow"><span class="netBadge">해양비즈니스·관광수도</span></div>
+          <h3 class="netRegion">부산광역시 지부 (16개 구·군)</h3>
+          <div class="cardCovText">해운대 센텀/마린시티 · 서면 메디컬상권 · 강서 명지·녹산산단 · 기장 오시리아</div>
+          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 MICE 단지 및 해안선 전역 관제 배차, 수입차 및 국산 전 차종 15분 즉시 해결</div>
+          <div class="netBtnRow">
+            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="networkMoreWrap" id="networkMoreWrap"></div>
+
+      <div class="netMoreBtnArea">
+        <button class="btnNetworkToggle" id="btnNetworkToggle" onclick="toggleNetwork()">
+          <span id="networkBtnText">🏛️ 전국 8대 광역 70개 마스터 네트워크 전체보기 (가나다순) ▼</span>
+        </button>
+      </div>
+
+      <div class="netCallBanner">
+        <div class="netCallText">
+          📍 대한민국 전역 어디서든 <strong>대표전화 1600-9712</strong>로 접수 시, 통합 관제망을 통해 현장과 가장 인접한 <strong>20년 베테랑 엔지니어팀</strong>이 1초 만에 직통 배차됩니다.
+        </div>
+        <a class="btnActionLarge btnMainHighlight" style="padding:14px 28px; font-size:16px;" href="tel:16009712">📞 대표번호 직통 연결</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Cases Section -->
+  <section id="cases" class="caseSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">WORK PROCESS & CASES</h2>
+        <span class="secHeaderSubKoBig" style="font-size:20px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
+          원스톱 접수 & 현장 해결 4단계
+        </span>
+      </div>
+
+      <div class="stepProcessGrid">
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 01</span>
+            <span class="stepGuaranteeTag">100% 사전 확정 정찰제</span>
+          </div>
+          <h3 class="stepTitle">사전 정보 확인 및 100% 확정 정찰 견적 접수</h3>
+          <ul class="stepDescList">
+            <li>대표번호(<strong>1600-9712</strong>) 또는 직통 상담을 통해 <strong>[차량 번호]</strong>와 <strong>시동 방식</strong>을 확인합니다.</li>
+            <li>부품 품번과 전용 코딩 장비를 즉시 매칭하여, <strong>현장에서 1원의 추가금도 없는 '100% 사전 확정 정찰 견적'</strong>을 안내합니다.</li>
+          </ul>
+        </article>
+
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 02</span>
+            <span class="stepGuaranteeTag">약속 시간 엄수 보증</span>
+          </div>
+          <h3 class="stepTitle">약속 시간 엄수를 위한 책임 예약 보증</h3>
+          <ul class="stepDescList">
+            <li>키앤키닷컴은 100% 시간 약속 엄수를 위해 <strong>'책임 예약 보증제'</strong>로 운영됩니다.</li>
+            <li>사전 상담 후 예약 확인 즉시 관제망을 통해 고객님 위치와 가장 인접한 <strong>20년 현장 엔지니어가 전담 배차</strong>됩니다.</li>
+          </ul>
+        </article>
+
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 03</span>
+            <span class="stepGuaranteeTag">도난 방지 법적 필수 절차</span>
+          </div>
+          <h3 class="stepTitle">현장 직통 출동 & 필수 본인 확인 절차</h3>
+          <ul class="stepDescList">
+            <li>견인차가 진입하기 힘든 지하주차장, 비탈길 등 고객님이 계신 위치로 <strong>모바일 랩(전용 출동차)이 즉시 현장 도착</strong>합니다.</li>
+            <li>차량 도난 방지를 위해 현장에서 <strong>[신분증]</strong>과 <strong>[자동차등록증]</strong> 일치 여부를 대조 확인 후 시공을 시작합니다.</li>
+          </ul>
+        </article>
+
+        <article class="stepProcessCard">
+          <div class="stepBadgeRow">
+            <span class="stepBadgeNum">STEP 04</span>
+            <span class="stepGuaranteeTag">배터리 전압 실측 검수</span>
+          </div>
+          <h3 class="stepTitle">무손상 정밀 제작 · 배터리 전압 실측 및 비탑승 매너 인도</h3>
+          <ul class="stepDescList">
+            <li><strong>100% 무손상 픽킹 기술</strong>로 도어를 열고 최첨단 CNC 자동 가공기로 비상키를 오차 없이 정밀 가공합니다.</li>
+            <li>조립 전 고객님 눈앞에서 <strong>배터리 전압(3.0V 이상 정상치)을 실측 검수</strong>하며, <strong>'비탑승·무접촉 청결 매너'</strong>로 최종 인도합니다.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ Section -->
+  <section id="faq" class="faqSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">FREQUENTLY ASKED QUESTIONS</h2>
+        <span class="secHeaderSubKoBig" style="font-size:22px; padding:8px 20px; background:var(--neon-yellow); color:#000; border-radius:4px; font-weight:800;">
+          FAQ / 자주 묻는 질문
+        </span>
+      </div>
+
+      <div class="faqList">
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q1</span>
+            <h3 class="faqQuestion">"아반떼 얼마예요?" 차종만 말씀드리면 정확한 견적이 어렵나요?</h3>
+          </div>
+          <p class="faqAnswer">
+            네, 같은 아반떼라도 연식에 따라 일반 꽂는 키, 폴딩키, 스마트키 등 적용 부품과 코딩 장비가 완전히 달라집니다. [차량 번호] 또는 [연식과 시동 방식]을 확인해 주시면 현장 추가금 없는 '100% 확정 정찰 견적'을 안내해 드립니다.
+          </p>
+        </div>
+
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q2</span>
+            <h3 class="faqQuestion">차키를 전부 분실했는데 서비스센터 견인 없이 현장에서 바로 해결되나요?</h3>
+          </div>
+          <p class="faqAnswer">
+            네, 지하주차장, 비탈길, 도로변 상관없이 모바일 랩이 현장으로 직접 이동합니다. 차문 개방부터 키 가공, ECU 스마트키 보안 코딩까지 현장에서 당일 즉시 운행 가능하도록 원스톱 복원합니다.
+          </p>
+        </div>
+
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q3</span>
+            <h3 class="faqQuestion">문을 열거나 작업할 때 차량 도어 틈새나 도장면에 흠집이 안 나나요?</h3>
+          </div>
+          <p class="faqAnswer">
+            키앤키닷컴은 키 실린더 구멍에 특수 텐션을 삽입해 키 핀을 한 땀씩 정렬해 여는 '100% 무손상(비파괴) 정밀 픽킹'을 원칙으로 시공하므로 흠집 걱정이 없습니다.
+          </p>
+        </div>
+
+        <div class="faqCard">
+          <div class="faqTopRow">
+            <span class="faqBadge">Q4</span>
+            <h3 class="faqQuestion">순정 부품을 사용하나요? 현장에서 배터리 상태는 어떻게 확인하나요?</h3>
+          </div>
+          <p class="faqAnswer">
+            제조사 규격 순정 파츠를 최우선으로 시공하며, 현장에서 디지털 테스터기로 배터리 전압(3.0V 이상)을 고객님 눈앞에서 실측 검수한 뒤 조립·인도합니다. 단종 차종의 경우에도 최적의 검증 파츠로 당일 시동을 약속드립니다.
+          </p>
+        </div>
+
+        <div class="faqHiddenWrap" id="faqMoreWrap">
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q5</span>
+              <h3 class="faqQuestion">배터리 충전도 해주시나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              쉐보레 차량의 경우 차키제작 입력시 배터리 소모가 많아 충전된 배터리를 연결후 작업을 하는 경우가 있습니다. 차량의 배터리마다 다르니 참고해주세요.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q6</span>
+              <h3 class="faqQuestion">르노삼성스마트키 당일에 되나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              재고가 변동되기는 하지만 재고가 있을경우 예약을 잡아주시면 당일에 가능합니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q7</span>
+              <h3 class="faqQuestion">포터2 봉고3 스타렉스등 자영업자 차량키 리모컨되나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              기존에 쓰시던 버튼이 고무가 찢어졌을경우 튼튼한 플라스틱 버튼형으로 당일제작 가능해요.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q8</span>
+              <h3 class="faqQuestion">리모컨주파수까지 현장에서 가능한가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              일반리모컨 뿐 아니라 스마트키도 등록까지 가능합니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q9</span>
+              <h3 class="faqQuestion">쌍용자동차 KGM 신형품번 재고있나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              재고를 가지고 있을뿐 아니라 현장에서 없는 차키 제작부터 등록까지 가능합니다. 기존차키 키머리부분 망가진 키도 새로 제작후 등록합니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q10</span>
+              <h3 class="faqQuestion">이모빌라이저 차키는 무엇인가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              일반 막대기 키로 제작을 한후 시동을 돌리면 바로 시동이 안걸리고 차 내부의 ECU과 일치하는 암호를 입력하여 등록해주어야 시동이 걸리는 방식을 이모빌라이저라고 합니다. 일종의 차량용 OTP번호 등록입니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q11</span>
+              <h3 class="faqQuestion">쌍용 KGM 자동차키도 가능한가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              해당되는 차량의 키는 쌍용자동차 KGM으로 바뀌면서 새롭게 출시된 스마트키입니다. 차량마다 여러종류가 있습니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q12</span>
+              <h3 class="faqQuestion">폴딩리모컨차키도 가능한가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              이모빌라이저가 적용되어 있지 않는 차량의 키는 막대키도 여유분으로 복제후 같이 드립니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q13</span>
+              <h3 class="faqQuestion">현대모비스 순정 부품인가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              현대차 기아차 모두 같은 현대 모비스 순정 스마트키로 최우선 작업해 드립니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q14</span>
+              <h3 class="faqQuestion">어디든 출장을 나와서 작업이 되나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              논, 밭 지하주차장 등등 왠만한곳은 출장후 작업이 됩니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q15</span>
+              <h3 class="faqQuestion">슬롯이라는 부분에 꽂아서 시동걸어주는 스마트키 재고 있나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              스마트키 슬롯에 넣어서 입력을 해주는 구형 스마트키도 왠만한 경우 재고를 갖추고 있습니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q16</span>
+              <h3 class="faqQuestion">차키제작은 어떻게 이루어지나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              최첨단 자동화 CNC로 읽어낸 핀 높이를 바탕으로 정확하게 제작이 됩니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q17</span>
+              <h3 class="faqQuestion">수출차량키 제작 가능한가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              모하비 더마스터, 펠리세이드, 싼타페TM, 카니발KA4 등등 외국에서 인기 많은 차량의 경우 키복제후 등록까지 가능하기에 많은 제휴를 맺고 있습니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q18</span>
+              <h3 class="faqQuestion">중고차 매매 마켓 스마트키 리모컨키 복제 가능한가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              KB국민차매매단지, 엠파크, 오토플렉스, SKV1 등등 많은 업체와 제휴를 맺어 신속하게 해결 가능합니다. 한 분야에서 20년간 살아남은 업체이기에 단골이 많습니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q19</span>
+              <h3 class="faqQuestion">내 차량이 렌트카인데 키복사 절차가 왜이리 까다롭나요?</h3>
+            </div>
+            <p class="faqAnswer">
+              렌트카 차량의 경우에도 폴딩차키 스마트키 없는키 제작부터 기존차키 추가복제 당일에 가능합니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q20</span>
+              <h3 class="faqQuestion">키 제작하는김에 한 개 더 하려는데 바로 가능한가요?</h3>
+            </div>
+            <p class="faqAnswer">
+              기본 스마트키 1개 제작후 추가 복제시 재고가 있다면 가능합니다. 차량마다 상황이 다르니 참고 부탁드립니다.
+            </p>
+          </div>
+
+          <div class="faqCard">
+            <div class="faqTopRow">
+              <span class="faqBadge">Q21</span>
+              <h3 class="faqQuestion">알리Ali, 테무Temu, 당근에서 부품을 샀는데 등록만 가능요?</h3>
+            </div>
+            <p class="faqAnswer">
+              차종 한 종류마다 수많은 종류의 품번으로 나누어져 있는것이 스마트키입니다. 그만큼 예민한 파트입니다. 알리와 테무, 당근에서 구매한 키는 등록 불가합니다. 자칫 품번이 다를경우 차에 이상이 생기게 되기 때문입니다. 제조사에 들어가셔도 작업이 불가함을 참고해주세요.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqMoreArea">
+        <button class="btnFaqMore" id="btnFaqToggle" onclick="toggleFaq()">자주 묻는 질문 더보기 +</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Blog Section -->
+  <section id="blogs" class="blogSection">
+    <div class="wrap">
+      <div class="secHeader">
+        <h2 class="secHeaderTitle">LATEST BLOG STORIES</h2>
+        <span class="secHeaderSubKoBig" style="font-size:22px; padding:8px 20px; background:var(--neon-yellow); color:#000; border-radius:4px; font-weight:800;">
+          실시간 출동 일지 & 블로그 검색 안내
+        </span>
+      </div>
+      <div class="blogGrid">
+        <article class="blogCard" id="blog-card-1">
+          <div class="blogDate" id="blog-date-1">STEP 01 · REAL-TIME TODAY</div>
+          <h3 class="blogTitle" id="blog-title-1">"오늘 방금 올라온 가장 따끈따끈한 전국 실시간 출동 일지입니다"</h3>
+          <p class="blogExcerpt" id="blog-desc-1">지금 이 시간에도 전국 각지에서 20년 마스터들이 직접 발로 뛰며 해결하고 있는 생생한 당일 출동 기록을 투명하게 업데이트합니다.</p>
+          <a class="blogLink" id="blog-link-1" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey00">실시간 출동 일지 보기 →</a>
+        </article>
+
+        <article class="blogCard" id="blog-card-2">
+          <div class="blogDate" id="blog-date-2">STEP 02 · SMART SEARCH</div>
+          <h3 class="blogTitle" id="blog-title-2">"블로그 검색창에 ‘내 차종’이나 ‘동네 이름’을 입력해 보세요"</h3>
+          <p class="blogExcerpt" id="blog-desc-2">[아반떼], [쏘렌토], [BMW], [부평], [일산] 등 내 차종이나 지역명만 검색하시면 축적된 수천 건의 실제 시공 데이터가 즉시 뜹니다.</p>
+          <a class="blogLink" id="blog-link-2" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">블로그 검색창 이동하기 →</a>
+        </article>
+
+        <article class="blogCard" id="blog-card-3">
+          <div class="blogDate" id="blog-date-3">STEP 03 · PROVEN SOLUTION</div>
+          <h3 class="blogTitle" id="blog-title-3">"내 차와 똑같은 실제 해결 사례를 눈으로 직접 확인하세요"</h3>
+          <p class="blogExcerpt" id="blog-desc-3">키 실린더 손상 없는 무파괴 개문부터 순정 OBD 코딩까지, 완벽하게 시동을 터뜨린 실제 결과를 확인 후 안심하고 문의하세요.</p>
+          <a class="blogLink" id="blog-link-3" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey11">성공 해결 사례 확인 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 8. Footer -->
+<footer id="footer" class="footer">
+  <div class="wrap">
+    <div class="footerGrid">
+      <div class="footerCol footerAbout">
+        <h4>키앤키닷컴</h4>
+        <p>전국 마스터 엔지니어팀이 함께하는 자동차키·스마트키 긴급 제작 광역 네트워크 키앤키닷컴입니다.</p>
+        <div class="socialBox">
+          <a class="socialBtn btnKakao" target="_blank" rel="noopener" href="https://open.kakao.com/o/smAJL7Qi">카카오톡</a>
+          <a class="socialBtn btnPlusFriend" target="_blank" rel="noopener" href="http://pf.kakao.com/_xeDwRu/chat">플러스친구</a>
+          <a class="socialBtn btnSms" href="sms:01082424649">문자상담</a>
+          <a class="socialBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey00">블로그</a>
+        </div>
+      </div>
+
+      <div class="footerCol">
+        <h4>QUICK LINKS</h4>
+        <ul class="footerLinks">
+          <li><a href="#genuine-parts">순정·정밀 파츠</a></li>
+          <li><a href="#about">키앤키 소개 (About Us)</a></li>
+          <li><a href="#network">전국 광역 네트워크</a></li>
+          <li><a href="#cases">현장 출동 작업 사례</a></li>
+          <li><a href="#faq">자주 묻는 질문 (FAQ)</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4>RESOURCES</h4>
+        <ul class="footerLinks">
+          <li><a href="#cases">스마트키 코딩 시스템</a></li>
+          <li><a href="#cases">CNC 정밀 키 가공 안내</a></li>
+          <li><a href="#cases">무손상 차문 개문 원리</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4>CONTACT US</h4>
+        <ul class="footerLinks">
+          <li>대표전화 : 1600-9712</li>
+          <li>직통문의 : 010-8242-4649</li>
+          <li>상담시간 : 08:00 - 20:00</li>
+          <li style="color:var(--neon-yellow); font-weight:700;">출동시간 : 08:00 - 22:00 (야간 출장 마감)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bizInfoBox">
+      <div>
+        <strong>상호명 : 키앤키닷컴</strong> | 대표 : 차상준 | 사업자등록번호 : 122-10-65938<br>
+        통신판매업 신고번호 : 제2016-경기부천-1677호<br>
+        주소 : 서울특별시 강서구 마곡중앙6로 21 이너매스마곡1차 512호
+      </div>
+      <div>Copyright © 키앤키닷컴 All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- 9. 모바일 하단 고정 바 -->
+<div class="mobileBar">
+  <a class="btnMSms" href="sms:01082424649">💬 사진전송</a>
+  <a class="btnMCall" href="tel:16009712">📞 대표전화</a>
+</div>
+
+<!-- ================= 스크립트 ================= -->
+<script>
+  // 1. 세계 시간 시계 (독립 즉시 실행)
+  function updateWorldClocks() {
+    var now = new Date();
+    var krTimeStr = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Seoul', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    var usTimeStr = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    var elKr = document.getElementById('time-kr');
+    var elUs = document.getElementById('time-us');
+    if(elKr) elKr.innerText = krTimeStr;
+    if(elUs) elUs.innerText = usTimeStr;
+  }
+  setInterval(updateWorldClocks, 1000);
+  updateWorldClocks();
+
+  // 2. 히어로 슬라이더
+  var currentHeroSlide = 0;
+  var totalHeroSlides = 4;
+  function showHeroSlide(index) {
+    for (var i = 0; i < totalHeroSlides; i++) {
+      var slide = document.getElementById('heroSlide-' + i);
+      var dot = document.querySelectorAll('.sliderDots .sDot')[i];
+      if (slide) slide.classList.remove('active');
+      if (dot) dot.classList.remove('active');
+    }
+    var targetSlide = document.getElementById('heroSlide-' + index);
+    var targetDot = document.querySelectorAll('.sliderDots .sDot')[index];
+    if (targetSlide) targetSlide.classList.add('active');
+    if (targetDot) targetDot.classList.add('active');
+    currentHeroSlide = index;
+  }
+  function nextHeroSlide() { var next = (currentHeroSlide + 1) % totalHeroSlides; showHeroSlide(next); }
+  var heroSlideTimer = setInterval(nextHeroSlide, 7000);
+  function gotoHeroSlide(idx) { clearInterval(heroSlideTimer); showHeroSlide(idx); heroSlideTimer = setInterval(nextHeroSlide, 7000); }
+
+  // 3. About 뉴스 슬라이더
+  var currentNewsSlide = 0;
+  var totalNewsSlides = 3;
+  function showNewsSlide(index) {
+    for (var i = 0; i < totalNewsSlides; i++) {
+      var slide = document.getElementById('newsSlide-' + i);
+      var dot = document.querySelectorAll('.newsDots .nDot')[i];
+      if (slide) slide.classList.remove('active');
+      if (dot) dot.classList.remove('active');
+    }
+    var targetSlide = document.getElementById('newsSlide-' + index);
+    var targetDot = document.querySelectorAll('.newsDots .nDot')[index];
+    if (targetSlide) targetSlide.classList.add('active');
+    if (targetDot) targetDot.classList.add('active');
+    currentNewsSlide = index;
+  }
+  function nextNewsSlide() { var next = (currentNewsSlide + 1) % totalNewsSlides; showNewsSlide(next); }
+  var newsSlideTimer = setInterval(nextNewsSlide, 7000);
+  function gotoNewsSlide(idx) { clearInterval(newsSlideTimer); showNewsSlide(idx); newsSlideTimer = setInterval(nextNewsSlide, 7000); }
+
+  // 4. 지도 관제 데이터 및 상세 보기 (대표님 원본 그대로 100% 복원)
+  var regionMapData = {
+    incheon: {
+      title: "📍 인천광역시 10대 세부 자치구 관제 지부",
+      branches: [
+        { badge: "상권·제조 메카", name: "인천 부평구 지부", cov: "부평역 상권 · 한국GM 부평공장 · 삼산·갈산 IT단지 · 십정동", exp: "<strong>20년 베테랑 엔지니어팀</strong> 초밀집 도심 골목길 및 공업단지 특화 초고속 긴급출동 & 현장 즉시 제작" },
+        { badge: "3기 신도시 거점", name: "인천 계양구 지부", cov: "계양테크노밸리 · 작전·서운동 산단 · 계산택지 · 계양역세권", exp: "<strong>20년 베테랑 엔지니어팀</strong> 서울 서부 관문 및 첨단 신도시 주거지구 순정·호환 스마트키 현장 당일 코딩" },
+        { badge: "국가산단·행정타운", name: "인천 남동구 지부", cov: "남동국가산업단지 · 인천시청 행정타운 · 구월 로데오 · 논현해안벨트", exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업 화물·승용차 및 행정타운 10분 직통 무손상 개문 및 원스톱 키 복원" },
+        { badge: "바이오·에듀특구", name: "인천 연수구 지부", cov: "송도국제업무지구 · 바이오클러스터 · 연수 에듀타운 · 옥련·동춘", exp: "<strong>20년 베테랑 엔지니어팀</strong> 하이엔드 수입차 및 국산 전 차종 스마트키 현장 CNC 밀링 가공 & 전압 실측 인도" },
+        { badge: "공단·대학가 특화", name: "인천 미추홀구 지부", cov: "주안국가산단 · 인하대 캠퍼스타운 · 용현·학익 도시개발구역", exp: "<strong>20년 베테랑 엔지니어팀</strong> 공단 업무용 차량 및 밀집 주거지역 지하주차장 긴급 픽킹 개문 & 키박스 완벽 복구" },
+        { badge: "항만·원도심 르네상스", name: "인천 제물포구 지부", cov: "내항 1·8부두 항만배후지 · 동인천역세권 · 차이나타운 · 송현·화수 산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 부두 물류트럭 및 원도심 골목 상권 특화 비상키 현장 즉석 판독 & 완벽 복원" },
+        { badge: "항공물류·공항특구", name: "인천 영종구 지부", cov: "인천국제공항 T1·T2 · 영종하늘도시 · 운서복합단지 · 을왕리 리조트", exp: "<strong>20년 베테랑 엔지니어팀</strong> 공항 장기주차장 차키 분실 및 도서 리조트 차량 긴급 24시 출동 현장 해결" },
+        { badge: "북부 스마트 신도시", name: "인천 검단구 지부", cov: "검단신도시(아라동·원당·당하) · 마전·불로 · 오류왕길 산업단지", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 신규 아파트 단지 및 아라뱃길 산업축선 특화 정밀 스마트키 신속 출동" },
+        { badge: "국제금융·첨단복합", name: "인천 서해구(청라) 지부", cov: "청라국제도시(하나금융타운) · 루원시티 · 원창·경서 산단 · 로봇랜드", exp: "<strong>20년 베테랑 엔지니어팀</strong> 최신 스마트키 코딩 장비 완비로 신도시 지하주차장 무손상 개문 및 즉석 키 복원" },
+        { badge: "도서·해양관광특구", name: "인천 강화군 지부", cov: "강화읍 · 길상·초지대교권 · 화도면(마니산) · 석모도 · 교동도 전역", exp: "<strong>20년 베테랑 엔지니어팀</strong> 캠핑·관광 명소 및 농어촌 산간 도로 차키 분실 시 견인 없는 현장 직통 제작" }
+      ]
+    },
+    seoul: {
+      title: "📍 서울특별시 핵심 8대 권역 관제 지부 (25개 자치구 전역)",
+      branches: [
+        { badge: "서남 1권역 (MICE·주거)", name: "서울 강서구 · 양천구 지부", cov: "마곡 MICE·바이오단지 · 화곡 · 발산 · 목동 신시가지 · 신정 에듀벨트", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 연구복합단지 및 학원가 주거특구 15분 긴급 배차, 순정·호환 스마트키 원스톱 등록" },
+        { badge: "서남 2권역 (디지털·금융)", name: "서울 구로구 · 금천구 · 영등포구 지부", cov: "구로/가산 디지털단지(G밸리) · 신도림역 · 여의도 금융업무지구 · 문래 창작촌", exp: "<strong>20년 베테랑 엔지니어팀</strong> IT벤처타운 및 여의도 비즈니스 빌딩 지하주차장 특화 신속 진입 & 무손상 픽킹 개문" },
+        { badge: "서남 3권역 (청년·교통거점)", name: "서울 관악구 · 동작구 지부", cov: "서울대입구 · 신림·봉천동 · 사당·이수 교통축 · 노량진 · 흑석뉴타운", exp: "<strong>20년 베테랑 엔지니어팀</strong> 구릉지대 골목 및 고밀도 주거단지 모바일 랩 직통 출동, 현장 키 판독 CNC 밀링 제작" },
+        { badge: "동남 1권역 (비즈니스·하이엔드)", name: "서울 강남구 · 서초구 지부", cov: "테헤란로 IT밸리 · 압구정·청담 · 서초 법조타운 · 양재 R&D · 반포", exp: "<strong>20년 베테랑 엔지니어팀</strong> 수입차 및 최신 제네시스/현대/기아 순정 스마트키 암호화 보안 코딩 전문" },
+        { badge: "동남 2권역 (메가주거·상업)", name: "서울 송파구 · 강동구 지부", cov: "잠실 MICE·롯데타워 · 문정법조단지 · 위례신도시 · 고덕그라시움 · 천호", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대단지 아파트 및 대형 복합몰 지하주차장 분실 차키 견인 없이 100% 현장 즉시 해결" },
+        { badge: "도심 코어 (국제업무·역사상권)", name: "서울 종로구 · 중구 · 용산구 지부", cov: "광화문·을지로 CBD · 명동·동대문 상권 · 용산 국제업무지구 · 한남·이태원", exp: "<strong>20년 베테랑 엔지니어팀</strong> 도심 복잡 상권 및 고급 주거단지 비탑승·무접촉 청결 매너 시공 & 3.0V 전압 검수" },
+        { badge: "서북 권역 (미디어·대학가)", name: "서울 마포구 · 서대문구 · 은평구 지부", cov: "상암 DMC 미디어밸리 · 홍대·신촌 대학로 · 은평뉴타운 · 불광·연신내", exp: "<strong>20년 베테랑 엔지니어팀</strong> 은평뉴타운 주거축 및 미디어 복합단지 특화 분실키 당일 현장 복원 및 이모빌라이저 코딩" },
+        { badge: "동북 권역 (IT밸리·메가베드타운)", name: "서울 성동·광진·동대문·중랑·성북·강북·도봉·노원 지부", cov: "성수 IT밸리 · 청량리 환승허브 · 건대입구 · 노원·도봉 대규모 아파트 벨트", exp: "<strong>20년 베테랑 엔지니어팀</strong> 동북부 전역 관제 배차, 키 실린더 손상 없는 무파괴 개문 및 정품·호환 키 현장 인도" }
+      ]
+    },
+    gyeonggi_north: {
+      title: "📍 경기 북부 5대 광역 관제 지부 (10개 시·군 전역)",
+      branches: [
+        { badge: "서북부 메가주거·출판", name: "경기 고양시 · 파주시 지부", cov: "일산 1기 신도시 · 삼송·창릉(3기) · 운정신도시 · 파주출판단지 · LCD산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 자유로·제2자유로 축선 및 서북부 대단지 아파트 특화 원스톱 스마트키 복원" },
+        { badge: "북부 행정·스마트 신도시", name: "경기 의정부시 · 양주시 지부", cov: "경기도청 북부청사 · 의정부역 상권 · 민락지구 · 양주 옥정·회천신도시", exp: "<strong>20년 베테랑 엔지니어팀</strong> 경기북부 광역행정타운 및 3기 연결 주거벨트 순정 OBD 코딩 장비 완비로 15분 즉시 출동" },
+        { badge: "동북부 신도시·교통허브", name: "경기 남양주시 · 구리시 지부", cov: "다산신도시 · 별내신도시 · 왕숙지구 · 화도·평내 · 구리 갈매·수택", exp: "<strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축선 및 대규모 동북부 주거타운 분실 스마트키 현장 CNC 가공 제작" },
+        { badge: "산단·관광 휴양벨트", name: "경기 포천시 · 가평군 지부", cov: "포천 소흘·송우 가구섬유산단 · 신읍 도심 · 산정호수 · 가평 청평·자라섬", exp: "<strong>20년 베테랑 엔지니어팀</strong> 국도변 공단 밀집지 및 북한강변 펜션·캠핑장 차키 분실 견인 없는 현장 즉시 제작" },
+        { badge: "경원선 접경·안보축선", name: "경기 동두천시 · 연천군 지부", cov: "동두천 지행·중앙역 도심 · 소요산 권역 · 연천 전곡리 · 백학산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 3번 국도 접경벨트 및 군부대 영외 주차장 특화 이모빌라이저 키 정밀 복원 & 무손상 개문" }
+      ]
+    },
+    gyeonggi_south: {
+      title: "📍 경기 남부 8대 광역 관제 지부 (21개 시·군 전역)",
+      branches: [
+        { badge: "경기 수부도시 메인허브", name: "경기 수원시 지부 (4개 구)", cov: "영통(삼성디지털시티) · 광교신도시 · 수원역 민자역사 · 권선 · 장안 · 팔달", exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대단지 복합빌딩 특화, 현장 배터리 전압 실측 후 완벽 시동 인도" },
+        { badge: "판교 테크노·준강남벨트", name: "경기 성남시(분당·수정·중원) · 하남시 지부", cov: "판교 제1·2·3 테크노밸리 · 분당(정자·서현) · 위례신도시 · 미사강변도시", exp: "<strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 타운 및 고급 주거특구 최신 암호화 스마트키 보안 코딩 당일 완료" },
+        { badge: "글로벌 메가 반도체축", name: "경기 용인시(수지·기흥·처인) · 안성시 지부", cov: "남사·원삼 메가반도체 클러스터 · 기흥 삼성캠퍼스 · 수지 주거타운 · 안성 도심", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 산업단지 공사현장 및 아파트단지 24시 긴급 출동 키박스 무손상 정밀 판독" },
+        { badge: "모빌리티·첨단제조 거점", name: "경기 화성시 · 평택시 지부", cov: "동탄1·2신도시 · 남양 현대기아연구소 · 평택 고덕 삼성캠퍼스 · 평택항", exp: "<strong>20년 베테랑 엔지니어팀</strong> 자동차·반도체 핵심 전진기지 전 차종(화물·외제차 포함) 순정키 현장 즉석 복원" },
+        { badge: "서부 도심·스마트산단", name: "경기 부천시 · 광명시 · 시흥시 지부", cov: "부천 중동·상동 · 부천테크노파크 · 광명KTX역세권 · 시화MTV · 배곧신도시", exp: "<strong>20년 베테랑 엔지니어팀</strong> 골목길 초밀집 상권 및 서해안 국가산단 특화 모바일 랩 직통 배차, 1원 추가 없는 정찰 견적" },
+        { badge: "서해안 최대 국가산단", name: "경기 안산시(단원구·상록구) 지부", cov: "반월국가산업단지 · 고잔신도시 · 중앙역 상권 · 대부도 해양관광특구", exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업차량 긴급 출동 및 도심/관광지 분실 스마트키 현장 CNC 밀링 가공" },
+        { badge: "안양권 에듀·비즈니스", name: "경기 안양 · 군포 · 의왕 · 과천 지부", cov: "평촌 학원가 · 산본 신도시 · 의왕 백운밸리/포일IT · 과천 정부청사/지식정보타운", exp: "<strong>20년 베테랑 엔지니어팀</strong> 차문 강제 벌림 없는 100% 정밀 픽킹 개문 및 비탑승·무접촉 청결 작업 원칙 고수" },
+        { badge: "동남부 물류·반도체 벨트", name: "경기 오산 · 이천 · 여주 · 양평 지부", cov: "오산 세교신도시 · 이천 SK하이닉스 본사 · 여주 프리미엄아울렛 · 양평 남한강변", exp: "<strong>20년 베테랑 엔지니어팀</strong> 고속도로 IC 연계 물류단지 및 관광벨트 분실 차키 긴급 원스톱 코딩 복원" }
+      ]
+    },
+    chungbuk: {
+      title: "📍 충청북도 4대 광역 관제 지부 (11개 시·군 전역)",
+      branches: [
+        { badge: "충북 중심 바이오·2차전지", name: "충북 청주시 지부", cov: "오송 바이오폴리스 · 오창 2차전지산단 · 청주국제공항 · 오창과학산단 · 율량·가경", exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 R&D 산업단지 및 도심 아파트 지하주차장 스마트키 15분 긴급 출동 코딩망" },
+        { badge: "북부 내륙 기업도시·관광", name: "충북 충주시 · 제천시 · 단양군 지부", cov: "충주 첨단기업도시 · 제천 한방바이오밸리 · 단양 시멘트산단 · 단양팔경 관광축", exp: "<strong>20년 베테랑 엔지니어팀</strong> 중원 내륙 산업단지 및 산악 국립공원 관광지 분실 스마트키 현장 당일 즉시 복구" },
+        { badge: "혁신도시·중부 물류특구", name: "충북 진천군 · 음성군 지부", cov: "충북혁신도시(공공기관) · 대소·맹동 산단 · 진천 광혜원 도심 · 중부고속도로축", exp: "<strong>20년 베테랑 엔지니어팀</strong> 기업 물류 화물차 및 공공기관 출장 차량 비상키 CNC 밀링 가공 & 전압 3.0V 검수" },
+        { badge: "남부·중부 전원 산간축", name: "충북 영동군 · 옥천군 · 보은군 · 괴산군 지부", cov: "영동 과수·와인밸리 · 옥천 경부선축 · 보은 속리산 권역 · 괴산 유기농산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 농어촌 산간 도로 및 고속도로 휴게소 차키 분실 견인차 없는 현장 원스톱 해결" }
+      ]
+    },
+    chungcheong: {
+      title: "📍 대전 · 세종 · 충남 8대 광역 관제 지부 (20개 시·군·구 전역)",
+      branches: [
+        { badge: "R&D 국가 메카·광역교통", name: "대전광역시 지부", cov: "대덕연구개발특구(카이스트) · 둔산 행정타운 · 유성온천 · 대전역 광역환승센터", exp: "<strong>20년 베테랑 엔지니어팀</strong> 중부권 최대 메트로폴리스 전역 15분 즉시 배차, 전 차종 순정·호환 스마트키 원스톱 코딩" },
+        { badge: "대한민국 행정수도", name: "세종특별자치시 지부", cov: "정부세종청사 행정중심복합도시(보람·나성·어진·아름) · 조치원읍 스마트산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 정부청사 공무원 및 신도시 주민 대상 약속 시간 분 단위 엄수 책임 예약 출동제" },
+        { badge: "중기부 공식 백년가게 인증", name: "충남 천안시 지부", cov: "불당 신도시 · 백석·성성 테크노밸리 · 두정 상권 · 천안IC 교통허브", exp: "<strong>중기부 인증 백년가게 (친절열쇠)</strong> 20년 현장 장인 직접 출동, 충남 북부 최정예 픽킹 개문 및 키 발급" },
+        { badge: "디스플레이·완성차", name: "충남 아산시 지부", cov: "탕정 삼성디스플레이시티 · 배방 KTX역세권 · 인주 현대자동차 아산공장 · 온양온천", exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단산단 협력업체 및 신도시 차주 대상 현장 즉시 제작 및 시동 테스트" },
+        { badge: "서해안 철강·석유화학", name: "충남 서산시 · 당진시 지부", cov: "서산 대산석유화학단지 · 테크노밸리 · 당진 현대제철소 · 송악·송산 산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가 기간산업 플랜트 및 대형 철강산단 특화 공단 출동 키박스 완벽 복원" },
+        { badge: "충남도청 행정타운·해양축", name: "충남 홍성군 · 예산군 · 보령시 · 태안군 · 서천군 지부", cov: "내포 충남도청 신도시 · 예산 산단 · 대천해수욕장 항만 · 안면도 해안관광지", exp: "<strong>20년 베테랑 엔지니어팀</strong> 충남 행정타운 및 서해안 주요 관광지·해수욕장 피서객 긴급 스마트키 당일 복원" },
+        { badge: "백제 역사문화·금강수계", name: "충남 공주시 · 부여군 · 청양군 지부", cov: "공주 신관·원도심 · 부여 백제유적지구 · 청양 칠갑산 권역 · 공주IC", exp: "<strong>20년 베테랑 엔지니어팀</strong> 역사문화 관광지 및 금강 도로변 분실 키 견인 없는 현장 출장 제작" },
+        { badge: "국방·안보 메카 및 물류", name: "충남 논산시 · 계룡시 · 금산군 지부", cov: "논산 육군훈련소 · 계룡대 3군본부 · 연무대 · 금산 인삼유통특구", exp: "<strong>20년 베테랑 엔지니어팀</strong> 입소 차량 및 군 장병·가족 대상 안심 출장, 1원 추가 없는 확정 정찰제 시공" }
+      ]
+    },
+    tk_north: {
+      title: "📍 경북 북부 내륙 4대 광역 관제 지부 (안동·영주·문경·동해안)",
+      branches: [
+        { badge: "경북도청 행정신도시", name: "경북 안동시 · 예천군 지부", cov: "경북도청 신도시 · 풍천면 행정타운 · 안동 옥동·정하 주거단지 · 하회마을 유적지", exp: "<strong>20년 베테랑 엔지니어팀</strong> 광역 행정타운 및 유교문화 관광지 특화, 분실 스마트키 현장 즉석 순정 코딩 등록" },
+        { badge: "소백산·첨단베어링축", name: "경북 영주시 · 봉화군 지부", cov: "영주 첨단베어링 국가산단 · 풍기인삼특구 · 가흥택지지구 · 봉화 춘양 억지춘양시장", exp: "<strong>20년 베테랑 엔지니어팀</strong> 국가산단 기업차량 및 소백산 국립공원 관광객 차량 비상키 CNC 밀링 가공" },
+        { badge: "문경새재·스마트팜축", name: "경북 문경시 · 상주시 지부", cov: "문경 점촌도심 · 문경새재 도립공원 · 상주 스마트팜 혁신밸리 · 낙동강 자전거길", exp: "<strong>20년 베테랑 엔지니어팀</strong> 중부내륙고속도로 IC 인근 및 관광 휴양지 차키 분실 견인 없는 현장 즉시 제작" },
+        { badge: "원자력·동해북부벨트", name: "경북 울진군 · 영덕군 · 청송군 · 영양군 지부", cov: "울진 한울원자력발전소 · 영덕 강구항 대게거리 · 청송 주왕산국립공원 · 영양 풍력발전단지", exp: "<strong>20년 베테랑 엔지니어팀</strong> 동해안 해안국도변 및 산간 도로 분실 차키 모바일 랩 직통 출동, 3.0V 전압 실측 인도" }
+      ]
+    },
+    tk: {
+      title: "📍 대구 · 경북 남부 5대 광역 관제 지부 (대구·구미·포항·경주·경산)",
+      branches: [
+        { badge: "영남 중심 메가시티", name: "대구광역시 지부 (8개 구 · 군위군)", cov: "수성구 범어 법조타운 · 달서구 성서산단 · 동대구역 광역복합환승센터 · 칠곡·테크노폴리스", exp: "<strong>20년 베테랑 엔지니어팀</strong> 도심 초밀집 상권 및 아파트단지 지하주차장 15분 긴급 배차, 순정·호환 스마트키 당일 복원" },
+        { badge: "반도체·전자 수도", name: "경북 구미시 · 김천시 · 칠곡군 지부", cov: "구미 1~5국가산업단지 · 옥계·인동 신시가지 · 김천 KTX혁신도시 · 칠곡 왜관산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 IT산단 출퇴근 차량 및 공단 화물차량 100% 무손상 픽킹 개문 및 즉석 키 복원" },
+        { badge: "철강·2차전지 클러스터", name: "경북 포항시 지부", cov: "포스코 포항제철소 본원 · 영일만 일반산단(2차전지) · 블루밸리국가산단 · 죽도시장 · 영일대", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대형 철강플랜트 및 신항만 해안선 특화 긴급출동, 암호화 키 데이터 현장 완벽 매칭" },
+        { badge: "자동차부품·천년고도", name: "경북 경주시 · 영천시 지부", cov: "경주 외동 자동차전문부품산단 · 보문관광단지 · 황리단길 · 영천 첨단부품소재산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 완성차 1차 협력업체 단지 및 대규모 관광지 렌터카 분실키 현장 1원 추가 없는 정찰 견적" },
+        { badge: "대학연구·경북 남부벨트", name: "경북 경산시 · 청도군 · 고령군 · 성주군 지부", cov: "경산 대학로·지식산업지구 · 청도 대남 권역 · 고령 다산주철산단 · 성주 참외스마트밸리", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대구 외곽순환망 및 농공산단 연계 출장, 비탑승·무접촉 청결 매너 시공 원칙 준수" }
+      ]
+    },
+    pk: {
+      title: "📍 부산 · 울산 · 경남 6대 메가시티 관제 지부 (PK 전역)",
+      branches: [
+        { badge: "해양비즈니스·관광수도", name: "부산광역시 지부 (16개 구·군 전역)", cov: "해운대 센텀시티/마린시티 · 서면 메디컬상권 · 강서 명지·녹산국가산단 · 기장 오시리아 관광단지", exp: "<strong>20년 베테랑 엔지니어팀</strong> 첨단 MICE 단지 및 해안선 전역 관제 배차, 수입차 및 국산 전 차종 15분 즉시 해결" },
+        { badge: "자동차·조선·석유화학 메카", name: "울산광역시 지부 (5개 구·군)", cov: "현대자동차 울산공장 · 현대중공업 미포조선소 · 온산국가산업단지 · 삼산 도심 · 송정신도시", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대한민국 3대 중공업 벨트 근로자 차량 및 신도시 특화 순정 OBD 코딩 장비 전담 출동" },
+        { badge: "정밀기계·방위산업 허브", name: "경남 창원시 지부", cov: "창원국가산단(두산/한화) · 마산자유무역지역 · 진해 해군기지/신항만 · 상남 중심상업지구", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대규모 산업단지 정밀 픽킹 무파괴 차문 개방 및 최첨단 CNC 자동 가공기 원스톱 복원" },
+        { badge: "동남권 제조·주거 관문", name: "경남 김해시 · 양산시 지부", cov: "김해 골든루트산단 · 장유·율하신도시 · 양산 물금 증산신도시 · 덕계 웅상공단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 부산 접경 메가베드타운 및 부품공단 밀집구역 분실 스마트키 현장 당일 100% 코딩" },
+        { badge: "조선·해양관광", name: "경남 거제시 · 통영시 지부", cov: "거제 한화오션(옥포) · 삼성중공업(고현) · 아주동 주거타운 · 통영 미륵도 요트마리나", exp: "<strong>20년 베테랑 엔지니어팀</strong> 조선소 사내 주차장 및 남해안 섬·해안 관광지 차키 분실 견인 없는 현장 즉시 구원" },
+        { badge: "항공우주·서부경남 거점", name: "경남 진주시 · 사천시 · 밀양/함안/창녕/의령 지부", cov: "사천 우주항공청/KAI 공장 · 진주 충무공 혁신도시 · 밀양 나노산단 · 함안 칠원 · 창녕 남지", exp: "<strong>20년 베테랑 엔지니어팀</strong> 우주항공복합도시 및 경남 내륙 교통축선 상시 순찰 출동망 완비, 배터리 3.0V 검수" }
+      ]
+    },
+    honam: {
+      title: "📍 호남 6대 광역 관제 지부 (전북 · 광주 · 전남 41개 시·군·구)",
+      branches: [
+        { badge: "호남 메가허브·모빌리티", name: "광주광역시 지부 (5개 구 전역)", cov: "기아 광주공장 · 첨단3지구 AI연구단지 · 상무 행정타운 · 수완지구 메가단지 · 빛그린산단", exp: "<strong>20년 베테랑 엔지니어팀</strong> 호남 최대 중심도시 15분 즉시 배차, 차문 흠집 제로 무손상 개문 및 최신 스마트키 코딩" },
+        { badge: "전북 수부도시·상용차 메카", name: "전북 전주시 · 완주군 지부", cov: "전북혁신도시(공공기관) · 에코시티 · 효천지구 · 완주 현대자동차 상용차공장/테크노밸리", exp: "<strong>20년 베테랑 엔지니어팀</strong> 공공기관 출장자 및 대형트럭·승용차 스마트키 분실 현장 즉시 출장 원스톱 해결" },
+        { badge: "서해안 철강·새만금 관문", name: "전북 군산시 · 익산시 · 김제시 지부", cov: "군산 국가산업단지/항만 · 새만금 산단 · 익산 국가식품클러스터/영등동 · 김제 혁신농업특구", exp: "<strong>20년 베테랑 엔지니어팀</strong> 서해안 해양물류 거점 및 국가식품산단 기업차량 특화 비상키 CNC 밀링 가공" },
+        { badge: "석유화학·철강·생태수도", name: "전남 여수시 · 순천시 · 광양시 지부", cov: "여수국가석유화학단지 · 웅천신도시 · 포스코 광양제철소/항만 · 순천만 국가정원 · 신대지구", exp: "<strong>20년 베테랑 엔지니어팀</strong> 광양만권 중화학공업벨트 및 해양관광지 피서객 대상 현장 당일 순정 코딩 복원" },
+        { badge: "전남도청 행정타운·조선항만", name: "전남 목포시 · 무안군 · 영암군 지부", cov: "남악·오룡 전남도청 행정타운 · 목포 평화광장/북항 · 영암 대불국가산단(현대삼호)", exp: "<strong>20년 베테랑 엔지니어팀</strong> 서남권 행정중심지 및 대형 조선소 출퇴근 차량 1원 추가 없는 확정 정찰제 시공" },
+        { badge: "에너지수도·호남 내륙벨트", name: "전남 나주시 · 정읍/남원/장성/해남/완도 전역", cov: "나주 빛가람 한국전력 혁신도시 · 정읍 첨단방사선산단 · 남원 지리산권 · 해남 땅끝/완도항", exp: "<strong>20년 베테랑 엔지니어팀</strong> 한전 본사 및 국립공원·서남해 도서항만 분실키 견인 없는 현장 직통 모바일 랩 복구" }
+      ]
+    },
+    gangwon: {
+      title: "📍 강원도 4대 광역 관제 지부 (18개 시·군 전역)",
+      branches: [
+        { badge: "강원 영서 메디컬·행정허브", name: "강원 춘천시 · 원주시 지부", cov: "강원도청 행정타운 · 춘천 레고랜드/퇴계지구 · 원주 혁신도시/기업도시(의료기기) · 무실동", exp: "<strong>20년 베테랑 엔지니어팀</strong> 영서권 양대 대도시 및 공공기관 주거타운 15분 긴급 출동, 순정 스마트키 원스톱 코딩" },
+        { badge: "동해안 해양관광축", name: "강원 강릉시 · 속초시 · 양양군 · 고성군 지부", cov: "강릉 경포·안목 커피거리 · 유천지구 · 속초 해수욕장/관광수산시장 · 양양 서피비치 서핑로드", exp: "<strong>20년 베테랑 엔지니어팀</strong> 동해안 7번 국도 관광벨트 피서객 차키 분실 특화, 24시 현장 무손상 개문 & 즉석 키 복원" },
+        { badge: "남부 내륙 산업·에너지항만", name: "강원 동해시 · 삼척시 · 영월군 · 태백시 지부", cov: "동해 북평국가산단 · 삼척 LNG/수소특구 · 영월 한반도지형 · 태백 고원산악/오투리조트", exp: "<strong>20년 베테랑 엔지니어팀</strong> 동해선 산업축 및 고원 관광특구 산간 도로변 분실 키 정밀 픽킹 및 비상키 밀링 가공" },
+        { badge: "백두대간 메가리조트축", name: "강원 홍천군 · 횡성군 · 평창군 · 정선군 지부", cov: "홍천 비발디파크 · 횡성 둔내 유천축 · 평창 알펜시아/용평스키장 · 정선 강원랜드/하이원", exp: "<strong>20년 베테랑 엔지니어팀</strong> 대형 스키장·골프장 리조트 주차장 차키 분실 시 렉카 진입 불가 구역 모바일 랩 직통 구원" }
+      ]
+    },
+    jeju: {
+      title: "📍 제주특별자치도 2대 긴급출동 관제 지부 (도 전역)",
+      branches: [
+        { badge: "제주공항·북부 해안벨트", name: "제주 제주시 지부", cov: "제주국제공항 렌터카하우스 · 노형·연동 신도심 · 아라지구 · 애월/한림 해안카페거리", exp: "<strong>20년 베테랑 엔지니어팀</strong> 공항 도착 렌터카 및 도민 차량 15분 긴급 배차, 비행기 시간 맞춤형 초고속 키 복원" },
+        { badge: "중문관광·영어교육도시", name: "제주 서귀포시 지부", cov: "서귀포 중문관광단지 특급호텔가 · 대정 신화월드/영어교육도시 · 서귀포 신시가지 · 성산일출봉", exp: "<strong>20년 베테랑 엔지니어팀</strong> 고급 리조트 투숙객 및 글로벌 교육단지 차량 특화 무접촉 청결 매너 시공 & 3.0V 실측 인도" }
+      ]
+    }
+  };
+
+  function selectMapRegion(key) {
+    var paths = document.querySelectorAll('.geoPath');
+    paths.forEach(function(p) { p.classList.remove('selected'); });
+
+    if(key === 'incheon') {
+      var p1 = document.getElementById('geo-incheon');
+      var p2 = document.getElementById('geo-incheon-ganghwa');
+      var p3 = document.getElementById('geo-incheon-yeongjong');
+      if(p1) p1.classList.add('selected');
+      if(p2) p2.classList.add('selected');
+      if(p3) p3.classList.add('selected');
+    } else if(key === 'pk') {
+      var pkMain = document.getElementById('geo-pk');
+      var pkGeoje = document.getElementById('geo-pk-geoje');
+      if(pkMain) pkMain.classList.add('selected');
+      if(pkGeoje) pkGeoje.classList.add('selected');
+    } else {
+      var targetPath = document.getElementById('geo-' + key.replace('_', '-'));
+      if(targetPath) targetPath.classList.add('selected');
+    }
+
+    var data = regionMapData[key];
+    if(!data) return;
+
+    var titleEl = document.getElementById('ctrlBoardTitle');
+    var countEl = document.getElementById('ctrlBoardCount');
+    var board = document.getElementById('ctrlBoardCards');
+
+    if(titleEl) titleEl.innerText = data.title;
+    if(countEl) countEl.innerHTML = `<span style="font-size:12px;">●</span> ${data.branches.length}개 지부 실시간 관제`;
+    if(!board) return;
+    board.innerHTML = "";
+
+    data.branches.forEach(function(b) {
+      var item = document.createElement('article');
+      item.className = 'boardCard';
+      item.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
+        </div>
+        <h4 style="font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
+        <div class="cardCovText">${b.cov}</div>
+        <div class="cardExpText">${b.exp}</div>
+        <div class="panelBtnRow">
+          <a href="tel:16009712" class="panelBtn call">📞 직통전화</a>
+          <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
+        </div>
+      `;
+      board.appendChild(item);
+    });
+  }
+
+  // 5. 검색창 및 전체보기 기능
+  function handleNetworkSearch() {
+    var input = document.getElementById('netSearchInput');
+    if (!input) return;
+    var query = input.value.trim().toLowerCase();
+    if (!query) { alert("검색할 지역명을 입력해주세요. (예: 부평, 김포, 부천 등)"); return; }
+
+    var matchResults = [];
+    for (var regKey in regionMapData) {
+      if (regionMapData.hasOwnProperty(regKey) && regionMapData[regKey].branches) {
+        var branches = regionMapData[regKey].branches;
+        for (var i = 0; i < branches.length; i++) {
+          var b = branches[i];
+          var combinedStr = (b.name + " " + b.badge + " " + b.cov + " " + b.exp).toLowerCase();
+          if (combinedStr.indexOf(query) !== -1) { matchResults.push(b); }
+        }
+      }
+    }
+
+    var paths = document.querySelectorAll('.geoPath');
+    paths.forEach(function(p) { p.classList.remove('selected'); });
+
+    var titleEl = document.getElementById('ctrlBoardTitle');
+    var countEl = document.getElementById('ctrlBoardCount');
+    var board = document.getElementById('ctrlBoardCards');
+
+    if (titleEl) titleEl.innerText = `🔍 '${query}' 검색 결과`;
+    if (countEl) countEl.innerHTML = `<span style="font-size:12px;">●</span> ${matchResults.length}개 지부 검색됨`;
+    if (!board) return;
+    board.innerHTML = "";
+
+    if (matchResults.length === 0) {
+      board.innerHTML = `
+        <div style="grid-column: 1 / -1; padding: 40px 20px; text-align: center; background: var(--bg-card); border: 1.5px dashed var(--border-card); border-radius: 6px;">
+          <p style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px;">'${query}'에 해당하는 전용 지부를 찾지 못했습니다.</p>
+          <p style="font-size: 14.5px; color: var(--text-clean); margin-bottom: 18px; line-height: 1.6;">
+            키앤키닷컴은 전국 226개 시·군·구 전역에 비상 출동 네트워크를 운영 중입니다.<br>
+            대표번호로 문의하시면 가장 인접한 마스터 엔지니어가 즉시 배차됩니다.
+          </p>
+          <a href="tel:16009712" class="panelBtn call" style="display:inline-block; padding: 10px 24px; font-size: 15px;">📞 1600-9712 직통 출동 확인</a>
+        </div>
+      `;
+      return;
+    }
+
+    matchResults.forEach(function(b) {
+      var item = document.createElement('article');
+      item.className = 'boardCard';
+      item.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
+        </div>
+        <h4 style="font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
+        <div class="cardCovText">${b.cov}</div>
+        <div class="cardExpText">${b.exp}</div>
+        <div class="panelBtnRow">
+          <a href="tel:16009712" class="panelBtn call">📞 직통전화</a>
+          <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
+        </div>
+      `;
+      board.appendChild(item);
+    });
+  }
+
+  function resetNetworkSearch() {
+    var input = document.getElementById('netSearchInput');
+    if (input) input.value = "";
+    selectMapRegion('incheon');
+  }
+
+  var isNetworkLoaded = false;
+  function renderAllNetworkCards() {
+    var moreWrap = document.getElementById('networkMoreWrap');
+    if (!moreWrap || isNetworkLoaded) return;
+    var allBranches = [];
+    for (var regKey in regionMapData) {
+      if (regionMapData.hasOwnProperty(regKey) && regionMapData[regKey].branches) {
+        allBranches = allBranches.concat(regionMapData[regKey].branches);
+      }
+    }
+    allBranches.sort(function(a, b) { return a.name.localeCompare(b.name, 'ko'); });
+    moreWrap.innerHTML = "";
+    allBranches.forEach(function(b) {
+      var card = document.createElement('article');
+      card.className = 'networkCard';
+      card.innerHTML = `
+        <div class="netTopRow"><span class="netBadge">${b.badge}</span></div>
+        <h3 class="netRegion">${b.name}</h3>
+        <div class="cardCovText">${b.cov}</div>
+        <div class="cardExpText">${b.exp}</div>
+        <div class="netBtnRow">
+          <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
+          <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
+        </div>
+      `;
+      moreWrap.appendChild(card);
+    });
+    isNetworkLoaded = true;
+  }
+
+  function toggleNetwork() {
+    var wrap = document.getElementById('networkMoreWrap');
+    var btnText = document.getElementById('networkBtnText');
+    if (wrap.style.display === 'grid') {
+      wrap.style.display = 'none';
+      btnText.innerText = '🏛️ 전국 8대 광역 70개 마스터 네트워크 전체보기 (가나다순) ▼';
+    } else {
+      if (!isNetworkLoaded) renderAllNetworkCards();
+      wrap.style.display = 'grid';
+      btnText.innerText = '전국 마스터 지부 리스트 접기 ▲';
+    }
+  }
+
+  function toggleFaq() {
+    var wrap = document.getElementById('faqMoreWrap');
+    var btn = document.getElementById('btnFaqToggle');
+    if (wrap.style.display === 'flex') {
+      wrap.style.display = 'none';
+      btn.innerText = '자주 묻는 질문 더보기 +';
+    } else {
+      wrap.style.display = 'flex';
+      btn.innerText = '자주 묻는 질문 접기 -';
+    }
+  }
+
+  // 6. [대표님 전용] 10장 실물 사진 갤러리 (사진이 없어도 에러 없이 부드럽게 돌아감)
+  var genuinePhotoGallery = [
+    { src: "1791374934049.jpg", tag: "현대 순정 라벨", title: "현대 모비스 미개봉 정품 라벨 스마트키", desc: "제조사 정품 바코드 및 정품 라벨이 부착된 순정 부품 최우선 사용" },
+    { src: "1791386510311.jpg", tag: "기아 순정 라벨", title: "기아 콘티넨탈 순정 봉인 라벨(A9300)", desc: "공식 품번 봉인 라벨이 완벽히 유지된 최신형 스마트키 파츠" },
+    { src: "1791386510519.jpg", tag: "초정밀 CNC", title: "0.01mm 오차 없는 이동식 CNC 정밀 가공기", desc: "현장에서 즉석 황동 밀링 절삭으로 실린더 무손상 작동 보장" },
+    { src: "1791386510380.jpg", tag: "무손상 개문", title: "전 차종 비파괴 특수 리시(Lishi) 전용 툴셋", desc: "문 틈 벌림 없는 100% 실린더 핀 정렬 무손상 정밀 픽킹" },
+    { src: "1788928205363.jpg", tag: "OBD 진단기", title: "GM 공식 MDI OBD 진단 스캐너", desc: "쉐보레·캐딜락 등 전 차종 공식 OBD 암호화 보안 코딩 장비" },
+    { src: "1791386510540.jpg", tag: "기아 신형 순정", title: "기아 신형 로고 미개봉 정품 스마트키", desc: "신형 품번 라벨(95440-G6100) 미개봉 순정 파츠 상시 보유" },
+    { src: "1791386510415.jpg", tag: "현대 콘티넨탈", title: "현대 콘티넨탈 3S000 미개봉 라벨 파츠", desc: "세부 호환 품번 완벽 대조 후 현장 즉시 코딩 및 시동 복원" },
+    { src: "1791386510499.jpg", tag: "프리미엄 키", title: "기아 프리미엄 세단 신형 버튼 스마트키", desc: "원격 시동 및 트렁크 리모트 기능 100% 동기화 등록" },
+    { src: "1791386510589.jpg", tag: "현장 검증", title: "현장 가공 비상키 도어 실린더 무손상 회전 검증", desc: "차량 방전 시에도 수동 개폐가 가능하도록 정밀 맞춤 검증 완료" },
+    { src: "1791386510606.jpg", tag: "시동 성공", title: "보안 코딩 후 ENGINE START 즉각 시동 성공", desc: "OBD 매칭 후 엔진 스타트 버튼 터치 즉시 시동 성공 확인" }
+  ];
+
+  function renderGenuineShowcase() {
+    var track = document.getElementById('genuineMarqueeTrack');
+    if (!track) return;
+    var htmlContent = "";
+    var doubleList = genuinePhotoGallery.concat(genuinePhotoGallery);
+
+    doubleList.forEach(function(item) {
+      htmlContent += `
+        <article class="partsPhotoCard">
+          <div class="partsImgBox">
+            <img src="${item.src}" alt="${item.title}" onerror="this.style.opacity='0.15';">
+            <span class="partsTagOverlay">${item.tag}</span>
+          </div>
+          <div class="partsInfoBox">
+            <h3 class="partsInfoTitle">${item.title}</h3>
+            <p class="partsInfoDesc">${item.desc}</p>
+          </div>
+        </article>
+      `;
+    });
+    track.innerHTML = htmlContent;
+  }
+
+  // 화면 준비 완료 시 순차 실행
+  window.addEventListener('DOMContentLoaded', function() {
+    renderGenuineShowcase();
+    selectMapRegion('incheon');
+  });
+
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) return false;
+    if (e.ctrlKey && (e.keyCode == 85 || e.keyCode == 83)) return false;
+  };
+</script>
+
+</body>
+</html>
