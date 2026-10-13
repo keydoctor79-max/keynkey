@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
-  <title>키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크 1600-9712</title>
+  <title>키앤키닷컴 | 전국 베테랑 차키·스마트키 긴급네트워크 1600-9712 (테스트 미리보기)</title>
   <meta name="description" content="전국 적어도 15년 이상 현장 엔지니어 직통 출동, 분실 차키·스마트키 현장 당일 제작 및 순정 코딩 복원. 1600-9712">
   <meta name="theme-color" content="#0F172A">
 
@@ -1168,6 +1168,216 @@
     .netCallText { font-size: 17.5px; font-weight: 700; color: #fff; }
     .netCallText strong { color: var(--neon-yellow); }
 
+    /* ================= [신규] 실시간 출동 갤러리 슬라이더 스타일 ================= */
+    .galleryTickerSection {
+      background: #090E1A;
+      border-bottom: 2px solid var(--border-card);
+      padding: 75px 0 85px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .galleryHeaderWrap {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    .gallerySubBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 5px 16px;
+      border: 1.5px solid var(--neon-yellow);
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 12px rgba(254, 232, 56, 0.3);
+    }
+    .galleryTitle {
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .galleryTitle span { color: var(--clear-cyan); }
+    .galleryDesc {
+      font-size: 17px;
+      color: var(--text-clean);
+      line-height: 1.7;
+    }
+    .tickerTrackWrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 15px 0;
+    }
+    .tickerTrackWrapper::before,
+    .tickerTrackWrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .tickerTrackWrapper::before {
+      left: 0;
+      background: linear-gradient(to right, #090E1A 0%, rgba(9, 14, 26, 0) 100%);
+    }
+    .tickerTrackWrapper::after {
+      right: 0;
+      background: linear-gradient(to left, #090E1A 0%, rgba(9, 14, 26, 0) 100%);
+    }
+    .tickerFlexTrack {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+      animation: marqueeScroll 38s linear infinite;
+    }
+    .tickerTrackWrapper:hover .tickerFlexTrack {
+      animation-play-state: paused;
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .casePhotoCard {
+      width: 320px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-card);
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .casePhotoCard:hover {
+      transform: translateY(-6px);
+      border-color: var(--neon-yellow);
+      box-shadow: 0 12px 30px rgba(254, 232, 56, 0.35);
+    }
+    .cardImgBox {
+      width: 100%;
+      height: 200px;
+      background: #060A12;
+      position: relative;
+      overflow: hidden;
+    }
+    .cardImgBox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .casePhotoCard:hover .cardImgBox img {
+      transform: scale(1.05);
+    }
+    .badgeFloatingRow {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .tagCarModel {
+      background: rgba(0, 0, 0, 0.85);
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--neon-yellow);
+      letter-spacing: 0.03em;
+    }
+    .tagTimeFast {
+      background: rgba(16, 185, 129, 0.9);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .cardBodyBox {
+      padding: 18px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .cardLocationRow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--clear-cyan);
+      margin-bottom: 8px;
+    }
+    .cardMainIssue {
+      font-size: 17.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .cardDetailList {
+      list-style: none;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cardDetailList li {
+      font-size: 13.5px;
+      color: var(--text-clean);
+      line-height: 1.5;
+      position: relative;
+      padding-left: 14px;
+    }
+    .cardDetailList li::before {
+      content: '▫';
+      position: absolute;
+      left: 0;
+      color: var(--neon-yellow);
+      font-weight: bold;
+    }
+    .cardActionBtn {
+      margin-top: auto;
+      display: block;
+      background: #111827;
+      color: var(--text-clean);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 0;
+      border-radius: 4px;
+      border: 1px solid #23334D;
+      transition: all 0.2s;
+    }
+    .casePhotoCard:hover .cardActionBtn {
+      background: var(--neon-yellow);
+      color: #000000;
+      border-color: var(--neon-yellow);
+      font-weight: 800;
+    }
+
     /* ================= 5. Cases Section (4단계 원스톱 프로세스) ================= */
     .caseSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
     .stepProcessGrid {
@@ -1352,6 +1562,13 @@
       .networkGrid, .networkMoreWrap { grid-template-columns: 1fr; gap: 14px; }
       .netCallBanner { flex-direction: column; align-items: flex-start; }
 
+      .galleryTickerSection { padding: 50px 0 60px; }
+      .galleryTitle { font-size: 26px; }
+      .galleryDesc { font-size: 15px; }
+      .casePhotoCard { width: 270px; }
+      .cardImgBox { height: 175px; }
+      .tickerTrackWrapper::before, .tickerTrackWrapper::after { width: 40px; }
+
       .caseSection { padding: 55px 0 65px; }
       .stepProcessGrid { grid-template-columns: 1fr; gap: 16px; }
       .stepTitle { font-size: 20px; }
@@ -1413,7 +1630,7 @@
   </div>
 </div>
 
-<!-- 1. Header (좌측 로고 클릭 시 #network 관제 지도로 직통 이동) -->
+<!-- 1. Header -->
 <header class="topNav">
   <div class="wrap navInner">
     <a class="brandLogo" href="#network" title="전국 실시간 관제 지도 바로가기">
@@ -2307,6 +2524,28 @@
     </div>
   </section>
 
+  <!-- ================= [신규 추가] 실시간 현장 출동 갤러리 섹션 ================= -->
+  <section class="galleryTickerSection">
+    <div class="galleryHeaderWrap">
+      <div class="gallerySubBadge">
+        <span>● REAL-TIME ON-SITE CASES</span>
+      </div>
+      <h2 class="galleryTitle">
+        "말뿐인 설명보다 <span>실제 현장 결과</span>로 증명합니다"
+      </h2>
+      <p class="galleryDesc">
+        키앤키닷컴 마스터 엔지니어팀이 당일 전국 각지에서 직접 해결한 실제 작업 사진입니다.<br>
+        키박스 손상 없는 정밀 픽킹부터 현장 순정 OBD 코딩까지 생생한 작업 내역을 확인해 보세요.
+      </p>
+    </div>
+
+    <div class="tickerTrackWrapper">
+      <div class="tickerFlexTrack" id="tickerFlexTrack">
+        <!-- 자바스크립트로 자동 생성됩니다 -->
+      </div>
+    </div>
+  </section>
+
   <!-- 5. Cases Section (원스톱 4단계 프로세스) -->
   <section id="cases" class="caseSection">
     <div class="wrap">
@@ -2600,7 +2839,7 @@
     </div>
   </section>
 
-  <!-- 7. Blog Section (세트 1 적용: 1-2-3 유기적 3단계 안내문 연동) -->
+  <!-- 7. Blog Section -->
   <section id="blogs" class="blogSection">
     <div class="wrap">
       <div class="secHeader">
@@ -2610,7 +2849,6 @@
         </span>
       </div>
       <div class="blogGrid">
-        <!-- 첫 번째 블록 (STEP 01: 최신 일지 안내) -->
         <article class="blogCard" id="blog-card-1">
           <div class="blogDate" id="blog-date-1">STEP 01 · REAL-TIME TODAY</div>
           <h3 class="blogTitle" id="blog-title-1">"오늘 방금 올라온 가장 따끈따끈한 전국 실시간 출동 일지입니다"</h3>
@@ -2618,7 +2856,6 @@
           <a class="blogLink" id="blog-link-1" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey00">실시간 출동 일지 보기 →</a>
         </article>
 
-        <!-- 두 번째 블록 (STEP 02: 내 차종/지역 검색 방법 제시) -->
         <article class="blogCard" id="blog-card-2">
           <div class="blogDate" id="blog-date-2">STEP 02 · SMART SEARCH</div>
           <h3 class="blogTitle" id="blog-title-2">"블로그 검색창에 ‘내 차종’이나 ‘동네 이름’을 입력해 보세요"</h3>
@@ -2626,7 +2863,6 @@
           <a class="blogLink" id="blog-link-2" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">블로그 검색창 이동하기 →</a>
         </article>
 
-        <!-- 세 번째 블록 (STEP 03: 동일 사례 확인 & 안심 종결) -->
         <article class="blogCard" id="blog-card-3">
           <div class="blogDate" id="blog-date-3">STEP 03 · PROVEN SOLUTION</div>
           <h3 class="blogTitle" id="blog-title-3">"내 차와 똑같은 실제 해결 사례를 눈으로 직접 확인하세요"</h3>
@@ -3452,8 +3688,108 @@
     }
   }
 
+  // ================= [신규] 실시간 출동 갤러리 데이터 및 구동 함수 =================
+  var caseGalleryData = [
+    {
+      img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
+      model: "기아 스포티지 R (스마트키)",
+      badgeTime: "당일 25분 완료",
+      loc: "경기 안양시 만안구 지하주차장",
+      issue: "차키 전량 분실 · 견인 불가 지하 현장 복원",
+      details: [
+        "100% 무손상 픽킹 도어 개방",
+        "최첨단 CNC 순정 비상키 정밀 밀링",
+        "현장 배터리 3.2V 실측 후 즉시 시동"
+      ]
+    },
+    {
+      img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80",
+      model: "현대 아반떼 CN7 (폴딩/스마트)",
+      badgeTime: "현장 20분 완료",
+      loc: "인천 부평구 부평동 상가 골목",
+      issue: "스마트키 잃어버림 · 현장 100% 순정키 등록",
+      details: [
+        "차량 번호 기반 전용 모비스 정품 매칭",
+        "차량 도장면 무흠집 비파괴 시공",
+        "ECU 전용 스캐너 보안 코딩 완료"
+      ]
+    },
+    {
+      img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80",
+      model: "제네시스 GV80 (하이엔드 스마트키)",
+      badgeTime: "당일 예약 정시 도착",
+      loc: "서울 강남구 역삼동 테헤란로",
+      issue: "최신 암호화 보안 시스템 현장 즉석 매칭",
+      details: [
+        "고급 수입차/제네시스 전용 보안 스캐너 사용",
+        "비탑승·무접촉 청결 시공 원칙 준수",
+        "신분증 및 등록증 철저 대조 후 인도"
+      ]
+    },
+    {
+      img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80",
+      model: "현대 포터 2 / 봉고 3 (영업용 화물)",
+      badgeTime: "긴급 15분 출동",
+      loc: "경기 화성시 남양읍 산업단지",
+      issue: "업무 중 차키 분실 · 튼튼한 플라스틱 버튼키",
+      details: [
+        "고무 찢어짐 없는 고강도 일체형 리모컨 제작",
+        "이모빌라이저 OTP 등록 즉시 정상 주행",
+        "법인/사업자 거래명세서 및 세금계산서 발급"
+      ]
+    },
+    {
+      img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
+      model: "르노 코레오스 / SM6 (카드형 스마트키)",
+      badgeTime: "재고 당일 해결",
+      loc: "경기 수원시 영통구 광교신도시",
+      issue: "부품 수급 까다로운 르노 순정 카드키 복원",
+      details: [
+        "사업소 견인 대기 없는 당일 현장 해결",
+        "순정 카드키 주파수 및 도어 센서 매칭",
+        "추가금 1원 없는 사전 확정 정찰제 적용"
+      ]
+    }
+  ];
+
+  function initCaseTicker() {
+    var track = document.getElementById('tickerFlexTrack');
+    if (!track) return;
+    var doubledData = caseGalleryData.concat(caseGalleryData);
+    var htmlContent = "";
+    doubledData.forEach(function(item) {
+      var detailsLi = item.details.map(function(d) {
+        return "<li>" + d + "</li>";
+      }).join('');
+
+      htmlContent += `
+        <article class="casePhotoCard">
+          <div class="cardImgBox">
+            <div class="badgeFloatingRow">
+              <span class="tagCarModel">${item.model}</span>
+              <span class="tagTimeFast">${item.badgeTime}</span>
+            </div>
+            <img src="${item.img}" alt="${item.model} 차키 제작 현장" loading="lazy">
+          </div>
+          <div class="cardBodyBox">
+            <div class="cardLocationRow">
+              <span>📍</span> <span>${item.loc}</span>
+            </div>
+            <h3 class="cardMainIssue">${item.issue}</h3>
+            <ul class="cardDetailList">
+              ${detailsLi}
+            </ul>
+            <a href="tel:16009712" class="cardActionBtn">📞 이 차종 당일 출동 문의</a>
+          </div>
+        </article>
+      `;
+    });
+    track.innerHTML = htmlContent;
+  }
+
   window.addEventListener('DOMContentLoaded', function() {
     selectMapRegion('incheon');
+    initCaseTicker();
   });
 
   document.onkeydown = function(e) {
