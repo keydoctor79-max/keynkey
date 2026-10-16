@@ -1879,7 +1879,7 @@
       </div>
 
       <p class="networkIntro">
-        키앤키닷컴은 <strong>20년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역(226개 시·군·구)을 8대 광역권 70개 거점으로 유기 관제·출동합니다.
+        키앤키닷컴은 <strong>적어도 15년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역(226개 시·군·구)을 8대 광역권 80개 핵심 거점으로 유기 관제·출동합니다.
       </p>
 
       <div class="mapControlCenter">
@@ -2149,12 +2149,12 @@
               <g class="mapPinNode" onclick="selectMapRegion('jeju')"><circle class="pinPulse" cx="245" cy="920" r="7.5" fill="none" stroke="#67E8F9" /><circle cx="245" cy="920" r="4.5" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
             </g>
 
-            <!-- [3. 최상단 텍스트 라벨 레이어] -->
+           <!-- [3. 최상단 텍스트 라벨 레이어] -->
             <g id="map-labels">
               <!-- 인천/도서 -->
               <text class="mapCityLabel subIsland" x="115" y="140">강화</text>
               <text class="mapCityLabel subIsland" x="70" y="235">영종</text>
-              <text class="mapCityLabel mainLarge" x="135" y="255">인천</text>
+              <text class="mapCityLabel microNodeText" x="135" y="255" style="fill:var(--clear-cyan); font-weight:800;">인천</text>
 
               <!-- 서울 -->
               <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
@@ -2196,7 +2196,6 @@
               <text class="mapCityLabel microNodeText" x="275" y="375">안성</text>
 
               <!-- 강원특별자치도 -->
-              <text class="mapCityLabel mainLarge" x="430" y="95">강원</text>
               <text class="mapCityLabel microNodeText" x="350" y="102">화천</text>
               <text class="mapCityLabel microNodeText" x="395" y="102">양구</text>
               <text class="mapCityLabel microNodeText" x="435" y="122">인제</text>
@@ -2335,7 +2334,7 @@
               <text class="mapCityLabel microNodeText" x="330" y="730">여수</text>
 
               <!-- 제주 -->
-              <text class="mapCityLabel mainLarge" x="230" y="865">제주도</text>
+              <text class="mapCityLabel microNodeText" x="230" y="865" style="fill:var(--clear-cyan); font-weight:800;">제주도</text>
               <text class="mapCityLabel microNodeText" x="230" y="900">제주시</text>
               <text class="mapCityLabel microNodeText" x="245" y="940">서귀포</text>
             </g>
@@ -2355,16 +2354,16 @@
         </div>
       </div>
 
-      <!-- 전체 지부 가나다순 리스트 -->
+     <!-- 전체 지부 가나다순 리스트 헤더 -->
       <div class="secHeader" style="margin-top:65px;">
         <h3 class="secHeaderTitle" style="font-size:32px;">NATIONWIDE INTEGRATED NETWORKS</h3>
         <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
-          대한민국 8대 광역권역 · 70개 마스터 관제 네트워크
+          대한민국 8대 광역 권역 · 80개 마스터 관제 네트워크
         </span>
       </div>
 
       <div class="sortNotice">
-        🏛️ <strong>전국 관제 인프라 표준 안내</strong> : 키앤키닷컴은 대한민국 전역(226개 기초자치단체)을 8대 광역권 70개 핵심 거점으로 유기 관제하며, 고객 편의와 공평성을 위해 <strong>‘가나다(ㄱ-ㄴ-ㄷ) 지역 표준 순서’</strong>로 투명하게 공개합니다.
+        🏛️ <strong>전국 관제 인프라 표준 안내</strong> : 키앤키닷컴은 대한민국 전역(226개 기초자치단체)을 8대 광역권 80개 핵심 거점으로 유기 관제하며, 고객 편의와 공평성을 위해 <strong>‘가나다(ㄱ-ㄴ-ㄷ) 지역 표준 순서’</strong>로 투명하게 공개합니다.
       </div>
 
       <!-- 상시 노출: 대표 8대 권역 거점 카드 -->
@@ -2461,16 +2460,17 @@
       <!-- 더보기 클릭 시 펼쳐지는 전국 세부 네트워크 그리드 -->
       <div class="networkMoreWrap" id="networkMoreWrap"></div>
 
-      <!-- 펼치기/접기 버튼 -->
+     <!-- 펼치기/접기 버튼 텍스트 -->
       <div class="netMoreBtnArea">
         <button class="btnNetworkToggle" id="btnNetworkToggle" onclick="toggleNetwork()">
-          <span id="networkBtnText">🏛️ 전국 8대 광역 70개 마스터 네트워크 전체보기 (가나다순) ▼</span>
+          <span id="networkBtnText">🏛️ 전국 8대 광역 80개 마스터 네트워크 전체보기 (가나다순) ▼</span>
         </button>
       </div>
 
+      <!-- 하단 직통 배차 배너 -->
       <div class="netCallBanner">
         <div class="netCallText">
-          📍 대한민국 전역 어디서든 <strong>대표전화 1600-9712</strong>로 접수 시, 인공지능 통합 관제망을 통해 현장과 가장 인접한 <strong>20년 베테랑 엔지니어팀</strong>이 1초 만에 직통 배차됩니다.
+          📍 대한민국 전역 어디서든 <strong>대표전화 1600-9712</strong>로 접수 시, 인공지능 통합 관제망을 통해 현장과 가장 인접한 <strong>적어도 15년 이상 베테랑 엔지니어팀</strong>이 1초 만에 직통 배차됩니다.
         </div>
         <a class="btnActionLarge btnMainHighlight" style="padding:14px 28px; font-size:16px;" href="tel:16009712">📞 대표번호 직통 연결</a>
       </div>
