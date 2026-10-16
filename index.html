@@ -1891,11 +1891,18 @@
 
           <!-- 남한 전도 SVG -->
           <svg class="koreaDetailedSvg" viewBox="0 0 660 980" xmlns="http://www.w3.org/2000/svg">
-            <defs>
+           <defs>
               <linearGradient id="seoulCyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#E0F2FE" />
                 <stop offset="40%" stop-color="#67E8F9" />
                 <stop offset="100%" stop-color="#0284C7" />
+              </linearGradient>
+
+              <!-- 인천 핫핑크(오징어 게임 핑크) 전용 그라데이션 -->
+              <linearGradient id="incheonPinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFE4F1" />
+                <stop offset="40%" stop-color="#FF007A" />
+                <stop offset="100%" stop-color="#B80058" />
               </linearGradient>
 
               <filter id="glowBigPinkPin" x="-50%" y="-50%" width="200%" height="200%">
@@ -1912,7 +1919,7 @@
               </filter>
             </defs>
 
-            <!-- [1. 지형 PATH 그룹] -->
+            <!-- [1. 지형 PATH 그룹] (강원도 동해안 영토 확장 & 인천 핑크 적용) -->
             <g id="map-geo-paths">
               <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
                     d="M 170,205 L 195,115 L 295,95 L 340,155 L 340,225 L 285,215 L 260,195 L 215,195 L 180,210 Z" />
@@ -1923,14 +1930,18 @@
               <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
                     d="M 175,240 L 205,230 L 215,255 L 255,255 L 275,245 L 285,215 L 340,225 L 340,320 L 300,380 L 220,380 L 155,270 L 175,240 Z" />
 
+              <!-- 강원 영토 확장 (동해안 라인을 25px 바깥으로 확장하여 고성·속초·양양 포함) -->
               <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
-                    d="M 295,95 L 420,85 L 530,190 L 590,305 L 475,360 L 340,320 L 340,155 Z" />
+                    d="M 295,95 L 420,85 L 545,100 L 565,190 L 610,305 L 475,360 L 340,320 L 340,155 Z" />
 
               <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
                     d="M 85,105 L 150,95 L 155,155 L 115,170 L 80,145 Z" />
               <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
                     d="M 40,205 L 105,195 L 115,250 L 55,265 L 35,235 Z" />
+
+              <!-- 인천 본토: 핫핑크 오징어게임 네온 컬러 적용 -->
               <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
+                    style="fill:url(#incheonPinkGradient) !important; stroke:#FFFFFF !important; stroke-width:3.8 !important; filter:drop-shadow(0 0 20px rgba(255, 0, 122, 0.95)) !important;"
                     d="M 115,200 L 170,205 L 175,240 L 155,270 L 125,310 L 100,270 L 105,215 Z" />
 
               <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
@@ -1940,10 +1951,10 @@
                     d="M 155,270 L 220,380 L 300,380 L 350,470 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
 
               <path class="geoPath" id="geo-tk-north" onclick="selectMapRegion('tk_north')"
-                    d="M 475,360 L 590,305 L 610,385 L 530,445 L 440,430 Z" />
+                    d="M 475,360 L 610,305 L 625,385 L 530,445 L 440,430 Z" />
 
               <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
-                    d="M 440,430 L 530,445 L 610,385 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 Z" />
+                    d="M 440,430 L 530,445 L 625,385 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 Z" />
 
               <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
                     d="M 370,520 L 420,535 L 490,560 L 615,550 L 600,655 L 550,720 L 485,735 L 430,735 L 400,720 L 345,595 Z" />
@@ -1958,15 +1969,15 @@
                     d="M 150,885 Q 225,855 315,885 Q 330,915 285,935 Q 200,945 145,920 Z" />
             </g>
 
-           <!-- [2. 펄스 핀 레이어] -->
+            <!-- [2. 펄스 핀 레이어] (고성·속초·양양 안쪽으로 완벽 진입) -->
             <g id="map-radar-pins">
               <!-- 인천/도서 -->
-              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="135" cy="275" r="7" fill="none" stroke="#FF007A" /><circle cx="135" cy="275" r="5" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="70" cy="250" r="6" fill="none" stroke="#FF007A" /><circle cx="70" cy="250" r="4" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="115" cy="155" r="6" fill="none" stroke="#FF007A" /><circle cx="115" cy="155" r="4" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.5" /></g>
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="135" cy="275" r="7" fill="none" stroke="#FF007A" /><circle cx="135" cy="275" r="5" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.8" filter="url(#glowBigPinkPin)" /></g>
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="70" cy="250" r="5" fill="none" stroke="#FF007A" /><circle cx="70" cy="250" r="3.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.2" /></g>
+              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="115" cy="155" r="5" fill="none" stroke="#FF007A" /><circle cx="115" cy="155" r="3.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.2" /></g>
 
               <!-- 서울 -->
-              <g class="mapPinNode" onclick="selectMapRegion('seoul')"><circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" /><circle cx="240" cy="235" r="5.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" /></g>
+              <g class="mapPinNode" onclick="selectMapRegion('seoul')"><circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" /><circle cx="240" cy="235" r="5.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" filter="url(#glowBigCyanPin)" /></g>
 
               <!-- 경기 북부 -->
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="160" cy="195" r="6" fill="none" stroke="#FEE838" /><circle cx="160" cy="195" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
@@ -2004,19 +2015,19 @@
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="230" cy="370" r="6" fill="none" stroke="#FF1E44" /><circle cx="230" cy="370" r="4.5" fill="#FF1E44" stroke="#FFFFFF" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="275" cy="360" r="6" fill="none" stroke="#FEE838" /><circle cx="275" cy="360" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
 
-              <!-- 강원 -->
+              <!-- 강원특별자치도 (고성·속초·양양을 영토 안쪽인 x:475~505선으로 내륙 이동) -->
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="350" cy="115" r="6" fill="none" stroke="#38BDF8" /><circle cx="350" cy="115" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="395" cy="115" r="6" fill="none" stroke="#67E8F9" /><circle cx="395" cy="115" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="435" cy="135" r="6" fill="none" stroke="#10B981" /><circle cx="435" cy="135" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="485" cy="115" r="6" fill="none" stroke="#F59E0B" /><circle cx="485" cy="115" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="505" cy="140" r="6" fill="none" stroke="#EC4899" /><circle cx="505" cy="140" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="525" cy="170" r="6" fill="none" stroke="#38BDF8" /><circle cx="525" cy="170" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="475" cy="120" r="6" fill="none" stroke="#F59E0B" /><circle cx="475" cy="120" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g> <!-- 고성 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="495" cy="145" r="6" fill="none" stroke="#EC4899" /><circle cx="495" cy="145" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g> <!-- 속초 -->
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="505" cy="175" r="6" fill="none" stroke="#38BDF8" /><circle cx="505" cy="175" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g> <!-- 양양 -->
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="365" cy="160" r="7" fill="none" stroke="#38BDF8" /><circle cx="365" cy="160" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="410" cy="190" r="6" fill="none" stroke="#67E8F9" /><circle cx="410" cy="190" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="380" cy="245" r="7" fill="none" stroke="#FEE838" /><circle cx="380" cy="245" r="4.5" fill="#FEE838" stroke="#000" stroke-width="1.5" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="415" cy="235" r="6" fill="none" stroke="#10B981" /><circle cx="415" cy="235" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="465" cy="245" r="6" fill="none" stroke="#FEE838" /><circle cx="465" cy="245" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="510" cy="210" r="7.5" fill="none" stroke="#38BDF8" /><circle cx="510" cy="210" r="5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
+              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="510" cy="210" r="7.5" fill="none" stroke="#38BDF8" /><circle cx="510" cy="210" r="5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g> <!-- 강릉 -->
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="495" cy="285" r="6" fill="none" stroke="#F59E0B" /><circle cx="495" cy="285" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="435" cy="305" r="6" fill="none" stroke="#34D399" /><circle cx="435" cy="305" r="4" fill="#34D399" stroke="#000" stroke-width="1.2" /></g>
               <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="505" cy="325" r="6" fill="none" stroke="#F472B6" /><circle cx="505" cy="325" r="4" fill="#F472B6" stroke="#000" stroke-width="1.2" /></g>
@@ -2149,12 +2160,12 @@
               <g class="mapPinNode" onclick="selectMapRegion('jeju')"><circle class="pinPulse" cx="245" cy="920" r="7.5" fill="none" stroke="#67E8F9" /><circle cx="245" cy="920" r="4.5" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
             </g>
 
-           <!-- [3. 최상단 텍스트 라벨 레이어] -->
+            <!-- [3. 최상단 텍스트 라벨 레이어] (인천 서울과 동급 볼드 & 강화·영종 축소 & 고성·속초·양양 내륙 안착) -->
             <g id="map-labels">
-              <!-- 인천/도서 -->
-              <text class="mapCityLabel subIsland" x="115" y="140">강화</text>
-              <text class="mapCityLabel subIsland" x="70" y="235">영종</text>
-              <text class="mapCityLabel microNodeText" x="135" y="255" style="fill:var(--clear-cyan); font-weight:800;">인천</text>
+              <!-- 인천/도서 (강화·영종 글씨 작게 정돈 / 인천은 서울처럼 볼드 처리) -->
+              <text class="mapCityLabel microNodeText" x="115" y="145" style="fill:#CBD5E1; font-size:11px;">강화</text>
+              <text class="mapCityLabel microNodeText" x="70" y="240" style="fill:#CBD5E1; font-size:11px;">영종</text>
+              <text class="mapCityLabel seoulBoldText" x="135" y="255" style="font-size:20px; fill:#000; stroke:#FF007A; stroke-width:4px;">인천</text>
 
               <!-- 서울 -->
               <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
@@ -2195,13 +2206,13 @@
               <text class="mapCityLabel microNodeText" x="230" y="385">평택</text>
               <text class="mapCityLabel microNodeText" x="275" y="375">안성</text>
 
-              <!-- 강원특별자치도 -->
+              <!-- 강원특별자치도 (고성·속초·양양을 영토 내륙 x:475~505선으로 안착) -->
               <text class="mapCityLabel microNodeText" x="350" y="102">화천</text>
               <text class="mapCityLabel microNodeText" x="395" y="102">양구</text>
               <text class="mapCityLabel microNodeText" x="435" y="122">인제</text>
-              <text class="mapCityLabel microNodeText" x="485" y="102">고성</text>
-              <text class="mapCityLabel microNodeText" x="505" y="128">속초</text>
-              <text class="mapCityLabel microNodeText" x="525" y="158">양양</text>
+              <text class="mapCityLabel microNodeText" x="475" y="108">고성</text>
+              <text class="mapCityLabel microNodeText" x="495" y="133">속초</text>
+              <text class="mapCityLabel microNodeText" x="505" y="163">양양</text>
               <text class="mapCityLabel microNodeText" x="365" y="148">춘천</text>
               <text class="mapCityLabel microNodeText" x="410" y="178">홍천</text>
               <text class="mapCityLabel microNodeText" x="380" y="232">원주</text>
