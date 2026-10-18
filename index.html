@@ -1866,13 +1866,14 @@
 
         <!-- 소비자가 원하는 지역 검색창 -->
         <div class="networkSearchBox">
-          <input 
-            type="text" 
-            id="netSearchInput" 
-            class="networkSearchInput" 
-            placeholder="지역명 검색 (예: 부평, 김포, 부천)" 
-            onkeydown="if(event.key === 'Enter') handleNetworkSearch();"
-          >
+       <input
+  type="text"
+  id="netSearchInput"
+  class="networkSearchInput"
+  placeholder="🔍 지역명을 검색하세요 (예: 양산, 용인, 평택)"
+  onkeydown="if(event.key === 'Enter') handleNetworkSearch();"
+  style="border: 3px solid #00E5FF; box-shadow: 0 0 15px rgba(0, 229, 255, 0.8), inset 0 0 8px rgba(0, 229, 255, 0.3); font-size: 16px; font-weight: 700; color: #fff; background: #0b111e; border-radius: 8px; outline: none; transition: all 0.3s ease;"
+>  
           <button type="button" class="btnNetReset" onclick="resetNetworkSearch()" title="검색 초기화">✕</button>
           <button type="button" class="btnNetSearch" onclick="handleNetworkSearch()">검색</button>
         </div>
@@ -2904,12 +2905,33 @@
 
 <!-- 9. 모바일 하단 고정 바 -->
 <div class="mobileBar">
-  <a class="btnMSms" href="sms:01082424649">💬 사진전송</a>
-  <a class="btnMCall" href="tel:16009712">📞 대표전화</a>
+<!-- 좌측: 카카오톡 상담 바로가기 -->
+<a href="https://pf.kakao.com/_xgpxkKG" target="_blank" rel="noopener" class="bottomBtn kakaoBtn" style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; background:#FEE500; color:#191919; font-weight:700; text-decoration:none; padding:14px 0; font-size:16px;">
+  <span style="font-size:18px;">💬</span> 카톡 빠른상담
+</a>
+
+<!-- 우측: 누르면 상단 검색창으로 부드럽게 이동하고 테두리가 반짝이는 지역검색 버튼 -->
+<a href="javascript:void(0);" onclick="focusSearchInput()" class="bottomBtn searchNavBtn" style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; background:#00E5FF; color:#000; font-weight:800; text-decoration:none; padding:14px 0; font-size:16px;">
+  <span style="font-size:18px;">🔍</span> 지역 검색하기
+</a> 
 </div>
 
 <!-- ================= 스크립트 ================= -->
 <script>
+// 하단 '지역 검색하기' 클릭 시 검색창으로 즉시 이동 & 포커스
+function focusSearchInput() {
+  var searchEl = document.getElementById('netSearchInput');
+  if (searchEl) {
+    searchEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function() {
+      searchEl.focus();
+      searchEl.style.boxShadow = '0 0 25px #00E5FF, 0 0 10px #fff';
+      setTimeout(function() {
+        searchEl.style.boxShadow = '0 0 15px rgba(0, 229, 255, 0.8), inset 0 0 8px rgba(0, 229, 255, 0.4)';
+      }, 1000);
+    }, 400);
+  }
+}
   function updateWorldClocks() {
     var now = new Date();
     var krTimeStr = now.toLocaleTimeString('en-US', {
