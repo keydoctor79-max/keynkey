@@ -1625,7 +1625,127 @@ html, body {
 p, h1, h2, h3, h4, span, div {
   word-break: keep-all !important;
   overflow-wrap: break-word !important;
-}  
+} 
+/* 최상단 히어로 섹션 전용 정밀 최적화 */
+@media (min-width: 992px) {
+  .heroSection .wrap, 
+  .heroGrid {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 60px !important;
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+  }
+  .heroGrid > div:first-child,
+  .heroContentLeft {
+    flex: 1.1 !important;
+    max-width: 680px !important;
+  }
+  .heroGrid > div:last-child,
+  .heroContentRight {
+    flex: 1 !important;
+    max-width: 580px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .heroSection .wrap,
+  .heroGrid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 30px !important;
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+  .heroGrid > div:first-child,
+  .heroGrid > div:last-child,
+  .heroContentLeft,
+  .heroContentRight {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .heroGrid div[style*="border"],
+  .reserveBadgeBig {
+    max-width: 100% !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+  }
+} 
+/* =========================================================
+   ABOUT US 모바일 1열(상/하) 분리 & 박스 슬림화
+========================================================= */
+
+@media (max-width: 991px) {
+  .aboutGrid {
+    display: flex !important;
+    flex-direction: column !important; /* 모바일에서 위아래로 분리 */
+    gap: 28px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 1번째 칸: 소개 문구 & 지표 영역 전체 폭 차지 */
+  .aboutGrid > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 진심 스토리 전문 읽기 버튼 폭 슬림화 */
+  .aboutTistoryBtnBig {
+    width: auto !important;
+    display: inline-flex !important;
+    max-width: 100% !important;
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 20+ / 100% / 0% 지표 박스 크기 슬림화 */
+  .aboutStats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-top: 14px !important;
+  }
+  .aboutStats .statBox {
+    padding: 8px 4px !important;
+    text-align: center !important;
+  }
+  .aboutStats .statNum {
+    font-size: 18px !important;
+  }
+  .aboutStats .statLabel {
+    font-size: 10px !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* 2번째 칸: 카드뉴스 상자 (독립된 다음 줄 100% 차지) */
+  .aboutNewsSliderBox {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 16px 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutGrid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.15fr !important;
+    gap: 50px !important;
+    align-items: center !important;
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+  }
+}    
   </style>
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
@@ -1679,14 +1799,15 @@ p, h1, h2, h3, h4, span, div {
     <div class="wrap heroGrid">
       <div>
         <div class="reserveBadgeBig">
-          <span>⏱ 100% 예약 우선 출동 원칙 · 시간 약속 엄수</span>
+<span style="display:inline-block; font-size:clamp(11px, 3.2vw, 14px); white-space:nowrap; letter-spacing:-0.02em;">⏱ 100% 예약 우선 출동 원칙 · 시간 약속 엄수</span> 
         </div>
 
-        <h1 class="mainTitle">
-          "오늘 당일, 시간 약속 지켜서<br>
-          차키를 완벽 해결해 줄<br>
-          <span>믿을 수 있는 </span><span style="color: var(--clear-cyan);">전문가</span>는 없을까?"
-        </h1>
+      <h1 class="mainTitle" style="word-break:keep-all; line-height:1.35; font-size:clamp(22px, 6vw, 40px);">
+  "오늘 당일,<br>
+  시간 약속 지켜서<br>
+  차키를 완벽 해결해 줄<br>
+  <span style="color:var(--neon-yellow, #FEE500);">믿을 수 있는</span> <span style="color:var(--clear-cyan);">전문가</span>는 없을까?"
+</h1> 
         <p class="mainDesc">
           키앤키닷컴은 철저한 사전 상담과 <strong>‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과의 약속 시간을 엄수하여 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결합니다.
         </p>
@@ -1783,11 +1904,12 @@ p, h1, h2, h3, h4, span, div {
       </div>
       <div class="aboutGrid">
         <div>
-          <h3 class="aboutHeading">
-            <a class="highlightTag3D" target="_blank" rel="noopener" href="https://keynkey.tistory.com">20년 현장 노하우 ↗</a> 로 완성하는<br>
-            원스톱 차키 출장 솔루션
-          </h3>
-          <p class="aboutText">
+       <h3 class="aboutHeading" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; line-height:1.4;">
+  <a class="highlightTag3D" target="_blank" rel="noopener" href="https://keynkey.tistory.com" style="display:inline-block; white-space:nowrap;">20년 현장 노하우 ↗</a>
+  <span style="white-space:nowrap;">로 완성하는</span>
+  <span style="width:100%; display:block;">원스톱 차키 출장 솔루션</span>
+</h3>  
+ <p class="aboutText" style="word-break:keep-all; overflow-wrap:break-word; max-width:100%; box-sizing:border-box; line-height:1.6;">   
             키앤키닷컴은 분실된 차키와 스마트키를 현장에서 견인 없이 즉시 가공·복원하는 대한민국 대표 자동차키 전문 네트워크입니다. 최첨단 CNC 자동 가공기와 순정 OBD 진단 코딩 시스템을 통해 차량 손상 없는 완벽한 시동을 약속드립니다.
           </p>
 
@@ -1804,7 +1926,7 @@ p, h1, h2, h3, h4, span, div {
         </div>
 
         <!-- 카드뉴스 -->
-        <div class="aboutNewsSliderBox">
+ <div class="aboutNewsSliderBox" style="max-width:100%; width:100%; box-sizing:border-box; overflow:hidden;">      
           <div class="newsSliderTopBar">
             <div class="newsTopBadge">
               <span class="newsTopDot"></span>
@@ -1816,7 +1938,7 @@ p, h1, h2, h3, h4, span, div {
           <div class="newsTrackArea">
             <div class="newsSlideItem active" id="newsSlide-0">
               <span class="newsCopyBadge">DIRECT MASTER CONSULTING</span>
-              <h4 class="newsHeadline">"차도 모르는 일반 상담원이 중간에서 전달하는 콜센터가 아닙니다."</h4>
+           <h4 class="newsHeadline" style="word-break:keep-all; overflow-wrap:break-word; max-width:100%; line-height:1.4;">"차도 모르는 일반 상담원이 중간에서 전달하는 콜센터가 아닙니다."</h4>  
               <ul class="newsContentList">
                 <li>현장 기술을 전혀 모르는 콜센터가 기계적으로 접수해 하청 넘기는 플랫폼 구조를 완전히 차단합니다.</li>
                 <li><strong>적어도 15년 이상 현장 엔지니어 대표가 직접 전화</strong>를 받아 차종·연식·증상·키 타입을 1초 만에 정확히 진단합니다.</li>
@@ -1831,7 +1953,7 @@ p, h1, h2, h3, h4, span, div {
 
             <div class="newsSlideItem" id="newsSlide-1">
               <span class="newsCopyBadge">TRUSTED BY METICULOUS DRIVERS</span>
-              <h4 class="newsHeadline">"디테일에 민감한 여성 고객과 약속 시간이 생명인 분들의 1순위 선택"</h4>
+      <h4 class="newsHeadline" style="word-break:keep-all; overflow-wrap:break-word; max-width:100%; line-height:1.4;">"디테일에 민감한 여성 고객과 약속 시간이 생명인 분들의 1순위 선택"</h4>       
               <ul class="newsContentList">
                 <li>견적 뻥튀기나 불친절 없는 <strong>100% 투명 사전 정찰제</strong>로 여성 차주분들의 만족도와 재이용률이 압도적입니다.</li>
                 <li>바쁜 일정을 방해하지 않는 <strong>'100% 사전 예약 우선제'</strong>로 고객과의 약속 시간을 분 단위까지 철저히 엄수합니다.</li>
@@ -1846,7 +1968,7 @@ p, h1, h2, h3, h4, span, div {
 
             <div class="newsSlideItem" id="newsSlide-2">
               <span class="newsCopyBadge">20+ YEARS CRAFTSMANSHIP & MANNER</span>
-              <h4 class="newsHeadline">"20년 베테랑의 기술력에 단정한 청결 매너를 더했습니다."</h4>
+       <h4 class="newsHeadline" style="word-break:keep-all; overflow-wrap:break-word; max-width:100%; line-height:1.4;">"20년 베테랑의 기술력에 단정한 청결 매너를 더했습니다."</h4>     
               <ul class="newsContentList">
                 <li>초보 기사를 전면 배제하고, 각 지역에서 <strong>적어도 15년 이상 검증된 정통 장인들</strong>만 모인 순수 기술 네트워크입니다.</li>
                 <li>불필요하게 차내에 탑승하지 않는 <strong>'비탑승·무접촉 청결 작업'</strong>으로 시트 오염 및 내부 손상을 원천 방지합니다.</li>
@@ -2399,9 +2521,14 @@ p, h1, h2, h3, h4, span, div {
      <!-- 전체 지부 가나다순 리스트 헤더 -->
       <div class="secHeader" style="margin-top:65px;">
         <h3 class="secHeaderTitle" style="font-size:32px;">NATIONWIDE INTEGRATED NETWORKS</h3>
-        <span class="secHeaderSubKoBig" style="font-size:18px; padding:6px 18px; background:#000; color:var(--neon-yellow); border:2px solid var(--neon-yellow); border-radius:4px; font-weight:800;">
-          대한민국 8대 광역 권역 · 80개 마스터 관제 네트워크
-        </span>
+  <div style="display:inline-flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; max-width:100%; margin-top:8px;">
+  <span style="display:inline-block; font-size:clamp(14px, 3.8vw, 17px); padding:6px 14px; background:#000; color:var(--neon-yellow, #FEE500); border:2px solid var(--neon-yellow, #FEE500); border-radius:4px; font-weight:800; white-space:nowrap;">
+    대한민국 8대 광역 권역
+  </span>
+ <span style="display:inline-block; font-size:clamp(14px, 3.8vw, 17px); padding:6px 14px; background:#000; color:var(--neon-yellow, #FEE500); border:2px solid var(--neon-yellow, #FEE500); border-radius:4px; font-weight:800; white-space:nowrap;">
+    80개 마스터 관제 네트워크
+  </span>
+</div>
       </div>
 
       <div class="sortNotice">
