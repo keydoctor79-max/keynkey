@@ -3474,18 +3474,26 @@ var branchPhoneMap = {
     allBranches.forEach(function(b) {
       var card = document.createElement('article');
       card.className = 'networkCard';
-      card.innerHTML = `
-        <div class="netTopRow"><span class="netBadge">${b.badge}</span></div>
-        <h3 class="netRegion">${b.name}</h3>
-        <div class="cardCovText">${b.cov}</div>
-        <div class="cardExpText">${b.exp}</div>
-        <div class="netBtnRow">
-      <a class="netMiniBtn call" href="tel:${(function(name){ for(var k in branchPhoneMap){ if(name.indexOf(k) !== -1 || k.indexOf(name) !== -1) return branchPhoneMap[k]; } return '1600-9712'; })(b.name).replace(/[^0-9]/g, '')}">📞 직통전화</a>
-          <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-        </div>
-      `;
-      moreWrap.appendChild(card);
-    });
+var phone = '16009712';
+    if (typeof branchPhoneMap !== 'undefined') {
+      for (var k in branchPhoneMap) {
+        if (b.name.indexOf(k) !== -1 || k.indexOf(b.name) !== -1) {
+          phone = branchPhoneMap[k].replace(/[^0-9]/g, '');
+          break;
+        }
+      }
+    }
+    card.innerHTML = 
+      '<div class="netTopRow"><span class="netBadge">' + b.badge + '</span></div>' +
+      '<h3 class="netRegion">' + b.name + '</h3>' +
+      '<div class="cardCovText">' + b.cov + '</div>' +
+      '<div class="cardExpText">' + b.exp + '</div>' +
+      '<div class="netBtnRow">' +
+        '<a class="netMiniBtn call" href="tel:' + phone + '">📞 직통전화</a>' +
+        '<a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>' +
+      '</div>';
+    moreWrap.appendChild(card);
+  });     
 
     isNetworkLoaded = true;
   }
