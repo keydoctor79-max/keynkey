@@ -546,645 +546,297 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    <!-- 4. 전국 인터랙티브 관제 지도 (실시간 지부 검색창 내장) -->
-  <section id="network" class="networkSection">
-    <div class="wrap">
-      <div class="secHeader secHeaderFlex">
-        <div class="secHeaderTitleGroup">
-          <h2 class="secHeaderTitle" style="margin-bottom:0;">NATIONWIDE MASTERS NETWORK</h2>
-          <span class="secHeaderBadgePulse">
-            <span>⏱ 실시간 긴급출동 관제망</span>
-          </span>
-        </div>
+      gap: 16px;
+      background: var(--bg-surface);
+      color: #fff;
+      font-size: 19px;
+      font-weight: 800;
+      padding: 20px 28px;
+      border: 2px solid var(--border-card);
+      border-radius: 6px;
+      margin-bottom: 30px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+    .aboutTistoryBtnBig:hover {
+      border-color: var(--neon-pink);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--neon-pink-glow);
+    }
+    .aboutTistoryBtnBig .tistoryIconPink {
+      background: var(--neon-pink);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      padding: 6px 14px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px var(--neon-pink-glow);
+    }
 
-        <!-- 소비자가 원하는 지역 검색창 -->
-        <div class="networkSearchBox" style="display:flex; align-items:center; gap:8px; width:100%; max-width:540px; margin:0 auto; box-sizing:border-box;">
-          <div style="position:relative; flex:1; display:flex; align-items:center;">
-            <input
-              type="text"
-              id="netSearchInput"
-              class="networkSearchInput"
-              placeholder="🔍 지역명을 검색하세요 (예: 부천, 부평, 김포)"
-              onkeydown="if(event.key === 'Enter') handleNetworkSearch();"
-              style="width:100%; height:54px; border: 3px solid #00E5FF; box-shadow: 0 0 15px rgba(0, 229, 255, 0.7), inset 0 0 8px rgba(0, 229, 255, 0.2); font-size: 16px; font-weight: 700; color: #fff; background: #0b111e; border-radius: 10px; padding: 0 40px 0 14px; outline: none; box-sizing:border-box;"
-            >
-            <button type="button" class="btnNetReset" onclick="resetNetworkSearch()" title="검색 초기화" style="position:absolute; right:10px; background:none; border:none; color:#888; font-size:18px; cursor:pointer; padding:6px;">✕</button>
-          </div>
-          <button type="button" class="btnNetSearch" onclick="handleNetworkSearch()" style="flex-shrink:0; height:54px; padding:0 18px; background:#FFD700; color:#000; font-size:17px; font-weight:800; border:none; border-radius:10px; cursor:pointer; white-space:nowrap; box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);">검색</button>
-        </div>
-      </div>
+    .aboutStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .statBox { border: 2px solid var(--border-card); padding: 18px 14px; background: var(--bg-surface); text-align: center; border-radius: 4px; }
+    .statNum { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; display: block; line-height: 1; margin-bottom: 6px; color: var(--neon-yellow); }
+    .statLabel { font-size: 13.5px; font-weight: 700; color: var(--text-muted); }
 
-      <p class="networkIntro">
-        키앤키닷컴은 <strong>적어도 15년 이상 베테랑 마스터 엔지니어팀</strong>이 대한민국 전역(226개 시·군·구)을 8대 광역권 80개 핵심 거점으로 유기 관제·출동합니다.
-      </p>
+    .aboutNewsSliderBox {
+      width: 100%;
+      background: #09101E;
+      border: 3px solid var(--border-card);
+      border-radius: 10px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .newsSliderTopBar {
+      background: #0F1A2E;
+      border-bottom: 2px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .newsTopBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--clear-cyan);
+      letter-spacing: 0.05em;
+    }
+    .newsTopDot {
+      width: 8px;
+      height: 8px;
+      background: var(--clear-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--clear-cyan);
+      animation: alertPulse 1.8s infinite;
+    }
+    .newsTrackArea {
+      position: relative;
+      width: 100%;
+      min-height: 440px;
+      overflow: hidden;
+    }
+    .newsSlideItem {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      padding: 32px 28px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .newsSlideItem.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .newsCopyBadge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #000;
+      color: var(--neon-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border: 1.5px solid var(--neon-yellow);
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px rgba(254, 232, 56, 0.25);
+    }
+    .newsHeadline {
+      font-size: 22.5px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .newsContentList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px dashed var(--border-card);
+      padding-top: 16px;
+      margin-bottom: 18px;
+    }
+    .newsContentList li {
+      font-size: 15.5px;
+      color: var(--text-clean);
+      line-height: 1.7;
+      position: relative;
+      padding-left: 18px;
+      letter-spacing: -0.01em;
+    }
+    .newsContentList li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--clear-cyan);
+      font-size: 18px;
+    }
+    .newsTagRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .newsTag {
+      background: #152238;
+      color: var(--clear-cyan);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #273854;
+      letter-spacing: -0.01em;
+    }
+    .newsSliderControlBar {
+      background: #0B1424;
+      border-top: 1.5px solid #23334D;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .newsDots { display: flex; gap: 8px; }
+    .nDot {
+      width: 14px;
+      height: 6px;
+      background: #334155;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nDot.active {
+      width: 32px;
+      background: var(--clear-cyan);
+      box-shadow: 0 0 10px rgba(103, 232, 249, 0.7);
+    }
+    .newsTimerText {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
 
-      <div class="mapControlCenter">
-        <div class="mapViewWrapper">
-          <div class="mapTopStatus">
-            <span class="statusLive"><span class="statusLiveDot"></span> REAL-TIME EMERGENCY DISPATCH SYSTEM</span>
-            <span>지역을 누르거나 상단 검색창에 지역명을 입력하세요</span>
-          </div>
+    /* ================= 4. 전국 인터랙티브 관제 지도 & 실시간 검색창 ================= */
+    .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
+    .networkIntro { font-size: 19px; font-weight: 400; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: var(--text-clean); }
 
-          <!-- 남한 전도 SVG -->
-          <svg class="koreaDetailedSvg" viewBox="0 0 660 980" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="seoulCyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#E0F2FE" />
-                <stop offset="40%" stop-color="#67E8F9" />
-                <stop offset="100%" stop-color="#0284C7" />
-              </linearGradient>
+    .secHeaderFlex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .secHeaderTitleGroup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .networkSearchBox {
+      display: inline-flex;
+      align-items: center;
+      background: #080D18;
+      border: 2px solid var(--border-card);
+      border-radius: 6px;
+      padding: 5px 6px 5px 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+    }
+    .networkSearchBox:focus-within {
+      border-color: var(--neon-yellow);
+      box-shadow: 0 0 16px rgba(254, 232, 56, 0.4);
+    }
+    .networkSearchInput {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      width: 220px;
+    }
+    .networkSearchInput::placeholder {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .btnNetSearch {
+      background: var(--neon-yellow);
+      color: #000;
+      border: none;
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btnNetSearch:hover {
+      background: #fff;
+    }
+    .btnNetReset {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 8px;
+      cursor: pointer;
+    }
+    .btnNetReset:hover {
+      color: var(--neon-pink);
+    }
 
-              <linearGradient id="incheonGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFBEB" />
-                <stop offset="40%" stop-color="#FEE838" />
-                <stop offset="100%" stop-color="#EAB308" />
-              </linearGradient>
-
-              <filter id="glowBigPinkPin" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="6" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-              <filter id="glowBigCyanPin" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-              <filter id="glowBigPin" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            <!-- [1. 지형 PATH 그룹] -->
-            <g id="map-geo-paths">
-              <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-north" onclick="selectMapRegion('gyeonggi_north')"
-                    d="M 170,205 L 195,115 L 295,95 L 340,155 L 340,225 L 285,215 L 260,195 L 215,195 L 180,210 Z" />
-
-              <path class="geoPath seoulBrightCenter" id="geo-seoul" onclick="selectMapRegion('seoul')"
-                    d="M 215,195 L 260,195 L 275,215 L 275,245 L 255,255 L 215,255 L 205,230 Z" />
-
-              <path class="geoPath directTerritoryRedGlow" id="geo-gyeonggi-south" onclick="selectMapRegion('gyeonggi_south')"
-                    d="M 175,240 L 205,230 L 215,255 L 255,255 L 275,245 L 285,215 L 340,225 L 340,320 L 300,380 L 220,380 L 155,270 L 175,240 Z" />
-
-              <path class="geoPath" id="geo-gangwon" onclick="selectMapRegion('gangwon')"
-                    d="M 295,95 L 400,85 L 500,70 L 530,125 L 555,200 L 595,305 L 475,360 L 340,320 L 340,155 Z" />
-
-              <path class="geoPath" id="geo-incheon-ganghwa" onclick="selectMapRegion('incheon')"
-                    d="M 85,105 L 150,95 L 155,155 L 115,170 L 80,145 Z" />
-              <path class="geoPath" id="geo-incheon-yeongjong" onclick="selectMapRegion('incheon')"
-                    d="M 40,205 L 105,195 L 115,250 L 55,265 L 35,235 Z" />
-
-              <path class="geoPath" id="geo-incheon" onclick="selectMapRegion('incheon')"
-                    style="fill:url(#incheonGoldGradient) !important; stroke:#FFFFFF !important; stroke-width:3.8 !important; filter:drop-shadow(0 0 18px rgba(254, 232, 56, 0.95)) !important;"
-                    d="M 115,200 L 170,205 L 175,240 L 155,270 L 125,310 L 100,270 L 105,215 Z" />
-
-              <path class="geoPath" id="geo-chungbuk" onclick="selectMapRegion('chungbuk')"
-                    d="M 340,320 L 475,360 L 440,430 L 380,430 L 350,470 L 300,380 Z" />
-
-              <path class="geoPath" id="geo-chungcheong" onclick="selectMapRegion('chungcheong')"
-                    d="M 155,270 L 220,380 L 300,380 L 350,470 L 370,520 L 235,510 L 120,440 L 105,340 Z" />
-
-              <path class="geoPath" id="geo-tk-north" onclick="selectMapRegion('tk_north')"
-                    d="M 475,360 L 595,305 L 615,385 L 530,445 L 440,430 Z" />
-
-              <path class="geoPath" id="geo-tk" onclick="selectMapRegion('tk')"
-                    d="M 440,430 L 530,445 L 615,385 L 635,460 L 615,550 L 490,560 L 420,535 L 370,520 L 380,430 Z" />
-
-              <path class="geoPath" id="geo-pk" onclick="selectMapRegion('pk')"
-                    d="M 370,520 L 420,535 L 490,560 L 615,550 L 600,655 L 550,720 L 485,735 L 430,735 L 400,720 L 345,595 Z" />
-
-              <path class="geoPath" id="geo-pk-geoje" onclick="selectMapRegion('pk')"
-                    d="M 485,725 L 530,720 L 535,760 L 495,775 L 475,745 Z" />
-
-              <path class="geoPath" id="geo-honam" onclick="selectMapRegion('honam')"
-                    d="M 120,440 L 235,510 L 370,520 L 345,595 L 400,720 L 290,780 L 160,775 L 80,630 Z" />
-
-              <path class="geoPath" id="geo-jeju" onclick="selectMapRegion('jeju')"
-                    d="M 150,885 Q 225,855 315,885 Q 330,915 285,935 Q 200,945 145,920 Z" />
-            </g>
-
-            <!-- [2. 펄스 핀 레이어] -->
-            <g id="map-radar-pins">
-              <!-- 인천/도서 -->
-              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="135" cy="275" r="7" fill="none" stroke="#FEE838" /><circle cx="135" cy="275" r="5" fill="#FEE838" stroke="#000" stroke-width="1.8" filter="url(#glowBigPin)" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="70" cy="250" r="5" fill="none" stroke="#FEE838" /><circle cx="70" cy="250" r="3.5" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('incheon')"><circle class="pinPulse" cx="115" cy="155" r="5" fill="none" stroke="#FEE838" /><circle cx="115" cy="155" r="3.5" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 서울 -->
-              <g class="mapPinNode" onclick="selectMapRegion('seoul')"><circle class="pinPulse" cx="240" cy="235" r="8" fill="none" stroke="#67E8F9" /><circle cx="240" cy="235" r="5.5" fill="#67E8F9" stroke="#000" stroke-width="1.8" filter="url(#glowBigCyanPin)" /></g>
-
-              <!-- 경기 북부 -->
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="160" cy="195" r="6" fill="none" stroke="#FEE838" /><circle cx="160" cy="195" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="205" cy="140" r="6" fill="none" stroke="#38BDF8" /><circle cx="205" cy="140" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="210" cy="175" r="6" fill="none" stroke="#10B981" /><circle cx="210" cy="175" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="225" cy="115" r="6" fill="none" stroke="#FEE838" /><circle cx="225" cy="115" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="245" cy="150" r="6" fill="none" stroke="#67E8F9" /><circle cx="245" cy="150" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="265" cy="125" r="6" fill="none" stroke="#F59E0B" /><circle cx="265" cy="125" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="250" cy="178" r="6" fill="none" stroke="#FEE838" /><circle cx="250" cy="178" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="285" cy="135" r="6" fill="none" stroke="#EC4899" /><circle cx="285" cy="135" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="255" cy="95" r="6" fill="none" stroke="#38BDF8" /><circle cx="255" cy="95" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="280" cy="200" r="6" fill="none" stroke="#38BDF8" /><circle cx="280" cy="200" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="300" cy="190" r="6" fill="none" stroke="#10B981" /><circle cx="300" cy="190" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_north')"><circle class="pinPulse" cx="325" cy="165" r="6" fill="none" stroke="#FEE838" /><circle cx="325" cy="165" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 경기 남부 -->
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="185" cy="235" r="6" fill="none" stroke="#38BDF8" /><circle cx="185" cy="235" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="210" cy="250" r="6" fill="none" stroke="#FEE838" /><circle cx="210" cy="250" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="180" cy="270" r="6" fill="none" stroke="#10B981" /><circle cx="180" cy="270" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="190" cy="305" r="6" fill="none" stroke="#67E8F9" /><circle cx="190" cy="305" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="228" cy="265" r="6" fill="none" stroke="#F59E0B" /><circle cx="228" cy="265" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="250" cy="250" r="6" fill="none" stroke="#EC4899" /><circle cx="250" cy="250" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="225" cy="290" r="6" fill="none" stroke="#38BDF8" /><circle cx="225" cy="290" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="245" cy="285" r="6" fill="none" stroke="#10B981" /><circle cx="245" cy="285" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="270" cy="245" r="6" fill="none" stroke="#F59E0B" /><circle cx="270" cy="245" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="280" cy="260" r="6" fill="none" stroke="#FEE838" /><circle cx="280" cy="260" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="300" cy="275" r="6" fill="none" stroke="#67E8F9" /><circle cx="300" cy="275" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="325" cy="250" r="6" fill="none" stroke="#38BDF8" /><circle cx="325" cy="250" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="245" cy="315" r="6" fill="none" stroke="#FF007A" /><circle cx="245" cy="315" r="4.5" fill="#FF007A" stroke="#FFFFFF" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="280" cy="315" r="6" fill="none" stroke="#F59E0B" /><circle cx="280" cy="315" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="315" cy="315" r="6" fill="none" stroke="#10B981" /><circle cx="315" cy="315" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="335" cy="305" r="6" fill="none" stroke="#FEE838" /><circle cx="335" cy="305" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="210" cy="340" r="6" fill="none" stroke="#F59E0B" /><circle cx="210" cy="340" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="255" cy="345" r="6" fill="none" stroke="#67E8F9" /><circle cx="255" cy="345" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="230" cy="370" r="6" fill="none" stroke="#FF1E44" /><circle cx="230" cy="370" r="4.5" fill="#FF1E44" stroke="#FFFFFF" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gyeonggi_south')"><circle class="pinPulse" cx="275" cy="360" r="6" fill="none" stroke="#FEE838" /><circle cx="275" cy="360" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 강원특별자치도 -->
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="350" cy="115" r="6" fill="none" stroke="#38BDF8" /><circle cx="350" cy="115" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="395" cy="115" r="6" fill="none" stroke="#67E8F9" /><circle cx="395" cy="115" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="440" cy="130" r="6" fill="none" stroke="#10B981" /><circle cx="440" cy="130" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="488" cy="85" r="6.5" fill="none" stroke="#F59E0B" /><circle cx="488" cy="85" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="512" cy="120" r="6.5" fill="none" stroke="#EC4899" /><circle cx="512" cy="120" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="528" cy="155" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="528" cy="155" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="548" cy="205" r="7.5" fill="none" stroke="#38BDF8" /><circle cx="548" cy="205" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="568" cy="255" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="568" cy="255" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="582" cy="290" r="6.5" fill="none" stroke="#67E8F9" /><circle cx="582" cy="290" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="365" cy="160" r="7" fill="none" stroke="#38BDF8" /><circle cx="365" cy="160" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="410" cy="190" r="6" fill="none" stroke="#67E8F9" /><circle cx="410" cy="190" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="380" cy="245" r="7" fill="none" stroke="#FEE838" /><circle cx="380" cy="245" r="4.5" fill="#FEE838" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="415" cy="235" r="6" fill="none" stroke="#10B981" /><circle cx="415" cy="235" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="465" cy="245" r="6" fill="none" stroke="#FEE838" /><circle cx="465" cy="245" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="495" cy="285" r="6" fill="none" stroke="#F59E0B" /><circle cx="495" cy="285" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="435" cy="305" r="6" fill="none" stroke="#34D399" /><circle cx="435" cy="305" r="4" fill="#34D399" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('gangwon')"><circle class="pinPulse" cx="515" cy="325" r="6" fill="none" stroke="#F472B6" /><circle cx="515" cy="325" r="4" fill="#F472B6" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 충북 -->
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="355" cy="340" r="6" fill="none" stroke="#67E8F9" /><circle cx="355" cy="340" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="330" cy="355" r="6" fill="none" stroke="#38BDF8" /><circle cx="330" cy="355" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="390" cy="345" r="7" fill="none" stroke="#38BDF8" /><circle cx="390" cy="345" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="435" cy="335" r="6.5" fill="none" stroke="#FEE838" /><circle cx="435" cy="335" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="470" cy="345" r="6" fill="none" stroke="#10B981" /><circle cx="470" cy="345" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="380" cy="385" r="6" fill="none" stroke="#F59E0B" /><circle cx="380" cy="385" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="320" cy="415" r="7" fill="none" stroke="#38BDF8" /><circle cx="320" cy="415" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="360" cy="430" r="6" fill="none" stroke="#67E8F9" /><circle cx="360" cy="430" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="335" cy="465" r="6" fill="none" stroke="#10B981" /><circle cx="335" cy="465" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungbuk')"><circle class="pinPulse" cx="355" cy="495" r="6" fill="none" stroke="#FEE838" /><circle cx="355" cy="495" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 충남 / 대전 / 세종 -->
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="160" cy="335" r="6" fill="none" stroke="#67E8F9" /><circle cx="160" cy="335" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="120" cy="375" r="6" fill="none" stroke="#38BDF8" /><circle cx="120" cy="375" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="140" cy="390" r="6" fill="none" stroke="#FEE838" /><circle cx="140" cy="390" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="180" cy="410" r="6" fill="none" stroke="#10B981" /><circle cx="180" cy="410" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="165" cy="435" r="6" fill="none" stroke="#F59E0B" /><circle cx="165" cy="435" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="215" cy="385" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="215" cy="385" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="245" cy="395" r="7.5" fill="none" stroke="#FF1E44" /><circle cx="245" cy="395" r="4.5" fill="#FF1E44" stroke="#FFFFFF" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="260" cy="425" r="7" fill="none" stroke="#67E8F9" /><circle cx="260" cy="425" r="4.5" fill="#67E8F9" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="230" cy="445" r="6.5" fill="none" stroke="#FEE838" /><circle cx="230" cy="445" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="195" cy="460" r="6" fill="none" stroke="#10B981" /><circle cx="195" cy="460" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="155" cy="475" r="6" fill="none" stroke="#EC4899" /><circle cx="155" cy="475" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="195" cy="495" r="6" fill="none" stroke="#38BDF8" /><circle cx="195" cy="495" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="165" cy="515" r="6" fill="none" stroke="#67E8F9" /><circle cx="165" cy="515" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="230" cy="510" r="6" fill="none" stroke="#F59E0B" /><circle cx="230" cy="510" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="260" cy="490" r="6" fill="none" stroke="#10B981" /><circle cx="260" cy="490" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="275" cy="465" r="8" fill="none" stroke="#FEE838" /><circle cx="275" cy="465" r="5" fill="#FEE838" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('chungcheong')"><circle class="pinPulse" cx="295" cy="515" r="6" fill="none" stroke="#FEE838" /><circle cx="295" cy="515" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 경북 북부 -->
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="430" cy="375" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="430" cy="375" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="470" cy="375" r="6" fill="none" stroke="#67E8F9" /><circle cx="470" cy="375" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="505" cy="355" r="6.5" fill="none" stroke="#10B981" /><circle cx="505" cy="355" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="545" cy="345" r="6" fill="none" stroke="#F59E0B" /><circle cx="545" cy="345" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="585" cy="335" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="585" cy="335" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="420" cy="420" r="6.5" fill="none" stroke="#FEE838" /><circle cx="420" cy="420" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="515" cy="410" r="7.5" fill="none" stroke="#FEE838" /><circle cx="515" cy="410" r="5" fill="#FEE838" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="560" cy="400" r="6" fill="none" stroke="#EC4899" /><circle cx="560" cy="400" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="585" cy="420" r="6.5" fill="none" stroke="#67E8F9" /><circle cx="585" cy="420" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="535" cy="445" r="6" fill="none" stroke="#10B981" /><circle cx="535" cy="445" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk_north')"><circle class="pinPulse" cx="475" cy="445" r="6" fill="none" stroke="#38BDF8" /><circle cx="475" cy="445" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 대구 / 경북 남부 -->
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="410" cy="460" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="410" cy="460" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="455" cy="460" r="7" fill="none" stroke="#F97316" /><circle cx="455" cy="460" r="4.5" fill="#F97316" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="465" cy="490" r="6" fill="none" stroke="#67E8F9" /><circle cx="465" cy="490" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="485" cy="465" r="6" fill="none" stroke="#10B981" /><circle cx="485" cy="465" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="505" cy="505" r="8.5" fill="none" stroke="#EF4444" /><circle cx="505" cy="505" r="5" fill="#EF4444" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="430" cy="520" r="6" fill="none" stroke="#FEE838" /><circle cx="430" cy="520" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="445" cy="545" r="6" fill="none" stroke="#F59E0B" /><circle cx="445" cy="545" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="525" cy="525" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="525" cy="525" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="545" cy="485" r="6.5" fill="none" stroke="#FEE838" /><circle cx="545" cy="485" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="585" cy="465" r="7.5" fill="none" stroke="#F97316" /><circle cx="585" cy="465" r="5" fill="#F97316" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="585" cy="525" r="7" fill="none" stroke="#38BDF8" /><circle cx="585" cy="525" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('tk')"><circle class="pinPulse" cx="520" cy="555" r="6" fill="none" stroke="#10B981" /><circle cx="520" cy="555" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 경남 / 부산 / 울산 -->
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="435" cy="570" r="6" fill="none" stroke="#FEE838" /><circle cx="435" cy="570" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="400" cy="590" r="6" fill="none" stroke="#67E8F9" /><circle cx="400" cy="590" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="455" cy="595" r="6" fill="none" stroke="#38BDF8" /><circle cx="455" cy="595" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="495" cy="580" r="6" fill="none" stroke="#10B981" /><circle cx="495" cy="580" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="530" cy="585" r="6" fill="none" stroke="#F59E0B" /><circle cx="530" cy="585" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="420" cy="625" r="6" fill="none" stroke="#10B981" /><circle cx="420" cy="625" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="460" cy="625" r="6" fill="none" stroke="#EC4899" /><circle cx="460" cy="625" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="485" cy="635" r="6" fill="none" stroke="#FEE838" /><circle cx="485" cy="635" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="515" cy="630" r="7" fill="none" stroke="#67E8F9" /><circle cx="515" cy="630" r="4.5" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="545" cy="625" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="545" cy="625" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="560" cy="605" r="6.5" fill="none" stroke="#10B981" /><circle cx="560" cy="605" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="595" cy="590" r="8" fill="none" stroke="#EF4444" /><circle cx="595" cy="590" r="5" fill="#EF4444" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="575" cy="640" r="9" fill="none" stroke="#EF4444" /><circle cx="575" cy="640" r="5.5" fill="#EF4444" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="435" cy="660" r="7" fill="none" stroke="#38BDF8" /><circle cx="435" cy="660" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="395" cy="670" r="6" fill="none" stroke="#F59E0B" /><circle cx="395" cy="670" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="455" cy="685" r="6" fill="none" stroke="#FEE838" /><circle cx="455" cy="685" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="495" cy="685" r="6" fill="none" stroke="#67E8F9" /><circle cx="495" cy="685" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="440" cy="730" r="6" fill="none" stroke="#10B981" /><circle cx="440" cy="730" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="490" cy="725" r="6.5" fill="none" stroke="#EC4899" /><circle cx="490" cy="725" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('pk')"><circle class="pinPulse" cx="525" cy="725" r="7" fill="none" stroke="#38BDF8" /><circle cx="525" cy="725" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.5" /></g>
-
-              <!-- 전북특별자치도 -->
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="165" cy="460" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="165" cy="460" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="210" cy="455" r="6.5" fill="none" stroke="#67E8F9" /><circle cx="210" cy="455" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="240" cy="465" r="6" fill="none" stroke="#10B981" /><circle cx="240" cy="465" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="185" cy="485" r="6" fill="none" stroke="#FEE838" /><circle cx="185" cy="485" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="225" cy="485" r="7.5" fill="none" stroke="#10B981" /><circle cx="225" cy="485" r="5" fill="#10B981" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="275" cy="475" r="6" fill="none" stroke="#F59E0B" /><circle cx="275" cy="475" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="315" cy="460" r="6" fill="none" stroke="#38BDF8" /><circle cx="315" cy="460" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="150" cy="515" r="6" fill="none" stroke="#EC4899" /><circle cx="150" cy="515" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="190" cy="535" r="6.5" fill="none" stroke="#FEE838" /><circle cx="190" cy="535" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="240" cy="525" r="6" fill="none" stroke="#67E8F9" /><circle cx="240" cy="525" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="285" cy="520" r="6" fill="none" stroke="#10B981" /><circle cx="285" cy="520" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="150" cy="565" r="6" fill="none" stroke="#38BDF8" /><circle cx="150" cy="565" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="220" cy="560" r="6" fill="none" stroke="#F59E0B" /><circle cx="220" cy="560" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="275" cy="555" r="6.5" fill="none" stroke="#FEE838" /><circle cx="275" cy="555" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 광주 / 전남 -->
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="130" cy="600" r="6" fill="none" stroke="#67E8F9" /><circle cx="130" cy="600" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="180" cy="580" r="6" fill="none" stroke="#10B981" /><circle cx="180" cy="580" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="215" cy="580" r="6" fill="none" stroke="#38BDF8" /><circle cx="215" cy="580" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="265" cy="590" r="6" fill="none" stroke="#FEE838" /><circle cx="265" cy="590" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="310" cy="610" r="6" fill="none" stroke="#EC4899" /><circle cx="310" cy="610" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="205" cy="615" r="8.5" fill="none" stroke="#A855F7" /><circle cx="205" cy="615" r="5" fill="#A855F7" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="140" cy="630" r="6" fill="none" stroke="#38BDF8" /><circle cx="140" cy="630" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="180" cy="645" r="6.5" fill="none" stroke="#C084FC" /><circle cx="180" cy="645" r="4" fill="#C084FC" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="235" cy="640" r="6" fill="none" stroke="#67E8F9" /><circle cx="235" cy="640" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="105" cy="640" r="6" fill="none" stroke="#10B981" /><circle cx="105" cy="640" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="130" cy="660" r="6" fill="none" stroke="#F59E0B" /><circle cx="130" cy="660" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="125" cy="695" r="7" fill="none" stroke="#38BDF8" /><circle cx="125" cy="695" r="4.5" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="165" cy="690" r="6" fill="none" stroke="#FEE838" /><circle cx="165" cy="690" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="250" cy="685" r="6" fill="none" stroke="#10B981" /><circle cx="250" cy="685" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="295" cy="650" r="7" fill="none" stroke="#A855F7" /><circle cx="295" cy="650" r="4.5" fill="#A855F7" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="340" cy="660" r="6.5" fill="none" stroke="#38BDF8" /><circle cx="340" cy="660" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="205" cy="725" r="6" fill="none" stroke="#EC4899" /><circle cx="205" cy="725" r="4" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="175" cy="740" r="6" fill="none" stroke="#67E8F9" /><circle cx="175" cy="740" r="4" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="145" cy="760" r="6.5" fill="none" stroke="#F59E0B" /><circle cx="145" cy="760" r="4" fill="#F59E0B" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="100" cy="765" r="6" fill="none" stroke="#10B981" /><circle cx="100" cy="765" r="4" fill="#10B981" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="255" cy="735" r="6" fill="none" stroke="#FEE838" /><circle cx="255" cy="735" r="4" fill="#FEE838" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="195" cy="780" r="6" fill="none" stroke="#38BDF8" /><circle cx="195" cy="780" r="4" fill="#38BDF8" stroke="#000" stroke-width="1.2" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('honam')"><circle class="pinPulse" cx="330" cy="715" r="7" fill="none" stroke="#EC4899" /><circle cx="330" cy="715" r="4.5" fill="#EC4899" stroke="#000" stroke-width="1.2" /></g>
-
-              <!-- 제주 -->
-              <g class="mapPinNode" onclick="selectMapRegion('jeju')"><circle class="pinPulse" cx="230" cy="880" r="8.5" fill="none" stroke="#FEE838" /><circle cx="230" cy="880" r="5" fill="#FEE838" stroke="#000" stroke-width="1.5" /></g>
-              <g class="mapPinNode" onclick="selectMapRegion('jeju')"><circle class="pinPulse" cx="245" cy="920" r="7.5" fill="none" stroke="#67E8F9" /><circle cx="245" cy="920" r="4.5" fill="#67E8F9" stroke="#000" stroke-width="1.2" /></g>
-            </g>
-
-            <!-- [3. 최상단 텍스트 라벨 레이어] -->
-            <g id="map-labels">
-              <!-- 인천/도서 -->
-              <text class="mapCityLabel microNodeText" x="115" y="145" style="fill:#CBD5E1; font-size:11px;">강화</text>
-              <text class="mapCityLabel microNodeText" x="70" y="240" style="fill:#CBD5E1; font-size:11px;">영종</text>
-              <text class="mapCityLabel seoulBoldText" x="135" y="255" style="font-size:20px; fill:#000000; stroke:#FFFFFF; stroke-width:4.5px;">인천</text>
-
-              <!-- 서울 -->
-              <text class="mapCityLabel seoulBoldText" x="240" y="222">서울</text>
-
-              <!-- 경기 북부 -->
-              <text class="mapCityLabel microNodeText" x="160" y="185">김포</text>
-              <text class="mapCityLabel microNodeText" x="205" y="125">파주</text>
-              <text class="mapCityLabel microNodeText" x="200" y="190">고양</text>
-              <text class="mapCityLabel microNodeText" x="225" y="102">연천</text>
-              <text class="mapCityLabel microNodeText" x="245" y="137">양주</text>
-              <text class="mapCityLabel microNodeText" x="265" y="112">동두천</text>
-              <text class="mapCityLabel microNodeText" x="250" y="195">의정부</text>
-              <text class="mapCityLabel microNodeText" x="285" y="122">포천</text>
-              <text class="mapCityLabel microNodeText" x="255" y="82">철원</text>
-              <text class="mapCityLabel microNodeText" x="280" y="215">구리</text>
-              <text class="mapCityLabel microNodeText" x="310" y="190">남양주</text>
-              <text class="mapCityLabel microNodeText" x="325" y="152">가평</text>
-
-              <!-- 경기 남부 -->
-              <text class="mapCityLabel microNodeText" x="185" y="222">부천</text>
-              <text class="mapCityLabel microNodeText" x="210" y="238">광명</text>
-              <text class="mapCityLabel microNodeText" x="180" y="258">시흥</text>
-              <text class="mapCityLabel microNodeText" x="190" y="320">안산</text>
-              <text class="mapCityLabel microNodeText" x="228" y="252">안양</text>
-              <text class="mapCityLabel microNodeText" x="250" y="238">과천</text>
-              <text class="mapCityLabel microNodeText" x="225" y="305">군포</text>
-              <text class="mapCityLabel microNodeText" x="245" y="300">의왕</text>
-              <text class="mapCityLabel microNodeText" x="270" y="232">하남</text>
-              <text class="mapCityLabel microNodeText" x="280" y="248">성남</text>
-              <text class="mapCityLabel microNodeText" x="300" y="262">광주</text>
-              <text class="mapCityLabel microNodeText" x="325" y="238">양평</text>
-              <text class="mapCityLabel microNodeText" x="245" y="332">수원</text>
-              <text class="mapCityLabel microNodeText" x="280" y="332">용인</text>
-              <text class="mapCityLabel microNodeText" x="315" y="332">이천</text>
-              <text class="mapCityLabel microNodeText" x="335" y="322">여주</text>
-              <text class="mapCityLabel microNodeText" x="210" y="355">화성</text>
-              <text class="mapCityLabel microNodeText" x="255" y="360">오산</text>
-              <text class="mapCityLabel microNodeText" x="230" y="385">평택</text>
-              <text class="mapCityLabel microNodeText" x="275" y="375">안성</text>
-
-              <!-- 강원특별자치도 -->
-              <text class="mapCityLabel microNodeText" x="350" y="102">화천</text>
-              <text class="mapCityLabel microNodeText" x="395" y="102">양구</text>
-              <text class="mapCityLabel microNodeText" x="440" y="118">인제</text>
-              <text class="mapCityLabel microNodeText" x="488" y="73">고성</text>
-              <text class="mapCityLabel microNodeText" x="512" y="108">속초</text>
-              <text class="mapCityLabel microNodeText" x="528" y="143">양양</text>
-              <text class="mapCityLabel microNodeText" x="548" y="193">강릉</text>
-              <text class="mapCityLabel microNodeText" x="568" y="243">동해</text>
-              <text class="mapCityLabel microNodeText" x="582" y="278">삼척</text>
-              <text class="mapCityLabel microNodeText" x="365" y="148">춘천</text>
-              <text class="mapCityLabel microNodeText" x="410" y="178">홍천</text>
-              <text class="mapCityLabel microNodeText" x="380" y="232">원주</text>
-              <text class="mapCityLabel microNodeText" x="415" y="222">횡성</text>
-              <text class="mapCityLabel microNodeText" x="465" y="232">평창</text>
-              <text class="mapCityLabel microNodeText" x="495" y="272">정선</text>
-              <text class="mapCityLabel microNodeText" x="435" y="320">영월</text>
-              <text class="mapCityLabel microNodeText" x="515" y="340">태백</text>
-
-              <!-- 충청북도 -->
-              <text class="mapCityLabel microNodeText" x="355" y="328">음성</text>
-              <text class="mapCityLabel microNodeText" x="330" y="342">진천</text>
-              <text class="mapCityLabel microNodeText" x="390" y="332">충주</text>
-              <text class="mapCityLabel microNodeText" x="435" y="322">제천</text>
-              <text class="mapCityLabel microNodeText" x="470" y="332">단양</text>
-              <text class="mapCityLabel microNodeText" x="380" y="372">괴산</text>
-              <text class="mapCityLabel microNodeText" x="320" y="402">청주</text>
-              <text class="mapCityLabel microNodeText" x="360" y="418">보은</text>
-              <text class="mapCityLabel microNodeText" x="335" y="452">옥천</text>
-              <text class="mapCityLabel microNodeText" x="355" y="482">영동</text>
-
-              <!-- 충청남도 / 대전 / 세종 -->
-              <text class="mapCityLabel microNodeText" x="160" y="322">당진</text>
-              <text class="mapCityLabel microNodeText" x="120" y="362">태안</text>
-              <text class="mapCityLabel microNodeText" x="140" y="405">서산</text>
-              <text class="mapCityLabel microNodeText" x="180" y="425">예산</text>
-              <text class="mapCityLabel microNodeText" x="165" y="450">홍성</text>
-              <text class="mapCityLabel microNodeText" x="215" y="372">아산</text>
-              <text class="mapCityLabel microNodeText" x="245" y="382">천안</text>
-              <text class="mapCityLabel microNodeText" x="260" y="412">세종</text>
-              <text class="mapCityLabel microNodeText" x="230" y="432">공주</text>
-              <text class="mapCityLabel microNodeText" x="195" y="448">청양</text>
-              <text class="mapCityLabel microNodeText" x="155" y="490">보령</text>
-              <text class="mapCityLabel microNodeText" x="195" y="510">부여</text>
-              <text class="mapCityLabel microNodeText" x="165" y="530">서천</text>
-              <text class="mapCityLabel microNodeText" x="230" y="525">논산</text>
-              <text class="mapCityLabel microNodeText" x="260" y="505">계룡</text>
-              <text class="mapCityLabel microNodeText" x="275" y="450">대전</text>
-              <text class="mapCityLabel microNodeText" x="295" y="530">금산</text>
-
-              <!-- 경상북도 -->
-              <text class="mapCityLabel microNodeText" x="430" y="362">문경</text>
-              <text class="mapCityLabel microNodeText" x="470" y="362">예천</text>
-              <text class="mapCityLabel microNodeText" x="505" y="342">영주</text>
-              <text class="mapCityLabel microNodeText" x="545" y="332">봉화</text>
-              <text class="mapCityLabel microNodeText" x="585" y="322">울진</text>
-              <text class="mapCityLabel microNodeText" x="420" y="408">상주</text>
-              <text class="mapCityLabel microNodeText" x="515" y="398">안동</text>
-              <text class="mapCityLabel microNodeText" x="560" y="388">영양</text>
-              <text class="mapCityLabel microNodeText" x="585" y="408">영덕</text>
-              <text class="mapCityLabel microNodeText" x="535" y="432">청송</text>
-              <text class="mapCityLabel microNodeText" x="475" y="432">의성</text>
-              <text class="mapCityLabel microNodeText" x="410" y="448">김천</text>
-              <text class="mapCityLabel microNodeText" x="455" y="448">구미</text>
-              <text class="mapCityLabel microNodeText" x="465" y="505">칠곡</text>
-              <text class="mapCityLabel microNodeText" x="485" y="452">군위</text>
-              <text class="mapCityLabel microNodeText" x="505" y="492">대구</text>
-              <text class="mapCityLabel microNodeText" x="430" y="508">성주</text>
-              <text class="mapCityLabel microNodeText" x="445" y="560">고령</text>
-              <text class="mapCityLabel microNodeText" x="525" y="540">경산</text>
-              <text class="mapCityLabel microNodeText" x="545" y="472">영천</text>
-              <text class="mapCityLabel microNodeText" x="585" y="452">포항</text>
-              <text class="mapCityLabel microNodeText" x="585" y="540">경주</text>
-              <text class="mapCityLabel microNodeText" x="520" y="570">청도</text>
-
-              <!-- 경상남도 / 부산 / 울산 -->
-              <text class="mapCityLabel microNodeText" x="435" y="558">거창</text>
-              <text class="mapCityLabel microNodeText" x="400" y="578">함양</text>
-              <text class="mapCityLabel microNodeText" x="455" y="582">합천</text>
-              <text class="mapCityLabel microNodeText" x="495" y="568">창녕</text>
-              <text class="mapCityLabel microNodeText" x="530" y="572">밀양</text>
-              <text class="mapCityLabel microNodeText" x="420" y="612">산청</text>
-              <text class="mapCityLabel microNodeText" x="460" y="612">의령</text>
-              <text class="mapCityLabel microNodeText" x="485" y="622">함안</text>
-              <text class="mapCityLabel microNodeText" x="515" y="618">창원</text>
-              <text class="mapCityLabel microNodeText" x="545" y="612">김해</text>
-              <text class="mapCityLabel microNodeText" x="560" y="592">양산</text>
-              <text class="mapCityLabel microNodeText" x="595" y="578">울산</text>
-              <text class="mapCityLabel microNodeText" x="575" y="628">부산</text>
-              <text class="mapCityLabel microNodeText" x="435" y="648">진주</text>
-              <text class="mapCityLabel microNodeText" x="395" y="658">하동</text>
-              <text class="mapCityLabel microNodeText" x="455" y="672">사천</text>
-              <text class="mapCityLabel microNodeText" x="495" y="672">고성</text>
-              <text class="mapCityLabel microNodeText" x="440" y="718">남해</text>
-              <text class="mapCityLabel microNodeText" x="490" y="740">통영</text>
-              <text class="mapCityLabel microNodeText" x="525" y="740">거제</text>
-
-              <!-- 전북특별자치도 -->
-              <text class="mapCityLabel microNodeText" x="165" y="448">군산</text>
-              <text class="mapCityLabel microNodeText" x="210" y="442">익산</text>
-              <text class="mapCityLabel microNodeText" x="240" y="452">완주</text>
-              <text class="mapCityLabel microNodeText" x="185" y="472">김제</text>
-              <text class="mapCityLabel microNodeText" x="225" y="472">전주</text>
-              <text class="mapCityLabel microNodeText" x="275" y="462">진안</text>
-              <text class="mapCityLabel microNodeText" x="315" y="448">무주</text>
-              <text class="mapCityLabel microNodeText" x="150" y="502">부안</text>
-              <text class="mapCityLabel microNodeText" x="190" y="522">정읍</text>
-              <text class="mapCityLabel microNodeText" x="240" y="512">임실</text>
-              <text class="mapCityLabel microNodeText" x="285" y="508">장수</text>
-              <text class="mapCityLabel microNodeText" x="150" y="552">고창</text>
-              <text class="mapCityLabel microNodeText" x="220" y="548">순창</text>
-              <text class="mapCityLabel microNodeText" x="275" y="542">남원</text>
-
-              <!-- 전라남도 / 광주 -->
-              <text class="mapCityLabel microNodeText" x="130" y="588">영광</text>
-              <text class="mapCityLabel microNodeText" x="180" y="568">장성</text>
-              <text class="mapCityLabel microNodeText" x="215" y="568">담양</text>
-              <text class="mapCityLabel microNodeText" x="265" y="578">곡성</text>
-              <text class="mapCityLabel microNodeText" x="310" y="598">구례</text>
-              <text class="mapCityLabel microNodeText" x="205" y="605">광주</text>
-              <text class="mapCityLabel microNodeText" x="140" y="618">함평</text>
-              <text class="mapCityLabel microNodeText" x="180" y="660">나주</text>
-              <text class="mapCityLabel microNodeText" x="235" y="628">화순</text>
-              <text class="mapCityLabel microNodeText" x="105" y="628">신안</text>
-              <text class="mapCityLabel microNodeText" x="130" y="648">무안</text>
-              <text class="mapCityLabel microNodeText" x="125" y="710">목포</text>
-              <text class="mapCityLabel microNodeText" x="165" y="678">영암</text>
-              <text class="mapCityLabel microNodeText" x="250" y="672">보성</text>
-              <text class="mapCityLabel microNodeText" x="295" y="638">순천</text>
-              <text class="mapCityLabel microNodeText" x="340" y="648">광양</text>
-              <text class="mapCityLabel microNodeText" x="205" y="712">장흥</text>
-              <text class="mapCityLabel microNodeText" x="175" y="728">강진</text>
-              <text class="mapCityLabel microNodeText" x="145" y="748">해남</text>
-              <text class="mapCityLabel microNodeText" x="100" y="752">진도</text>
-              <text class="mapCityLabel microNodeText" x="255" y="722">고흥</text>
-              <text class="mapCityLabel microNodeText" x="195" y="768">완도</text>
-              <text class="mapCityLabel microNodeText" x="330" y="730">여수</text>
-
-              <!-- 제주 -->
-              <text class="mapCityLabel microNodeText" x="230" y="865" style="fill:var(--clear-cyan); font-weight:800;">제주도</text>
-              <text class="mapCityLabel microNodeText" x="230" y="900">제주시</text>
-              <text class="mapCityLabel microNodeText" x="245" y="940">서귀포</text>
-            </g>
-          </svg>
-        </div>
-
-        <!-- 우측 관제 센터 실시간 상세 보드 -->
-        <div class="mapDetailBoard">
-          <div class="boardHead">
-            <h3 class="boardTitle" id="ctrlBoardTitle">📍 인천광역시 10대 세부 자치구 관제 지부</h3>
-            <span class="boardCountTagCustom" id="ctrlBoardCount">
-              <span style="font-size:12px;">●</span> 10개 지부 실시간 관제
-            </span>
-          </div>
-
-          <div class="boardScrollArea" id="ctrlBoardCards"></div>
-        </div>
-      </div>
-
-      <!-- 전체 지부 가나다순 리스트 헤더 -->
-      <div class="secHeader" style="margin-top:65px;">
-        <h3 class="secHeaderTitle" style="font-size:32px;">NATIONWIDE INTEGRATED NETWORKS</h3>
-        <div style="display:inline-flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; max-width:100%; margin-top:8px;">
-          <span style="display:inline-block; font-size:clamp(14px, 3.8vw, 17px); padding:6px 14px; background:#000; color:var(--neon-yellow, #FEE500); border:2px solid var(--neon-yellow, #FEE500); border-radius:4px; font-weight:800; white-space:nowrap;">
-            대한민국 8대 광역 권역
-          </span>
-          <span style="display:inline-block; font-size:clamp(14px, 3.8vw, 17px); padding:6px 14px; background:#000; color:var(--neon-yellow, #FEE500); border:2px solid var(--neon-yellow, #FEE500); border-radius:4px; font-weight:800; white-space:nowrap;">
-            80개 마스터 관제 네트워크
-          </span>
-        </div>
-      </div>
-
-      <div class="sortNotice">
-        🏛️ <strong>전국 관제 인프라 표준 안내</strong> : 키앤키닷컴은 대한민국 전역(226개 기초자치단체)을 8대 광역권 80개 핵심 거점으로 유기 관제하며, 고객 편의와 공평성을 위해 <strong>‘가나다(ㄱ-ㄴ-ㄷ) 지역 표준 순서’</strong>로 투명하게 공개합니다.
-      </div>
-
-      <!-- 상시 노출: 대표 8대 권역 거점 카드 -->
-      <div class="networkGrid" id="networkBaseGrid">
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">강원 영서 메디컬·행정허브</span></div>
-          <h3 class="netRegion">강원 춘천시 · 원주시 지부</h3>
-          <div class="cardCovText">강원도청 행정타운 · 춘천 레고랜드/퇴계지구 · 원주 혁신도시/기업도시(의료기기)</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 영서권 양대 거점 및 공공기관 주거타운 15분 긴급 출동, 순정 스마트키 원스톱 코딩</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">서북부 메가주거·출판</span></div>
-          <h3 class="netRegion">경기 고양시 · 파주시 지부</h3>
-          <div class="cardCovText">일산 1기 신도시 · 삼송·창릉(3기) · 운정신도시 · 파주출판단지 · LCD산단</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 자유로·제2자유로 축선 및 서북부 대단지 아파트 특화 원스톱 스마트키 복원</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">동북부 신도시·교통허브</span></div>
-          <h3 class="netRegion">경기 남양주시 · 구리시 지부</h3>
-          <div class="cardCovText">다산신도시 · 별내신도시 · 왕숙지구 · 화도·평내 · 구리 갈매·수택</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 북한강 교통축선 및 대규모 동북부 주거타운 분실 스마트키 현장 CNC 가공 제작</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">서부 도심·스마트산단</span></div>
-          <h3 class="netRegion">경기 부천시 · 광명시 · 시흥시 지부</h3>
-          <div class="cardCovText">부천 중동·상동 · 부천테크노파크 · 광명KTX역세권 · 시화MTV · 배곧신도시</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 골목길 초밀집 상권 및 서해안 국가산단 특화 모바일 랩 직통 배차, 1원 추가 없는 정찰 견적</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">판교 테크노·준강남벨트</span></div>
-          <h3 class="netRegion">경기 성남시 · 하남시 지부</h3>
-          <div class="cardCovText">판교 제1·2·3 테크노밸리 · 분당(정자·서현) · 위례신도시 · 미사강변도시</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> IT비즈니스 타운 및 고급 주거특구 최신 암호화 스마트키 보안 코딩 100% 당일 완료</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">경기 수부도시 메인허브</span></div>
-          <h3 class="netRegion">경기 수원시 지부 (4개 구)</h3>
-          <div class="cardCovText">영통(삼성디지털시티) · 광교신도시 · 수원역 민자역사 · 권선 · 장안 · 팔달</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 디지털연구단지 및 대단지 복합빌딩 특화, 현장 배터리 전압 실측 후 완벽 시동 인도</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">모빌리티·첨단제조 거점</span></div>
-          <h3 class="netRegion">경기 화성시 · 평택시 지부</h3>
-          <div class="cardCovText">동탄1·2신도시 · 남양 현대기아연구소 · 평택 고덕 삼성캠퍼스 · 평택항</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 대한민국 자동차·반도체 핵심 전진기지 전 차종(화물·외제차 포함) 순정키 현장 즉석 복원</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-
-        <article class="networkCard">
-          <div class="netTopRow"><span class="netBadge">해양비즈니스·관광수도</span></div>
-          <h3 class="netRegion">부산광역시 지부 (16개 구·군)</h3>
-          <div class="cardCovText">해운대 센텀/마린시티 · 서면 메디컬상권 · 강서 명지·녹산산단 · 기장 오시리아</div>
-          <div class="cardExpText"><strong>20년 베테랑 엔지니어팀</strong> 첨단 MICE 단지 및 해안선 전역 관제 배차, 수입차 및 국산 전 차종 15분 즉시 해결</div>
-          <div class="netBtnRow">
-            <a class="netMiniBtn call" href="tel:16009712">📞 직통전화</a>
-            <a class="netMiniBtn" target="_blank" rel="noopener" href="https://blog.naver.com/keynkey77">📝 작업블로그</a>
-          </div>
-        </article>
-      </div>
-
-      <!-- 더보기 클릭 시 펼쳐지는 전국 세부 네트워크 그리드 -->
-      <div class="networkMoreWrap" id="networkMoreWrap"></div>
-
-      <!-- 펼치기/접기 버튼 -->
-      <div class="netMoreBtnArea">
-        <button class="btnNetworkToggle" id="btnNetworkToggle" onclick="toggleNetwork()">
-          <span id="networkBtnText">🏛️ 전국 8대 광역 80개 마스터 네트워크 전체보기 (가나다순) ▼</span>
-        </button>
-      </div>
-
-      <!-- 하단 직통 배차 배너 -->
-      <div class="netCallBanner">
-        <div class="netCallText">
-          📍 대한민국 전역 어디서든 <strong>대표전화 1600-9712</strong>로 접수 시, 인공지능 통합 관제망을 통해 현장과 가장 인접한 <strong>적어도 15년 이상 베테랑 엔지니어팀</strong>이 1초 만에 직통 배차됩니다.
-        </div>
-        <a class="btnActionLarge btnMainHighlight" style="padding:14px 28px; font-size:16px;" href="tel:16009712">📞 대표번호 직통 연결</a>
-      </div>
-    </div>
-  </section>  
+    .mapControlCenter {
+      background: var(--map-sea);
+      border: 3px solid var(--border-card);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.75);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 740px 1fr;
+      gap: 36px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .mapViewWrapper {
+      background: #060B14;
+      border: 2px solid #23334D;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.95);
+    }
+    .mapTopStatus {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #2A3C59;
       font-size: 15px;
       color: #94A3B8;
       font-weight: 700;
@@ -1256,24 +908,22 @@
       filter: drop-shadow(0 0 30px var(--neon-yellow-glow)) drop-shadow(0 0 8px #FFFFFF) !important;
     }
 
-   function toggleNetwork() {
-  var wrap = document.getElementById('networkMoreWrap');
-  var btnText = document.getElementById('networkBtnText');
-  if (!wrap || !btnText) return;
-
-  var currentDisplay = window.getComputedStyle(wrap).display;
-
-  if (currentDisplay === 'none') {
-    if (!isNetworkLoaded) {
-      renderAllNetworkCards();
+    .mapCityLabel {
+      font-size: 21px;
+      font-weight: 900;
+      fill: #FFFFFF;
+      pointer-events: none;
+      text-anchor: middle;
+      paint-order: stroke fill;
+      stroke: #0A111E;
+      stroke-width: 7px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      letter-spacing: -0.02em;
     }
-    wrap.style.display = 'grid';
-    btnText.innerText = '전국 마스터 지부 리스트 접기 ▲';
-  } else {
-    wrap.style.display = 'none';
-    btnText.innerText = '🏛️ 전국 8대 광역 80개 마스터 네트워크 전체보기 (가나다순) ▼';
-  }
-}
+    .mapCityLabel.mainLarge { font-size: 24px; fill: var(--neon-yellow); }
+    .mapCityLabel.subIsland { font-size: 16px; fill: var(--clear-cyan); }
+    .mapCityLabel.subNodeText { font-size: 13.5px; fill: var(--clear-cyan); }
     .mapCityLabel.microNodeText { font-size: 12px; fill: #F1F5F9; stroke-width: 4.5px; }
     .mapCityLabel.seoulBoldText {
       font-size: 21px;
