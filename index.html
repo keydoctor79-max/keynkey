@@ -3490,21 +3490,21 @@ var branchPhoneMap = {
     isNetworkLoaded = true;
   }
 
-  function toggleNetwork() {
-    var wrap = document.getElementById('networkMoreWrap');
-    var btnText = document.getElementById('networkBtnText');
+function toggleNetwork() {
+  var wrap = document.getElementById('networkMoreWrap');
+  var btnText = document.getElementById('networkBtnText');
 
-    if (wrap.style.display === 'grid') {
-      wrap.style.display = 'none';
-      btnText.innerText = '🏛️ 전국 8대 광역 70개 마스터 네트워크 전체보기 (가나다순) ▼';
-    } else {
-      if (!isNetworkLoaded) {
-        renderAllNetworkCards();
-      }
-      wrap.style.display = 'grid';
-      btnText.innerText = '전국 마스터 지부 리스트 접기 ▲';
+  if (wrap.style.display === 'grid') {
+    wrap.style.display = 'none';
+    btnText.innerText = '🏛️ 전국 8대 광역 80개 마스터 네트워크 전체보기 (가나다순) ▼';
+  } else {
+    if (!isNetworkLoaded) {
+      renderAllNetworkCards();
     }
+    wrap.style.display = 'grid';
+    btnText.innerText = '전국 마스터 지부 리스트 접기 ▲';
   }
+} 
 
   function toggleFaq() {
     var wrap = document.getElementById('faqMoreWrap');
