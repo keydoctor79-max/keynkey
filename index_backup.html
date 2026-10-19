@@ -1787,7 +1787,7 @@ p, h1, h2, h3, h4, span, div {
       <a class="menuBtn" href="#blogs"><span>📝</span> BLOGS</a>
     </nav>
 
-  <a href="javascript:void(0);" onclick="focusSearchInput()" style="display:inline-flex; align-items:center; justify-content:center; gap:5px; padding:10px 14px; background:#00E5FF; color:#000; font-weight:800; font-size:15px; border-radius:6px; text-decoration:none; white-space:nowrap; box-shadow:0 0 12px rgba(0,229,255,0.7); border:2px solid #fff;">
+<a href="javascript:void(0);" onclick="focusSearchInput()" style="display:inline-flex; align-items:center; justify-content:center; gap:4px; padding:7px 10px; background:#00E5FF; color:#000; font-weight:800; font-size:clamp(12px, 3.2vw, 14px); border-radius:6px; text-decoration:none; white-space:nowrap; flex-shrink:0;">
           🔍 지역 검색하기
         </a> 
   </div>
@@ -1796,8 +1796,12 @@ p, h1, h2, h3, h4, span, div {
 <main id="top">
   <!-- 2. Hero Section -->
   <section class="heroSection">
+ <div class="wrap" style="padding-top:20px; padding-bottom:10px;">
+    <h2 style="font-size:clamp(22px, 3.5vw, 32px); font-weight:900; color:#ffffff; letter-spacing:-0.02em; text-transform:uppercase; margin:0;">HOW IT WORKS</h2>
+</div>   
     <div class="wrap heroGrid">
       <div>
+
         <div class="reserveBadgeBig">
 <span style="display:inline-block; font-size:clamp(11px, 3.2vw, 14px); white-space:nowrap; letter-spacing:-0.02em;">⏱ 100% 예약 우선 출동 원칙 · 시간 약속 엄수</span> 
         </div>
@@ -1817,8 +1821,8 @@ p, h1, h2, h3, h4, span, div {
           <a class="btnActionLarge btnMainHighlight" href="#network">
             🌐 내 지역 전국 광역 지부 확인하기
           </a>
-          <a class="btnActionLarge btnSubMuted" href="tel:16009712">
-            📞 예약 및 출동 상담
+  <a href="javascript:void(0);" onclick="focusSearchInput()" class="btnActionLarge btnSubMuted">       
+          🔍 예약 및 출동 상담 (지역 검색)
           </a>
         </div>
       </div>
@@ -3056,7 +3060,7 @@ p, h1, h2, h3, h4, span, div {
 <!-- 9. 모바일 하단 고정 바 -->
 <div class="mobileBar">
 <!-- 좌측: 카카오톡 상담 바로가기 -->
-<a href="https://pf.kakao.com/_xgpxkKG/chat" target="_blank" rel="noopener" class="bottomBtn kakaoBtn" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#FEE500; color:#191919; font-weight:800; text-decoration:none; padding:14px 0; font-size:16px;">
+<a href="https://pf.kakao.com/_xeDwRu/chat" target="_blank" rel="noopener" class="bottomBtn kakaoBtn" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#FEE500; color:#191919; font-weight:800; text-decoration:none; padding:14px 0; font-size:16px;">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="#000000" style="vertical-align:middle;">
       <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.85 1.867 5.345 4.688 6.703l-1.188 4.359c-.105.387.285.707.625.512l5.125-2.953c.246.016.496.029.75.029 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
     </svg>
