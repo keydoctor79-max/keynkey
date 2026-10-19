@@ -1625,7 +1625,57 @@ html, body {
 p, h1, h2, h3, h4, span, div {
   word-break: keep-all !important;
   overflow-wrap: break-word !important;
-}  
+} 
+/* 최상단 히어로 섹션 전용 정밀 최적화 */
+@media (min-width: 992px) {
+  .heroSection .wrap, 
+  .heroGrid {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 60px !important;
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+  }
+  .heroGrid > div:first-child,
+  .heroContentLeft {
+    flex: 1.1 !important;
+    max-width: 680px !important;
+  }
+  .heroGrid > div:last-child,
+  .heroContentRight {
+    flex: 1 !important;
+    max-width: 580px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .heroSection .wrap,
+  .heroGrid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 30px !important;
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+  .heroGrid > div:first-child,
+  .heroGrid > div:last-child,
+  .heroContentLeft,
+  .heroContentRight {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .heroGrid div[style*="border"],
+  .reserveBadgeBig {
+    max-width: 100% !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+  }
+}    
   </style>
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
