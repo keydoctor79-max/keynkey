@@ -1626,56 +1626,6 @@ p, h1, h2, h3, h4, span, div {
   word-break: keep-all !important;
   overflow-wrap: break-word !important;
 }  
-/* PC 화면 중앙 집중 정렬 (좌우 붕 뜸 방지) */
-.wrap, .navInner, .heroGrid {
-  max-width: 1200px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100% !important;
-}
-.heroGrid {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 32px !important;
-}
-
-/* 모바일 전용: 노란색 타이틀 박스 깨짐 및 우측 잘림 완벽 방지 */
-@media (max-width: 768px) {
-  html, body {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-  }
-  .wrap, .container, section, .heroSection, .networkSection {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-  }
-  h1, h2, h3, h4, p, span, div {
-    word-break: keep-all !important;
-    overflow-wrap: break-word !important;
-  }
-  div[style*="border"], span[style*="border"],
-  div[style*="background"], span[style*="background"],
-  .secHeaderTitle, .reserveBadgeBig, .mainTitle {
-    max-width: 100% !important;
-    white-space: normal !important;
-    height: auto !important;
-    line-height: 1.35 !important;
-  }
-  h2 span, h3 span, .secHeaderTitle {
-    font-size: clamp(15px, 4.3vw, 20px) !important;
-  }
-  #networkMap, svg, .mapWrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
   </style>
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
@@ -2979,7 +2929,7 @@ p, h1, h2, h3, h4, span, div {
 <!-- 9. 모바일 하단 고정 바 -->
 <div class="mobileBar">
 <!-- 좌측: 카카오톡 상담 바로가기 -->
-<a href="https://pf.kakao.com/_xeDwRu" target="_blank" rel="noopener" class="bottomBtn kakaoBtn" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#FEE500; color:#191919; font-weight:800; text-decoration:none; padding:14px 0; font-size:16px;">
+<a href="https://pf.kakao.com/_xgpxkKG/chat" target="_blank" rel="noopener" class="bottomBtn kakaoBtn" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#FEE500; color:#191919; font-weight:800; text-decoration:none; padding:14px 0; font-size:16px;">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="#000000" style="vertical-align:middle;">
       <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.85 1.867 5.345 4.688 6.703l-1.188 4.359c-.105.387.285.707.625.512l5.125-2.953c.246.016.496.029.75.029 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
     </svg>
