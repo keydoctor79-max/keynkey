@@ -1675,6 +1675,76 @@ p, h1, h2, h3, h4, span, div {
     white-space: normal !important;
     line-height: 1.4 !important;
   }
+} 
+/* =========================================================
+   ABOUT US 모바일 1열(상/하) 분리 & 박스 슬림화
+========================================================= */
+
+@media (max-width: 991px) {
+  .aboutGrid {
+    display: flex !important;
+    flex-direction: column !important; /* 모바일에서 위아래로 분리 */
+    gap: 28px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 1번째 칸: 소개 문구 & 지표 영역 전체 폭 차지 */
+  .aboutGrid > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 진심 스토리 전문 읽기 버튼 폭 슬림화 */
+  .aboutTistoryBtnBig {
+    width: auto !important;
+    display: inline-flex !important;
+    max-width: 100% !important;
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 20+ / 100% / 0% 지표 박스 크기 슬림화 */
+  .aboutStats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-top: 14px !important;
+  }
+  .aboutStats .statBox {
+    padding: 8px 4px !important;
+    text-align: center !important;
+  }
+  .aboutStats .statNum {
+    font-size: 18px !important;
+  }
+  .aboutStats .statLabel {
+    font-size: 10px !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* 2번째 칸: 카드뉴스 상자 (독립된 다음 줄 100% 차지) */
+  .aboutNewsSliderBox {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 16px 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutGrid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.15fr !important;
+    gap: 50px !important;
+    align-items: center !important;
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+  }
 }    
   </style>
 </head>
