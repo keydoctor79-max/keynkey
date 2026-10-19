@@ -1626,6 +1626,37 @@ p, h1, h2, h3, h4, span, div {
   word-break: keep-all !important;
   overflow-wrap: break-word !important;
 }  
+/* 모바일 전용: 노란색 타이틀 박스 자동 줄바꿈 및 화면 맞춤 */
+@media (max-width: 768px) {
+  * {
+    max-width: 100% !important;
+  }
+  h2, h3, .secHeaderTitle, div[style*="background"], span[style*="background"] {
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: keep-all !important;
+    font-size: clamp(16px, 4.2vw, 22px) !important;
+    line-height: 1.4 !important;
+    padding: 6px 10px !important;
+  }
+  .statGrid, .statsRow {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+  .statGrid > div, .statsRow > div {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 10px 4px !important;
+  }
+  .statGrid h3, .statsRow h3 {
+    font-size: 20px !important;
+  }
+  .statGrid span, .statsRow span {
+    font-size: 11px !important;
+  }
+}    
   </style>
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
