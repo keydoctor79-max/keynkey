@@ -1753,15 +1753,14 @@ p, h1, h2, h3, h4, span, div {
 <!-- 0. Top Clock Bar -->
 <div class="topClockTicker">
   <div class="wrap clockTickerInner">
-    <div class="clockMotto">
-      <span class="clockMottoDot"></span>
-<span style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,230,0,0.12); color:var(--neon-yellow); border:1px solid rgba(255,230,0,0.4); padding:4px 12px; border-radius:20px; font-size:13px; font-weight:700; letter-spacing:-0.3px;">
-        <span>⏱️ 시간 약속 엄수</span>
-        <span style="opacity:0.4;">|</span>
-        <span style="color:#00ff66;">🟢 실시간 관제 중</span>
-      </span>    
-      <span class="tagFraudShield">🚨 부정클릭 IP 실시간 감시 중</span>
-    </div>
+<div class="clockMotto" style="margin: 0 auto; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; padding: 4px 10px;">
+          <span class="tagFraudShield" style="margin: 0; white-space: nowrap; font-size: 13px; padding: 5px 12px; box-shadow: 0 0 10px rgba(255, 42, 122, 0.25);">🚨 부정클릭 IP 실시간 감지 중</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,230,0,0.12); color: var(--neon-yellow); border: 1px solid rgba(255,230,0,0.4); padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; box-shadow: 0 0 10px rgba(255, 230, 0, 0.15);">
+            <span>⏱ 시간 약속 엄수</span>
+            <span style="opacity: 0.4;">|</span>
+            <span style="color: #00ff66; text-shadow: 0 0 6px rgba(0,255,102,0.6);">● 실시간 관제 중</span>
+          </span>
+        </div>
     <div class="clockTimesWrap">
       <div class="clockItem">
         <span class="tag">KOREA (SEOUL)</span>
@@ -3791,6 +3790,12 @@ function toggleNetwork() {
   };
  
 </script>
+<!-- Smartlog -->
+<script type="text/javascript">
+    var hpt_info={'_account':'UHPT-27522', '_server': 'a27'};
+</script>
+<script language="javascript" src="//cdn.smlog.co.kr/core/smart.js" charset="utf-8"></script>
+<noscript><img src="//a27.smlog.co.kr/smart_bda.php?_account=27522" style="display:none;width:0;height:0;" border="0"/></noscript>  
 
 </body>
 </html>
