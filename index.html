@@ -1823,15 +1823,49 @@ p, h1, h2, h3, h4, span, div {
           키앤키닷컴은 철저한 사전 상담과 <strong>‘예약 우선제’</strong>로 운영됩니다. 20년 현장 엔지니어가 차주님과의 약속 시간을 엄수하여 출동, 견인 없이 당일 차키 복원부터 순정 코딩까지 완벽하게 해결합니다.
         </p>
 
-        <!-- 히어로 버튼 그룹 -->
-        <div class="ctaGroup">
-          <a class="btnActionLarge btnMainHighlight" href="#network">
-            🌐 내 지역 전국 광역 지부 확인하기
-          </a>
-  <a href="javascript:void(0);" onclick="focusSearchInput()" class="btnActionLarge btnSubMuted">       
-          🔍 예약 및 출동 상담 (지역 검색)
-          </a>
+   <!-- ==================== [대문] 전화 직통 & 문자 접수 메인 배너 ==================== -->
+    <div style="width:100%; max-width:100%; margin:15px 0 0 0; box-sizing:border-box; font-family:sans-serif;">
+
+      <!-- 1. 키앤키닷컴 직통 전화 걸기 (화면 꽉 차는 노란색 빅 배너) -->
+      <a href="tel:16009712" style="display:block; width:100%; background:#FFE600; color:#000; text-decoration:none; text-align:center; padding:20px 15px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15); box-sizing:border-box;">
+        <div style="font-size:clamp(14px, 4vw, 18px); font-weight:800; color:#111; letter-spacing:-0.5px; margin-bottom:4px;">
+          당일 차 키 제작 · 약속 시간 엄수 현장 출동
         </div>
+        <div style="font-size:clamp(26px, 7.5vw, 40px); font-weight:900; letter-spacing:-1px; line-height:1.1; margin-bottom:4px;">
+          키앤키닷컴 직통
+        </div>
+        <div style="font-size:clamp(30px, 9vw, 46px); font-weight:950; color:#000; letter-spacing:-1px; line-height:1.1;">
+          📞 1600 - 9712
+        </div>
+        <div style="margin-top:8px; display:inline-block; background:#000; color:#FFE600; font-size:13px; font-weight:700; padding:4px 14px; border-radius:20px;">
+          터치 시 즉시 전화 연결
+        </div>
+      </a>
+
+      <!-- 2. 문자 상담 접수 배너 (좌우 분할 / 터치 시 01082424649 문자창 열림) -->
+      <a href="sms:01082424649?body=계신 지역: %0A차량 번호 및 차종: %0A궁금하신 내용: " style="display:flex; align-items:center; width:100%; margin-top:12px; background:#e0f9ff; border:2px solid #00bcd4; border-radius:12px; text-decoration:none; overflow:hidden; box-sizing:border-box; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        
+        <!-- 왼쪽 파란 편지봉투 아이콘 영역 -->
+        <div style="flex:0 0 35%; background:#0040d0; padding:20px 10px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" style="width:46px; height:46px; fill:#fff;">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+
+        <!-- 오른쪽 안내 문구 영역 -->
+        <div style="flex:1; padding:12px 14px; text-align:left;">
+          <div style="font-size:clamp(13px, 3.8vw, 16px); font-weight:900; color:#006b82; line-height:1.4; letter-spacing:-0.5px;">
+            계신 지역과 차량 번호<br>
+            &amp; 궁금하신 내용을<br>
+            <span style="color:#0040d0; text-decoration:underline;">문자로 남겨주세요 ✉️</span>
+          </div>
+          <div style="font-size:11px; color:#555; margin-top:5px; font-weight:700;">
+            터치 시 문자 상담창 자동 실행 ❯
+          </div>
+        </div>
+      </a>
+
+    </div>  
       </div>
 
       <!-- 우측 4단계 슬라이더 -->
@@ -3800,6 +3834,23 @@ function toggleNetwork() {
 </script>
 <script language="javascript" src="//cdn.smlog.co.kr/core/smart.js" charset="utf-8"></script>
 <noscript><img src="//a27.smlog.co.kr/smart_bda.php?_account=27522" style="display:none;width:0;height:0;" border="0"/></noscript>  
+  
+<!-- ==================== [우측 고정] 플로팅 퀵메뉴 (전화/문자/블로그/카톡) ==================== -->
+<div style="position:fixed; right:15px; bottom:80px; z-index:99999; display:flex; flex-direction:column; gap:10px; align-items:center;">
+  <!-- 1. 직통 전화 걸기 (1600-9712) -->
+  <a href="tel:16009712" title="전화 상담" style="width:48px; height:48px; border-radius:50%; background:#6c5ce7; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:22px;">📞</a>
 
+  <!-- 2. 문자 상담 보내기 (010-8242-4649) -->
+  <a href="sms:01082424649?body=계신 지역: %0A차량 번호: %0A문의 내용: " title="문자 문의" style="width:48px; height:48px; border-radius:50%; background:#4834d4; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:22px;">✉️</a>
+
+  <!-- 3. 공식 네이버 블로그 바로가기 -->
+  <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" title="공식 블로그" style="width:48px; height:48px; border-radius:50%; background:#03c75a; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:13px; font-weight:900;">blog</a>
+
+  <!-- 4. 카카오톡 채널 1:1 채팅 바로가기 -->
+  <a href="http://pf.kakao.com/_xeDwRu/chat" target="_blank" rel="noopener" title="카카오톡 상담" style="width:48px; height:48px; border-radius:50%; background:#FEE500; color:#3c1e1e; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:13px; font-weight:900;">TALK</a>
+
+  <!-- 맨 위로 가기(TOP) 버튼 -->
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'});" title="맨 위로" style="width:40px; height:40px; border-radius:50%; background:#2d3436; color:#fff; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 8px rgba(0,0,0,0.3); font-size:16px;">↑</button>
+</div>
 </body>
 </html>
