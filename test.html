@@ -44,8 +44,8 @@
       --bg-surface: #FFFFFF;     /* 44번줄: 구역(섹션) 바탕을 깨끗한 순백색으로 변경 */
       --bg-card: #FFFFFF;        /* 45번줄: 사진 카드 및 안내 박스 바탕을 순백색으로 변경 */
       --border-card: #E2E8F0;    /* 46번줄: 카드 테두리를 부드럽고 밝은 회색 선으로 변경 */
-      --neon-yellow: #FEE838;
-      --neon-yellow-glow: rgba(254, 232, 56, 0.95);
+    --neon-yellow: #03C75A;    /* 47번줄: 흰 바탕에서 안 보이는 노란색을 네이버 초록색으로 변경 */
+      --neon-yellow-glow: rgba(3, 199, 90, 0.25); /* 48번줄: 초록색 은은한 효과 */
       --neon-pink: #FF007A;
       --neon-pink-glow: rgba(255, 0, 122, 0.75);
       --neon-red: #FF1E44;
@@ -61,32 +61,49 @@
       --map-land: #FFFFFF;       /* 61번줄: 지도 육지색을 깔끔한 흰색으로 변경 */
       --map-stroke: #CBD5E1;     /* 62번줄: 지도 경계선을 밝은 회색으로 변경 */
     }
-/* === 네이버 밝은 톤 완벽 보정 코드 (숨어있는 흰 글씨 & 검은 박스 해결) === */
+/* === 네이버 밝은 톤 완벽 보정 코드 (빈칸 강조글씨 & 숨은 제목 & 노란글씨 복원) === */
     
-    /* 1. 모든 제목, 본문, STORY 옆 안 보이는 흰색 고정 글씨를 진한 먹색으로 강제 변경 */
-    h1, h2, h3, h4, p, li, dt, dd,
-    .secHeaderSubKoBig, .storyBox, .storyText,
-    section div, section span {
-      color: #1E1E23;
-    }
-
-    /* 2. 오른쪽 어두운 카드뉴스 박스 및 하단 검은 검색창 배경을 밝은 흰색으로 변경 */
-    section div[class*="Card"], section div[class*="Box"], 
-    section div[class*="Wrap"], section div[class*="Search"],
-    input {
-      background-color: #FFFFFF !important;
-      border-color: #CBD5E1 !important;
+    /* 1. 모든 제목과 일반 글씨를 흰색 고정 무시하고(!important) 진한 먹색으로 강제 표시 */
+    section h1, section h2, section h3, section h4, section h5,
+    section p, section li, section dt, section dd,
+    section div:not([class*="Badge"]):not([class*="Tag"]), 
+    section span:not([class*="Badge"]):not([class*="Tag"]) {
       color: #1E1E23 !important;
     }
 
-    /* 3. 강조 배지(노란 박스, 핑크 STORY 버튼, 초록 태그)는 원래의 선명한 글씨색 유지 */
-    .storyBadge, [class*="Badge"], [class*="Btn"], button, a[class*="Btn"] {
-      color: inherit;
-    }
-    
-    /* 4. 20+, 100%, 0% 노란 숫자가 흰 바탕에서 눈부시지 않고 선명하게 보이도록 네이버 그린으로 변경 */
-    [class*="Stat"] strong, [class*="Num"], [class*="Count"] {
+    /* 2. 문장 중간에 뻥 뚫려 안 보이던 강조 단어(strong, b)를 네이버 초록색으로 선명하게 복원 */
+    section p strong, section li strong, section div strong,
+    section p b, section li b, section span strong {
       color: #03C75A !important;
+      font-weight: 800 !important;
+    }
+
+    /* 3. 배지, STEP 번호, 체크 아이콘 등 고정된 노란색 글씨들을 전부 선명한 네이버 그린으로 강제 변경 */
+    [class*="Step"] span:first-child, [class*="step"] span:first-child,
+    .stepBadge, [class*="Badge"], [class*="Tag"],
+    [class*="Stat"] strong, [class*="Num"], [class*="Count"],
+    li::before, .checkIcon {
+      color: #03C75A !important;
+      border-color: #03C75A !important;
+    }
+
+    /* 4. 본문 구역 안의 어두운 박스/카드/검색창 배경을 전부 깨끗한 흰색으로 통일 */
+    section div[class*="Card"], section div[class*="Box"], 
+    section div[class*="Wrap"], section div[class*="Search"],
+    section div[class*="Panel"], section div[class*="Slide"],
+    section div[class*="Item"], section div[class*="Step"],
+    input {
+      background-color: #FFFFFF !important;
+      border-color: #CBD5E1 !important;
+    }
+
+    /* 5. 맨 아래 하단(footer) 영역도 밝은 회색 바탕 + 진한 글씨로 변경 */
+    footer, [class*="footer"], [class*="Footer"] {
+      background-color: #EBEEF2 !important;
+      border-top: 1px solid #CBD5E1 !important;
+    }
+    footer *, [class*="footer"] *, [class*="Footer"] * {
+      color: #333333 !important;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
