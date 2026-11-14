@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   
-  <style>
+<style>
     @font-face {
       font-family: 'GmarketSans';
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
@@ -40,26 +40,34 @@
     }
 
     :root {
-      --bg-main: #0B0F19;
-      --bg-surface: #151D2E;
-      --bg-card: #1E293B;
-      --border-card: #334155;
-      --neon-yellow: #FEE838;
-      --neon-yellow-glow: rgba(254, 232, 56, 0.95);
-      --neon-pink: #FF007A;
-      --neon-pink-glow: rgba(255, 0, 122, 0.75);
-      --neon-red: #FF1E44;
-      --neon-red-glow: rgba(255, 30, 68, 0.85);
-      --clear-cyan: #67E8F9;
-      --clear-cyan-glow: rgba(103, 232, 249, 0.95);
-      --text-main: #FFFFFF;
-      --text-clean: #E2E8F0;
-      --text-bright: #F1F5F9;
-      --text-muted: #94A3B8;
+      /* 밝고 화사한 배경 & 아이폰/시니어 맞춤형 리얼 블랙 초고대비 세팅 */
+      --bg-main: #F4F6F8;           /* 네이버 스타일의 눈이 편안한 밝은 쿨그레이 바탕 */
+      --bg-surface: #FFFFFF;        /* 섹션 구분용 순백색 바탕 */
+      --bg-card: #FFFFFF;           /* 카드 및 박스 순백색 바탕 */
+      --border-card: #CBD5E1;       /* 또렷하고 세련된 카드 테두리 */
+      
+      /* 밝은 배경에서 선명하게 눈에 띄는 포인트 컬러 */
+      --neon-yellow: #03C75A;       /* 기존 눈부신 노란 글씨들을 선명한 네이버 그린으로 전환 */
+      --neon-yellow-glow: rgba(3, 199, 90, 0.25);
+      --brand-gold: #FFEB3B;        /* 전화 버튼 등 핵심 배너용 골드 옐로우 */
+      --neon-pink: #E11D48;         /* 세련된 딥 로즈 핑크 */
+      --neon-pink-glow: rgba(225, 29, 72, 0.2);
+      --neon-red: #DC2626;
+      --neon-red-glow: rgba(220, 38, 38, 0.3);
+      --clear-cyan: #0284C7;        /* 흰 바탕에서 또렷하게 읽히는 딥 오션 블루 */
+      --clear-cyan-glow: rgba(2, 132, 199, 0.2);
+      
+      /* 글씨 색상: 새까만 리얼 블랙 & 고대비 다크 차콜 */
+      --text-main: #09090B;         /* 최상위 제목용 리얼 블랙 */
+      --text-clean: #18181B;        /* 본문용 아주 진한 먹색 (가독성 극대화) */
+      --text-bright: #000000;       /* 강조 텍스트 순수 검정 */
+      --text-muted: #475569;        /* 보조 설명용 또렷한 다크 그레이 */
       --black: #000000;
-      --map-sea: #080D18;
-      --map-land: #1E2B40;
-      --map-stroke: #526E96;
+      
+      /* 지도 전용 컬러 (지도의 입체감과 가독성을 위해 관제 스크린 톤 유지) */
+      --map-sea: #0B1528;
+      --map-land: #1E293B;
+      --map-stroke: #64748B;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -74,9 +82,12 @@
       color: var(--text-main);
       -webkit-user-select: none;
       user-select: none;
-      line-height: 1.6;
+      line-height: 1.65;
       word-break: keep-all;
-      -webkit-font-smoothing: antialiased;
+      /* 아이폰(iOS)에서 글씨가 가늘어지지 않고 또렷하고 진하게 맺히도록 최적화 */
+      -webkit-font-smoothing: subpixel-antialiased;
+      text-rendering: optimizeLegibility;
+      font-weight: 500;
     }
 
     h1, h2, h3, h4, .brandLogo, .menuBtn, .secHeaderSubKoBig, .reserveBadgeBig, .btnActionLarge {
@@ -87,13 +98,35 @@
     img, video { max-width: 100%; height: auto; display: block; }
     .wrap { max-width: 1380px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
+    /* 섹션 공통 제목 (화사한 배경 위 새까만 글씨) */
+    .secHeader { margin-bottom: 36px; text-align: center; }
+    .secHeaderTitle {
+      font-size: 38px;
+      font-weight: 800;
+      color: #09090B !important;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .secHeaderBadgePulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #E6F9EE;
+      color: #029A46;
+      border: 1.5px solid #03C75A;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
     /* ================= 0. Top Clock Bar ================= */
     .topClockTicker {
-      background: #060911;
+      background: #111827;
       border-bottom: 1.5px solid #1E293B;
       padding: 10px 0;
       font-size: 14px;
-      color: var(--text-muted);
+      color: #E2E8F0;
       letter-spacing: -0.01em;
     }
     .clockTickerInner {
@@ -107,52 +140,24 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--text-clean);
+      color: #FFFFFF;
       font-weight: 600;
     }
-    .clockMottoDot {
-      width: 9px;
-      height: 9px;
-      background: var(--neon-yellow);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--neon-yellow);
-      animation: alertPulse 1.8s infinite;
-    }
-    .clockMotto b {
-      color: var(--neon-yellow);
-      font-weight: 700;
-    }
-    
     .tagFraudShield {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #000;
-      color: #FF2E93;
+      background: #FFF1F2;
+      color: #E11D48;
       font-family: 'GmarketSans', sans-serif;
       font-size: 13.5px;
       font-weight: 900;
       padding: 5px 15px;
       margin-left: 10px;
       border-radius: 5px;
-      border: 2px solid var(--neon-pink);
-      box-shadow: 0 0 14px var(--neon-pink-glow);
+      border: 2px solid #E11D48;
       letter-spacing: -0.01em;
-      animation: fraudAlertPulse 1.6s infinite ease-in-out;
     }
-    @keyframes fraudAlertPulse {
-      0%, 100% {
-        box-shadow: 0 0 12px rgba(255, 0, 122, 0.4);
-        border-color: #FF007A;
-        color: #FF2E93;
-      }
-      50% {
-        box-shadow: 0 0 28px rgba(255, 30, 68, 0.95), inset 0 0 8px rgba(255, 0, 122, 0.4);
-        border-color: #FFFFFF;
-        color: #FFFFFF;
-      }
-    }
-
     .clockTimesWrap {
       display: flex;
       align-items: center;
@@ -161,85 +166,78 @@
       font-weight: 700;
       font-size: 13px;
     }
-    .clockItem {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .clockItem { display: inline-flex; align-items: center; gap: 6px; }
     .clockItem .tag {
-      background: #111827;
-      color: var(--clear-cyan);
+      background: #1F2937;
+      color: #38BDF8;
       font-size: 11px;
       padding: 2px 7px;
       border-radius: 3px;
-      border: 1px solid #1F2937;
+      border: 1px solid #374151;
       letter-spacing: 0.05em;
     }
-    .clockItem .val {
-      color: #FFFFFF;
-      letter-spacing: 0.04em;
-    }
+    .clockItem .val { color: #FFFFFF; letter-spacing: 0.04em; }
 
     /* ================= 1. Header Navigation ================= */
     .topNav {
-      background: rgba(11, 15, 25, 0.96);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
-      border-bottom: 2px solid var(--border-card);
+      border-bottom: 2px solid #E2E8F0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 100;
       width: 100%;
     }
     .navInner {
-      height: 86px;
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
     }
-
     .brandLogo {
-      background: #000;
-      color: #fff;
+      background: #09090B;
+      color: #FFFFFF;
       padding: 0 18px;
-      height: 56px;
+      height: 54px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       white-space: nowrap;
-      border: 2px solid var(--neon-yellow);
-      box-shadow: 0 0 12px rgba(254, 232, 56, 0.25);
+      border: 2px solid #09090B;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
       flex-shrink: 0;
       cursor: pointer;
       transition: all 0.2s ease;
     }
-    .brandLogo:hover {
-      box-shadow: 0 0 20px rgba(254, 232, 56, 0.6);
-      transform: translateY(-2px);
-    }
+    .brandLogo:hover { transform: translateY(-2px); }
     .brandLogo .logoKo {
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1;
       transform: translateY(1.5px);
+      color: #FFFFFF;
     }
     .brandLogo .logoEn {
       font-family: 'Oswald', sans-serif;
       font-size: 22px;
       font-weight: 700;
-      color: var(--neon-yellow);
+      color: #FFEB3B;
       letter-spacing: 0.03em;
     }
 
-    .centerMenu { display: flex; gap: 10px; }
+    .centerMenu { display: flex; gap: 8px; }
     .menuBtn {
-      border: 1.5px solid var(--border-card);
-      padding: 10px 20px;
+      border: 1.5px solid #CBD5E1;
+      padding: 10px 18px;
       font-size: 15px;
       font-weight: 700;
-      background: var(--bg-surface);
-      color: var(--text-main);
+      background: #F8FAFC;
+      color: #09090B;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -247,45 +245,17 @@
       white-space: nowrap;
     }
     .menuBtn:hover {
-      background: var(--neon-yellow);
-      color: #000;
-      border-color: var(--neon-yellow);
-      box-shadow: 0 0 14px rgba(254, 232, 56, 0.4);
+      background: #03C75A;
+      color: #FFFFFF;
+      border-color: #03C75A;
       transform: translateY(-2px);
-    }
-
-    .navCallLarge {
-      background: var(--neon-yellow);
-      color: #000;
-      padding: 0 22px;
-      height: 56px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 2.5px solid #000;
-      white-space: nowrap;
-      box-shadow: 0 0 18px rgba(254, 232, 56, 0.45);
-      flex-shrink: 0;
-      transition: all 0.2s;
-    }
-    .navCallLarge:hover {
-      background: #fff;
-      transform: scale(1.03);
-    }
-    .navCallLarge .badgeText { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
-    .navCallLarge b {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      transform: translateY(1px);
     }
 
     /* ================= 2. Hero Section ================= */
     .heroSection {
-      background: linear-gradient(180deg, #0F172A 0%, #151F33 100%);
-      border-bottom: 2px solid var(--border-card);
-      padding: 85px 0 95px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+      border-bottom: 2px solid #E2E8F0;
+      padding: 40px 0 80px;
       width: 100%;
     }
     .heroGrid { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 40px; }
@@ -294,112 +264,75 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: #000;
-      color: var(--neon-yellow);
-      font-size: 21px;
+      background: #E6F9EE;
+      color: #028A3E;
+      font-size: 19px;
       font-weight: 900;
-      padding: 15px 28px;
-      margin-bottom: 26px;
-      border: 3px solid var(--neon-yellow);
-      border-radius: 6px;
-      box-shadow: 0 0 20px rgba(254, 232, 56, 0.45);
-      animation: alertPulse 1.8s infinite ease-in-out;
-    }
-    @keyframes alertPulse {
-      0%, 100% {
-        box-shadow: 0 0 15px rgba(254, 232, 56, 0.35);
-        border-color: var(--neon-yellow);
-      }
-      50% {
-        box-shadow: 0 0 32px rgba(254, 232, 56, 0.85);
-        border-color: #ffffff;
-      }
+      padding: 12px 24px;
+      margin-bottom: 24px;
+      border: 2px solid #03C75A;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(3, 199, 90, 0.15);
     }
 
     .mainTitle {
-      font-size: 52px;
-      line-height: 1.25;
-      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.28;
+      font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 24px;
-      color: #fff;
+      margin-bottom: 22px;
+      color: #09090B !important;
     }
-    .mainTitle span { color: var(--neon-yellow); }
+    .mainTitle span { color: #03C75A !important; }
     .mainDesc {
       font-size: 19px;
-      font-weight: 400;
+      font-weight: 500;
       max-width: 640px;
-      margin-bottom: 38px;
-      line-height: 1.8;
-      color: var(--text-clean);
+      margin-bottom: 34px;
+      line-height: 1.75;
+      color: #18181B !important;
       letter-spacing: -0.01em;
     }
-    .ctaGroup { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-    
+    .mainDesc strong { color: #000000; font-weight: 800; background: #FEF08A; padding: 0 4px; }
+
     .btnActionLarge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      border-radius: 6px;
+      border-radius: 8px;
       transition: all 0.2s ease;
       letter-spacing: -0.02em;
       font-weight: 900;
     }
     .btnMainHighlight {
-      background: var(--neon-yellow);
-      color: #000;
-      border: 3px solid var(--neon-yellow);
-      box-shadow: 0 0 25px rgba(254, 232, 56, 0.6);
-      font-size: 21px;
-      padding: 22px 38px;
-      animation: ctaPulse 2s infinite ease-in-out;
+      background: #03C75A;
+      color: #FFFFFF !important;
+      border: 2px solid #029A46;
+      box-shadow: 0 6px 20px rgba(3, 199, 90, 0.35);
+      font-size: 20px;
+      padding: 18px 34px;
     }
     .btnMainHighlight:hover {
-      background: #fff;
-      border-color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 0 32px rgba(255, 255, 255, 0.85);
-    }
-    @keyframes ctaPulse {
-      0%, 100% {
-        box-shadow: 0 0 16px rgba(254, 232, 56, 0.4);
-        transform: scale(1);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(254, 232, 56, 0.85);
-        transform: scale(1.02);
-      }
-    }
-    .btnSubMuted {
-      background: #111827;
-      color: var(--text-muted);
-      border: 2px solid #283548;
-      font-size: 17px;
-      padding: 18px 26px;
-    }
-    .btnSubMuted:hover {
-      background: #1a2333;
-      border-color: #475569;
-      color: #fff;
+      background: #029A46;
       transform: translateY(-2px);
     }
 
-    /* 우측 4단계 슬라이더 */
+    /* 우측 4단계 슬라이더 (화이트 카드 스타일) */
     .heroStepSliderWrap {
       width: 100%;
-      background: #080E1B;
-      border: 3px solid var(--border-card);
-      border-radius: 10px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+      background: #FFFFFF;
+      border: 2.5px solid #09090B;
+      border-radius: 12px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
     .sliderHeaderBar {
-      background: #0D1629;
-      border-bottom: 2px solid #23334D;
+      background: #09090B;
+      border-bottom: 2px solid #09090B;
       padding: 14px 22px;
       display: flex;
       justify-content: space-between;
@@ -407,10 +340,10 @@
     }
     .sliderHeaderTitle {
       font-family: 'Oswald', sans-serif;
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 700;
-      color: var(--neon-yellow);
-      letter-spacing: 0.05em;
+      color: #FFEB3B;
+      letter-spacing: 0.03em;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -418,186 +351,145 @@
     .sliderAutoDot {
       width: 9px;
       height: 9px;
-      background: #10B981;
+      background: #03C75A;
       border-radius: 50%;
-      box-shadow: 0 0 10px #10B981;
-      animation: pulseLive 1.5s infinite;
+      box-shadow: 0 0 10px #03C75A;
     }
-    @keyframes pulseLive {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.6; }
-    }
-
-    .sliderTrack {
-      position: relative;
-      width: 100%;
-      min-height: 380px;
-      overflow: hidden;
-    }
+    .sliderTrack { position: relative; width: 100%; min-height: 360px; overflow: hidden; background: #FFFFFF; }
     .slideItem {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      padding: 34px 28px;
+      padding: 32px 28px;
       opacity: 0;
       transform: translateX(50px);
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.5s ease;
       display: flex;
       flex-direction: column;
       justify-content: center;
       pointer-events: none;
     }
-    .slideItem.active {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
-    }
-    .slideBadgeRow {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
+    .slideItem.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+    .slideBadgeRow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
     .slideBadgeNum {
-      background: #000;
-      color: var(--neon-yellow);
+      background: #09090B;
+      color: #FFEB3B;
       font-family: 'Oswald', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       padding: 4px 14px;
-      border: 2px solid var(--neon-yellow);
       border-radius: 4px;
-      box-shadow: 0 0 14px rgba(254, 232, 56, 0.35);
     }
     .slideTag {
-      background: rgba(103, 232, 249, 0.15);
-      color: var(--clear-cyan);
+      background: #E6F9EE;
+      color: #028A3E;
       font-size: 13.5px;
       font-weight: 800;
       padding: 4px 12px;
       border-radius: 4px;
-      border: 1px solid var(--clear-cyan);
+      border: 1px solid #03C75A;
     }
     .slideHeading {
-      font-size: 25px;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 18px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #09090B !important;
+      margin-bottom: 16px;
       line-height: 1.4;
       letter-spacing: -0.02em;
     }
     .slideBodyText {
       font-size: 17px;
-      color: var(--text-clean);
-      line-height: 1.8;
-      border-top: 1px dashed var(--border-card);
-      padding-top: 18px;
-      letter-spacing: -0.015em;
+      color: #18181B !important;
+      line-height: 1.75;
+      border-top: 1.5px dashed #CBD5E1;
+      padding-top: 16px;
+      font-weight: 500;
     }
     .slideBodyText strong {
-      color: #FFFFFF;
-      font-weight: 700;
+      color: #028A3E !important;
+      font-weight: 800;
     }
     .sliderIndicatorRow {
-      background: #09101E;
-      border-top: 1.5px solid #23334D;
+      background: #F8FAFC;
+      border-top: 1.5px solid #E2E8F0;
       padding: 12px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .sliderDots { display: flex; gap: 8px; }
-    .sDot {
-      width: 14px;
-      height: 6px;
-      background: #334155;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .sDot.active {
-      width: 32px;
-      background: var(--neon-yellow);
-      box-shadow: 0 0 10px rgba(254, 232, 56, 0.7);
-    }
-    .sliderLiveNotice { font-size: 12.5px; font-weight: 700; color: var(--text-muted); }
+    .sDot { width: 14px; height: 6px; background: #CBD5E1; border-radius: 3px; cursor: pointer; transition: all 0.3s; }
+    .sDot.active { width: 32px; background: #03C75A; }
+    .sliderLiveNotice { font-size: 13px; font-weight: 700; color: #475569; }
 
     /* ================= 3. About Us Section & 카드뉴스 ================= */
-    .aboutSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .aboutSection { background-color: #FFFFFF; padding: 90px 0 100px; width: 100%; border-bottom: 2px solid #E2E8F0; }
     .aboutGrid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
     
-    .aboutHeading { font-size: 36px; font-weight: 700; line-height: 1.4; margin-bottom: 24px; color: #fff; }
+    .aboutHeading { font-size: 34px; font-weight: 800; line-height: 1.4; margin-bottom: 22px; color: #09090B !important; }
     .highlightTag3D {
-      background: var(--neon-yellow);
-      color: #000;
+      background: #FFEB3B;
+      color: #000000 !important;
       padding: 5px 16px;
       margin-right: 8px;
       display: inline-block;
       font-weight: 900;
-      border: 2.5px solid #000;
-      box-shadow: 3px 3px 0px rgba(254, 232, 56, 0.6);
-      border-radius: 4px;
+      border: 2.5px solid #09090B;
+      box-shadow: 3px 3px 0px #09090B;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.2s ease;
     }
-    .highlightTag3D:hover {
-      background: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-    .aboutText { font-size: 18px; font-weight: 400; line-height: 1.8; color: var(--text-clean); margin-bottom: 28px; }
+    .aboutText { font-size: 18px; font-weight: 500; line-height: 1.8; color: #18181B !important; margin-bottom: 28px; }
     
     .aboutTistoryBtnBig {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      background: var(--bg-surface);
-      color: #fff;
-      font-size: 19px;
+      gap: 14px;
+      background: #F8FAFC;
+      color: #09090B !important;
+      font-size: 18px;
       font-weight: 800;
-      padding: 20px 28px;
-      border: 2px solid var(--border-card);
-      border-radius: 6px;
+      padding: 18px 24px;
+      border: 2px solid #09090B;
+      border-radius: 8px;
       margin-bottom: 30px;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
     .aboutTistoryBtnBig:hover {
-      border-color: var(--neon-pink);
-      color: #fff;
+      background: #FFF1F2;
+      border-color: #E11D48;
       transform: translateY(-2px);
-      box-shadow: 0 0 20px var(--neon-pink-glow);
     }
     .aboutTistoryBtnBig .tistoryIconPink {
-      background: var(--neon-pink);
-      color: #fff;
+      background: #E11D48;
+      color: #FFFFFF !important;
       border-radius: 6px;
-      font-size: 16px;
-      padding: 6px 14px;
+      font-size: 15px;
+      padding: 5px 12px;
       font-weight: 900;
-      letter-spacing: 0.05em;
-      box-shadow: 0 0 10px var(--neon-pink-glow);
     }
 
-    .aboutStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .statBox { border: 2px solid var(--border-card); padding: 18px 14px; background: var(--bg-surface); text-align: center; border-radius: 4px; }
-    .statNum { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900; display: block; line-height: 1; margin-bottom: 6px; color: var(--neon-yellow); }
-    .statLabel { font-size: 13.5px; font-weight: 700; color: var(--text-muted); }
+    .aboutStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .statBox { border: 2px solid #CBD5E1; padding: 18px 14px; background: #F8FAFC; text-align: center; border-radius: 8px; }
+    .statNum { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 900; display: block; line-height: 1; margin-bottom: 6px; color: #03C75A !important; }
+    .statLabel { font-size: 13.5px; font-weight: 800; color: #334155; }
 
+    /* 우측 카드뉴스 박스 (밝고 또렷한 화이트 & 다크 헤더 조합) */
     .aboutNewsSliderBox {
       width: 100%;
-      background: #09101E;
-      border: 3px solid var(--border-card);
-      border-radius: 10px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+      background: #FFFFFF;
+      border: 2.5px solid #09090B;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
     .newsSliderTopBar {
-      background: #0F1A2E;
-      border-bottom: 2px solid #23334D;
+      background: #09090B;
+      border-bottom: 2px solid #09090B;
       padding: 14px 22px;
       display: flex;
       justify-content: space-between;
@@ -608,62 +500,43 @@
       align-items: center;
       gap: 8px;
       font-family: 'Oswald', sans-serif;
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 700;
-      color: var(--clear-cyan);
+      color: #38BDF8;
       letter-spacing: 0.05em;
     }
-    .newsTopDot {
-      width: 8px;
-      height: 8px;
-      background: var(--clear-cyan);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--clear-cyan);
-      animation: alertPulse 1.8s infinite;
-    }
-    .newsTrackArea {
-      position: relative;
-      width: 100%;
-      min-height: 440px;
-      overflow: hidden;
-    }
+    .newsTopDot { width: 8px; height: 8px; background: #03C75A; border-radius: 50%; }
+    .newsTrackArea { position: relative; width: 100%; min-height: 430px; overflow: hidden; background: #FFFFFF; }
     .newsSlideItem {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      padding: 32px 28px;
+      padding: 30px 26px;
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(20px);
+      transition: all 0.5s ease;
       display: flex;
       flex-direction: column;
       justify-content: center;
       pointer-events: none;
     }
-    .newsSlideItem.active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
+    .newsSlideItem.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .newsCopyBadge {
       display: inline-block;
       align-self: flex-start;
-      background: #000;
-      color: var(--neon-yellow);
+      background: #09090B;
+      color: #FFEB3B;
       font-family: 'Oswald', sans-serif;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       padding: 4px 12px;
-      border: 1.5px solid var(--neon-yellow);
       border-radius: 4px;
       margin-bottom: 14px;
-      letter-spacing: 0.05em;
-      box-shadow: 0 0 10px rgba(254, 232, 56, 0.25);
     }
     .newsHeadline {
-      font-size: 22.5px;
+      font-size: 22px;
       font-weight: 800;
       line-height: 1.45;
-      color: #FFFFFF;
+      color: #09090B !important;
       margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
@@ -672,73 +545,54 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      border-top: 1px dashed var(--border-card);
+      border-top: 1.5px dashed #CBD5E1;
       padding-top: 16px;
       margin-bottom: 18px;
     }
     .newsContentList li {
-      font-size: 15.5px;
-      color: var(--text-clean);
+      font-size: 16px;
+      color: #18181B !important;
+      font-weight: 500;
       line-height: 1.7;
       position: relative;
       padding-left: 18px;
-      letter-spacing: -0.01em;
     }
+    .newsContentList li strong { color: #028A3E !important; font-weight: 800; }
     .newsContentList li::before {
       content: '▪';
       position: absolute;
       left: 0;
       top: -1px;
-      color: var(--clear-cyan);
+      color: #03C75A;
       font-size: 18px;
     }
-    .newsTagRow {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: auto;
-    }
+    .newsTagRow { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
     .newsTag {
-      background: #152238;
-      color: var(--clear-cyan);
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 4px 10px;
+      background: #F1F5F9;
+      color: #0284C7;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 11px;
       border-radius: 4px;
-      border: 1px solid #273854;
-      letter-spacing: -0.01em;
+      border: 1px solid #CBD5E1;
     }
     .newsSliderControlBar {
-      background: #0B1424;
-      border-top: 1.5px solid #23334D;
-      padding: 14px 22px;
+      background: #F8FAFC;
+      border-top: 1.5px solid #E2E8F0;
+      padding: 13px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .newsDots { display: flex; gap: 8px; }
-    .nDot {
-      width: 14px;
-      height: 6px;
-      background: #334155;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .nDot.active {
-      width: 32px;
-      background: var(--clear-cyan);
-      box-shadow: 0 0 10px rgba(103, 232, 249, 0.7);
-    }
-    .newsTimerText {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
+    .nDot { width: 14px; height: 6px; background: #CBD5E1; border-radius: 3px; cursor: pointer; transition: all 0.3s; }
+    .nDot.active { width: 32px; background: #03C75A; }
+    .newsTimerText { font-size: 13px; font-weight: 700; color: #475569; }
 
     /* ================= 4. 전국 인터랙티브 관제 지도 & 실시간 검색창 ================= */
-    .networkSection { background-color: var(--bg-surface); padding: 100px 0 115px; border-bottom: 2px solid var(--border-card); width: 100%; }
-    .networkIntro { font-size: 19px; font-weight: 400; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: var(--text-clean); }
+    .networkSection { background-color: #F4F6F8; padding: 95px 0 110px; border-bottom: 2px solid #E2E8F0; width: 100%; }
+    .networkIntro { font-size: 19px; font-weight: 500; max-width: 920px; line-height: 1.7; margin-bottom: 26px; color: #18181B !important; }
+    .networkIntro strong { color: #09090B; font-weight: 800; }
 
     .secHeaderFlex {
       display: flex;
@@ -748,90 +602,39 @@
       gap: 16px;
       margin-bottom: 20px;
     }
-    .secHeaderTitleGroup {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+    .secHeaderTitleGroup { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .networkSearchBox {
       display: inline-flex;
       align-items: center;
-      background: #080D18;
-      border: 2px solid var(--border-card);
-      border-radius: 6px;
-      padding: 5px 6px 5px 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      transition: all 0.2s ease;
-    }
-    .networkSearchBox:focus-within {
-      border-color: var(--neon-yellow);
-      box-shadow: 0 0 16px rgba(254, 232, 56, 0.4);
-    }
-    .networkSearchInput {
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #fff;
-      font-family: 'Pretendard', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      width: 220px;
-    }
-    .networkSearchInput::placeholder {
-      color: var(--text-muted);
-      font-size: 14px;
-      font-weight: 400;
-    }
-    .btnNetSearch {
-      background: var(--neon-yellow);
-      color: #000;
-      border: none;
-      font-family: 'GmarketSans', sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-      padding: 8px 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .btnNetSearch:hover {
-      background: #fff;
-    }
-    .btnNetReset {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 0 8px;
-      cursor: pointer;
-    }
-    .btnNetReset:hover {
-      color: var(--neon-pink);
+      background: #FFFFFF;
+      border: 2px solid #09090B;
+      border-radius: 10px;
+      padding: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
 
+    /* 지도 컨트롤 센터: 좌측 지도 스크린은 다크 레이더 유지, 우측 보드는 화이트 카드 */
     .mapControlCenter {
-      background: var(--map-sea);
-      border: 3px solid var(--border-card);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.75);
-      padding: 34px;
+      background: #FFFFFF;
+      border: 2.5px solid #CBD5E1;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+      padding: 30px;
       display: grid;
-      grid-template-columns: 740px 1fr;
-      gap: 36px;
-      border-radius: 8px;
+      grid-template-columns: 720px 1fr;
+      gap: 32px;
+      border-radius: 12px;
       position: relative;
     }
     .mapViewWrapper {
-      background: #060B14;
-      border: 2px solid #23334D;
+      background: #080E1A; /* 지도 SVG 안의 흰 글씨/네온 핀들이 100% 선명하게 보이도록 전용 다크 캔버스 유지 */
+      border: 2px solid #1E293B;
       padding: 24px 18px;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
-      border-radius: 6px;
-      box-shadow: inset 0 0 60px rgba(0,0,0,0.95);
+      border-radius: 10px;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.85);
     }
     .mapTopStatus {
       width: 100%;
@@ -840,33 +643,19 @@
       align-items: center;
       margin-bottom: 18px;
       padding-bottom: 12px;
-      border-bottom: 1px dashed #2A3C59;
-      font-size: 15px;
-      color: #94A3B8;
+      border-bottom: 1px dashed #334155;
+      font-size: 14.5px;
+      color: #CBD5E1;
       font-weight: 700;
     }
-    .statusLive {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #10B981;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-    }
-    .statusLiveDot {
-      width: 14px;
-      height: 14px;
-      background: #10B981;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #10B981;
-      animation: pulseLive 1.5s infinite;
-    }
+    .statusLive { display: inline-flex; align-items: center; gap: 10px; color: #10B981; font-weight: 800; }
+    .statusLiveDot { width: 12px; height: 12px; background: #10B981; border-radius: 50%; box-shadow: 0 0 12px #10B981; }
 
     .koreaDetailedSvg {
       width: 100%;
-      max-width: 710px;
+      max-width: 700px;
       height: auto;
-      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.85));
+      filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.7));
       touch-action: manipulation;
     }
     .geoPath {
@@ -876,40 +665,27 @@
       stroke-linejoin: round;
       stroke-linecap: round;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s ease;
     }
     .geoPath:hover {
-      fill: #2B3D59 !important;
-      stroke: var(--neon-yellow) !important;
+      fill: #334155 !important;
+      stroke: #FFEB3B !important;
       stroke-width: 5 !important;
-      filter: drop-shadow(0 0 24px rgba(254, 232, 56, 0.95)) !important;
     }
-    
     .geoPath.directTerritoryRedGlow {
-      fill: #142033 !important;
-      stroke: var(--neon-red) !important;
+      fill: #17253B !important;
+      stroke: #FF2E4C !important;
       stroke-width: 3.6 !important;
-      filter: drop-shadow(0 0 10px rgba(255, 30, 68, 0.75));
     }
-    .geoPath.directTerritoryRedGlow:hover {
-      fill: #0E3656 !important;
-      stroke: var(--clear-cyan) !important;
-      stroke-width: 5.5 !important;
-      filter: drop-shadow(0 0 32px var(--clear-cyan-glow)) !important;
-    }
-
     .geoPath.seoulBrightCenter {
       fill: url(#seoulCyanGradient) !important;
       stroke: #FFFFFF !important;
       stroke-width: 3.8 !important;
-      filter: drop-shadow(0 0 20px var(--clear-cyan-glow)) !important;
     }
-
     .geoPath.selected {
-      fill: #18263E !important;
-      stroke: var(--neon-yellow) !important;
+      fill: #1E3A5F !important;
+      stroke: #FFEB3B !important;
       stroke-width: 5.5 !important;
-      filter: drop-shadow(0 0 30px var(--neon-yellow-glow)) drop-shadow(0 0 8px #FFFFFF) !important;
     }
 
     .mapCityLabel {
@@ -923,19 +699,12 @@
       stroke-width: 7px;
       stroke-linecap: round;
       stroke-linejoin: round;
-      letter-spacing: -0.02em;
     }
-    .mapCityLabel.mainLarge { font-size: 24px; fill: var(--neon-yellow); }
-    .mapCityLabel.subIsland { font-size: 16px; fill: var(--clear-cyan); }
-    .mapCityLabel.subNodeText { font-size: 13.5px; fill: var(--clear-cyan); }
-    .mapCityLabel.microNodeText { font-size: 12px; fill: #F1F5F9; stroke-width: 4.5px; }
-    .mapCityLabel.seoulBoldText {
-      font-size: 21px;
-      fill: #000000;
-      stroke: #FFFFFF;
-      stroke-width: 4px;
-      font-weight: 900;
-    }
+    .mapCityLabel.mainLarge { font-size: 24px; fill: #FFEB3B; }
+    .mapCityLabel.subIsland { font-size: 16px; fill: #67E8F9; }
+    .mapCityLabel.subNodeText { font-size: 13.5px; fill: #67E8F9; }
+    .mapCityLabel.microNodeText { font-size: 12px; fill: #F8FAFC; stroke-width: 4.5px; }
+    .mapCityLabel.seoulBoldText { font-size: 21px; fill: #000000; stroke: #FFFFFF; stroke-width: 4px; font-weight: 900; }
 
     .mapPinNode { cursor: pointer; transition: transform 0.2s; }
     .mapPinNode:hover { transform: scale(1.3); }
@@ -945,15 +714,10 @@
       100% { r: 26; opacity: 0; stroke-width: 0.5; }
     }
 
-    /* 우측 상세 정보 패널 */
-    .mapDetailBoard {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      color: #fff;
-    }
+    /* 우측 상세 정보 패널 (화이트 & 리얼블랙 고대비) */
+    .mapDetailBoard { display: flex; flex-direction: column; gap: 18px; color: #09090B; }
     .boardHead {
-      border-bottom: 2px solid #23334D;
+      border-bottom: 2px solid #E2E8F0;
       padding-bottom: 14px;
       display: flex;
       justify-content: space-between;
@@ -962,23 +726,22 @@
       gap: 10px;
     }
     .boardTitle {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--neon-yellow);
+      font-size: 24px;
+      font-weight: 800;
+      color: #09090B !important;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .boardCountTagCustom {
-      background: #064E3B;
-      color: #34D399;
+      background: #E6F9EE;
+      color: #028A3E;
       font-family: 'Oswald', sans-serif;
       font-size: 15px;
       font-weight: 800;
-      padding: 6px 16px;
-      border: 1.5px solid #10B981;
-      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
-      border-radius: 4px;
+      padding: 6px 14px;
+      border: 1.5px solid #03C75A;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -989,177 +752,169 @@
       gap: 14px;
       max-height: 700px;
       overflow-y: auto;
-      padding-right: 8px;
+      padding-right: 6px;
     }
     .boardScrollArea::-webkit-scrollbar { width: 6px; }
-    .boardScrollArea::-webkit-scrollbar-thumb { background: var(--neon-pink); border-radius: 3px; }
+    .boardScrollArea::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
 
     .boardCard {
-      background: var(--bg-card);
-      border: 1.5px solid var(--border-card);
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
       padding: 18px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: all 0.2s ease;
-      border-radius: 6px;
+      border-radius: 8px;
     }
     .boardCard:hover {
-      border-color: var(--neon-pink);
-      box-shadow: 0 0 16px var(--neon-pink-glow);
+      background: #FFFFFF;
+      border-color: #03C75A;
+      box-shadow: 0 6px 16px rgba(3, 199, 90, 0.15);
       transform: translateY(-2px);
+    }
+    /* JS로 생성되는 카드 내부 흰색 글씨를 리얼블랙으로 강제 전환 */
+    .boardCard h4 { color: #09090B !important; font-weight: 800 !important; }
+    .boardCard span[style*="background:#000"] {
+      background: #09090B !important;
+      color: #FFEB3B !important;
+      border-color: #09090B !important;
     }
 
     .cardCovText {
       font-family: 'Pretendard', sans-serif;
-      font-size: 15.5px;
-      font-weight: 500;
-      color: var(--clear-cyan);
+      font-size: 15px;
+      font-weight: 700;
+      color: #0284C7 !important;
       margin-bottom: 10px;
-      line-height: 1.6;
-      letter-spacing: -0.015em;
+      line-height: 1.55;
     }
     .cardExpText {
       font-family: 'Pretendard', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-clean);
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #18181B !important;
       line-height: 1.65;
-      border-top: 1px dashed var(--border-card);
+      border-top: 1px dashed #CBD5E1;
       padding-top: 10px;
       margin-top: auto;
       margin-bottom: 14px;
-      letter-spacing: -0.01em;
     }
-    .cardExpText strong {
-      color: #FFFFFF;
-      font-weight: 700;
-    }
+    .cardExpText strong { color: #028A3E !important; font-weight: 800; }
 
-    .panelBtnRow {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 4px;
-    }
+    .panelBtnRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
     .panelBtn {
-      border: 1.5px solid var(--border-card);
-      padding: 8px 4px;
-      font-size: 13px;
-      font-weight: 700;
+      border: 1.5px solid #CBD5E1;
+      padding: 9px 4px;
+      font-size: 13.5px;
+      font-weight: 800;
       text-align: center;
-      background: var(--bg-surface);
-      color: #fff;
-      border-radius: 4px;
+      background: #FFFFFF;
+      color: #09090B !important;
+      border-radius: 6px;
       transition: all 0.15s;
     }
-    .panelBtn:hover { background: var(--border-card); }
+    .panelBtn:hover { background: #F1F5F9; }
     .panelBtn.call {
-      background: var(--neon-yellow);
-      color: #000;
-      border-color: var(--neon-yellow);
-      font-weight: 800;
+      background: #03C75A;
+      color: #FFFFFF !important;
+      border-color: #029A46;
+      font-weight: 900;
     }
-    .panelBtn.call:hover {
-      background: #fff;
-      border-color: #fff;
-    }
+    .panelBtn.call:hover { background: #029A46; }
 
     /* 하단 가나다순 지부 리스트 */
     .netBtnRow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .netMiniBtn {
-      border: 1.5px solid var(--border-card);
-      padding: 12px 4px;
-      font-size: 16.5px;
-      font-weight: 900;
+      border: 1.5px solid #CBD5E1;
+      padding: 11px 4px;
+      font-size: 15.5px;
+      font-weight: 800;
       text-align: center;
-      background: var(--bg-surface);
-      color: #fff;
-      border-radius: 4px;
+      background: #F8FAFC;
+      color: #09090B !important;
+      border-radius: 6px;
       transition: all 0.15s;
-      letter-spacing: -0.02em;
     }
-    .netMiniBtn:hover { background: var(--border-card); }
+    .netMiniBtn:hover { background: #E2E8F0; }
     .netMiniBtn.call {
-      background: var(--neon-yellow);
-      color: #000;
-      border-color: var(--neon-yellow);
+      background: #03C75A;
+      color: #FFFFFF !important;
+      border-color: #029A46;
       font-weight: 900;
     }
-    .netMiniBtn.call:hover {
-      background: #fff;
-      border-color: #fff;
-    }
+    .netMiniBtn.call:hover { background: #029A46; }
 
     .sortNotice {
-      font-size: 15px;
-      font-weight: 700;
-      color: #fff;
-      background: rgba(22, 26, 34, 0.9);
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #18181B !important;
+      background: #FFFFFF;
       display: inline-block;
-      padding: 7px 18px;
-      border: 1.5px solid var(--border-card);
+      padding: 10px 20px;
+      border: 1.5px solid #CBD5E1;
       margin-bottom: 26px;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
+    .sortNotice strong { color: #028A3E; font-weight: 800; }
+
     .networkGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
     .networkCard {
-      background: var(--bg-card);
-      border: 1.5px solid var(--border-card);
-      padding: 20px;
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      padding: 22px 20px;
       display: flex;
       flex-direction: column;
       transition: all 0.2s ease;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     }
     .networkCard:hover {
-      border-color: var(--neon-yellow);
-      box-shadow: 0 0 18px rgba(254, 232, 56, 0.45);
+      border-color: #03C75A;
+      box-shadow: 0 8px 20px rgba(3, 199, 90, 0.15);
       transform: translateY(-3px);
     }
     .netTopRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .netBadge {
-      background: #000;
-      color: var(--neon-yellow);
+      background: #09090B;
+      color: #FFEB3B;
       font-family: 'Oswald', sans-serif;
       font-size: 13px;
       font-weight: 700;
-      padding: 3px 9px;
-      border: 1px solid var(--neon-yellow);
-      border-radius: 3px;
+      padding: 3px 10px;
+      border-radius: 4px;
     }
-    .netRegion { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; color: #fff; }
+    .netRegion { font-size: 19px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; color: #09090B !important; }
 
     .networkMoreWrap { display: none; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
     .netMoreBtnArea { margin-top: 40px; text-align: center; }
     .btnNetworkToggle {
-      background: var(--bg-card);
-      color: var(--neon-yellow);
+      background: #09090B;
+      color: #FFFFFF;
       font-family: 'GmarketSans', sans-serif;
       font-size: 18px;
       font-weight: 700;
-      padding: 16px 40px;
+      padding: 16px 38px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: 2px solid var(--neon-yellow);
-      border-radius: 6px;
+      border: 2px solid #09090B;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s ease;
-      box-shadow: 0 0 15px rgba(254, 232, 56, 0.2);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     }
     .btnNetworkToggle:hover {
-      background: var(--neon-yellow);
-      color: #000;
+      background: #03C75A;
+      border-color: #03C75A;
+      color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(254, 232, 56, 0.5);
     }
     .netCallBanner {
-      background: var(--bg-card);
-      border: 2px solid var(--border-card);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      background: #FFFFFF;
+      border: 2px solid #03C75A;
+      box-shadow: 0 8px 24px rgba(3, 199, 90, 0.12);
       padding: 24px 28px;
       margin-top: 40px;
       display: flex;
@@ -1167,79 +922,60 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 18px;
-      border-radius: 6px;
+      border-radius: 10px;
     }
-    .netCallText { font-size: 17.5px; font-weight: 700; color: #fff; }
-    .netCallText strong { color: var(--neon-yellow); }
+    .netCallText { font-size: 17.5px; font-weight: 700; color: #09090B !important; }
+    .netCallText strong { color: #028A3E !important; font-weight: 900; }
 
-    /* ================= [신규] 실시간 출동 갤러리 슬라이더 스타일 ================= */
+    /* ================= 실시간 출동 갤러리 슬라이더 스타일 (화이트 테마) ================= */
     .galleryTickerSection {
-      background: #090E1A;
-      border-bottom: 2px solid var(--border-card);
-      padding: 75px 0 85px;
+      background: #F8FAFC;
+      border-top: 2px solid #E2E8F0;
+      border-bottom: 2px solid #E2E8F0;
+      padding: 60px 0 70px;
       width: 100%;
       overflow: hidden;
       position: relative;
     }
-    .galleryHeaderWrap {
-      text-align: center;
-      max-width: 860px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-    }
+    .galleryHeaderWrap { text-align: center; max-width: 860px; margin: 0 auto 36px; padding: 0 20px; }
     .gallerySubBadge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #000;
-      color: var(--neon-yellow);
+      background: #09090B;
+      color: #FFEB3B;
       font-family: 'Oswald', sans-serif;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       padding: 5px 16px;
-      border: 1.5px solid var(--neon-yellow);
       border-radius: 4px;
       margin-bottom: 14px;
       letter-spacing: 0.05em;
-      box-shadow: 0 0 12px rgba(254, 232, 56, 0.3);
     }
     .galleryTitle {
-      font-size: 36px;
-      font-weight: 700;
-      color: #FFFFFF;
+      font-size: 35px;
+      font-weight: 800;
+      color: #09090B !important;
       line-height: 1.35;
       margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
-    .galleryTitle span { color: var(--clear-cyan); }
-    .galleryDesc {
-      font-size: 17px;
-      color: var(--text-clean);
-      line-height: 1.7;
-    }
-    .tickerTrackWrapper {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      padding: 15px 0;
-    }
+    .galleryTitle span { color: #03C75A !important; }
+    .galleryDesc { font-size: 17px; font-weight: 500; color: #18181B !important; line-height: 1.7; }
+    .tickerTrackWrapper { width: 100%; overflow: hidden; position: relative; padding: 15px 0; }
     .tickerTrackWrapper::before,
     .tickerTrackWrapper::after {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 120px;
-      z-index: 10;
-      pointer-events: none;
+      top: 0; bottom: 0; width: 90px; z-index: 10; pointer-events: none;
     }
     .tickerTrackWrapper::before {
       left: 0;
-      background: linear-gradient(to right, #090E1A 0%, rgba(9, 14, 26, 0) 100%);
+      background: linear-gradient(to right, #F8FAFC 0%, rgba(248, 250, 252, 0) 100%);
     }
     .tickerTrackWrapper::after {
       right: 0;
-      background: linear-gradient(to left, #090E1A 0%, rgba(9, 14, 26, 0) 100%);
+      background: linear-gradient(to left, #F8FAFC 0%, rgba(248, 250, 252, 0) 100%);
     }
     .tickerFlexTrack {
       display: flex;
@@ -1247,101 +983,68 @@
       width: max-content;
       animation: marqueeScroll 38s linear infinite;
     }
-    .tickerTrackWrapper:hover .tickerFlexTrack {
-      animation-play-state: paused;
-    }
+    .tickerTrackWrapper:hover .tickerFlexTrack { animation-play-state: paused; }
     @keyframes marqueeScroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
     .casePhotoCard {
       width: 320px;
-      background: var(--bg-card);
-      border: 2px solid var(--border-card);
-      border-radius: 10px;
+      background: #FFFFFF;
+      border: 2px solid #CBD5E1;
+      border-radius: 12px;
       overflow: hidden;
       flex-shrink: 0;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
     }
     .casePhotoCard:hover {
       transform: translateY(-6px);
-      border-color: var(--neon-yellow);
-      box-shadow: 0 12px 30px rgba(254, 232, 56, 0.35);
+      border-color: #03C75A;
+      box-shadow: 0 12px 28px rgba(3, 199, 90, 0.2);
     }
-    .cardImgBox {
-      width: 100%;
-      height: 200px;
-      background: #060A12;
-      position: relative;
-      overflow: hidden;
-    }
-    .cardImgBox img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .casePhotoCard:hover .cardImgBox img {
-      transform: scale(1.05);
-    }
+    .cardImgBox { width: 100%; height: 200px; background: #E2E8F0; position: relative; overflow: hidden; }
+    .cardImgBox img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .casePhotoCard:hover .cardImgBox img { transform: scale(1.05); }
     .badgeFloatingRow {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      right: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 2;
+      position: absolute; top: 12px; left: 12px; right: 12px;
+      display: flex; justify-content: space-between; align-items: center; z-index: 2;
     }
     .tagCarModel {
-      background: rgba(0, 0, 0, 0.85);
-      color: var(--neon-yellow);
+      background: rgba(9, 9, 11, 0.9);
+      color: #FFEB3B;
       font-family: 'Oswald', sans-serif;
       font-size: 13.5px;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 4px 10px;
       border-radius: 4px;
-      border: 1px solid var(--neon-yellow);
-      letter-spacing: 0.03em;
     }
     .tagTimeFast {
-      background: rgba(16, 185, 129, 0.9);
+      background: #03C75A;
       color: #FFFFFF;
       font-size: 12px;
       font-weight: 800;
-      padding: 3px 8px;
+      padding: 4px 9px;
       border-radius: 4px;
     }
-    .cardBodyBox {
-      padding: 18px 18px 20px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+    .cardBodyBox { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; background: #FFFFFF; }
     .cardLocationRow {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--clear-cyan);
-      margin-bottom: 8px;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13.5px; font-weight: 800; color: #0284C7; margin-bottom: 8px;
     }
     .cardMainIssue {
-      font-size: 17.5px;
-      font-weight: 700;
-      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 800;
+      color: #09090B !important;
       line-height: 1.4;
       margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
     .cardDetailList {
       list-style: none;
-      border-top: 1px dashed var(--border-card);
+      border-top: 1px dashed #CBD5E1;
       padding-top: 12px;
       margin-bottom: 16px;
       display: flex;
@@ -1349,94 +1052,81 @@
       gap: 6px;
     }
     .cardDetailList li {
-      font-size: 13.5px;
-      color: var(--text-clean);
-      line-height: 1.5;
+      font-size: 14px;
+      font-weight: 500;
+      color: #18181B !important;
+      line-height: 1.55;
       position: relative;
       padding-left: 14px;
     }
     .cardDetailList li::before {
-      content: '▫';
+      content: '▪';
       position: absolute;
       left: 0;
-      color: var(--neon-yellow);
+      color: #03C75A;
       font-weight: bold;
     }
     .cardActionBtn {
       margin-top: auto;
       display: block;
-      background: #111827;
-      color: var(--text-clean);
+      background: #09090B;
+      color: #FFFFFF !important;
       text-align: center;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 8px 0;
-      border-radius: 4px;
-      border: 1px solid #23334D;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 10px 0;
+      border-radius: 6px;
       transition: all 0.2s;
     }
     .casePhotoCard:hover .cardActionBtn {
-      background: var(--neon-yellow);
-      color: #000000;
-      border-color: var(--neon-yellow);
-      font-weight: 800;
+      background: #03C75A;
+      color: #FFFFFF !important;
     }
 
     /* ================= 5. Cases Section (4단계 원스톱 프로세스) ================= */
-    .caseSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
-    .stepProcessGrid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 20px;
-    }
+    .caseSection { background-color: #FFFFFF; padding: 90px 0 100px; width: 100%; border-bottom: 2px solid #E2E8F0; }
+    .stepProcessGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 20px; }
     .stepProcessCard {
-      background: var(--bg-card);
-      border: 2px solid var(--border-card);
-      border-radius: 8px;
+      background: #F8FAFC;
+      border: 2px solid #CBD5E1;
+      border-radius: 12px;
       padding: 30px 28px;
       display: flex;
       flex-direction: column;
       position: relative;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
       transition: all 0.25s ease;
     }
     .stepProcessCard:hover {
-      border-color: var(--neon-yellow);
+      background: #FFFFFF;
+      border-color: #03C75A;
       transform: translateY(-4px);
-      box-shadow: 0 0 22px rgba(254, 232, 56, 0.35);
+      box-shadow: 0 12px 28px rgba(3, 199, 90, 0.15);
     }
-    .stepBadgeRow {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
+    .stepBadgeRow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
     .stepBadgeNum {
-      background: #000;
-      color: var(--neon-yellow);
+      background: #09090B;
+      color: #FFEB3B;
       font-family: 'Oswald', sans-serif;
       font-size: 16px;
       font-weight: 700;
       padding: 4px 14px;
-      border: 1.5px solid var(--neon-yellow);
       border-radius: 4px;
       letter-spacing: 0.05em;
     }
     .stepGuaranteeTag {
-      background: rgba(103, 232, 249, 0.12);
-      color: var(--clear-cyan);
+      background: #E6F9EE;
+      color: #028A3E;
       font-size: 13.5px;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 4px;
-      border: 1px solid var(--clear-cyan);
-      letter-spacing: -0.02em;
+      border: 1px solid #03C75A;
     }
     .stepTitle {
       font-size: 23px;
-      font-weight: 700;
-      color: #FFFFFF;
+      font-weight: 800;
+      color: #09090B !important;
       margin-bottom: 16px;
       line-height: 1.4;
       letter-spacing: -0.02em;
@@ -1446,73 +1136,138 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      border-top: 1px dashed var(--border-card);
+      border-top: 1.5px dashed #CBD5E1;
       padding-top: 16px;
     }
     .stepDescList li {
-      font-size: 16px;
-      color: var(--text-clean);
+      font-size: 16.5px;
+      font-weight: 500;
+      color: #18181B !important;
       line-height: 1.75;
       position: relative;
-      padding-left: 20px;
-      letter-spacing: -0.015em;
+      padding-left: 22px;
     }
     .stepDescList li::before {
       content: '✔';
       position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--neon-yellow);
-      font-size: 13px;
+      left: 0; top: 0;
+      color: #03C75A;
+      font-size: 15px;
       font-weight: 900;
     }
     .stepDescList li strong {
-      color: #FFFFFF;
-      font-weight: 700;
+      color: #028A3E !important;
+      font-weight: 800;
     }
 
     /* ================= 6. FAQ Section ================= */
-    .faqSection { background-color: var(--bg-surface); color: #fff; padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .faqSection { background-color: #F4F6F8; color: #09090B; padding: 90px 0 100px; width: 100%; border-bottom: 2px solid #E2E8F0; }
     .faqList { display: flex; flex-direction: column; gap: 16px; max-width: 940px; margin: 0 auto 35px; }
-    .faqCard { background: var(--bg-card); border: 1.5px solid var(--border-card); padding: 22px 26px; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .faqCard {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      padding: 24px 26px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
     .faqTopRow { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
-    .faqBadge { background: var(--neon-yellow); color: #000; font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; padding: 3px 10px; flex-shrink: 0; border-radius: 3px; }
-    .faqQuestion { font-size: 18.5px; font-weight: 700; color: #fff; }
-    .faqAnswer { font-size: 16px; color: var(--text-clean); line-height: 1.7; padding-left: 48px; }
+    .faqBadge {
+      background: #03C75A;
+      color: #FFFFFF;
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 3px 11px;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+    .faqQuestion { font-size: 19px; font-weight: 800; color: #09090B !important; }
+    .faqAnswer { font-size: 16.5px; font-weight: 500; color: #18181B !important; line-height: 1.75; padding-left: 50px; }
     .faqHiddenWrap { display: none; flex-direction: column; gap: 16px; }
     .faqMoreArea { text-align: center; }
-    .btnFaqMore { background: var(--neon-yellow); color: #000; font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 700; padding: 14px 34px; border: 2px solid #000; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
-    .btnFaqMore:hover { background: #fff; transform: translateY(-2px); }
+    .btnFaqMore {
+      background: #09090B;
+      color: #FFFFFF;
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 15px 36px;
+      border: 2px solid #09090B;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btnFaqMore:hover { background: #03C75A; border-color: #03C75A; transform: translateY(-2px); }
 
     /* ================= 7. Blog Section ================= */
-    .blogSection { background-color: var(--bg-main); padding: 95px 0 105px; width: 100%; border-bottom: 2px solid var(--border-card); }
+    .blogSection { background-color: #FFFFFF; padding: 90px 0 100px; width: 100%; border-bottom: 2px solid #E2E8F0; }
     .blogGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .blogCard { border: 1.5px solid var(--border-card); background: var(--bg-card); padding: 26px; display: flex; flex-direction: column; border-radius: 6px; transition: all 0.2s; }
-    .blogCard:hover { border-color: var(--neon-yellow); transform: translateY(-3px); box-shadow: 0 0 16px rgba(254, 232, 56, 0.25); }
-    .blogDate { font-size: 13.5px; font-weight: 800; color: var(--neon-yellow); margin-bottom: 10px; font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
-    .blogTitle { font-size: 19px; font-weight: 700; margin-bottom: 14px; line-height: 1.45; color: #fff; }
-    .blogExcerpt { font-size: 15px; color: var(--text-clean); line-height: 1.65; margin-bottom: 18px; flex: 1; }
-    .blogLink { font-size: 15px; font-weight: 800; color: var(--clear-cyan); text-decoration: underline; }
+    .blogCard {
+      border: 2px solid #CBD5E1;
+      background: #F8FAFC;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .blogCard:hover {
+      background: #FFFFFF;
+      border-color: #03C75A;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(3, 199, 90, 0.15);
+    }
+    .blogDate {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #028A3E;
+      margin-bottom: 10px;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.05em;
+    }
+    .blogTitle { font-size: 20px; font-weight: 800; margin-bottom: 14px; line-height: 1.45; color: #09090B !important; }
+    .blogExcerpt { font-size: 15.5px; font-weight: 500; color: #18181B !important; line-height: 1.7; margin-bottom: 18px; flex: 1; }
+    .blogLink { font-size: 15.5px; font-weight: 800; color: #0284C7; text-decoration: underline; }
 
-    /* ================= 8. Footer ================= */
-    .footer { background: #070A0F; border-top: 2px solid var(--border-card); padding: 75px 0 95px; width: 100%; }
+    /* ================= 8. Footer (깔끔한 쿨그레이 & 블랙 텍스트) ================= */
+    .footer { background: #E2E8F0; border-top: 2px solid #CBD5E1; padding: 70px 0 95px; width: 100%; color: #09090B; }
     .footerGrid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 35px; margin-bottom: 45px; }
-    .footerCol h4 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: var(--neon-yellow); }
+    .footerCol h4 { font-size: 21px; font-weight: 800; margin-bottom: 16px; color: #09090B !important; }
     .footerLinks { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footerLinks li { font-size: 15px; color: var(--text-bright); }
-    .footerLinks a { color: var(--text-bright); transition: color 0.15s; }
-    .footerLinks a:hover { color: var(--neon-yellow); }
-    .footerAbout p { font-size: 15px; line-height: 1.7; margin-bottom: 18px; color: var(--text-bright); }
+    .footerLinks li { font-size: 15.5px; font-weight: 600; color: #18181B !important; }
+    .footerLinks a { color: #18181B !important; transition: color 0.15s; }
+    .footerLinks a:hover { color: #028A3E !important; }
+    .footerAbout p { font-size: 15.5px; font-weight: 500; line-height: 1.7; margin-bottom: 18px; color: #18181B !important; }
     
     .socialBox { display: flex; gap: 8px; flex-wrap: wrap; }
-    .socialBtn { border: 1px solid var(--border-card); background: var(--bg-surface); color: #fff; padding: 7px 14px; font-size: 13px; font-weight: 700; border-radius: 4px; transition: all 0.15s; }
-    .socialBtn:hover { border-color: var(--neon-yellow); color: var(--neon-yellow); transform: translateY(-2px); }
-    .btnKakao { background: #FEE500; color: #000; border: none; font-weight: 800; }
-    .btnPlusFriend { background: #3B1E1E; color: #FEE500; border: 1px solid #FEE500; font-weight: 800; }
-    .btnSms { background: var(--neon-yellow); color: #000; border: none; font-weight: 800; }
+    .socialBtn { border: 1.5px solid #09090B; background: #FFFFFF; color: #09090B !important; padding: 8px 14px; font-size: 13.5px; font-weight: 800; border-radius: 6px; transition: all 0.15s; }
+    .btnKakao { background: #FEE500; color: #000000 !important; border: 1.5px solid #09090B; font-weight: 900; }
+    .btnPlusFriend { background: #3B1E1E; color: #FEE500 !important; border: 1.5px solid #3B1E1E; font-weight: 800; }
+    .btnSms { background: #03C75A; color: #FFFFFF !important; border: 1.5px solid #028A3E; font-weight: 800; }
 
-    .bizInfoBox { border-top: 1px dashed var(--border-card); padding-top: 28px; font-size: 14.5px; line-height: 1.85; color: var(--text-bright); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .bizInfoBox strong { color: #FFFFFF; font-weight: 700; }
+    .bizInfoBox { border-top: 1.5px dashed #94A3B8; padding-top: 28px; font-size: 14.5px; font-weight: 500; line-height: 1.85; color: #18181B !important; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .bizInfoBox strong { color: #09090B !important; font-weight: 800; }
+
+    /* ================= HTML 본문 내 인라인 고정 색상(흰 글씨/검은 검색창/노란 배지) 자동 보정 ================= */
+    .heroSection h2[style*="color:#ffffff"] { color: #09090B !important; }
+    .mainTitle span[style*="color:var(--neon-yellow"] { color: #028A3E !important; }
+    span[style*="rgba(255,230,0,0.12)"] {
+      background: #E6F9EE !important;
+      color: #028A3E !important;
+      border-color: #03C75A !important;
+      box-shadow: 0 2px 8px rgba(3, 199, 90, 0.12) !important;
+    }
+    .topClockTicker span[style*="rgba(255,230,0,0.12)"] {
+      background: rgba(255, 235, 59, 0.15) !important;
+      color: #FFEB3B !important;
+      border-color: rgba(255, 235, 59, 0.5) !important;
+    }
+    #netSearchInput {
+      background: #FFFFFF !important;
+      color: #09090B !important;
+      border: 2.5px solid #0284C7 !important;
+      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.15) !important;
+    }
 
     /* ================= 모바일 반응형 ================= */
     .mobileBar { display: none; }
@@ -1524,23 +1279,19 @@
       .brandLogo { height: 44px; padding: 0 10px; }
       .brandLogo .logoKo { font-size: 18px; }
       .brandLogo .logoEn { font-size: 15px; }
-      .navCallLarge { height: 44px; padding: 0 12px; }
-      .navCallLarge .badgeText { font-size: 14px; }
-      .navCallLarge b { font-size: 19px; }
 
-      .heroSection { padding: 45px 0 55px; }
+      .heroSection { padding: 25px 0 50px; }
       .heroGrid { grid-template-columns: 1fr; gap: 28px; }
       .reserveBadgeBig { font-size: 15px; padding: 10px 16px; width: 100%; justify-content: center; }
       .mainTitle { font-size: 30px; line-height: 1.3; }
-      .mainDesc { font-size: 16px; }
-      .ctaGroup { flex-direction: column; width: 100%; gap: 12px; }
+      .mainDesc { font-size: 16.5px; }
       .btnActionLarge { width: 100%; padding: 15px; font-size: 16.5px; }
       
       .heroStepSliderWrap { margin-top: 10px; }
       .sliderTrack { min-height: 330px; }
       .slideItem { padding: 24px 18px; }
       .slideHeading { font-size: 20px; }
-      .slideBodyText { font-size: 15px; }
+      .slideBodyText { font-size: 15.5px; }
 
       .aboutSection { padding: 55px 0 65px; }
       .aboutGrid { grid-template-columns: 1fr; gap: 32px; }
@@ -1548,12 +1299,12 @@
       .aboutTistoryBtnBig { font-size: 15px; padding: 14px; }
       .newsTrackArea { min-height: 410px; }
       .newsSlideItem { padding: 24px 18px; }
-      .newsHeadline { font-size: 19px; }
-      .newsContentList li { font-size: 14.5px; }
+      .newsHeadline { font-size: 19.5px; }
+      .newsContentList li { font-size: 15px; }
 
+      .secHeaderTitle { font-size: 28px; }
       .secHeaderFlex { flex-direction: column; align-items: flex-start; }
       .networkSearchBox { width: 100%; }
-      .networkSearchInput { flex: 1; width: auto; }
 
       .mapControlCenter { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
       .boardScrollArea { grid-template-columns: 1fr; max-height: 380px; }
@@ -1566,20 +1317,20 @@
       .networkGrid, .networkMoreWrap { grid-template-columns: 1fr; gap: 14px; }
       .netCallBanner { flex-direction: column; align-items: flex-start; }
 
-      .galleryTickerSection { padding: 50px 0 60px; }
+      .galleryTickerSection { padding: 45px 0 55px; }
       .galleryTitle { font-size: 26px; }
-      .galleryDesc { font-size: 15px; }
+      .galleryDesc { font-size: 15.5px; }
       .casePhotoCard { width: 270px; }
       .cardImgBox { height: 175px; }
-      .tickerTrackWrapper::before, .tickerTrackWrapper::after { width: 40px; }
+      .tickerTrackWrapper::before, .tickerTrackWrapper::after { width: 30px; }
 
       .caseSection { padding: 55px 0 65px; }
       .stepProcessGrid { grid-template-columns: 1fr; gap: 16px; }
       .stepTitle { font-size: 20px; }
 
       .faqSection { padding: 55px 0 65px; }
-      .faqQuestion { font-size: 16.5px; }
-      .faqAnswer { padding-left: 0; }
+      .faqQuestion { font-size: 17px; }
+      .faqAnswer { padding-left: 0; font-size: 15.5px; }
 
       .blogSection { padding: 55px 0 65px; }
       .blogGrid { grid-template-columns: 1fr; gap: 16px; }
@@ -1593,8 +1344,8 @@
         position: fixed;
         left: 0; right: 0; bottom: 0;
         z-index: 999;
-        background: #0B0F19;
-        border-top: 2px solid var(--border-card);
+        background: #FFFFFF;
+        border-top: 2px solid #CBD5E1;
         padding-bottom: env(safe-area-inset-bottom);
       }
       .mobileBar a {
@@ -1606,151 +1357,64 @@
         align-items: center;
         justify-content: center;
       }
-      .mobileBar .btnMSms { background: #151D2E; color: var(--neon-yellow); border-right: 1.5px solid var(--border-card); }
-      .mobileBar .btnMCall { background: var(--neon-yellow); color: #000; }
     }
-  /* =========================================================
-   모바일 화면 우측 잘림 방지 및 가로폭 최적화
-========================================================= */
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-html, body {
-  max-width: 100vw !important;
-  overflow-x: hidden !important;
-}
-.wrap, .container, section, .networkSection, .heroSection {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  box-sizing: border-box !important;
-}
-p, h1, h2, h3, h4, span, div {
-  word-break: keep-all !important;
-  overflow-wrap: break-word !important;
-} 
-/* 최상단 히어로 섹션 전용 정밀 최적화 */
-@media (min-width: 992px) {
-  .heroSection .wrap, 
-  .heroGrid {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 60px !important;
-    max-width: 1360px !important;
-    margin: 0 auto !important;
-  }
-  .heroGrid > div:first-child,
-  .heroContentLeft {
-    flex: 1.1 !important;
-    max-width: 680px !important;
-  }
-  .heroGrid > div:last-child,
-  .heroContentRight {
-    flex: 1 !important;
-    max-width: 580px !important;
-  }
-}
 
-@media (max-width: 991px) {
-  .heroSection .wrap,
-  .heroGrid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 30px !important;
-    width: 100% !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-  }
-  .heroGrid > div:first-child,
-  .heroGrid > div:last-child,
-  .heroContentLeft,
-  .heroContentRight {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .heroGrid div[style*="border"],
-  .reserveBadgeBig {
-    max-width: 100% !important;
-    white-space: normal !important;
-    line-height: 1.4 !important;
-  }
-} 
-/* =========================================================
-   ABOUT US 모바일 1열(상/하) 분리 & 박스 슬림화
-========================================================= */
-
-@media (max-width: 991px) {
-  .aboutGrid {
-    display: flex !important;
-    flex-direction: column !important; /* 모바일에서 위아래로 분리 */
-    gap: 28px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 1번째 칸: 소개 문구 & 지표 영역 전체 폭 차지 */
-  .aboutGrid > div:first-child {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 진심 스토리 전문 읽기 버튼 폭 슬림화 */
-  .aboutTistoryBtnBig {
-    width: auto !important;
-    display: inline-flex !important;
-    max-width: 100% !important;
-    padding: 8px 14px !important;
-    font-size: 13px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 20+ / 100% / 0% 지표 박스 크기 슬림화 */
-  .aboutStats {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 6px !important;
-    width: 100% !important;
-    margin-top: 14px !important;
-  }
-  .aboutStats .statBox {
-    padding: 8px 4px !important;
-    text-align: center !important;
-  }
-  .aboutStats .statNum {
-    font-size: 18px !important;
-  }
-  .aboutStats .statLabel {
-    font-size: 10px !important;
-    letter-spacing: -0.03em !important;
-  }
-
-  /* 2번째 칸: 카드뉴스 상자 (독립된 다음 줄 100% 차지) */
-  .aboutNewsSliderBox {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 16px 12px !important;
-    box-sizing: border-box !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .aboutGrid {
-    display: grid !important;
-    grid-template-columns: 1fr 1.15fr !important;
-    gap: 50px !important;
-    align-items: center !important;
-    max-width: 1360px !important;
-    margin: 0 auto !important;
-  }
-}    
-  </style>
+    /* 모바일 화면 우측 잘림 방지 및 가로폭 최적화 */
+    *, *::before, *::after { box-sizing: border-box !important; }
+    html, body { max-width: 100vw !important; overflow-x: hidden !important; }
+    .wrap, .container, section, .networkSection, .heroSection {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+      box-sizing: border-box !important;
+    }
+    p, h1, h2, h3, h4, span, div {
+      word-break: keep-all !important;
+      overflow-wrap: break-word !important;
+    }
+    @media (min-width: 992px) {
+      .heroSection .wrap, .heroGrid {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 60px !important;
+        max-width: 1360px !important;
+        margin: 0 auto !important;
+      }
+      .heroGrid > div:first-child, .heroContentLeft { flex: 1.1 !important; max-width: 680px !important; }
+      .heroGrid > div:last-child, .heroContentRight { flex: 1 !important; max-width: 580px !important; }
+      .aboutGrid {
+        display: grid !important;
+        grid-template-columns: 1fr 1.15fr !important;
+        gap: 50px !important;
+        align-items: center !important;
+        max-width: 1360px !important;
+        margin: 0 auto !important;
+      }
+    }
+    @media (max-width: 991px) {
+      .heroSection .wrap, .heroGrid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 30px !important;
+        width: 100% !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      .heroGrid > div:first-child, .heroGrid > div:last-child { width: 100% !important; max-width: 100% !important; }
+      .reserveBadgeBig { max-width: 100% !important; white-space: normal !important; line-height: 1.4 !important; }
+      .aboutGrid { display: flex !important; flex-direction: column !important; gap: 28px !important; width: 100% !important; }
+      .aboutGrid > div:first-child { width: 100% !important; max-width: 100% !important; }
+      .aboutTistoryBtnBig { width: auto !important; display: inline-flex !important; max-width: 100% !important; padding: 10px 16px !important; font-size: 14px !important; }
+      .aboutStats { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; width: 100% !important; margin-top: 14px !important; }
+      .aboutStats .statBox { padding: 10px 4px !important; }
+      .aboutStats .statNum { font-size: 20px !important; }
+      .aboutStats .statLabel { font-size: 11px !important; }
+      .aboutNewsSliderBox { width: 100% !important; max-width: 100% !important; margin: 0 !important; }
+    }
+  </style> 
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
@@ -1781,10 +1445,10 @@ p, h1, h2, h3, h4, span, div {
 <!-- 1. Header -->
 <header class="topNav">
   <div class="wrap navInner">
-<a class="brandLogo" href="tel:1600-9712" title="전화 상담 바로연결">
-    <span class="logoKo">키앤키닷컴</span>
-    <span class="logoEn">1600-9712</span>
-</a>   
+    <a class="brandLogo" href="tel:1600-9712" title="전화 상담 바로연결">
+      <span class="logoKo">키앤키닷컴</span>
+      <span class="logoEn">1600-9712</span>
+    </a>   
 
     <nav class="centerMenu">
       <a class="menuBtn" href="#about"><span>👤</span> ABOUT</a>
@@ -1794,85 +1458,146 @@ p, h1, h2, h3, h4, span, div {
       <a class="menuBtn" href="#blogs"><span>📝</span> BLOGS</a>
     </nav>
 
-<a href="javascript:void(0);" onclick="focusSearchInput()" style="display:inline-flex; align-items:center; justify-content:center; gap:4px; padding:7px 10px; background:#00E5FF; color:#000; font-weight:800; font-size:clamp(12px, 3.2vw, 14px); border-radius:6px; text-decoration:none; white-space:nowrap; flex-shrink:0;">
-          🔍 지역 검색하기
-        </a> 
+    <!-- 우측 상단 지역 검색하기 버튼: 세련된 딥 차콜 & 에메랄드 포인트 -->
+    <a href="javascript:void(0);" onclick="focusSearchInput()" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 16px; background:#0F172A; color:#FFFFFF; border:1.5px solid #03C75A; box-shadow:0 4px 12px rgba(15, 23, 42, 0.15); font-weight:800; font-size:clamp(13px, 3.2vw, 15px); border-radius:8px; text-decoration:none; white-space:nowrap; flex-shrink:0; transition:all 0.2s ease;">
+      <span style="color:#03C75A;">🔍</span> 지역 검색하기
+    </a> 
   </div>
 </header>
 
 <main id="top">
-  <!-- 2. Hero Section -->
+ <!-- 2. Hero Section -->
   <section class="heroSection">
-<!-- ==================== [대문 최상단 1] 세련된 레몬 옐로우 직통 & 문자 배너 ==================== -->
+    <!-- ==================== [대문 최상단 1] 1:1 대칭형 프리미엄 직통 전화 & 문자 카드 ==================== -->
     <style>
-      @keyframes neonGlowPulse {
-        0%, 100% {
-          box-shadow: 0 0 15px rgba(255, 235, 59, 0.45), inset 0 0 10px rgba(255, 235, 59, 0.25);
-          border-color: #FFEB3B;
-        }
-        50% {
-          box-shadow: 0 0 32px rgba(255, 235, 59, 0.9), inset 0 0 16px rgba(255, 235, 59, 0.5);
-          border-color: #FFF9C4;
-        }
+      .top-action-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 1120px;
+        margin: 15px auto 32px auto;
+        padding: 0 15px;
+        box-sizing: border-box;
       }
-      .neon-call-banner {
-        animation: neonGlowPulse 2s infinite ease-in-out;
-        transition: transform 0.2s ease;
+      .action-card-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        min-height: 230px;
+        padding: 28px 24px;
+        border-radius: 18px;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
       }
-      .neon-call-banner:active {
+      .action-card-box:hover {
+        transform: translateY(-4px);
+      }
+      .action-card-box:active {
         transform: scale(0.98);
       }
-      .neon-sms-banner {
-        background: linear-gradient(135deg, rgba(16, 26, 48, 0.95) 0%, rgba(10, 42, 64, 0.95) 100%);
-        border: 1.5px solid rgba(0, 240, 255, 0.4);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 240, 255, 0.15);
-        transition: all 0.25s ease;
+      
+      /* 좌측: 직통 전화 카드 (세련된 딥 에메랄드 그린) */
+      .card-call-premium {
+        background: linear-gradient(135deg, #03C75A 0%, #028A3E 100%);
+        color: #FFFFFF !important;
+        border: 2px solid #027A37;
+        box-shadow: 0 14px 30px rgba(3, 199, 90, 0.25);
       }
-      .neon-sms-banner:active {
-        transform: scale(0.98);
-        border-color: #00f0ff;
-        box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+      .card-call-premium:hover {
+        box-shadow: 0 18px 36px rgba(3, 199, 90, 0.38);
+      }
+
+      /* 우측: 문자 상담 카드 (고급 다크 네이비 슬레이트 - 전화 카드와 1:1 동일 비율) */
+      .card-sms-premium {
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        color: #FFFFFF !important;
+        border: 2px solid #334155;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+      }
+      .card-sms-premium:hover {
+        border-color: #38BDF8;
+        box-shadow: 0 18px 36px rgba(15, 23, 42, 0.35);
+      }
+
+      /* 사진 슬라이더 속도: 어르신들도 편안하게 보실 수 있도록 아주 천천히(110초) 흐르도록 설정 */
+      .tickerFlexTrack {
+        animation: marqueeScroll 110s linear infinite !important;
+      }
+
+      /* 모바일에서도 두 카드가 균형 잡힌 박스 형태를 유지하도록 설정 */
+      @media (max-width: 768px) {
+        .top-action-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .action-card-box {
+          min-height: 195px;
+          padding: 24px 18px;
+        }
+      }
+
+      /* 모바일 하단 고정바의 '지역 검색하기' 파란색도 세련된 다크 네이비로 자동 변경 */
+      .mobileBar .searchNavBtn {
+        background: #0F172A !important;
+        color: #FFFFFF !important;
       }
     </style>
 
-    <div class="wrap" style="width:100%; max-width:1200px; margin:15px auto 20px auto; padding:0 15px; box-sizing:border-box;">
+    <div class="top-action-grid">
 
-      <!-- 1. 키앤키닷컴 직통 전화 걸기 (대표번호 레몬 옐로우 네온 배너) -->
-      <a href="tel:16009712" class="neon-call-banner" style="display:block; width:100%; background:#FFEB3B; color:#000; text-decoration:none; text-align:center; padding:20px 16px; border-radius:16px; border:2px solid #FFEB3B; box-sizing:border-box;">
-        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,0,0,0.85); color:#FFEB3B; font-size:clamp(12px, 3.2vw, 14px); font-weight:800; padding:4px 14px; border-radius:20px; letter-spacing:-0.3px; margin-bottom:8px;">
-          <span>⏱️ 당일 차키 제작</span>
-          <span style="opacity:0.4;">|</span>
-          <span>약속 시간 엄수 현장 출동</span>
+      <!-- 1. 키앤키닷컴 직통 전화 카드 (좌측 - 깔끔한 화이트 라인 아이콘 적용) -->
+      <a href="tel:16009712" class="action-card-box card-call-premium">
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,0,0,0.22); color:#FFFFFF; font-size:13.5px; font-weight:800; padding:5px 14px; border-radius:20px; letter-spacing:-0.3px;">
+          <span>당일 차키 제작</span>
+          <span style="opacity:0.5;">|</span>
+          <span style="color:#FEF08A;">약속 시간 엄수 현장 출동</span>
         </div>
-        <div style="font-size:clamp(20px, 6vw, 30px); font-weight:900; letter-spacing:-1px; line-height:1.15; color:#111;">
-          키앤키닷컴 직통
+
+        <div style="margin: 12px 0;">
+          <div style="font-size:clamp(19px, 4vw, 24px); font-weight:800; letter-spacing:-0.8px; color:#E6F9EE; margin-bottom:6px;">
+            키앤키닷컴 엔지니어 직통
+          </div>
+          <div style="display:inline-flex; align-items:center; justify-content:center; gap:10px; font-family:'Montserrat', sans-serif; font-size:clamp(30px, 6.5vw, 42px); font-weight:900; color:#FFFFFF; letter-spacing:-1px; line-height:1.1;">
+            <!-- 세련된 미니멀 화이트 라인 수화기 아이콘 -->
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; transform:translateY(1px);">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>1600 - 9712</span>
+          </div>
         </div>
-        <div style="font-size:clamp(30px, 9vw, 46px); font-weight:950; color:#000; letter-spacing:-1.2px; line-height:1.1; margin-top:4px;">
-          📞 1600 - 9712
-        </div>
-        <div style="margin-top:8px; font-size:12px; font-weight:800; color:#222; letter-spacing:-0.4px;">
-          ⚡ 터치 시 즉시 다이렉트 통화 연결 ❯
+
+        <div style="width:100%; background:rgba(255,255,255,0.18); padding:9px 0; border-radius:10px; font-size:13.5px; font-weight:800; color:#FFFFFF; letter-spacing:-0.3px;">
+          터치 시 즉시 다이렉트 통화 연결 ❯
         </div>
       </a>
 
-      <!-- 2. 문자 상담 접수 배너 (모던 글래스 & 사이안 네온 스타일) -->
-      <a href="sms:01082424649?body=계신 지역: %0A차량 번호 및 차종: %0A궁금하신 내용: " class="neon-sms-banner" style="display:flex; align-items:center; width:100%; margin-top:12px; border-radius:16px; text-decoration:none; overflow:hidden; box-sizing:border-box; padding:15px 14px;">
-        <!-- 왼쪽 전용 아이콘 뱃지 -->
-        <div style="flex:0 0 50px; height:50px; border-radius:12px; background:rgba(0, 240, 255, 0.1); border:1px solid rgba(0, 240, 255, 0.4); display:flex; align-items:center; justify-content:center; margin-right:12px; box-shadow:0 0 12px rgba(0, 240, 255, 0.2);">
-          <svg viewBox="0 0 24 24" style="width:26px; height:26px; fill:#00f0ff;">
-            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-          </svg>
+      <!-- 2. 문자 상담 접수 카드 (우측 - '24시' 단어 제거 & 깔끔한 라인 아이콘) -->
+    <a href="sms:01082424649?body=1.%20현재%20차량이%20있는%20지역:%20%0A2.%20차량번호%20및%20차종:%20%0A3.%20요청사항%20([1]전부분실%20[2]추가복사%20[3]키고장):%20%0A※%20사진이%20있으시면%20함께%20보내주세요!" class="action-card-box card-sms-premium"> 
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38BDF8; font-size:13.5px; font-weight:800; padding:5px 14px; border-radius:20px; letter-spacing:-0.3px;">
+          <span>실시간 문자 판독</span>
+          <span style="opacity:0.4;">|</span>
+          <span>정찰 견적 안내</span>
         </div>
-        <!-- 오른쪽 안내 문구 영역 -->
-        <div style="flex:1; text-align:left;">
-          <div style="font-size:clamp(13px, 3.8vw, 15px); font-weight:800; color:#ffffff; line-height:1.4; letter-spacing:-0.5px;">
-            <span style="color:#FFEB3B;">계신 지역과 차량 번호</span> &amp; 궁금한 점을<br>
-            <span style="color:#00f0ff; text-shadow:0 0 8px rgba(0,240,255,0.4);">문자로 남겨주시면 즉시 답변 드립니다</span>
+
+        <div style="margin: 12px 0;">
+          <div style="font-size:clamp(18px, 3.8vw, 23px); font-weight:800; color:#FFFFFF; line-height:1.4; letter-spacing:-0.6px; word-break:keep-all;">
+            <span style="color:#FDE047;">계신 지역과 차량 번호</span> · 궁금한 점을<br>
+            문자로 남겨주시면 <span style="color:#38BDF8;">즉시 답변드립니다</span>
           </div>
-          <div style="font-size:11px; color:#8ab4f8; margin-top:4px; font-weight:700; display:flex; align-items:center; gap:4px;">
-            <span>✉️ 010-8242-4649 문자창 열기</span>
-            <span style="color:#00f0ff;">❯</span>
-          </div>
+        </div>
+
+        <div style="width:100%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); padding:9px 0; border-radius:10px; font-size:13.5px; font-weight:800; color:#F8FAFC; letter-spacing:-0.3px; display:flex; align-items:center; justify-content:center; gap:6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          <span>010-8242-4649 문자창 바로 열기 ❯</span>
         </div>
       </a>
 
@@ -1900,10 +1625,8 @@ p, h1, h2, h3, h4, span, div {
           </div>
         </div>
       </section>
-    </div>    
- <div class="wrap" style="padding-top:20px; padding-bottom:10px;">
-    <h2 style="font-size:clamp(22px, 3.5vw, 32px); font-weight:900; color:#ffffff; letter-spacing:-0.02em; text-transform:uppercase; margin:0;">어떻게 진행되나요?</h2>
-</div>   
+    </div>
+
     <div class="wrap heroGrid">
       <div>
 
@@ -2000,9 +1723,7 @@ p, h1, h2, h3, h4, span, div {
   <!-- 3. About Us Section & 카드뉴스 -->
   <section id="about" class="aboutSection">
     <div class="wrap">
-      <div class="secHeader">
-        <h2 class="secHeaderTitle">우리 회사는요</h2>
-      </div>
+    
       <div class="aboutGrid">
         <div>
        <h3 class="aboutHeading" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; line-height:1.4;">
@@ -3441,13 +3162,13 @@ function focusSearchInput() {
     });
   }
 
-  // ================= 전국 지부 실시간 검색 기능 =================
+ // ================= 전국 지부 실시간 검색 기능 (검색 시 해당 보드로 즉시 이동) =================
   function handleNetworkSearch() {
     var input = document.getElementById('netSearchInput');
     if (!input) return;
     var query = input.value.trim().toLowerCase();
     if (!query) {
-      alert("검색할 지역명을 입력해주세요. (예: 부평, 김포, 부천 등)");
+      alert("검색할 지역명을 입력해주세요. (예: 부천, 부평, 김포 등)");
       return;
     }
 
@@ -3472,7 +3193,7 @@ function focusSearchInput() {
     var countEl = document.getElementById('ctrlBoardCount');
     var board = document.getElementById('ctrlBoardCards');
 
-    if (titleEl) titleEl.innerText = `🔍 '${query}' 검색 결과`;
+    if (titleEl) titleEl.innerText = `📍 '${query}' 검색 결과`;
     if (countEl) countEl.innerHTML = `<span style="font-size:12px;">●</span> ${matchResults.length}개 지부 검색됨`;
 
     if (!board) return;
@@ -3481,7 +3202,7 @@ function focusSearchInput() {
     if (matchResults.length === 0) {
       board.innerHTML = `
         <div style="grid-column: 1 / -1; padding: 40px 20px; text-align: center; background: var(--bg-card); border: 1.5px dashed var(--border-card); border-radius: 6px;">
-          <p style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px;">'${query}'에 해당하는 전용 지부를 찾지 못했습니다.</p>
+          <p style="font-size: 18px; font-weight: 700; color: #09090B; margin-bottom: 10px;">'${query}'에 해당하는 전용 지부를 찾지 못했습니다.</p>
           <p style="font-size: 14.5px; color: var(--text-clean); margin-bottom: 18px; line-height: 1.6;">
             키앤키닷컴은 전국 226개 시·군·구 전역에 비상 출동 네트워크를 운영 중입니다.<br>
             대표번호로 문의하시면 가장 인접한 마스터 엔지니어가 즉시 배차됩니다.
@@ -3489,43 +3210,57 @@ function focusSearchInput() {
           <a href="tel:16009712" class="panelBtn call" style="display:inline-block; padding: 10px 24px; font-size: 15px;">📞 1600-9712 직통 출동 확인</a>
         </div>
       `;
-      return;
+    } else {
+      var branchPhoneMap = {
+        "성동구": "010-3830-4300", "광진구": "010-3830-4300", "동대문구": "010-3830-4300",
+        "중랑구": "010-3830-4300", "성북구": "010-3830-4300", "강북구": "010-3830-4300",
+        "도봉구": "010-3830-4300", "노원구": "010-3830-4300", "구로구": "010-3552-2914",
+        "금천구": "010-3552-2914", "용인시": "010-7204-9007", "의정부시": "010-4512-9229",
+        "양주시": "010-4512-9229", "평택시": "010-5383-3369", "안성시": "010-5383-3369",
+        "안양시": "010-8998-1304", "군포시": "010-8998-1304", "의왕시": "010-8998-1304",
+        "과천시": "010-8998-1304", "대전광역시": "010-9206-1304", "제천시": "010-2311-5000",
+        "단양군": "010-2311-5000", "충주시": "010-2311-5000", "춘천시": "010-2311-5000",
+        "원주시": "010-2311-5000", "광주광역시": "010-4113-2294", "나주시": "010-4113-2294",
+        "화순군": "010-4113-2294", "장성군": "010-4113-2294", "영광군": "010-4113-2294",
+        "함평군": "010-4113-2294", "여수시": "010-9608-4380", "순천시": "010-9608-4380",
+        "광양시": "010-9608-4380", "대구광역시": "010-2201-1313", "경산시": "010-2201-1313",
+        "청도군": "010-2201-1313", "고령군": "010-2201-1313", "성주군": "010-2201-1313",
+        "포항시": "010-3131-4064", "경주시": "010-3131-4064", "영천시": "010-3131-4064",
+        "부산광역시": "010-4542-1313", "김해시": "010-4542-1313", "양산시": "010-4542-1313",
+        "창원시": "010-5046-4111"
+      };
+
+      matchResults.forEach(function(b) {
+        var item = document.createElement('article');
+        item.className = 'boardCard';
+        var phone = '16009712';
+        for(var k in branchPhoneMap){ 
+          if(b.name.indexOf(k) !== -1 || k.indexOf(b.name) !== -1) { 
+            phone = branchPhoneMap[k].replace(/[^0-9]/g, ''); 
+            break; 
+          } 
+        }
+        item.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
+          </div>
+          <h4 style="font-size:18px; font-weight:700; color:#09090B; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
+          <div class="cardCovText">${b.cov}</div>
+          <div class="cardExpText">${b.exp}</div>
+          <div class="panelBtnRow">
+            <a href="tel:${phone}" class="panelBtn call">📞 직통전화</a>
+            <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
+          </div>
+        `;
+        board.appendChild(item);
+      });
     }
-var branchPhoneMap = {
-  "성동구": "010-3830-4300", "광진구": "010-3830-4300", "동대문구": "010-3830-4300",
-  "중랑구": "010-3830-4300", "성북구": "010-3830-4300", "강북구": "010-3830-4300",
-  "도봉구": "010-3830-4300", "노원구": "010-3830-4300", "구로구": "010-3552-2914",
-  "금천구": "010-3552-2914", "용인시": "010-7204-9007", "의정부시": "010-4512-9229",
-  "양주시": "010-4512-9229", "평택시": "010-5383-3369", "안성시": "010-5383-3369",
-  "안양시": "010-8998-1304", "군포시": "010-8998-1304", "의왕시": "010-8998-1304",
-  "과천시": "010-8998-1304", "대전광역시": "010-9206-1304", "제천시": "010-2311-5000",
-  "단양군": "010-2311-5000", "충주시": "010-2311-5000", "춘천시": "010-2311-5000",
-  "원주시": "010-2311-5000", "광주광역시": "010-4113-2294", "나주시": "010-4113-2294",
-  "화순군": "010-4113-2294", "장성군": "010-4113-2294", "영광군": "010-4113-2294",
-  "함평군": "010-4113-2294", "여수시": "010-9608-4380", "순천시": "010-9608-4380",
-  "광양시": "010-9608-4380", "대구광역시": "010-2201-1313", "경산시": "010-2201-1313",
-  "청도군": "010-2201-1313", "고령군": "010-2201-1313", "성주군": "010-2201-1313",
-  "포항시": "010-3131-4064", "경주시": "010-3131-4064", "영천시": "010-3131-4064",
-  "부산광역시": "010-4542-1313", "김해시": "010-4542-1313", "양산시": "010-4542-1313",
-  "창원시": "010-5046-4111"
-}; 
-    matchResults.forEach(function(b) {
-      var item = document.createElement('article');
-      item.className = 'boardCard';
-      item.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-          <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
-        </div>
-        <h4 style="font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
-        <div class="cardCovText">${b.cov}</div>
-        <div class="cardExpText">${b.exp}</div>
-        <div class="panelBtnRow">
-      <a href="tel:${(function(name){ for(var k in branchPhoneMap){ if(name.indexOf(k) !== -1 || k.indexOf(name) !== -1) return branchPhoneMap[k]; } return '1600-9712'; })(b.name).replace(/[^0-9]/g, '')}" class="panelBtn call">📞 직통전화</a>  
-          <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
-        </div>
-      `;
-      board.appendChild(item);
-    });
+
+    // 핵심: 검색을 완료하면 화면을 우측 상세 관제 보드 위치로 부드럽게 스크롤 이동
+    var targetBoard = document.getElementById('ctrlBoardTitle');
+    if (targetBoard) {
+      targetBoard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function resetNetworkSearch() {
