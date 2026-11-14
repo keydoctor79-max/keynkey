@@ -121,37 +121,63 @@
     }
 
     /* ================= 0. Top Clock Bar ================= */
-   <!-- 0. Top Clock Bar (태극기/성조기 배치 & 세련된 다크 감지 배지) -->
-<div class="topClockTicker" style="background:#09090B; border-bottom:1.5px solid #1E293B; padding:8px 0; color:#E2E8F0;">
-  <div class="wrap clockTickerInner" style="display:flex; justify-content:space-between; align-items:center; width:100%; padding:0 12px; box-sizing:border-box;">
-    
-    <!-- 좌측: 한국 국기 & 서울 시각 -->
-    <div style="display:inline-flex; align-items:center; gap:6px; font-family:'Montserrat', sans-serif; font-size:12px; font-weight:700;">
-      <span style="font-size:15px;" title="대한민국">🇰🇷</span>
-      <span style="background:#1E293B; color:#38BDF8; font-size:10.5px; padding:2px 6px; border-radius:3px; border:1px solid #334155;">KR</span>
-      <span class="val" id="time-kr" style="color:#FFFFFF; letter-spacing:0.5px;">--:--:--</span>
-    </div>
+    .topClockTicker {
+      background: #111827;
+      border-bottom: 1.5px solid #1E293B;
+      padding: 10px 0;
+      font-size: 14px;
+      color: #E2E8F0;
+      letter-spacing: -0.01em;
+    }
+    .clockTickerInner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .clockMotto {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+    .tagFraudShield {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF1F2;
+      color: #E11D48;
+      font-family: 'GmarketSans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 900;
+      padding: 5px 15px;
+      margin-left: 10px;
+      border-radius: 5px;
+      border: 2px solid #E11D48;
+      letter-spacing: -0.01em;
+    }
+    .clockTimesWrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .clockItem { display: inline-flex; align-items: center; gap: 6px; }
+    .clockItem .tag {
+      background: #1F2937;
+      color: #38BDF8;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      border: 1px solid #374151;
+      letter-spacing: 0.05em;
+    }
+    .clockItem .val { color: #FFFFFF; letter-spacing: 0.04em; }
 
-    <!-- 중앙: 세련된 다크 감지 배지 & 시간 약속 관제 -->
-    <div style="display:flex; align-items:center; gap:8px;">
-      <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(225, 29, 72, 0.12); color:#FB7185; border:1px solid rgba(225, 29, 72, 0.35); padding:4px 10px; border-radius:16px; font-size:11.5px; font-weight:800; letter-spacing:-0.3px; box-shadow:0 0 12px rgba(225, 29, 72, 0.15);">
-        <span style="width:6px; height:6px; background:#FB7185; border-radius:50%; box-shadow:0 0 8px #FB7185;"></span>
-        부정클릭 IP 실시간 감지 중
-      </span>
-      <span style="display:none; md-display:inline-flex; align-items:center; gap:5px; background:rgba(3, 199, 90, 0.12); color:#4ADE80; border:1px solid rgba(3, 199, 90, 0.35); padding:4px 10px; border-radius:16px; font-size:11.5px; font-weight:800; letter-spacing:-0.3px;">
-        ⏱ 시간약속엄수 · 실시간관제
-      </span>
-    </div>
-
-    <!-- 우측: 미국 국기 & 뉴욕 시각 -->
-    <div style="display:inline-flex; align-items:center; gap:6px; font-family:'Montserrat', sans-serif; font-size:12px; font-weight:700;">
-      <span class="val" id="time-us" style="color:#FFFFFF; letter-spacing:0.5px;">--:--:--</span>
-      <span style="background:#1E293B; color:#FDE047; font-size:10.5px; padding:2px 6px; border-radius:3px; border:1px solid #334155;">NY</span>
-      <span style="font-size:15px;" title="미국">🇺🇸</span>
-    </div>
-
-  </div>
-</div>
     /* ================= 1. Header Navigation ================= */
     .topNav {
       background: rgba(255, 255, 255, 0.96);
@@ -1392,40 +1418,27 @@
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-<!-- 0. Top Clock Bar (모바일 확장 및 한줄 정렬 최적화) -->
+<!-- 0. Top Clock Bar -->
 <div class="topClockTicker">
-  <div class="wrap clockTickerInner" style="padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    
-    <!-- 좌측 및 중앙: 감지 문구 & 시간 약속 박스 (모바일에서 양옆으로 꽉 차도록 확장) -->
-    <div class="clockMotto" style="margin: 0; width: 100%; display: flex; flex-direction: column; md-flex-direction: row; justify-content: center; align-items: center; gap: 6px; width: 100%;">
-      
-      <!-- 상단 줄: 부정 클릭 IP 감지 (모바일 가로폭 100% 꽉 채우기) -->
-      <span class="tagFraudShield" style="margin: 0; width: 100%; display: flex; justify-content: center; align-items: center; box-sizing: border-box; font-size: 12.5px; padding: 6px 0; box-shadow: 0 0 10px rgba(255, 42, 122, 0.25); text-align: center;">
-        🚨 부정클릭 IP 실시간 감지 중
-      </span>
-
-      <!-- 하단 줄: 시간 약속 엄수 & 실시간 관제 (모바일 가로폭 100% 꽉 채우기) -->
-      <span style="display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; background: rgba(255,230,0,0.12); color: var(--neon-yellow); border: 1px solid rgba(255,230,0,0.4); padding: 6px 0; border-radius: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: -0.3px; box-sizing: border-box; box-shadow: 0 0 10px rgba(255, 230, 0, 0.15); text-align: center;">
-        <span>⏱ 시간 약속 엄수</span>
-        <span style="opacity: 0.4;">|</span>
-        <span style="color: #00ff66; text-shadow: 0 0 6px rgba(0,255,102,0.6);">● 실시간 관제 중</span>
-      </span>
-
-    </div>
-
-    <!-- 우측: 세계 시계 (모바일에서도 붕 뜨지 않고 한 줄로 깔끔하게 정렬) -->
-    <div class="clockTimesWrap" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.15); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px;">
-      <div class="clockItem" style="display: inline-flex; align-items:center; gap:4px;">
-        <span class="tag" style="font-size:10px; padding:2px 5px;">KR</span>
-        <span class="val" id="time-kr" style="letter-spacing:0px;">--:--:--</span>
+  <div class="wrap clockTickerInner">
+<div class="clockMotto" style="margin: 0 auto; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; padding: 4px 10px;">
+          <span class="tagFraudShield" style="margin: 0; white-space: nowrap; font-size: 13px; padding: 5px 12px; box-shadow: 0 0 10px rgba(255, 42, 122, 0.25);">🚨 부정클릭 IP 실시간 감지 중</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,230,0,0.12); color: var(--neon-yellow); border: 1px solid rgba(255,230,0,0.4); padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; box-shadow: 0 0 10px rgba(255, 230, 0, 0.15);">
+            <span>⏱ 시간 약속 엄수</span>
+            <span style="opacity: 0.4;">|</span>
+            <span style="color: #00ff66; text-shadow: 0 0 6px rgba(0,255,102,0.6);">● 실시간 관제 중</span>
+          </span>
+        </div>
+    <div class="clockTimesWrap">
+      <div class="clockItem">
+        <span class="tag">KOREA (SEOUL)</span>
+        <span class="val" id="time-kr">--:--:--</span>
       </div>
-      <span style="opacity:0.3;">|</span>
-      <div class="clockItem" style="display: inline-flex; align-items:center; gap:4px;">
-        <span class="tag" style="font-size:10px; padding:2px 5px;">NY</span>
-        <span class="val" id="time-us" style="letter-spacing:0px;">--:--:--</span>
+      <div class="clockItem">
+        <span class="tag">USA (NEW YORK)</span>
+        <span class="val" id="time-us">--:--:--</span>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -3592,38 +3605,22 @@ function toggleNetwork() {
 <script language="javascript" src="//cdn.smlog.co.kr/core/smart.js" charset="utf-8"></script>
 <noscript><img src="//a27.smlog.co.kr/smart_bda.php?_account=27522" style="display:none;width:0;height:0;" border="0"/></noscript>  
   
-<!-- ==================== [우측 고정] 플로팅 퀵메뉴 (미니멀 라인 아이콘 & 고유 컬러) ==================== -->
+<!-- ==================== [우측 고정] 플로팅 퀵메뉴 (전화/문자/블로그/카톡) ==================== -->
 <div style="position:fixed; right:15px; bottom:80px; z-index:99999; display:flex; flex-direction:column; gap:10px; align-items:center;">
-  
-  <!-- 1. 직통 전화 (퍼플 라인) -->
-  <a href="tel:16009712" title="전화 상담" style="width:46px; height:46px; border-radius:50%; background:#FFFFFF; border:2px solid #6c5ce7; color:#6c5ce7; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(108,92,231,0.18); transition:all 0.2s ease;" onmouseover="this.style.background='#6c5ce7';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#6c5ce7';">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
-  </a>
+  <!-- 1. 직통 전화 걸기 (1600-9712) -->
+  <a href="tel:16009712" title="전화 상담" style="width:48px; height:48px; border-radius:50%; background:#6c5ce7; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:22px;">📞</a>
 
-  <!-- 2. 문자 상담 (인디고 라인) -->
-  <a href="sms:01082424649?body=계신 지역: %0A차량 번호: %0A문의 내용: " title="문자 문의" style="width:46px; height:46px; border-radius:50%; background:#FFFFFF; border:2px solid #4834d4; color:#4834d4; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(72,52,212,0.18); transition:all 0.2s ease;" onmouseover="this.style.background='#4834d4';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#4834d4';">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <rect width="20" height="16" x="2" y="4" rx="2"/>
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-    </svg>
-  </a>
+  <!-- 2. 문자 상담 보내기 (010-8242-4649) -->
+  <a href="sms:01082424649?body=계신 지역: %0A차량 번호: %0A문의 내용: " title="문자 문의" style="width:48px; height:48px; border-radius:50%; background:#4834d4; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:22px;">✉️</a>
 
-  <!-- 3. 네이버 블로그 (네이버 그린 라인) -->
-  <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" title="공식 블로그" style="width:46px; height:46px; border-radius:50%; background:#FFFFFF; border:2px solid #03c75a; color:#03c75a; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(3,199,90,0.18); font-family:'Montserrat', sans-serif; font-size:12px; font-weight:900; transition:all 0.2s ease;" onmouseover="this.style.background='#03c75a';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#03c75a';">
-    B
-  </a>
+  <!-- 3. 공식 네이버 블로그 바로가기 -->
+  <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" title="공식 블로그" style="width:48px; height:48px; border-radius:50%; background:#03c75a; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:13px; font-weight:900;">blog</a>
 
-  <!-- 4. 카카오톡 1:1 채팅 (카카오 옐로우 라인) -->
-  <a href="http://pf.kakao.com/_xeDwRu/chat" target="_blank" rel="noopener" title="카카오톡 상담" style="width:46px; height:46px; border-radius:50%; background:#FFFFFF; border:2px solid #e6d000; color:#b89c00; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(254,229,0,0.25); font-family:'Montserrat', sans-serif; font-size:11px; font-weight:900; transition:all 0.2s ease;" onmouseover="this.style.background='#FEE500';this.style.color='#3c1e1e';" onmouseout="this.style.background='#fff';this.style.color='#b89c00';">
-    TALK
-  </a>
+  <!-- 4. 카카오톡 채널 1:1 채팅 바로가기 -->
+  <a href="http://pf.kakao.com/_xeDwRu/chat" target="_blank" rel="noopener" title="카카오톡 상담" style="width:48px; height:48px; border-radius:50%; background:#FEE500; color:#3c1e1e; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:13px; font-weight:900;">TALK</a>
 
   <!-- 맨 위로 가기(TOP) 버튼 -->
-  <button onclick="window.scrollTo({top:0, behavior:'smooth'});" title="맨 위로" style="width:38px; height:38px; border-radius:50%; background:#FFFFFF; border:1.5px solid #CBD5E1; color:#475569; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 8px rgba(0,0,0,0.08); font-size:15px; transition:all 0.2s ease;" onmouseover="this.style.background='#09090B';this.style.color='#fff';this.style.borderColor='#09090B';" onmouseout="this.style.background='#fff';this.style.color='#475569';this.style.borderColor='#CBD5E1';">
-    ↑
-  </button>
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'});" title="맨 위로" style="width:40px; height:40px; border-radius:50%; background:#2d3436; color:#fff; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 8px rgba(0,0,0,0.3); font-size:16px;">↑</button>
 </div>
 </body>
 </html>
