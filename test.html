@@ -1418,27 +1418,40 @@
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-<!-- 0. Top Clock Bar -->
+<!-- 0. Top Clock Bar (모바일 확장 및 한줄 정렬 최적화) -->
 <div class="topClockTicker">
-  <div class="wrap clockTickerInner">
-<div class="clockMotto" style="margin: 0 auto; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; padding: 4px 10px;">
-          <span class="tagFraudShield" style="margin: 0; white-space: nowrap; font-size: 13px; padding: 5px 12px; box-shadow: 0 0 10px rgba(255, 42, 122, 0.25);">🚨 부정클릭 IP 실시간 감지 중</span>
-          <span style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,230,0,0.12); color: var(--neon-yellow); border: 1px solid rgba(255,230,0,0.4); padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; box-shadow: 0 0 10px rgba(255, 230, 0, 0.15);">
-            <span>⏱ 시간 약속 엄수</span>
-            <span style="opacity: 0.4;">|</span>
-            <span style="color: #00ff66; text-shadow: 0 0 6px rgba(0,255,102,0.6);">● 실시간 관제 중</span>
-          </span>
-        </div>
-    <div class="clockTimesWrap">
-      <div class="clockItem">
-        <span class="tag">KOREA (SEOUL)</span>
-        <span class="val" id="time-kr">--:--:--</span>
+  <div class="wrap clockTickerInner" style="padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    
+    <!-- 좌측 및 중앙: 감지 문구 & 시간 약속 박스 (모바일에서 양옆으로 꽉 차도록 확장) -->
+    <div class="clockMotto" style="margin: 0; width: 100%; display: flex; flex-direction: column; md-flex-direction: row; justify-content: center; align-items: center; gap: 6px; width: 100%;">
+      
+      <!-- 상단 줄: 부정 클릭 IP 감지 (모바일 가로폭 100% 꽉 채우기) -->
+      <span class="tagFraudShield" style="margin: 0; width: 100%; display: flex; justify-content: center; align-items: center; box-sizing: border-box; font-size: 12.5px; padding: 6px 0; box-shadow: 0 0 10px rgba(255, 42, 122, 0.25); text-align: center;">
+        🚨 부정클릭 IP 실시간 감지 중
+      </span>
+
+      <!-- 하단 줄: 시간 약속 엄수 & 실시간 관제 (모바일 가로폭 100% 꽉 채우기) -->
+      <span style="display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; background: rgba(255,230,0,0.12); color: var(--neon-yellow); border: 1px solid rgba(255,230,0,0.4); padding: 6px 0; border-radius: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: -0.3px; box-sizing: border-box; box-shadow: 0 0 10px rgba(255, 230, 0, 0.15); text-align: center;">
+        <span>⏱ 시간 약속 엄수</span>
+        <span style="opacity: 0.4;">|</span>
+        <span style="color: #00ff66; text-shadow: 0 0 6px rgba(0,255,102,0.6);">● 실시간 관제 중</span>
+      </span>
+
+    </div>
+
+    <!-- 우측: 세계 시계 (모바일에서도 붕 뜨지 않고 한 줄로 깔끔하게 정렬) -->
+    <div class="clockTimesWrap" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.15); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px;">
+      <div class="clockItem" style="display: inline-flex; align-items:center; gap:4px;">
+        <span class="tag" style="font-size:10px; padding:2px 5px;">KR</span>
+        <span class="val" id="time-kr" style="letter-spacing:0px;">--:--:--</span>
       </div>
-      <div class="clockItem">
-        <span class="tag">USA (NEW YORK)</span>
-        <span class="val" id="time-us">--:--:--</span>
+      <span style="opacity:0.3;">|</span>
+      <div class="clockItem" style="display: inline-flex; align-items:center; gap:4px;">
+        <span class="tag" style="font-size:10px; padding:2px 5px;">NY</span>
+        <span class="val" id="time-us" style="letter-spacing:0px;">--:--:--</span>
       </div>
     </div>
+
   </div>
 </div>
 
