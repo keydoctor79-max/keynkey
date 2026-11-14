@@ -121,63 +121,37 @@
     }
 
     /* ================= 0. Top Clock Bar ================= */
-    .topClockTicker {
-      background: #111827;
-      border-bottom: 1.5px solid #1E293B;
-      padding: 10px 0;
-      font-size: 14px;
-      color: #E2E8F0;
-      letter-spacing: -0.01em;
-    }
-    .clockTickerInner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .clockMotto {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #FFFFFF;
-      font-weight: 600;
-    }
-    .tagFraudShield {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #FFF1F2;
-      color: #E11D48;
-      font-family: 'GmarketSans', sans-serif;
-      font-size: 13.5px;
-      font-weight: 900;
-      padding: 5px 15px;
-      margin-left: 10px;
-      border-radius: 5px;
-      border: 2px solid #E11D48;
-      letter-spacing: -0.01em;
-    }
-    .clockTimesWrap {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-    }
-    .clockItem { display: inline-flex; align-items: center; gap: 6px; }
-    .clockItem .tag {
-      background: #1F2937;
-      color: #38BDF8;
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 3px;
-      border: 1px solid #374151;
-      letter-spacing: 0.05em;
-    }
-    .clockItem .val { color: #FFFFFF; letter-spacing: 0.04em; }
+   <!-- 0. Top Clock Bar (태극기/성조기 배치 & 세련된 다크 감지 배지) -->
+<div class="topClockTicker" style="background:#09090B; border-bottom:1.5px solid #1E293B; padding:8px 0; color:#E2E8F0;">
+  <div class="wrap clockTickerInner" style="display:flex; justify-content:space-between; align-items:center; width:100%; padding:0 12px; box-sizing:border-box;">
+    
+    <!-- 좌측: 한국 국기 & 서울 시각 -->
+    <div style="display:inline-flex; align-items:center; gap:6px; font-family:'Montserrat', sans-serif; font-size:12px; font-weight:700;">
+      <span style="font-size:15px;" title="대한민국">🇰🇷</span>
+      <span style="background:#1E293B; color:#38BDF8; font-size:10.5px; padding:2px 6px; border-radius:3px; border:1px solid #334155;">KR</span>
+      <span class="val" id="time-kr" style="color:#FFFFFF; letter-spacing:0.5px;">--:--:--</span>
+    </div>
 
+    <!-- 중앙: 세련된 다크 감지 배지 & 시간 약속 관제 -->
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(225, 29, 72, 0.12); color:#FB7185; border:1px solid rgba(225, 29, 72, 0.35); padding:4px 10px; border-radius:16px; font-size:11.5px; font-weight:800; letter-spacing:-0.3px; box-shadow:0 0 12px rgba(225, 29, 72, 0.15);">
+        <span style="width:6px; height:6px; background:#FB7185; border-radius:50%; box-shadow:0 0 8px #FB7185;"></span>
+        부정클릭 IP 실시간 감지 중
+      </span>
+      <span style="display:none; md-display:inline-flex; align-items:center; gap:5px; background:rgba(3, 199, 90, 0.12); color:#4ADE80; border:1px solid rgba(3, 199, 90, 0.35); padding:4px 10px; border-radius:16px; font-size:11.5px; font-weight:800; letter-spacing:-0.3px;">
+        ⏱ 시간약속엄수 · 실시간관제
+      </span>
+    </div>
+
+    <!-- 우측: 미국 국기 & 뉴욕 시각 -->
+    <div style="display:inline-flex; align-items:center; gap:6px; font-family:'Montserrat', sans-serif; font-size:12px; font-weight:700;">
+      <span class="val" id="time-us" style="color:#FFFFFF; letter-spacing:0.5px;">--:--:--</span>
+      <span style="background:#1E293B; color:#FDE047; font-size:10.5px; padding:2px 6px; border-radius:3px; border:1px solid #334155;">NY</span>
+      <span style="font-size:15px;" title="미국">🇺🇸</span>
+    </div>
+
+  </div>
+</div>
     /* ================= 1. Header Navigation ================= */
     .topNav {
       background: rgba(255, 255, 255, 0.96);
