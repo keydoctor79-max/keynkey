@@ -3162,13 +3162,13 @@ function focusSearchInput() {
     });
   }
 
-  // ================= 전국 지부 실시간 검색 기능 =================
+ // ================= 전국 지부 실시간 검색 기능 (검색 시 해당 보드로 즉시 이동) =================
   function handleNetworkSearch() {
     var input = document.getElementById('netSearchInput');
     if (!input) return;
     var query = input.value.trim().toLowerCase();
     if (!query) {
-      alert("검색할 지역명을 입력해주세요. (예: 부평, 김포, 부천 등)");
+      alert("검색할 지역명을 입력해주세요. (예: 부천, 부평, 김포 등)");
       return;
     }
 
@@ -3193,7 +3193,7 @@ function focusSearchInput() {
     var countEl = document.getElementById('ctrlBoardCount');
     var board = document.getElementById('ctrlBoardCards');
 
-    if (titleEl) titleEl.innerText = `🔍 '${query}' 검색 결과`;
+    if (titleEl) titleEl.innerText = `📍 '${query}' 검색 결과`;
     if (countEl) countEl.innerHTML = `<span style="font-size:12px;">●</span> ${matchResults.length}개 지부 검색됨`;
 
     if (!board) return;
@@ -3202,7 +3202,7 @@ function focusSearchInput() {
     if (matchResults.length === 0) {
       board.innerHTML = `
         <div style="grid-column: 1 / -1; padding: 40px 20px; text-align: center; background: var(--bg-card); border: 1.5px dashed var(--border-card); border-radius: 6px;">
-          <p style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px;">'${query}'에 해당하는 전용 지부를 찾지 못했습니다.</p>
+          <p style="font-size: 18px; font-weight: 700; color: #09090B; margin-bottom: 10px;">'${query}'에 해당하는 전용 지부를 찾지 못했습니다.</p>
           <p style="font-size: 14.5px; color: var(--text-clean); margin-bottom: 18px; line-height: 1.6;">
             키앤키닷컴은 전국 226개 시·군·구 전역에 비상 출동 네트워크를 운영 중입니다.<br>
             대표번호로 문의하시면 가장 인접한 마스터 엔지니어가 즉시 배차됩니다.
@@ -3210,43 +3210,57 @@ function focusSearchInput() {
           <a href="tel:16009712" class="panelBtn call" style="display:inline-block; padding: 10px 24px; font-size: 15px;">📞 1600-9712 직통 출동 확인</a>
         </div>
       `;
-      return;
+    } else {
+      var branchPhoneMap = {
+        "성동구": "010-3830-4300", "광진구": "010-3830-4300", "동대문구": "010-3830-4300",
+        "중랑구": "010-3830-4300", "성북구": "010-3830-4300", "강북구": "010-3830-4300",
+        "도봉구": "010-3830-4300", "노원구": "010-3830-4300", "구로구": "010-3552-2914",
+        "금천구": "010-3552-2914", "용인시": "010-7204-9007", "의정부시": "010-4512-9229",
+        "양주시": "010-4512-9229", "평택시": "010-5383-3369", "안성시": "010-5383-3369",
+        "안양시": "010-8998-1304", "군포시": "010-8998-1304", "의왕시": "010-8998-1304",
+        "과천시": "010-8998-1304", "대전광역시": "010-9206-1304", "제천시": "010-2311-5000",
+        "단양군": "010-2311-5000", "충주시": "010-2311-5000", "춘천시": "010-2311-5000",
+        "원주시": "010-2311-5000", "광주광역시": "010-4113-2294", "나주시": "010-4113-2294",
+        "화순군": "010-4113-2294", "장성군": "010-4113-2294", "영광군": "010-4113-2294",
+        "함평군": "010-4113-2294", "여수시": "010-9608-4380", "순천시": "010-9608-4380",
+        "광양시": "010-9608-4380", "대구광역시": "010-2201-1313", "경산시": "010-2201-1313",
+        "청도군": "010-2201-1313", "고령군": "010-2201-1313", "성주군": "010-2201-1313",
+        "포항시": "010-3131-4064", "경주시": "010-3131-4064", "영천시": "010-3131-4064",
+        "부산광역시": "010-4542-1313", "김해시": "010-4542-1313", "양산시": "010-4542-1313",
+        "창원시": "010-5046-4111"
+      };
+
+      matchResults.forEach(function(b) {
+        var item = document.createElement('article');
+        item.className = 'boardCard';
+        var phone = '16009712';
+        for(var k in branchPhoneMap){ 
+          if(b.name.indexOf(k) !== -1 || k.indexOf(b.name) !== -1) { 
+            phone = branchPhoneMap[k].replace(/[^0-9]/g, ''); 
+            break; 
+          } 
+        }
+        item.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
+          </div>
+          <h4 style="font-size:18px; font-weight:700; color:#09090B; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
+          <div class="cardCovText">${b.cov}</div>
+          <div class="cardExpText">${b.exp}</div>
+          <div class="panelBtnRow">
+            <a href="tel:${phone}" class="panelBtn call">📞 직통전화</a>
+            <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
+          </div>
+        `;
+        board.appendChild(item);
+      });
     }
-var branchPhoneMap = {
-  "성동구": "010-3830-4300", "광진구": "010-3830-4300", "동대문구": "010-3830-4300",
-  "중랑구": "010-3830-4300", "성북구": "010-3830-4300", "강북구": "010-3830-4300",
-  "도봉구": "010-3830-4300", "노원구": "010-3830-4300", "구로구": "010-3552-2914",
-  "금천구": "010-3552-2914", "용인시": "010-7204-9007", "의정부시": "010-4512-9229",
-  "양주시": "010-4512-9229", "평택시": "010-5383-3369", "안성시": "010-5383-3369",
-  "안양시": "010-8998-1304", "군포시": "010-8998-1304", "의왕시": "010-8998-1304",
-  "과천시": "010-8998-1304", "대전광역시": "010-9206-1304", "제천시": "010-2311-5000",
-  "단양군": "010-2311-5000", "충주시": "010-2311-5000", "춘천시": "010-2311-5000",
-  "원주시": "010-2311-5000", "광주광역시": "010-4113-2294", "나주시": "010-4113-2294",
-  "화순군": "010-4113-2294", "장성군": "010-4113-2294", "영광군": "010-4113-2294",
-  "함평군": "010-4113-2294", "여수시": "010-9608-4380", "순천시": "010-9608-4380",
-  "광양시": "010-9608-4380", "대구광역시": "010-2201-1313", "경산시": "010-2201-1313",
-  "청도군": "010-2201-1313", "고령군": "010-2201-1313", "성주군": "010-2201-1313",
-  "포항시": "010-3131-4064", "경주시": "010-3131-4064", "영천시": "010-3131-4064",
-  "부산광역시": "010-4542-1313", "김해시": "010-4542-1313", "양산시": "010-4542-1313",
-  "창원시": "010-5046-4111"
-}; 
-    matchResults.forEach(function(b) {
-      var item = document.createElement('article');
-      item.className = 'boardCard';
-      item.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-          <span style="background:#000; color:var(--neon-yellow); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; padding:3px 9px; border-radius:3px; border:1px solid var(--neon-yellow);">${b.badge}</span>
-        </div>
-        <h4 style="font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; font-family:'GmarketSans',sans-serif;">${b.name}</h4>
-        <div class="cardCovText">${b.cov}</div>
-        <div class="cardExpText">${b.exp}</div>
-        <div class="panelBtnRow">
-      <a href="tel:${(function(name){ for(var k in branchPhoneMap){ if(name.indexOf(k) !== -1 || k.indexOf(name) !== -1) return branchPhoneMap[k]; } return '1600-9712'; })(b.name).replace(/[^0-9]/g, '')}" class="panelBtn call">📞 직통전화</a>  
-          <a href="https://blog.naver.com/keynkey77" target="_blank" rel="noopener" class="panelBtn">📝 작업블로그</a>
-        </div>
-      `;
-      board.appendChild(item);
-    });
+
+    // 핵심: 검색을 완료하면 화면을 우측 상세 관제 보드 위치로 부드럽게 스크롤 이동
+    var targetBoard = document.getElementById('ctrlBoardTitle');
+    if (targetBoard) {
+      targetBoard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function resetNetworkSearch() {
